@@ -5,6 +5,8 @@ import Grid from "@/components/Grid";
 import RecentProject from "@/components/RecentProject";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data/indxe";
+import { LampDemo } from "@/components/LampDemo";
+import { TracingBeamDemo } from "@/components/TracingBeam";
 
 const Home = () => {
   return (
@@ -14,6 +16,7 @@ const Home = () => {
         <Hero />
         <Grid />
         <RecentProject />
+        <LampDemo/>
       </div>
     </main>
   );
