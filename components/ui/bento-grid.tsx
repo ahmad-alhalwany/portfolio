@@ -1,12 +1,16 @@
 "use client"
+import { useState } from "react";
+import { IoCopyOutline } from "react-icons/io5";
+
+import Lottie from "react-lottie";
+
 import { cn } from "@/lib/utils";
+
+
 import { BackgroundGradientAnimation } from "./backgroundGradientAnimation";
 import {GlobeDemo} from "./GridGlobe";
-import Lottie from "react-lottie";
-import { useState } from "react";
-import animationData from '@/data/confetti.json'
+import animationData from "@/data/confetti.json";
 import MagicButtons from "./Magic-buttons";
-import { IoCopyOutline } from "react-icons/io5";
 
 export const BentoGrid = ({
   className,
@@ -29,26 +33,23 @@ export const BentoGrid = ({
 
 export const BentoGridItem = ({
   className,
+  id,
   title,
   description,
   img,
   imgClassName,
   titleClassName,
   spareImg,
-  id,
 }: {
   className?: string;
+  id: number;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
-  id?: number;
-  img?:string;
-  imgClassName?:string;
-  titleClassName?:string;
-  spareImg?:string;
+  img?: string;
+  imgClassName?: string;
+  titleClassName?: string;
+  spareImg?: string;
 }) => {
-
   const leftLists = ["ReactJS", "Express", "Typescript"];
   const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
 
@@ -64,12 +65,13 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "ahmad.s.alhalwany@gmail.com";
+    const text = "hsu@jsmastery.pro";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
+
   return (
-  <div
+    <div
       className={cn(
         "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
         className
@@ -98,6 +100,7 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
+              //   width={220}
               className="object-cover object-center w-full h-full"
             />
           )}
@@ -122,6 +125,7 @@ export const BentoGridItem = ({
           >
             {title}
           </div>
+
           {id === 2 && <GlobeDemo />}
 
           {id === 3 && (
