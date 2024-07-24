@@ -6,7 +6,10 @@ import RecentProject from "@/components/RecentProject";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data/indxe";
 import { LampDemo } from "@/components/LampDemo";
-import { TracingBeamDemo } from "@/components/TracingBeam";
+import Experience from "@/components/Experience";
+import { Approach } from "@/components/Approach";
+import Footer from "@/components/Footer";
+
 
 const Home = () => {
   return (
@@ -19,6 +22,9 @@ const Home = () => {
         <div id="education">
           <LampDemo/>
         </div>
+        <Experience/>
+        <Approach/>
+        <Footer/>
       </div>
     </main>
   );

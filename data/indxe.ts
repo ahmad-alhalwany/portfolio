@@ -172,13 +172,26 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link:"https://github.com/ahmad-alhalwany"
     },
     {
       id: 2,
       img: "/twit.svg",
+      link:"https://x.com/ahmad_alhalwany"
     },
     {
       id: 3,
       img: "/link.svg",
+      link:"https://www.linkedin.com/in/ahmad-alhalwany/"
+    },
+    {
+      id: 4,
+      img: "/insta.png",
+      link:"https://www.instagram.com/ahmad_al_halwany/"
+    },
+    {
+      id: 5,
+      img: "/facebook.png",
+      link:"https://www.facebook.com/ahmad.alhalwany123"
     },
   ];
