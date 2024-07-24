@@ -3,83 +3,88 @@ import React from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "./ui/tracing-beam";
+import { HoverBorderGradientDemo } from "./HoverBorderGradient";
 
 export function TracingBeamDemo() {
   return (
-    <TracingBeam className="px-6">
-      <div className="max-w-2xl mx-auto antialiased pt-4 relative">
-        {dummyContent.map((item, index) => (
-          <div key={`content-${index}`} className="mb-10">
-            <div className="flex items-center mb-4">
-              <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1">
-                {item.badge}
-              </h2>
-              <div
-                key={index}
-                className="ml-4 border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                style={{
-                  transform: `translateX(-${5 * index + 2}px)`,
-                }}
-              >
-                <img
-                  src={item.icon}
-                  alt="icon"
-                  className="p-2 rounded-full w-full h-full object-fill"
-                />
+    <div>
+      <div>
+        <HoverBorderGradientDemo />
+      </div>
+      <TracingBeam className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+          {dummyContent.map((item, index) => (
+            <div key={`content-${index}`} className="mb-10">
+              <div className="flex items-center mb-4">
+                <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1">
+                  {item.badge}
+                </h2>
+                <div
+                  key={index}
+                  className="ml-4 border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 sm:w-8 sm:h-8 w-6 h-6 flex justify-center items-center"
+                  style={{
+                    transform: `translateX(-${5 * index + 2}px)`,
+                  }}
+                >
+                  <img
+                    src={item.icon}
+                    alt="icon"
+                    className="p-2 rounded-full w-full h-full object-fill"
+                  />
+                </div>
+              </div>
+              <p className={twMerge("text-lg sm:text-xl mb-4")}>
+                {item.title}
+              </p>
+
+              <div className="text-sm prose prose-sm dark:prose-invert">
+                {item?.image && (
+                  <Image
+                    src={item.image}
+                    alt="blog thumbnail"
+                    height="1000"
+                    width="1000"
+                    className="rounded-lg mb-10 w-full h-auto"
+                    style={{ maxHeight: '70vh', objectFit: 'cover' }}
+                  />
+                )}
+                {item.description}
               </div>
             </div>
-            <p className={twMerge("text-xl mb-4")}>
-              {item.title}
-            </p>
-
-            <div className="text-sm prose prose-sm dark:prose-invert">
-              {item?.image && (
-                <Image
-                  src={item.image}
-                  alt="blog thumbnail"
-                  height="1000"
-                  width="1000"
-                  className="rounded-lg mb-10 w-full h-[70vh]"
-                />
-              )}
-              {item.description}
-            </div>
-          </div>
-        ))}
-      </div>
-    </TracingBeam>
+          ))}
+        </div>
+      </TracingBeam>
+    </div>
   );
 }
 
 const dummyContent = [
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Information Technology Engineer | Artificial Intelligence Engineer",
     description: (
-      <>
+        <div className="max-w-2xl mx-auto">
         <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
+          I started studying at university in 2017.
         </p>
         <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-          veniam in commodo id reprehenderit adipisicing. Proident duis
-          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
+          I graduated with an average of 71.43% in 2023.
         </p>
-        <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-          reprehenderit deserunt amet laborum consequat adipisicing officia qui
-          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
-          Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
+        <p className="mt-6">
+          <span>Projects:</span>
+          
+          <span className="block pl-4 mb-4">
+            <span className="inline-block"> • Built an NLP based app to classify people&lsquo;s reactions to some emotional categories.</span>
+          </span>
+          
+          <span className="block pl-4 mb-4">
+            <span className="inline-block"> • Built a self-driving car using Unity and Genetic Algorithm to study the effect of deep neural networks over the randomness of genetic algorithms.</span>
+          </span>
+          
+          <span className="block pl-4 mb-4">
+            <span className="inline-block"> • Data Mining project to classify favorite songs.</span>
+          </span>
         </p>
-      </>
+      </div>
     ),
     badge: "Tishreen University",
     image:
@@ -87,22 +92,11 @@ const dummyContent = [
     icon:"/Tishreen.jpeg",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Introduction to Back-End Development",
     description: (
       <>
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-        <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-          cillum ut mollit.
+            learn about the day-to-day responsibilities of a web developer and get a general understanding of the core and underlying technologies that power the internet. You will learn how front-end developers create websites and applications that work well and are easy to maintain. 
         </p>
       </>
     ),
@@ -112,21 +106,125 @@ const dummyContent = [
     icon:"/facebook_logo.jpeg",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Introduction to Front-End Development",
     description: (
       <>
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+            learn about the day-to-day responsibilities of a web developer and get a general understanding of the core and underlying technologies that power the internet. You will learn how front-end developers create websites and applications that work well and are easy to maintain. 
         </p>
       </>
     ),
-    badge: "Launch Week",
+    badge: "Meta",
     image:
-      "/confetti.gif",
+      "/front-End.jpeg",
+    icon:"/facebook_logo.jpeg",
+  },
+  {
+    title: "Neural Networks and Deep Learning",
+    description: (
+      <>
+        <p>
+            familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
+            <br/>
+            The Deep Learning Specialization is our foundational program that will help you understand the capabilities, challenges, and consequences of deep learning and prepare you to participate in the development of leading-edge AI technology. It provides a pathway for you to gain the knowledge and skills to apply machine learning to your work, level up your technical career, and take the definitive step in the world of AI.
+        </p>
+      </>
+    ),
+    badge: "DeepLearning.AI",
+    image:
+      "/NN-DL.jpeg",
+    icon:"/deeplearningai_logo.jpeg",
+  },
+  {
+    title: "Project Initiation: Starting a Successful Project",
+    description: (
+      <>
+        <p>
+            set a project up for success in the first phase of the project life cycle: the project initiation phase. In exploring the key components of this phase, you’ll learn how to define and manage project goals, deliverables, scope, and success criteria. You’ll discover how to use tools and templates like stakeholder analysis grids and project charters to help you set project expectations and communicate roles and responsibilities. Current Google project managers will continue to instruct and provide you with hands-on approaches for accomplishing these tasks while showing you the best project management tools and resources for the job at hand.
+        </p>
+      </>
+    ),
+    badge: "Google",
+    image:
+      "/Project-Initiation.jpeg",
+    icon:"/Google.png",
+  },
+  {
+    title: "Supervised Machine Learning: Regression and Classification",
+    description: (
+      <>
+      <div className="max-w-2xl mx-auto">
+        <p className="mt-6">
+        <span className="block pl-4 mb-4">
+          <span className="inline-block"> • Build machine learning models in Python using popular machine learning libraries NumPy and scikit-learn.</span>
+        </span>
+        <span className="block pl-4 mb-4">
+          <span className="inline-block"> • Build and train supervised machine learning models for prediction and binary classification tasks, including linear regression and logistic regression</span>
+        </span>
+        </p>
+      </div>
+      </>
+    ),
+    badge: "DeepLearning.AI",
+    image:
+      "/ML.jpeg",
+    icon:"/DeepLearning.png",
+  },
+  {
+    title: "Excel Basics for Data Analysis",
+    description: (
+      <>
+        <p>
+          Spreadsheet tools like Excel are an essential tool for working with data - whether for data analytics, business, marketing, or research. This course is designed to give you a basic working knowledge of Excel and how to use it for analyzing data. 
+          This course is suitable for those who are interested in pursuing a career in data analysis or data science, as well as anyone looking to use Excel for data analysis in their own domain. No prior experience with spreadsheets or coding is required - all you need is a device with a modern web browser and the ability to create a Microsoft account to access Excel online at no cost. If you have a desktop version of Excel, you can also easily follow along with the course. 
+        </p>
+      </>
+    ),
+    badge: "IBM",
+    image:
+      "/EB-DA.jpeg",
+    icon:"/IBM.png",
+  },
+  {
+    title: "Foundations of Project Management",
+    description: (
+      <>
+        <p>
+        This course is the first in a series of six to equip you with the skills you need to apply to introductory-level roles in project management. Project managers play a key role in leading, planning and implementing critical projects to help their organizations succeed. In this course, you’ll discover foundational project management terminology and gain a deeper understanding of  the role and responsibilities of a project manager. We’ll also introduce you to the kinds of jobs you might pursue after completing this program. Throughout the program, you’ll learn from current Google project managers, who can provide you with a multi-dimensional educational experience that will help you build your skills  for on-the-job application. 
+        </p>
+      </>
+    ),
+    badge: "Google",
+    image:
+      "/FOPM.jpeg",
+    icon:"/Google.png",
+  },
+  {
+    title: "Introduction to Data Analytics",
+    description: (
+      <>
+        <p>
+        start a career in Data Analysis but don&lsquo;t know where to begin? This course presents you with a gentle introduction to Data Analysis, the role of a Data Analyst, and the tools used in this job. You will learn about the skills and responsibilities of a data analyst and hear from several data experts sharing their tips & advice to start a career. This course will help you to differentiate between the roles of Data Analysts, Data Scientists, and Data Engineers. 
+        </p>
+      </>
+    ),
+    badge: "IBM",
+    image:
+      "/ITDA.jpeg",
+    icon:"/IBM.png",
+  },
+  {
+    title: "Preparing to Manage Human Resources",
+    description: (
+      <>
+        <p>
+          One way or another, all employees are managed. But approaches to managing employees varying from employee-to-employee, job-to-job, manager-to-manager, organization-to-organization, and country-to-country. This course provides a foundation for developing your own approach to skillfully managing employees by illustrating alternative human resource management (HRM) strategies, introducing the importance of the legal context, and thinking about what motivates employees. This will then give you the factual and conceptual basis for developing specific, critical HRM skills in subsequent courses on hiring employees, managing performance, and rewarding employees. Don&lsquo;t know anything about HRM? That&lsquo;s OK! Leave this course with a new-found understanding of the range of options available for managing employees, a grasp of what makes workers tick, and the readiness to develop your own HRM skills.
+        </p>
+      </>
+    ),
+    badge: "University of Minnesota",
+    image:
+      "/PTMHR.jpeg",
+    icon:"/UOM.png",
   },
 ];
