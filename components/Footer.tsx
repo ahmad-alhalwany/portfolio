@@ -4,6 +4,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data/indxe";
 import MagicButtons from "./ui/Magic-buttons";
 import Link from "next/link";
+import { AnimatedModalDemo } from "./AnimatedModal";
 
 const Footer = () => {
   return (
@@ -25,13 +26,14 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="ahmad.s.alhalwany@gmail.com">
+        {/* <a href="ahmad.s.alhalwany@gmail.com">
           <MagicButtons
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             postion="right"
           />
-        </a>
+        </a> */}
+          <AnimatedModalDemo/>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
