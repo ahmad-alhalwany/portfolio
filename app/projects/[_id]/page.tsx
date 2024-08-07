@@ -55,6 +55,8 @@ const data = [
   {
     id: 1,
     title: "3D Solar System Planets to Explore",
+    gitHubLink:"",
+    link:"https://ui.aceternity.com/components/text-reveal-card",
     cards: [
       {
         category: "Artificial Intelligence",
@@ -73,6 +75,8 @@ const data = [
   {
     id: 2,
     title: "Yoom - Video Conferencing App",
+    gitHubLink:"",
+    link:"",
     cards: [
       {
         category: "Product",
@@ -91,6 +95,8 @@ const data = [
   {
     id: 3,
     title: "AI Image SaaS - Canva Application",
+    gitHubLink:"",
+    link:"",
     cards: [
       {
         category: "iOS",
@@ -103,6 +109,8 @@ const data = [
   {
     id: 4,
     title: "Animated Apple Iphone 3D Website",
+    gitHubLink:"",
+    link:"",
     cards: [
       {
         category: "Hiring",
