@@ -37,13 +37,15 @@ export function AppleCardsCarousel({ data, onPrevProject, onNextProject }: any) 
         />
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
-        <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
-          <Link href={data.gitHubLink}>
-            <p className="flex flex-col items-center">
-              <Image src="/git.svg" alt={data.title} width={20} height={20} />
-            </p>
-          </Link>
-        </div>
+        {data.gitHubLink && (
+          <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
+              <Link href={data.gitHubLink}>
+                <p className="flex flex-col items-center">
+                  <Image src="/git.svg" alt={data.title} width={20} height={20} />
+                </p>
+              </Link>
+          </div>
+        )}
         {data.link && (
           <Link href={data.link}>
             <p className="flex items-center lg:text-xl md:text-xs text-sm text-purple transition duration-300 transform hover:translate-x-2 hover:text-purple-600">
