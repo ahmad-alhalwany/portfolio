@@ -59,140 +59,94 @@ const data = [
     link:"https://plaze-shop.de/",
     cards: [
       {
-        category: "Slider for Home page",
-        title: "You can change based on your WordPress",
         src: "/project/plaze1.png",
         content: <DummyContent />,
       },
       {
-        category: "Artificial Intelligence",
-        title: "You can do more with AI.",
         src: "/project/plaze2.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze3.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze4.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze5.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze6.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze7.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze8.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze9.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze10.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze11.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze12.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze13.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze14.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze15.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze16.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze17.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze18.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze19.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze20.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plaze21.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plwp1.png",
         content: <DummyContent />,
       },
       {
-        category: "Productivity",
-        title: "Enhance your productivity.",
         src: "/project/plwp1.png",
         content: <DummyContent />,
       },
@@ -200,48 +154,152 @@ const data = [
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    gitHubLink:"",
+    title: "Apply for Jobs - Mobile App",
+    gitHubLink:"https://github.com/ahmad-alhalwany/jobs-react-native",
     link:"",
     cards: [
       {
-        category: "Product",
-        title: "Launching the new Apple Vision Pro.",
-        src: "/Back-End.jpeg",
+        src: "/project/jobsapp10.png",
         content: <DummyContent />,
       },
       {
-        category: "Product",
-        title: "Maps for your iPhone 15 Pro Max.",
-        src: "/Back-End.jpeg",
+        src: "/project/jobsapp11.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp12.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp13.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp14.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp15.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp16.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp1.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp2.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp3.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp4.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp5.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp6.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp7.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp8.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp9.png",
         content: <DummyContent />,
       },
     ],
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    gitHubLink:"",
-    link:"",
+    title: "Zeus - AI Prompt Application",
+    gitHubLink:"https://github.com/ahmad-alhalwany/Zeus",
+    link:"https://zeus-v851-8wlmcxt7r-ahmad-alhalwany.vercel.app/",
     cards: [
       {
-        category: "iOS",
-        title: "Photography just got better.",
-        src: "/Back-End.jpeg",
+        src: "/project/zeus1.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/zeus2.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/zeus3.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/zeus4.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/zeus5.png",
         content: <DummyContent />,
       },
     ],
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    gitHubLink:"",
+    title: "AI-Powered Animated 3D Website",
+    gitHubLink:"https://github.com/ahmad-alhalwany/AI-Powered-3D-Website",
     link:"",
     cards: [
       {
-        category: "Hiring",
-        title: "Hiring for a Staff Software Engineer",
-        src: "/Back-End.jpeg",
+        src: "/project/AI-Powered1.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered2.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered3.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered4.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered5.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered6.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered7.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered8.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered9.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered10.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/AI-Powered11.png",
         content: <DummyContent />,
       },
     ],
