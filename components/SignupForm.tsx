@@ -54,10 +54,10 @@ export function SignupFormDemo() {
     };
   
     return emailjs.send(
-      "service_qbow5xi",
-      "template_glxgi4v",
+      process.env.NEXT_PUBLIC_SERVICE_ID as string,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
       templateParams,
-      "ym_Cmu34o40AY5tp3"
+      process.env.NEXT_PUBLIC_USER_ID as string
     );
   };
 
