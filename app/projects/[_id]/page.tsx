@@ -159,34 +159,6 @@ const data = [
     link:"",
     cards: [
       {
-        src: "/project/jobsapp10.png",
-        content: <DummyContent />,
-      },
-      {
-        src: "/project/jobsapp11.png",
-        content: <DummyContent />,
-      },
-      {
-        src: "/project/jobsapp12.png",
-        content: <DummyContent />,
-      },
-      {
-        src: "/project/jobsapp13.png",
-        content: <DummyContent />,
-      },
-      {
-        src: "/project/jobsapp14.png",
-        content: <DummyContent />,
-      },
-      {
-        src: "/project/jobsapp15.png",
-        content: <DummyContent />,
-      },
-      {
-        src: "/project/jobsapp16.png",
-        content: <DummyContent />,
-      },
-      {
         src: "/project/jobsapp1.png",
         content: <DummyContent />,
       },
@@ -220,6 +192,34 @@ const data = [
       },
       {
         src: "/project/jobsapp9.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp10.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp11.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp12.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp13.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp14.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp15.png",
+        content: <DummyContent />,
+      },
+      {
+        src: "/project/jobsapp16.png",
         content: <DummyContent />,
       },
     ],

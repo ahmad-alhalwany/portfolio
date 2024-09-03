@@ -215,7 +215,7 @@ export const Card = ({
           src={card.src}
           alt={card.src}
           fill
-          className="object-cover absolute z-10 inset-0"
+          className="object-contain absolute z-10 inset-0"
         />
       </motion.button>
     </>
