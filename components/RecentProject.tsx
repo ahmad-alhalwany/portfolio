@@ -13,12 +13,12 @@ const RecentProject = () => {
         <span className='text-purple'>recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-          {projects.map(({id, title, des, img, iconLists, link}) =>(
+          {projects.map(({id, title, des, img, iconLists}) =>(
             <div 
                 className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
                 key={id}
             >
-                <PinContainer title={title} href={link}>
+                <PinContainer title={title}>
                     <Link href={`/projects/${id}`} >
                         <div className="relative flex items-center justify-center sm:h-[40vh] sm:w-[570px] w-[80vw] overflow-hidden h-[30vh] mb-10">
                             <div
