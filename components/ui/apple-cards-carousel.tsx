@@ -69,7 +69,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
+      const cardWidth = isMobile() ? 230 : 384;
       const gap = isMobile() ? 4 : 8;
       const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
@@ -90,13 +90,13 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+          className="flex w-full overflow-x-scroll py-6 sm:py-10 md:py-20 scroll-smooth [scrollbar-width:none] md:pl-10"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
           <div
             className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+              "absolute right-0 z-[1000] h-auto w-[15%] md:w-[5%] overflow-hidden bg-gradient-to-l from-white dark:from-neutral-900"
             )}
           ></div>
 
@@ -123,27 +123,27 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
+                className="last:pr-[15%] md:last:pr-[33%] rounded-3xl"
               >
                 {item}
               </motion.div>
             ))}
           </div>
         </div>
-        <div className="flex justify-end gap-2 mr-10">
+        <div className="flex justify-end gap-2 mr-4 sm:mr-6 md:mr-10">
           <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+            className="relative z-40 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowLeft className="h-5 w-5 sm:h-6 sm:w-6 text-gray-500" />
           </button>
           <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+            className="relative z-40 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-500" />
           </button>
         </div>
       </div>
@@ -162,7 +162,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -207,15 +207,16 @@ export const Card = ({
         )}
       </AnimatePresence>
       <motion.button
+        className="bg-gray-100 dark:bg-neutral-900 h-[30vh] w-[90vw] sm:h-[35vh] sm:w-[80vw] md:h-[50vh] md:w-[60vw] lg:h-[60vh] lg:w-[50vw] overflow-hidden flex flex-col items-start justify-start relative z-10"
         onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[35vh] w-[80vw] md:h-[60vh] md:w-[60vw] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <BlurImage
           src={card.src}
           alt={card.src}
           fill
-          className="object-contain absolute z-10 inset-0"
+          className="object-contain absolute z-10 inset-0 cursor-default"
+          onClick={(e) => e.stopPropagation()}
         />
       </motion.button>
     </>

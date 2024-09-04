@@ -1,10 +1,3 @@
-export const navItems = [
-    { name: "About", link: "#about" },
-    { name: "Projects", link: "#projects" },
-    { name: "Education", link: "#education" },
-    { name: "Contact", link: "#contact" },
-  ];
-  
   export const gridItems = [
     {
       id: 1,

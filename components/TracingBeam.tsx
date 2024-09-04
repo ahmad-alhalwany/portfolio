@@ -7,46 +7,48 @@ import { HoverBorderGradientDemo } from "./HoverBorderGradient";
 
 export function TracingBeamDemo() {
   return (
-    <div>
-      <div>
-        <HoverBorderGradientDemo />
-      </div>
-      <TracingBeam className="px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+    <div className="px-4 sm:px-6 lg:px-8">
+      <HoverBorderGradientDemo />
+      <TracingBeam className="py-4">
+        <div className="max-w-3xl mx-auto antialiased relative">
           {dummyContent.map((item, index) => (
-            <div key={`content-${index}`} className="mb-10">
-              <div className="flex items-center mb-4">
-                <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1">
+            <div key={`content-${index}`} className="mb-12 md:mb-16">
+              <div className="flex flex-wrap items-center mb-6">
+                <h2 className="bg-black text-white rounded-full text-xs md:text-sm w-fit px-3 py-1">
                   {item.badge}
                 </h2>
                 <div
-                  key={index}
-                  className="ml-4 border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 sm:w-8 sm:h-8 w-6 h-6 flex justify-center items-center"
+                  className="ml-4 border border-white/[.2] rounded-full bg-black flex justify-center items-center"
                   style={{
+                    width: 'clamp(24px, 6vw, 40px)',
+                    height: 'clamp(24px, 6vw, 40px)',
                     transform: `translateX(-${5 * index + 2}px)`,
                   }}
                 >
                   <img
                     src={item.icon}
                     alt="icon"
-                    className="p-2 rounded-full w-full h-full object-fill"
+                    className="p-1 rounded-full w-full h-full object-cover"
                   />
                 </div>
               </div>
-              <p className={twMerge("text-lg sm:text-xl mb-4")}>
+              <p className={twMerge("text-lg md:text-xl mb-6")}>
                 {item.title}
               </p>
 
               <div className="text-sm prose prose-sm dark:prose-invert">
                 {item?.image && (
-                  <Image
-                    src={item.image}
-                    alt="blog thumbnail"
-                    height="1000"
-                    width="1000"
-                    className="rounded-lg mb-10 w-full h-auto"
-                    style={{ maxHeight: '70vh', objectFit: 'cover' }}
-                  />
+                  <div className="relative w-full h-auto mb-8">
+                    <Image
+                      src={item.image}
+                      alt="blog thumbnail"
+                      layout="responsive"
+                      height={500}
+                      width={1000}
+                      className="rounded-lg object-cover"
+                      style={{ maxHeight: '60vh' }}
+                    />
+                  </div>
                 )}
                 {item.description}
               </div>
