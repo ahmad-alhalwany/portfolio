@@ -1,15 +1,11 @@
-import { FaLocationArrow } from "react-icons/fa6";
-
-
 import { socialMedia } from "@/data/indxe";
-import MagicButtons from "./ui/Magic-buttons";
 import Link from "next/link";
 import { AnimatedModalDemo } from "./AnimatedModal";
 
 const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+      <div className="w-full absolute left-0 -bottom-1 min-h-96">
         <img
           src="/footer-grid.svg"
           alt="grid"
@@ -26,13 +22,6 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        {/* <a href="ahmad.s.alhalwany@gmail.com">
-          <MagicButtons
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            postion="right"
-          />
-        </a> */}
           <AnimatedModalDemo/>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
