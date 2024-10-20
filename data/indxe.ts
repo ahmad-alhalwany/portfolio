@@ -91,6 +91,13 @@
       img: "/project/AI-Powered1.png",
       iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/framer-motion.svg"],
     },
+    {
+      id: 5,
+      title: "Student Website to share knowledge",
+      des: "Create a social website and publish your study ideas as posts, search and select and add comments using the latest set of technologies.",
+      img: "/project/studybud2.png",
+      iconLists: ["/django.png", "/Html.png", "/css.png", "/js.png"],
+    },
   ];
   
   export const workExperience = [

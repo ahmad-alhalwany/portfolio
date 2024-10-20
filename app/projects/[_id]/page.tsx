@@ -249,4 +249,45 @@ const data = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Student Website to share knowledge",
+    gitHubLink:"https://github.com/ahmad-alhalwany/django_Project_social",
+    link:"https://django-project-social.vercel.app/",
+    cards: [
+      {
+        src: "/project/studybud2.png",
+      },
+      {
+        src: "/project/studybud1.png",
+      },
+      {
+        src: "/project/studybud3.png",
+      },
+      {
+        src: "/project/studybud4.png",
+      },
+      {
+        src: "/project/studybud5.png",
+      },
+      {
+        src: "/project/studybud6.png",
+      },
+      {
+        src: "/project/studybud7.png",
+      },
+      {
+        src: "/project/studybud8.png",
+      },
+      {
+        src: "/project/studybud9.png",
+      },
+      {
+        src: "/project/studybud10.png",
+      },
+      {
+        src: "/project/studybud11.png",
+      },
+    ],
+  },
 ];
