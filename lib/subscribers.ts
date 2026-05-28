@@ -1,5 +1,4 @@
-import fs from "fs/promises";
-import path from "path";
+import { readJsonFile, writeJsonFile } from "./server-storage";
 
 export type Subscriber = {
   email: string;
@@ -7,16 +6,19 @@ export type Subscriber = {
   source: "portfolio" | "blog";
 };
 
-const FILE = path.join(process.cwd(), "data", "subscribers.json");
+const FILE = "subscribers.json";
 
 async function readAll(): Promise<Subscriber[]> {
-  try {
-    const raw = await fs.readFile(FILE, "utf-8");
-    const data = JSON.parse(raw) as Subscriber[];
-    return Array.isArray(data) ? data : [];
-  } catch {
-    return [];
-  }
+  const data = await readJsonFile<Subscriber[] | { subscribers?: Subscriber[] }>(
+    FILE,
+    []
+  );
+  if (Array.isArray(data)) return data;
+  return Array.isArray(data.subscribers) ? data.subscribers : [];
+}
+
+async function writeAll(list: Subscriber[]): Promise<void> {
+  await writeJsonFile(FILE, list);
 }
 
 export async function addSubscriber(
@@ -32,7 +34,6 @@ export async function addSubscriber(
     source,
   });
 
-  await fs.mkdir(path.dirname(FILE), { recursive: true });
-  await fs.writeFile(FILE, JSON.stringify(list, null, 2), "utf-8");
+  await writeAll(list);
   return "created";
 }
