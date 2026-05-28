@@ -1,0 +1,28 @@
+{
+  "reviews": [
+    {
+      "id": "rev_1779923937457_aacikh",
+      "name": "بثصبصث",
+      "email": "ahmad.ahmad123a123a@gmail.com",
+      "avatar": "/uploads/reviews/1779923934915-Screenshot_2026-05-24_171628.png",
+      "rating": 5,
+      "message": "لقلقثلثقلثقلثقلثق فثقل افقافثق اثلقلثق لثقل ثقلثق ثقل",
+      "status": "rejected",
+      "createdAt": "2026-05-27T23:18:57.457Z",
+      "lat": 58.59,
+      "lng": 175.3
+    },
+    {
+      "id": "rev_1779923375275_tg3wwu",
+      "name": "بيسبيسب",
+      "email": "ahmad.ahmad123a123a@gmail.com",
+      "avatar": "/uploads/reviews/1779923371667-Screenshot_2026-05-24_171431.png",
+      "rating": 5,
+      "message": "بصثبصثبصثبصثبصثبصثبصثبصثب بثصب صثبثصب صثبصث",
+      "status": "rejected",
+      "createdAt": "2026-05-27T23:09:35.275Z",
+      "lat": 17.75,
+      "lng": 55.139999999999986
+    }
+  ]
+}

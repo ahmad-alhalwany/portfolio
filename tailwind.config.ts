@@ -43,7 +43,20 @@ const config = {
         blue: {
           "100": "#E4ECFF",
         },
-        purple: "#CBACF9",
+        purple: {
+          DEFAULT: "rgb(var(--accent-purple-rgb) / <alpha-value>)",
+          soft: "var(--accent-purple-soft)",
+        },
+        page: {
+          bg: "var(--page-bg)",
+          fg: "var(--page-fg)",
+          muted: "var(--page-muted)",
+          card: "var(--page-card)",
+          "card-solid": "var(--page-card-solid)",
+          border: "var(--page-border)",
+          nav: "var(--page-nav)",
+          elevated: "var(--page-elevated)",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -148,6 +161,34 @@ const config = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        "marquee-up": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-50%)" },
+        },
+        "marquee-down": {
+          from: { transform: "translateY(-50%)" },
+          to: { transform: "translateY(0)" },
+        },
+        "cv-scan": {
+          "0%": { top: "8%", opacity: "0" },
+          "15%": { opacity: "1" },
+          "85%": { opacity: "1" },
+          "100%": { top: "92%", opacity: "0" },
+        },
+        "cv-orbit": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "cv-orbit-reverse": {
+          from: { transform: "rotate(360deg)" },
+          to: { transform: "rotate(0deg)" },
+        },
+        "cv-glitch": {
+          "0%, 100%": { clipPath: "inset(0 0 0 0)", transform: "translate(0)" },
+          "20%": { clipPath: "inset(12% 0 58% 0)", transform: "translate(-2px, 1px)" },
+          "40%": { clipPath: "inset(48% 0 8% 0)", transform: "translate(2px, -1px)" },
+          "60%": { clipPath: "inset(8% 0 72% 0)", transform: "translate(-1px, 2px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -161,6 +202,12 @@ const config = {
         fifth: "moveInCircle 20s ease infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "marquee-up": "marquee-up 55s linear infinite",
+        "marquee-down": "marquee-down 55s linear infinite",
+        "cv-scan": "cv-scan 2.8s ease-in-out infinite",
+        "cv-orbit": "cv-orbit 22s linear infinite",
+        "cv-orbit-reverse": "cv-orbit-reverse 16s linear infinite",
+        "cv-glitch": "cv-glitch 2.5s steps(1) infinite",
       },
     },
   },

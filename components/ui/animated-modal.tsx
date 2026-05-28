@@ -71,9 +71,13 @@ export const ModalBody = ({
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden";
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = "hidden";
+      }
     } else {
-      document.body.style.overflow = "auto";
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = "auto";
+      }
     }
   }, [open]);
 
@@ -231,6 +235,8 @@ export const useOutsideClick = (
       }
       callback(event);
     };
+
+    if (typeof window === 'undefined') return;
 
     document.addEventListener("mousedown", listener);
     document.addEventListener("touchstart", listener);

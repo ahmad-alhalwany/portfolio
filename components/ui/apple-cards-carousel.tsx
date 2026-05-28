@@ -172,13 +172,19 @@ export const Card = ({
     }
 
     if (open) {
-      document.body.style.overflow = "hidden";
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = "hidden";
+      }
     } else {
-      document.body.style.overflow = "auto";
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = "auto";
+      }
     }
 
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    if (typeof window !== 'undefined') {
+      window.addEventListener("keydown", onKeyDown);
+      return () => window.removeEventListener("keydown", onKeyDown);
+    }
   }, [open]);
 
   useOutsideClick(containerRef, () => handleClose());

@@ -25,6 +25,9 @@ interface ShootingStarsProps {
 }
 
 const getRandomStartPoint = () => {
+  if (typeof window === 'undefined') {
+    return { x: 0, y: 0, angle: 45 };
+  }
   const side = Math.floor(Math.random() * 4);
   const offset = Math.random() * window.innerWidth;
 

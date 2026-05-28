@@ -1,137 +1,103 @@
-import {withSentryConfig} from '@sentry/nextjs';
+import { withSentryConfig } from "@sentry/nextjs";
+
+const LONG_CACHE = "public, max-age=31536000, immutable";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+  ...(process.env.NEXT_PUBLIC_CDN_URL?.trim()
+    ? {
+        assetPrefix: process.env.NEXT_PUBLIC_CDN_URL.trim().replace(/\/$/, ""),
+      }
+    : {}),
+  images: {
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  experimental: {
+    optimizePackageImports: [
+      "framer-motion",
+      "react-icons",
+      "@tabler/icons-react",
+      "three",
+      "@react-three/drei",
+      "@react-three/fiber",
+    ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/_next/static/:path*",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/uploads/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/:path*.svg",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/:path*.png",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/:path*.jpg",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/:path*.jpeg",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/:path*.webp",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/:path*.avif",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/:path*.gif",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+      {
+        source: "/:path*.woff2",
+        headers: [{ key: "Cache-Control", value: LONG_CACHE }],
+      },
+    ];
+  },
+};
 
-export default withSentryConfig(withSentryConfig(withSentryConfig(withSentryConfig(nextConfig, {
-// For all available options, see:
-// https://github.com/getsentry/sentry-webpack-plugin#options
+/** Skip Sentry webpack upload locally (avoids sentry-cli 504). Enable on Vercel/CI. */
+const uploadSentry =
+  process.env.SENTRY_UPLOAD === "true" ||
+  process.env.CI === "true" ||
+  process.env.VERCEL === "1";
 
-org: "litco-1j",
-project: "javascript-nextjs",
+const sentryOptions = {
+  org: "litco-1j",
+  project: "javascript-nextjs",
+  silent: true,
+  widenClientFileUpload: true,
+  hideSourceMaps: true,
+  disableLogger: true,
+  automaticVercelMonitors: true,
+};
 
-// Only print logs for uploading source maps in CI
-silent: !process.env.CI,
-
-// For all available options, see:
-// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
-// Upload a larger set of source maps for prettier stack traces (increases build time)
-widenClientFileUpload: true,
-
-// Uncomment to route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-// This can increase your server load as well as your hosting bill.
-// Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-// side errors will fail.
-// tunnelRoute: "/monitoring",
-
-// Hides source maps from generated client bundles
-hideSourceMaps: true,
-
-// Automatically tree-shake Sentry logger statements to reduce bundle size
-disableLogger: true,
-
-// Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-// See the following for more information:
-// https://docs.sentry.io/product/crons/
-// https://vercel.com/docs/cron-jobs
-automaticVercelMonitors: true,
-}), {
-// For all available options, see:
-// https://github.com/getsentry/sentry-webpack-plugin#options
-
-org: "litco-1j",
-project: "javascript-nextjs",
-
-// Only print logs for uploading source maps in CI
-silent: !process.env.CI,
-
-// For all available options, see:
-// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
-// Upload a larger set of source maps for prettier stack traces (increases build time)
-widenClientFileUpload: true,
-
-// Uncomment to route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-// This can increase your server load as well as your hosting bill.
-// Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-// side errors will fail.
-// tunnelRoute: "/monitoring",
-
-// Hides source maps from generated client bundles
-hideSourceMaps: true,
-
-// Automatically tree-shake Sentry logger statements to reduce bundle size
-disableLogger: true,
-
-// Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-// See the following for more information:
-// https://docs.sentry.io/product/crons/
-// https://vercel.com/docs/cron-jobs
-automaticVercelMonitors: true,
-}), {
-// For all available options, see:
-// https://github.com/getsentry/sentry-webpack-plugin#options
-
-org: "litco-1j",
-project: "javascript-nextjs",
-
-// Only print logs for uploading source maps in CI
-silent: !process.env.CI,
-
-// For all available options, see:
-// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
-// Upload a larger set of source maps for prettier stack traces (increases build time)
-widenClientFileUpload: true,
-
-// Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-// This can increase your server load as well as your hosting bill.
-// Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-// side errors will fail.
-tunnelRoute: "/monitoring",
-
-// Hides source maps from generated client bundles
-hideSourceMaps: true,
-
-// Automatically tree-shake Sentry logger statements to reduce bundle size
-disableLogger: true,
-
-// Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-// See the following for more information:
-// https://docs.sentry.io/product/crons/
-// https://vercel.com/docs/cron-jobs
-automaticVercelMonitors: true,
-}), {
-// For all available options, see:
-// https://github.com/getsentry/sentry-webpack-plugin#options
-
-org: "litco-1j",
-project: "javascript-nextjs",
-
-// Only print logs for uploading source maps in CI
-silent: !process.env.CI,
-
-// For all available options, see:
-// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
-// Upload a larger set of source maps for prettier stack traces (increases build time)
-widenClientFileUpload: true,
-
-// Uncomment to route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-// This can increase your server load as well as your hosting bill.
-// Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-// side errors will fail.
-// tunnelRoute: "/monitoring",
-
-// Hides source maps from generated client bundles
-hideSourceMaps: true,
-
-// Automatically tree-shake Sentry logger statements to reduce bundle size
-disableLogger: true,
-
-// Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-// See the following for more information:
-// https://docs.sentry.io/product/crons/
-// https://vercel.com/docs/cron-jobs
-automaticVercelMonitors: true,
-});
+export default uploadSentry
+  ? withSentryConfig(nextConfig, sentryOptions)
+  : nextConfig;

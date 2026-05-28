@@ -17,6 +17,7 @@ export const FloatingNav = ({
     name: string;
     link: string;
     icon?: JSX.Element;
+    download?: boolean;
   }[];
   className?: string;
 }) => {
@@ -59,18 +60,37 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </Link>
-        ))}
+        {navItems.map((navItem, idx: number) => {
+          const classNames = cn(
+            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500",
+            navItem.download && "rounded-full border border-purple/40 bg-purple/10 px-2.5 py-1 text-purple dark:text-purple"
+          );
+
+          if (navItem.download) {
+            return (
+              <motion.a
+                key={`link=${idx}`}
+                href={navItem.link}
+                download
+                className={classNames}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="block sm:hidden">{navItem.icon}</span>
+                <span className="hidden sm:block text-sm font-semibold">{navItem.name}</span>
+              </motion.a>
+            );
+          }
+
+          return (
+            <motion.div key={`link=${idx}`} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+              <Link href={navItem.link} className={cn(classNames, "link-underline")}>
+                <span className="block sm:hidden">{navItem.icon}</span>
+                <span className="hidden sm:block text-sm">{navItem.name}</span>
+              </Link>
+            </motion.div>
+          );
+        })}
       </motion.div>
     </AnimatePresence>
   );

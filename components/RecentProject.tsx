@@ -1,79 +1,86 @@
-"use client"
-import { projects } from '@/data/indxe'
-import React from 'react'
-import { PinContainer } from './ui/3d-pin'
-import { FaLocationArrow } from 'react-icons/fa'
-import Link from 'next/link'
+"use client";
 
-const RecentProject = () => {
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import { SectionHeading } from "@/components/motion/SectionHeading";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { ProjectShowcaseCard } from "@/components/projects/ProjectShowcaseCard";
+import { Project } from "@/lib/types";
+import { getFeaturedProjects } from "@/lib/project-utils";
+import { projects as defaultProjects } from "@/data/indxe";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+
+type Props = {
+  projects?: Project[];
+};
+
+const FEATURED_COUNT = 5;
+
+const RecentProject = ({ projects = defaultProjects }: Props) => {
+  const { t } = useLocale();
+  const featured = getFeaturedProjects(projects, FEATURED_COUNT);
+  const [hero, ...rest] = featured;
+  const sidebar = rest.slice(0, 2);
+  const bottomRow = rest.slice(2);
+  const totalCount = projects.length;
+
+  if (!hero) return null;
+
   return (
-    <div className='py-20' id='projects'>
-      <h1 className='heading'>
-        A small selection {' '}
-        <span className='text-purple'>recent projects</span>
-      </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-          {projects.map(({id, title, des, img, iconLists}) =>(
-            <div 
-                className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
-                key={id}
-            >
-                <PinContainer title={title}>
-                    <Link href={`/projects/${id}`} >
-                        <div className="relative flex items-center justify-center sm:h-[40vh] sm:w-[570px] w-[80vw] overflow-hidden h-[30vh] mb-10">
-                            <div
-                                className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                                style={{ backgroundColor: "#13162D" }}
-                            >
-                                <img src='/bg.png' alt='bg-img'/>
-                            </div>
-                            <img 
-                                src={img} 
-                                alt={title}
-                                className="z-10 absolute bottom-0"
-                                />
-                        </div>
-                        <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                            {title}
-                        </h1>
-                        <div
-                            className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                            style={{
-                            color: "#BEC1DD",
-                            margin: "1vh 0",
-                            }}
-                        >
-                            {des}
-                        </div>
+    <section className="py-20" id="projects">
+      <SectionHeading>
+        {t("projects.featuredLead")} <span className="text-purple">{t("projects.featuredAccent")}</span>
+      </SectionHeading>
 
-                        <div className="flex items-center justify-between mt-7 mb-3">
-                            <div className="flex items-center">
-                                {iconLists.map((icon, index) => (
-                                    <div
-                                    key={index}
-                                    className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                                    style={{
-                                        transform: `translateX(-${5 * index + 2}px)`,
-                                    }}
-                                    >
-                                    <img src={icon} alt="icon5" className="p-2" />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="flex justify-center items-center">
-                                <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                                    Show details
-                                </p>
-                                <FaLocationArrow className="ms-3" color="#CBACF9" />
-                            </div>
-                        </div>
-                    </Link>
-                </PinContainer>
+      <ScrollReveal className="mx-auto mt-4 max-w-2xl text-center" variant="fadeUp">
+        <p className="text-sm leading-relaxed text-slate-400 md:text-base">
+          {t("projects.featuredDesc")}
+        </p>
+      </ScrollReveal>
+
+      <div className="mx-auto mt-10 max-w-6xl px-4">
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
+          <ScrollReveal className="lg:col-span-7" variant="fadeUp">
+            <ProjectShowcaseCard project={hero} variant="hero" />
+          </ScrollReveal>
+
+          {sidebar.length > 0 && (
+            <div className="flex flex-col gap-6 lg:col-span-5">
+              {sidebar.map((project, index) => (
+                <ScrollReveal key={project.id} variant="fadeUp" delay={0.05 * (index + 1)}>
+                  <ProjectShowcaseCard project={project} variant="standard" />
+                </ScrollReveal>
+              ))}
             </div>
-          ))}  
-      </div>
-    </div>
-  )
-}
+          )}
+        </div>
 
-export default RecentProject
+        {bottomRow.length > 0 && (
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {bottomRow.map((project, index) => (
+              <ScrollReveal
+                key={project.id}
+                variant="fadeUp"
+                delay={0.05 * (sidebar.length + index + 1)}
+              >
+                <ProjectShowcaseCard project={project} variant="standard" />
+              </ScrollReveal>
+            ))}
+          </div>
+        )}
+
+        <ScrollReveal className="mt-10 flex justify-center" variant="fadeUp" delay={0.15}>
+          <Link
+            href="/projects"
+            className="btn-press group inline-flex items-center gap-3 rounded-full border border-purple/40 bg-purple/10 px-8 py-3.5 text-sm font-semibold text-white transition hover:border-purple/60 hover:bg-purple/20"
+          >
+            {t("projects.viewAllCount").replace("{n}", String(totalCount))}
+            <FaArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+          </Link>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
+
+export default RecentProject;

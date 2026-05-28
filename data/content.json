@@ -1,0 +1,2568 @@
+{
+  "hero": {
+    "subtitle": "ahmad.dev / full-stack · open to hire",
+    "title": "Full-stack developer open to full-time roles — Python, Next.js, and software teams can rely on.",
+    "headlineLead": "I build",
+    "flipWords": [
+      "production web apps",
+      "full-stack systems",
+      "hire-ready products"
+    ],
+    "headlineEnd": "for teams that ship.",
+    "availabilityBadge": "Open to full-time roles",
+    "skillChips": [
+      "Python",
+      "Next.js",
+      "TypeScript",
+      "Django"
+    ],
+    "description": "Hi, I'm Ahmad — I turn complex problems into software people rely on. Looking for a long-term role where craft, ownership, and team impact matter.",
+    "ctaLabel": "Explore projects",
+    "ctaLink": "#projects",
+    "secondaryCtaLabel": "Hiring? Let's talk",
+    "secondaryCtaLink": "#contact",
+    "resumeUrl": "/resume/ahmad-alhalwany-cv.pdf",
+    "resumeLabel": "Extract dossier",
+    "resumeTagline": "Lebenslauf · encrypted"
+  },
+  "aboutSection": {
+    "label": "profile.sys / decode",
+    "title": "The engineer",
+    "titleAccent": "behind the product",
+    "intro": "I'm Ahmad Al-Halwany — a full-stack developer who cares about the whole journey: architecture, developer experience, and the people who rely on what we ship.",
+    "story": [
+      "I grew from tinkering with how systems work into owning production APIs, dashboards, and web applications that teams depend on every day.",
+      "Today I work across Python backends and Next.js frontends — favoring maintainable code, honest communication, and outcomes that survive beyond the first launch.",
+      "I'm seeking a full-time role where ownership, craft, and long-term product impact matter more than quick freelance handoffs."
+    ],
+    "principles": [
+      {
+        "id": "p1",
+        "title": "Own the outcome",
+        "body": "From schema design to UI polish — I follow problems end-to-end instead of throwing them over the wall."
+      },
+      {
+        "id": "p2",
+        "title": "Communicate clearly",
+        "body": "Stakeholders and teammates get plain language, realistic estimates, and visibility while work is in flight."
+      },
+      {
+        "id": "p3",
+        "title": "Ship to learn",
+        "body": "Small, reliable releases beat big-bang demos — I iterate with metrics, feedback, and room to improve."
+      }
+    ],
+    "timeline": [
+      {
+        "id": "t1",
+        "year": "Now",
+        "label": "Full-stack · open to full-time hire"
+      },
+      {
+        "id": "t2",
+        "year": "Focus",
+        "label": "Python systems & Next.js products"
+      },
+      {
+        "id": "t3",
+        "year": "Goal",
+        "label": "Join a team building something meaningful"
+      }
+    ],
+    "meta": [
+      {
+        "key": "mode",
+        "value": "employment · not freelance"
+      },
+      {
+        "key": "stack",
+        "value": "python · next.js · typescript"
+      },
+      {
+        "key": "timezone",
+        "value": "EU / MENA · remote-friendly"
+      },
+      {
+        "key": "languages",
+        "value": "AR native · EN B2 · DE A2 → B1"
+      }
+    ],
+    "bentoTitle": "Identity fragments"
+  },
+  "gridItems": [
+    {
+      "id": 1,
+      "title": "Building software with teams — not just for clients.",
+      "description": "Clarity · ownership · lasting impact",
+      "className": "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+      "imgClassName": "w-full h-full",
+      "titleClassName": "justify-end",
+      "img": "/b1.svg",
+      "spareImg": ""
+    },
+    {
+      "id": 2,
+      "title": "Remote-ready · async-friendly · direct communication",
+      "description": "Global teams welcome",
+      "className": "lg:col-span-2 md:col-span-3 md:row-span-2",
+      "imgClassName": "",
+      "titleClassName": "justify-start",
+      "img": "",
+      "spareImg": ""
+    },
+    {
+      "id": 3,
+      "title": "Stack I ship with daily",
+      "description": "Always refining craft",
+      "className": "lg:col-span-2 md:col-span-3 md:row-span-2",
+      "imgClassName": "",
+      "titleClassName": "justify-center",
+      "img": "",
+      "spareImg": ""
+    },
+    {
+      "id": 4,
+      "title": "Engineer at heart — product in mind.",
+      "description": "",
+      "className": "lg:col-span-2 md:col-span-3 md:row-span-1",
+      "imgClassName": "",
+      "titleClassName": "justify-start",
+      "img": "/grid.svg",
+      "spareImg": "/b4.svg"
+    },
+    {
+      "id": 5,
+      "title": "Always leveling up — backend depth & system design",
+      "description": "Learning in public",
+      "className": "md:col-span-3 md:row-span-2",
+      "imgClassName": "absolute right-0 bottom-0 md:w-96 w-60",
+      "titleClassName": "justify-center md:justify-start lg:justify-center",
+      "img": "/b5.svg",
+      "spareImg": "/grid.svg"
+    },
+    {
+      "id": 6,
+      "title": "Hiring? Let's decode the fit together.",
+      "description": "",
+      "className": "lg:col-span-2 md:col-span-3 md:row-span-1",
+      "imgClassName": "",
+      "titleClassName": "justify-center md:max-w-full max-w-60 text-center",
+      "img": "",
+      "spareImg": ""
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "plaze-shop ecommerce website",
+      "des": "Explore products and materials seamlessly and easily with an interface built with next.js",
+      "img": "/project/plaze1.png",
+      "iconLists": [
+        "/re.svg",
+        "/tail.svg",
+        "/ts.svg",
+        "/next.svg",
+        "/WD.png",
+        "/GQ.png"
+      ],
+      "challenge": "Reduce inventory errors and improve product browsing",
+      "solution": "Responsive storefront with structured inventory workflows",
+      "liveDemoUrl": "https://plaze-shop.de/",
+      "githubUrl": "",
+      "cards": [
+        {
+          "src": "/project/plaze1.png"
+        },
+        {
+          "src": "/project/plaze2.png"
+        },
+        {
+          "src": "/project/plaze3.png"
+        },
+        {
+          "src": "/project/plaze4.png"
+        },
+        {
+          "src": "/project/plaze5.png"
+        },
+        {
+          "src": "/project/plaze6.png"
+        },
+        {
+          "src": "/project/plaze7.png"
+        },
+        {
+          "src": "/project/plaze8.png"
+        },
+        {
+          "src": "/project/plaze9.png"
+        },
+        {
+          "src": "/project/plaze10.png"
+        },
+        {
+          "src": "/project/plaze11.png"
+        },
+        {
+          "src": "/project/plaze12.png"
+        },
+        {
+          "src": "/project/plaze13.png"
+        },
+        {
+          "src": "/project/plaze14.png"
+        },
+        {
+          "src": "/project/plaze15.png"
+        },
+        {
+          "src": "/project/plaze16.png"
+        },
+        {
+          "src": "/project/plaze17.png"
+        },
+        {
+          "src": "/project/plaze18.png"
+        },
+        {
+          "src": "/project/plaze19.png"
+        },
+        {
+          "src": "/project/plaze20.png"
+        },
+        {
+          "src": "/project/plaze21.png"
+        },
+        {
+          "src": "/project/plwp1.png"
+        },
+        {
+          "src": "/project/plwp1.png"
+        }
+      ],
+      "overview": "Plaze Shop is a production e-commerce storefront for building materials and supplies, built with Next.js to give customers fast product discovery and the business a reliable way to manage inventory online.",
+      "challengeDetail": "The business needed a modern web presence where customers could explore products and materials without friction, while internal staff struggled with manual stock tracking that led to counting mistakes and slow restocking cycles.",
+      "solutionDetail": "I delivered a Next.js storefront with clear category navigation, product detail pages, and an internal inventory dashboard. The UI prioritizes readability on mobile and desktop, and the data model keeps stock levels consistent across admin and public views.",
+      "keyFeatures": [
+        "Next.js App Router with optimized images and responsive layouts",
+        "Product catalog with search-friendly structure and detail pages",
+        "Internal inventory management views for stock updates",
+        "Tailwind-based design system aligned with the Plaze brand",
+        "Deployed live demo integrated with the real business domain"
+      ],
+      "outcomes": [
+        "Live production site serving real customers at plaze-shop.de",
+        "Single stock source — admin updates sync to the public catalog",
+        "21+ screens covering catalog, product detail, and inventory workflows",
+        "Mobile-first UX for on-site material lookup on phones and tablets"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "Live",
+          "label": "Production at plaze-shop.de"
+        },
+        {
+          "id": "m2",
+          "value": "21+",
+          "label": "Catalog & admin screens"
+        },
+        {
+          "id": "m3",
+          "value": "2",
+          "label": "Surfaces — storefront + inventory"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Jobs React Native — Mobile Job Search App",
+      "des": "Cross-platform job search app with Expo Router — browse popular and nearby roles, keyword search with pagination, tabbed job details, and one-tap apply via JSearch API (RapidAPI).",
+      "img": "/project/jobsapp10.png",
+      "iconLists": [
+        "/re.svg",
+        "/expo.png",
+        "/Axios.png",
+        "/js.png",
+        "/stream.svg"
+      ],
+      "challenge": "Job seekers jump between boards — discovery needs one fast mobile experience",
+      "solution": "Expo Router app with reusable useFetch hook, JSearch API, and component-driven UI",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/jobs-react-native",
+      "cards": [
+        {
+          "src": "/project/jobsapp1.png"
+        },
+        {
+          "src": "/project/jobsapp2.png"
+        },
+        {
+          "src": "/project/jobsapp3.png"
+        },
+        {
+          "src": "/project/jobsapp4.png"
+        },
+        {
+          "src": "/project/jobsapp5.png"
+        },
+        {
+          "src": "/project/jobsapp6.png"
+        },
+        {
+          "src": "/project/jobsapp7.png"
+        },
+        {
+          "src": "/project/jobsapp8.png"
+        },
+        {
+          "src": "/project/jobsapp9.png"
+        },
+        {
+          "src": "/project/jobsapp10.png"
+        },
+        {
+          "src": "/project/jobsapp11.png"
+        },
+        {
+          "src": "/project/jobsapp12.png"
+        },
+        {
+          "src": "/project/jobsapp13.png"
+        },
+        {
+          "src": "/project/jobsapp14.png"
+        },
+        {
+          "src": "/project/jobsapp15.png"
+        },
+        {
+          "src": "/project/jobsapp16.png"
+        }
+      ],
+      "overview": "Jobs React Native centralizes job discovery in one mobile experience built with React Native 0.74, Expo 51, and Expo Router 3.5. Instead of switching between job boards, users browse curated listings on the home screen, filter by job type, search by keyword with pagination, and open full job details with qualifications, responsibilities, and a one-tap apply link — all from a single codebase for iOS and Android.",
+      "challengeDetail": "Mobile job search often means juggling multiple apps and browser tabs with inconsistent UX. The goal was a production-style React Native app: real third-party API data (not mocked JSON), file-based navigation, reusable data fetching, loading and error states, and a design system — runnable on physical devices via Expo Go without maintaining separate iOS and Android codebases.",
+      "solutionDetail": "I architected the app around Expo Router file-based routes (/home, /search/:id, /job-details/:id, /all-jobs) and a custom useFetch hook that wraps Axios calls to the JSearch API on RapidAPI (/search and /job-details). Components use co-located .style.js files, shared COLORS/FONT/SIZES/SHADOWS constants, and DM Sans typography via expo-font. Home shows popular (horizontal) and nearby (vertical) job lists; search supports paginated prev/next; job details use tabbed About · Qualifications · Responsibilities with pull-to-refresh and Linking.openURL for apply.",
+      "keyFeatures": [
+        "Expo Router — file-based routes: home, search/:id, job-details/:id, all-jobs",
+        "JSearch API (RapidAPI) — live job listings via /search and /job-details endpoints",
+        "useFetch hook — reusable axios wrapper with loading, error, and refetch()",
+        "Home UX — welcome header, job-type chips (Full-time / Part-time / Contractor), popular + nearby lists",
+        "Search — keyword query, paginated results, ActivityIndicator and error fallbacks",
+        "Job details — tabbed content, company section, Apply button opens employer URL",
+        "Design system — DM Sans fonts, shared theme constants, co-located component styles",
+        "Cross-platform — Expo Go on iOS/Android; EAS build path for store deployment"
+      ],
+      "outcomes": [
+        "16 documented screens — home, search, pagination, job details tabs, all-jobs list",
+        "Single codebase → iOS + Android via Expo (React Native 0.74)",
+        "Real API integration — JSearch via RapidAPI, not hardcoded mock data",
+        "Open source on GitHub with README, run guide, and MIT license"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "16",
+          "label": "UI screens in gallery"
+        },
+        {
+          "id": "m2",
+          "value": "2",
+          "label": "Platforms — iOS & Android"
+        },
+        {
+          "id": "m3",
+          "value": "5",
+          "label": "Expo Router routes"
+        }
+      ],
+      "featured": false
+    },
+    {
+      "id": 3,
+      "title": "Zeus — AI Prompt Sharing Platform",
+      "des": "Full-stack community platform to create, tag, search, and share AI prompts — Next.js 13 App Router, MongoDB, Google OAuth via NextAuth, live on Vercel.",
+      "img": "/project/zeus1.png",
+      "iconLists": [
+        "/next.svg",
+        "/tail.svg",
+        "/mongodb.svg",
+        "/js.png",
+        "/re.svg"
+      ],
+      "challenge": "Creators need one place to publish, discover, and reuse AI prompts — not scattered notes",
+      "solution": "Next.js + MongoDB CRUD app with Google auth, debounced search, and tag filtering",
+      "liveDemoUrl": "https://zeus-kappa.vercel.app/",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Zeus",
+      "cards": [
+        {
+          "src": "/project/zeus1.png"
+        },
+        {
+          "src": "/project/zeus2.png"
+        },
+        {
+          "src": "/project/zeus3.png"
+        },
+        {
+          "src": "/project/zeus4.png"
+        },
+        {
+          "src": "/project/zeus5.png"
+        }
+      ],
+      "overview": "Zeus is an open-source platform where creators draft, organize, and discover AI prompts. Users sign in with Google, publish prompts with category tags, browse a community feed, search by keyword or tag, copy prompt text to clipboard, and manage their library from a personal profile — deployed live at zeus-kappa.vercel.app.",
+      "challengeDetail": "Prompt libraries scattered across docs and chat threads don't scale for a community product. The app needed persistent storage, authenticated CRUD, public discovery with search, and a polished responsive UI — without over-engineering AI generation into v1 (sharing and discovery first).",
+      "solutionDetail": "I built a full-stack Next.js 13 App Router app with Mongoose models (User + Prompt), NextAuth.js Google OAuth (auto-register on first sign-in), and REST API routes for prompt CRUD and user posts. The Feed component uses 500ms debounced search across username, tag, and prompt text; tag chips filter instantly. Profile pages support edit/delete with confirmation; public profiles expose any creator's prompts via /profile/[id]. Path aliases (@components, @models) keep imports clean; Tailwind handles responsive nav and skeleton loading states.",
+      "keyFeatures": [
+        "Google OAuth — NextAuth.js session, auto MongoDB user on first sign-in",
+        "Prompt CRUD — create, edit, delete with tag + creator ref; copy-to-clipboard",
+        "Community feed — homepage lists all prompts with creator avatar and username",
+        "Debounced search — filter by username, #tag, or prompt text (500ms)",
+        "Tag filtering — click any tag to filter the feed instantly",
+        "Profiles — /profile (mine) and /profile/[id] (public); skeleton loader",
+        "API layer — /api/prompt, /new, /[id], /users/[id]/posts + NextAuth route",
+        "Deployed — Vercel production with MongoDB Atlas + env-based secrets"
+      ],
+      "outcomes": [
+        "Live demo at zeus-kappa.vercel.app — sign in, create, search, and copy prompts",
+        "5 documented UI screens — feed, create, profile, edit, public profile",
+        "Full-stack proof — UI → API routes → MongoDB (share_prompt DB) → OAuth",
+        "Open source on GitHub — MIT license, README with setup guide"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "Live",
+          "label": "Vercel — zeus-kappa.vercel.app"
+        },
+        {
+          "id": "m2",
+          "value": "7",
+          "label": "API routes (CRUD + auth + user posts)"
+        },
+        {
+          "id": "m3",
+          "value": "5",
+          "label": "Core screens in gallery"
+        }
+      ],
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "AI-Powered 3D Website — T-Shirt Customizer",
+      "des": "Interactive 3D product configurator — customize shirt color, upload logos, generate DALL·E artwork, and preview on a live React Three Fiber model. Vite + Express + OpenAI.",
+      "img": "/project/AI-Powered1.png",
+      "iconLists": [
+        "/re.svg",
+        "/three.svg",
+        "/framer-motion.svg",
+        "/tail.svg",
+        "/js.png"
+      ],
+      "challenge": "Static product pages can't show real-time customization — users need to see designs on a 3D model",
+      "solution": "React Three Fiber viewer + Valtio state + Express API bridging OpenAI DALL·E",
+      "liveDemoUrl": "https://ai-powered-3-d-website.vercel.app/",
+      "githubUrl": "https://github.com/ahmad-alhalwany/AI-Powered-3D-Website",
+      "cards": [
+        {
+          "src": "/project/AI-Powered1.png"
+        },
+        {
+          "src": "/project/AI-Powered2.png"
+        },
+        {
+          "src": "/project/AI-Powered3.png"
+        },
+        {
+          "src": "/project/AI-Powered4.png"
+        },
+        {
+          "src": "/project/AI-Powered5.png"
+        },
+        {
+          "src": "/project/AI-Powered6.png"
+        },
+        {
+          "src": "/project/AI-Powered7.png"
+        },
+        {
+          "src": "/project/AI-Powered8.png"
+        },
+        {
+          "src": "/project/AI-Powered9.png"
+        },
+        {
+          "src": "/project/AI-Powered10.png"
+        },
+        {
+          "src": "/project/AI-Powered11.png"
+        }
+      ],
+      "overview": "This project turns static merchandising into an immersive 3D customization experience. Visitors pick shirt colors, place logos or full-texture designs, generate unique artwork with DALL·E prompts, and export the final canvas — all in the browser. The stack combines React Three Fiber for real-time GLB rendering, Valtio for reactive global state, Framer Motion for UI polish, and an Express server that proxies OpenAI image generation.",
+      "challengeDetail": "E-commerce configurators need instant visual feedback: color changes, decal placement, and AI-generated art must map to a 3D model without a page reload. The product also required a split architecture — Vite SPA on port 5173 talking to an Express API on 8080 — with clear separation between 3D rendering, UI state, and paid AI calls secured server-side.",
+      "solutionDetail": "I built a client/server monorepo: the Vite React app renders shirt_baked.glb via React Three Fiber with Lambert material color easing (maath), chest logo decals, and full-texture overlays driven by Valtio snapshots. The customizer panel tabs Color · File · AI switch between SketchPicker, file upload, and DALL·E prompts; Logo/Stylish filters toggle isLogoTexture vs isFullTexture. Express exposes POST /api/v1/dalle with OPENAI_API_KEY in server/.env, returning base64 images applied directly to the shirt. Intro landing uses Framer Motion; canvas export downloads PNG.",
+      "keyFeatures": [
+        "React Three Fiber — GLB model, orbit camera, @react-three/drei Environment lighting",
+        "3 customization layers — base color, logo decal, full-shirt texture (Valtio state)",
+        "DALL·E integration — text prompt → Express API → base64 image on 3D shirt",
+        "Editor tabs — Color (SketchPicker), File upload, AI prompt picker",
+        "Valtio store — intro/customizer modes, instant prop updates to Shirt component",
+        "Framer Motion — animated intro hero and panel transitions",
+        "Canvas export — download configured design as PNG",
+        "Split deploy — Vite frontend on Vercel; Express backend for OpenAI (Render-ready)"
+      ],
+      "outcomes": [
+        "Live demo at ai-powered-3-d-website.vercel.app — full browser configurator",
+        "11 documented UI screens — intro, color, file, AI, filters, 3D views",
+        "Realistic e-commerce stack — R3F + Valtio + Express + OpenAI in one repo",
+        "Open source on GitHub — MIT license with dual-terminal run guide"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "Live",
+          "label": "Vercel — ai-powered-3-d-website"
+        },
+        {
+          "id": "m2",
+          "value": "3",
+          "label": "Layers — color, logo, full texture"
+        },
+        {
+          "id": "m3",
+          "value": "11",
+          "label": "UI screens in gallery"
+        }
+      ],
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "MyStudyBud — Django Social Discussion Platform",
+      "des": "Community discussion app — topic-based chat rooms, messaging with edit history, user profiles, activity feed, DRF REST API, and Vercel deployment with Redis sessions.",
+      "img": "/project/studybud2.png",
+      "iconLists": [
+        "/django.png",
+        "/Html.png",
+        "/css.png",
+        "/js.png",
+        "/s.svg"
+      ],
+      "challenge": "Students need focused discussion spaces — not generic social noise",
+      "solution": "Django 5 app with rooms, topics, messages, custom auth, and DRF API layer",
+      "liveDemoUrl": "https://django-project-social.vercel.app/",
+      "githubUrl": "https://github.com/ahmad-alhalwany/django_Project_social",
+      "cards": [
+        {
+          "src": "/project/studybud2.png"
+        },
+        {
+          "src": "/project/studybud1.png"
+        },
+        {
+          "src": "/project/studybud3.png"
+        },
+        {
+          "src": "/project/studybud4.png"
+        },
+        {
+          "src": "/project/studybud5.png"
+        },
+        {
+          "src": "/project/studybud6.png"
+        },
+        {
+          "src": "/project/studybud7.png"
+        },
+        {
+          "src": "/project/studybud8.png"
+        },
+        {
+          "src": "/project/studybud9.png"
+        },
+        {
+          "src": "/project/studybud10.png"
+        },
+        {
+          "src": "/project/studybud11.png"
+        }
+      ],
+      "overview": "MyStudyBud is a community-driven discussion platform where users create and join rooms organized by topics, exchange messages, and explore activity feeds. Built with Django 5 and Django REST Framework, it features custom email-based authentication, role-based permissions (host-only room edits), message edit history, user profiles with avatars, and a read-only REST API — deployed live on Vercel.",
+      "challengeDetail": "Study groups need structured spaces: topics, persistent chat rooms, and clear permissions — not a generic blog with comments. The product required a custom User model (email login), ORM relationships across User · Topic · Room · Message, server-rendered templates for fast iteration, a JSON API for external clients, and production deployment with session caching on serverless infrastructure.",
+      "solutionDetail": "I modeled User (email auth, bio, avatar via Pillow), Topic, Room (host FK, participants M2M), and Message (body + old_body edit history). Views handle room CRUD with host-only delete/update, message edit/delete with owner checks, global search across rooms and messages, topics browser, and activity feed. DRF exposes GET /api/rooms/ and /api/rooms/<id>/ via RoomSerializer. Sessions cache through django-redis + Upstash; CORS enabled for API consumers. vercel.json routes traffic to Django WSGI with SQLite copied to /tmp on Vercel.",
+      "keyFeatures": [
+        "Custom User model — email login, register/logout, profile with avatar upload",
+        "Rooms & topics — create, join, search; host-only edit/delete permissions",
+        "Messaging — room chat UI, edit with old_body history, owner-only delete",
+        "Discovery — global search, topics page, cross-room activity feed",
+        "DRF REST API — /api/, /api/rooms/, /api/rooms/<id>/ JSON endpoints",
+        "Production — Vercel serverless Django, Redis session cache, collectstatic",
+        "Admin panel — Django admin for users, rooms, and messages",
+        "Templates + static — responsive HTML/CSS/JS with navbar layout"
+      ],
+      "outcomes": [
+        "Live demo at django-project-social.vercel.app — register, rooms, chat, profiles",
+        "11 documented UI screens — home, auth, room, create, profile, topics, activity",
+        "4 core models — User, Topic, Room, Message with role-based permissions",
+        "Open source on GitHub — MIT license with migrate + runserver guide"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "Live",
+          "label": "Vercel — django-project-social"
+        },
+        {
+          "id": "m2",
+          "value": "4",
+          "label": "Models — User, Topic, Room, Message"
+        },
+        {
+          "id": "m3",
+          "value": "11",
+          "label": "UI screens in gallery"
+        }
+      ],
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "ASD Early Detection Platform",
+      "des": "Full-stack AI platform for early autism screening — facial image analysis with Grad-CAM plus a 12-question behavioral questionnaire, bilingual AR/EN.",
+      "img": "/project/asd-home-hero.png",
+      "iconLists": [
+        "/next.svg",
+        "/re.svg",
+        "/ts.svg",
+        "/tail.svg",
+        "/dockerName.svg",
+        "/host.svg",
+        "/cloud.svg"
+      ],
+      "challenge": "Give families an accessible first screening path — not a black-box label",
+      "solution": "Dual-path Next.js + FastAPI platform with explainable AI and medical-grade reports",
+      "liveDemoUrl": "https://autism-spectrum-six.vercel.app/",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Autism-spectrum",
+      "cards": [
+        {
+          "src": "/project/asd-home-hero.png"
+        },
+        {
+          "src": "/project/asd-home-cards.png"
+        },
+        {
+          "src": "/project/asd-how-it-works.png"
+        },
+        {
+          "src": "/project/asd-image-upload.png"
+        },
+        {
+          "src": "/project/asd-image-result.png"
+        },
+        {
+          "src": "/project/asd-image-gradcam.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-start.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-mid.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-more.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-end.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-report.png"
+        },
+        {
+          "src": "/project/asd-about-top.png"
+        },
+        {
+          "src": "/project/asd-about-bottom.png"
+        }
+      ],
+      "overview": "A production full-stack health-tech platform that helps caregivers run an early ASD screening via two paths: upload a facial photo (MobileNetV3 + Grad-CAM) or complete a 12-question behavioral survey (neural network). Results include confidence scores, medical disclaimers, recommendations, and support resources — in Arabic and English.",
+      "challengeDetail": "Early autism signs are easy to miss without specialist access, and many AI demos stop at a classification label. The product needed two screening paths (visual + behavioral), explainable outputs caregivers can understand, clear medical disclaimers, and a bilingual UX that works in production — not just in a notebook.",
+      "solutionDetail": "I built a monorepo with Next.js 15 on Vercel and FastAPI on Hugging Face Spaces. The image pipeline preprocesses 224×224 inputs through a fine-tuned MobileNetV3, returns Grad-CAM heatmaps as base64, and generates structured reports. The questionnaire path scales 12 yes/no answers through a trained neural network (~92% accuracy) with tailored recommendations and WHO/CDC resource links. Docker, health checks, CORS, and Swagger keep the stack deployable and reviewable.",
+      "keyFeatures": [
+        "Next.js 15 App Router — image upload, questionnaire, about, AR/EN i18n with RTL/LTR",
+        "FastAPI backend — /predict-image, /predict-questions, /health, Swagger docs",
+        "MobileNetV3 (~70%) + Grad-CAM explainability on eyes, forehead, and mouth regions",
+        "Neural network questionnaire (~92%) with scaler, reports, and support resources",
+        "Medical disclaimer, ResultPanel, ChildInfoForm — privacy-first (in-memory processing)",
+        "Monorepo + Docker — Frontend on Vercel, backend on Hugging Face Spaces"
+      ],
+      "outcomes": [
+        "Live demo at autism-spectrum-six.vercel.app with open GitHub monorepo",
+        "2 screening paths — image (~70%) and questionnaire (~92%) with XAI heatmaps",
+        "13 UI screens documented — home, detect, results, about, bilingual flows",
+        "Production deployment — Vercel frontend + Hugging Face Docker API with CORS"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "~92%",
+          "label": "Questionnaire model accuracy"
+        },
+        {
+          "id": "m2",
+          "value": "2",
+          "label": "Screening paths — image + survey"
+        },
+        {
+          "id": "m3",
+          "value": "AR/EN",
+          "label": "Full bilingual UI + reports"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 7,
+      "title": "Payment Transfer System",
+      "des": "Full-stack multi-branch money transfer platform — SYP & USD, role-based dashboards, reports, profit tracking, PDF receipts, and bilingual AR/EN UI.",
+      "img": "/project/pay-director-branches.png",
+      "iconLists": [
+        "/next.svg",
+        "/re.svg",
+        "/ts.svg",
+        "/tail.svg",
+        "/s.svg",
+        "/Axios.png",
+        "/dockerName.svg",
+        "/cloud.svg"
+      ],
+      "challenge": "Multi-branch transfers need RBAC, tax logic, and audit-ready reporting — not spreadsheets",
+      "solution": "Production-grade Next.js + FastAPI + PostgreSQL with 3 role-specific dashboards",
+      "liveDemoUrl": "https://payment-system-portfolio.vercel.app/money-transfer",
+      "githubUrl": "https://github.com/ahmad-alhalwany/payment-system-portfolio",
+      "cards": [
+        {
+          "src": "/project/pay-landing.png"
+        },
+        {
+          "src": "/project/pay-login.png"
+        },
+        {
+          "src": "/project/pay-money-transfer-home.png"
+        },
+        {
+          "src": "/project/pay-new-transfer-form.png"
+        },
+        {
+          "src": "/project/pay-outgoing-transfers.png"
+        },
+        {
+          "src": "/project/pay-incoming-transfers.png"
+        },
+        {
+          "src": "/project/pay-receipt-pdf.png"
+        },
+        {
+          "src": "/project/pay-director-overview.png"
+        },
+        {
+          "src": "/project/pay-director-branches.png"
+        },
+        {
+          "src": "/project/pay-director-employees.png"
+        },
+        {
+          "src": "/project/pay-director-transactions.png"
+        },
+        {
+          "src": "/project/pay-director-reports-table.png"
+        },
+        {
+          "src": "/project/pay-director-reports-charts.png"
+        },
+        {
+          "src": "/project/pay-director-inventory.png"
+        },
+        {
+          "src": "/project/pay-director-inventory-table.png"
+        },
+        {
+          "src": "/project/pay-director-settings.png"
+        },
+        {
+          "src": "/project/pay-director-fund-history.png"
+        },
+        {
+          "src": "/project/pay-branch-dashboard.png"
+        },
+        {
+          "src": "/project/pay-branch-employees.png"
+        },
+        {
+          "src": "/project/pay-branch-reports.png"
+        },
+        {
+          "src": "/project/pay-branch-profits.png"
+        },
+        {
+          "src": "/project/pay-branch-profit-chart.png"
+        },
+        {
+          "src": "/project/pay-branch-settings.png"
+        },
+        {
+          "src": "/project/pay-employee-home.png"
+        },
+        {
+          "src": "/project/pay-employee-new-transfer.png"
+        },
+        {
+          "src": "/project/pay-employee-outgoing.png"
+        },
+        {
+          "src": "/project/pay-employee-incoming.png"
+        },
+        {
+          "src": "/project/pay-employee-search.png"
+        }
+      ],
+      "overview": "A portfolio-grade fintech demo that simulates a real multi-branch money transfer operation in Syria — handling outgoing and incoming transfers in Syrian pounds (SYP) and US dollars (USD). Three roles (Director, Branch Manager, Employee) each get scoped dashboards for branches, staff, transfers, tax/profit inventory, reports with charts, and PDF receipts — with full Arabic/English support and dark/light themes.",
+      "challengeDetail": "Branch networks can't run on ad-hoc tools: directors need system-wide visibility and fund allocation, branch managers must see only their branch's employees, profits, and reports, and front-line employees need a fast path to create transfers, track status, and confirm incoming payments. The product also requires tax calculation per branch, CSV exports, audit-friendly filters, JWT-secured APIs, and a demo that works end-to-end in production — not mocked JSON on the frontend.",
+      "solutionDetail": "I architected a separated stack: Next.js 14 on Vercel talks to FastAPI on Render over HTTPS with JWT (middleware + RoleGuard on the frontend, get_current_user + branch scoping on the backend). PostgreSQL on Neon stores branches, users, transfers, and tax rates. Business logic lives in service layers (branch_profits, transactions, reports) with pytest coverage; the UI uses React Hook Form + Zod, Recharts for analytics, jsPDF for receipts, and a full i18n layer (AR/EN, RTL/LTR). GitHub Actions runs lint + Jest + pytest; AUTO_SEED_DEMO seeds 3 branches, 6 users, and 20 sample transfers for instant demos.",
+      "keyFeatures": [
+        "3-role RBAC — Director (/dashboard), Branch Manager (/branch-dashboard), Employee (/money-transfer)",
+        "Transfer lifecycle — create, outgoing/incoming lists, status workflow, PDF receipt generation",
+        "Director ops — branch CRUD, fund allocation, employee management, system settings + backup",
+        "Branch manager ops — scoped employees, reports, profit/tax tables, Recharts analytics, CSV export",
+        "Multi-currency — SYP & USD with per-branch tax rates, benefited amount, and profit formulas",
+        "Security — JWT auth, bcrypt passwords, CORS allowlist, rate-limited login, branch_id scoping",
+        "i18n + theming — Arabic/English with RTL/LTR, dark/light mode, guide panels on every major screen",
+        "CI/CD + deploy — GitHub Actions, Vercel frontend, Render API, Neon PostgreSQL, Docker Compose locally"
+      ],
+      "outcomes": [
+        "Live demo at payment-system-portfolio.vercel.app with one-click demo login (director / demo123)",
+        "28 UI screens — landing, 3 dashboards, transfers, reports, inventory, settings, receipts",
+        "17+ backend test files — auth, transactions, reports, profits, branch scoping",
+        "Production stack — Vercel + Render + Neon, not frontend-only mocks"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "3",
+          "label": "Roles — Director, Manager, Employee"
+        },
+        {
+          "id": "m2",
+          "value": "2",
+          "label": "Currencies — SYP & USD"
+        },
+        {
+          "id": "m3",
+          "value": "28",
+          "label": "Documented UI screens"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 8,
+      "title": "VoteChain — Decentralized Voting dApp",
+      "des": "Full Web3 election platform — immutable votes on Ethereum, candidate/voter media on IPFS, MetaMask integration, and a live results dashboard with role-based admin.",
+      "img": "/project/vote-home-hero.png",
+      "iconLists": [
+        "/next.svg",
+        "/re.svg",
+        "/js.png",
+        "/git.svg",
+        "/cloud.svg",
+        "/host.svg"
+      ],
+      "challenge": "Centralized voting can be altered — elections need transparent, tamper-proof records",
+      "solution": "Hybrid Web3 dApp: Solidity smart contract + IPFS storage + Next.js admin & voter UI",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/vote-chain",
+      "cards": [
+        {
+          "src": "/project/vote-home-hero.png"
+        },
+        {
+          "src": "/project/vote-live-candidates.png"
+        },
+        {
+          "src": "/project/vote-live-results.png"
+        },
+        {
+          "src": "/project/vote-confirm-modal.png"
+        },
+        {
+          "src": "/project/vote-register-candidate.png"
+        },
+        {
+          "src": "/project/vote-register-voter.png"
+        },
+        {
+          "src": "/project/vote-voter-list.png"
+        },
+        {
+          "src": "/project/vote-how-it-works.png"
+        }
+      ],
+      "overview": "VoteChain is a portfolio Web3 dApp for transparent, tamper-proof elections. Votes are counted immutably on an Ethereum smart contract (Solidity + Hardhat), while candidate and voter photos plus JSON metadata live on IPFS. A Next.js frontend connects MetaMask for signing, protects organizer pages with on-chain + UI guards, and shows live results with percentage bars and leading badges.",
+      "challengeDetail": "Traditional voting systems rely on a central authority that can alter records. The product needed clear on-chain rules (one vote per registered voter, organizer-only registration), decentralized media storage without expensive on-chain blobs, CORS-safe IPFS uploads from the browser, and a polished UX so non-Web3 users can follow the flow — confirm modals, toasts, loaders, and readable live results.",
+      "solutionDetail": "I built a full-stack Web3 app: the Create smart contract (Solidity 0.8.9, OpenZeppelin Counters) enforces organizer permissions, voter whitelisting, and single-vote integrity. Next.js API routes (/api/ipfs-upload, /api/ipfs-proxy) handle server-side IPFS uploads and image proxying. VotingContext centralizes Web3 state (Ethers.js v5, Web3Modal, MetaMask). OrganizerGuard mirrors contract rules in the UI. React Dropzone feeds IPFS; live dashboards read vote counts directly from the chain after each transaction.",
+      "keyFeatures": [
+        "Smart contract — setCandidate(), voterRight(), vote() with events and on-chain RBAC",
+        "Hybrid storage — votes & permissions on Ethereum; images + JSON on IPFS (Kubo)",
+        "Next.js API — server-side IPFS upload + proxy to bypass browser CORS limits",
+        "MetaMask flow — wallet connect, transaction signing, full-screen loader during mining",
+        "Organizer admin — register candidates/voters with drag-drop photos (OrganizerGuard)",
+        "Live dashboard — vote counts, percentage bars, Leading badge, real-time refresh",
+        "UX polish — confirmation modal before vote, toast notifications, glassmorphism dark UI",
+        "Hardhat toolchain — local chain deploy script, contract ABI wired via constants + context"
+      ],
+      "outcomes": [
+        "End-to-end dApp — Frontend ↔ Smart Contract ↔ IPFS in one integrated codebase",
+        "8 documented screens — hero, live results, admin, voter list, confirm flow, how-it-works",
+        "Double protection — require(votingOrganizer) on-chain + OrganizerGuard in React",
+        "Open source on GitHub — runnable locally with Hardhat node + IPFS daemon + npm run dev"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "Web3",
+          "label": "Ethereum + MetaMask + Solidity"
+        },
+        {
+          "id": "m2",
+          "value": "1",
+          "label": "Vote per registered voter (on-chain)"
+        },
+        {
+          "id": "m3",
+          "value": "8",
+          "label": "UI screens in case study gallery"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 9,
+      "title": "Mancala — 3D Kalah Board Game",
+      "des": "Desktop Mancala (Kalah) built with Java 17 and JavaFX 21 — 3D board, full game rules, Minimax AI with three difficulty levels, sound effects, leaderboard, and Windows .exe packaging.",
+      "img": "/project/mancala-menu.png",
+      "iconLists": [
+        "/c.svg",
+        "/dock.svg",
+        "/three.svg",
+        "/app.svg",
+        "/stream.svg"
+      ],
+      "challenge": "Classic board games need polished UX, fair AI, and reliable rule enforcement",
+      "solution": "MVC JavaFX app — MancalaBoard logic, 3D SubScene view, Minimax + Alpha-Beta AI",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Mancala-game",
+      "cards": [
+        {
+          "src": "/project/mancala-menu.png"
+        },
+        {
+          "src": "/project/mancala-menu-register.png"
+        },
+        {
+          "src": "/project/mancala-gameplay-start.png"
+        },
+        {
+          "src": "/project/mancala-gameplay-mid.png"
+        },
+        {
+          "src": "/project/mancala-capture.png"
+        }
+      ],
+      "overview": "Mancala is a portfolio desktop game implementing Kalah rules in a modern dark-themed JavaFX UI. A wooden 3D board (SubScene, PhongMaterial, PerspectiveCamera) sits under a 2D HUD for scores, turn indicator, and status messages. The MVC architecture separates MancalaBoard game logic, GameController orchestration, MainMenuView setup, and MancalaView rendering — with Jackson JSON persistence for players and a programmatic SoundService (no external audio files).",
+      "challengeDetail": "Board games are deceptively complex: Kalah requires correct sowing paths (skip opponent store), extra turns, captures from empty pits, and automatic end-game collection. The UI must animate stone distribution step-by-step, run AI on a background delay without blocking JavaFX threads, persist a leaderboard across sessions, and ship as a runnable Windows .exe for portfolio reviewers who may not have JDK installed.",
+      "solutionDetail": "I structured the codebase in layers: MancalaBoard.sow() returns MoveResult with animation steps and deep copy() for AI search; GameController handles pit clicks, animateSteps() at 120ms intervals, and scheduleAiMove() with 500ms delay; MancalaAI uses Minimax + Alpha-Beta at depths 3/6/9 (Easy/Medium/Hard) with store-difference heuristics. PlayerRepository saves to %USERPROFILE%\\.mancala\\players.json via Jackson. package.bat builds Mancala.exe with jpackage. Fifteen JUnit 5 tests cover board rules and AI move selection.",
+      "keyFeatures": [
+        "JavaFX 3D board — Box pits/stores, Sphere stones, AmbientLight + PointLight, 180° camera rotation",
+        "Full Kalah rules — extra turn, capture, skip opponent store, auto collect on game end",
+        "Minimax AI — Alpha-Beta pruning, 3 difficulty levels, 25% random moves on Easy",
+        "Animated sowing — step-by-step pit updates synced with SOW/CAPTURE/STORE sound effects",
+        "Main menu — player registration, Two Players vs Computer, persistent leaderboard TableView",
+        "SoundService — 9 procedurally generated WAV tones (CLICK, WIN, LOSE, etc.), toggle ON/OFF",
+        "MVC + services — GameSession record, GameController, PlayerRepository, functional callbacks",
+        "Windows packaging — Maven + jpackage → Mancala.exe; run.bat for dev via javafx:run"
+      ],
+      "outcomes": [
+        "15 JUnit tests — board rules (sow, capture, extra turn) and AI valid-move selection",
+        "Shippable .exe — portfolio-ready binary via package.bat, no Java install for end users",
+        "Documented 5-screen gallery — menu, registration, gameplay, capture moment, HUD states",
+        "Open source on GitHub — Maven Wrapper included, MIT license"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "15",
+          "label": "JUnit 5 unit tests"
+        },
+        {
+          "id": "m2",
+          "value": "3",
+          "label": "AI difficulty levels (Minimax)"
+        },
+        {
+          "id": "m3",
+          "value": ".exe",
+          "label": "Windows build via jpackage"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 10,
+      "title": "Storybook Interface — Component Library",
+      "des": "Isolated UI development for marketing and dashboard components using Storybook — document variants, states, and props without running the full app.",
+      "img": "",
+      "iconLists": [
+        "/re.svg",
+        "/tail.svg",
+        "/js.svg"
+      ],
+      "challenge": "Reusable UI pieces were hard to review and test inside the full application shell",
+      "solution": "Storybook workspace with stories per component, controls, and visual states",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/storybook-interface",
+      "cards": [],
+      "overview": "A Storybook-driven interface layer for building and showcasing React UI components in isolation. Each story covers default, hover, disabled, and edge-case layouts so designers and developers can agree on behavior before integration.",
+      "challengeDetail": "Shipping UI without a catalog leads to duplicated markup, inconsistent spacing, and regressions that only surface in production pages. The goal was a lightweight sandbox where components could be iterated quickly and shared as living documentation.",
+      "solutionDetail": "I set up Storybook with organized story files, argTypes for interactive props, and Tailwind-friendly wrappers. Components are grouped by domain (navigation, cards, forms) so new pages compose from tested building blocks instead of one-off CSS.",
+      "keyFeatures": [
+        "Storybook stories for core layout and form components",
+        "Interactive controls — tweak props without code changes",
+        "Visual states — default, loading, error, empty",
+        "Tailwind + React — matches production styling",
+        "Living docs — onboarding reference for future pages"
+      ],
+      "outcomes": [
+        "Faster UI reviews — stakeholders preview components in isolation",
+        "Less duplication — shared primitives across marketing screens",
+        "Regression-friendly — visual checks before merge"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    },
+    {
+      "id": 11,
+      "title": "Zeus Store — E-commerce Frontend",
+      "des": "TypeScript storefront companion to the Zeus platform — product browsing, cart flow, and checkout-oriented UI wired to the same design language as the main Zeus app.",
+      "img": "",
+      "iconLists": [
+        "/re.svg",
+        "/ts.svg",
+        "/next.svg",
+        "/tail.svg"
+      ],
+      "challenge": "Zeus needed a dedicated shop experience separate from the core app shell",
+      "solution": "Standalone Next.js store with typed API hooks and responsive product grids",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Zeus-store",
+      "cards": [],
+      "overview": "Zeus Store extends the Zeus ecosystem with a focused e-commerce frontend. It emphasizes product discovery, cart management, and checkout-ready layouts while reusing the visual system established in the main Zeus project.",
+      "challengeDetail": "Splitting commerce from the core app avoids bloating the primary codebase while still requiring consistent branding, typed data contracts, and mobile-first layouts for product listings.",
+      "solutionDetail": "Built as a TypeScript Next.js app with componentized product cards, filterable grids, and cart state handled on the client with clear separation between presentation and data-fetch layers.",
+      "keyFeatures": [
+        "Product grid with responsive card layout",
+        "Cart flow — add, update quantity, summary panel",
+        "Shared Zeus design tokens and typography",
+        "TypeScript models for products and cart lines",
+        "Next.js App Router structure for shop routes"
+      ],
+      "outcomes": [
+        "Modular shop frontend — deployable apart from Zeus core",
+        "Typed interfaces — fewer runtime surprises in cart logic",
+        "Portfolio pair — complements the main Zeus case study"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    },
+    {
+      "id": 12,
+      "title": "Chat App — Real-Time Messaging",
+      "des": "TypeScript chat client with room-based messaging, message history, and a clean conversation UI — practice project for real-time patterns and authenticated sessions.",
+      "img": "",
+      "iconLists": [
+        "/re.svg",
+        "/ts.svg",
+        "/tail.svg"
+      ],
+      "challenge": "Real-time UX requires instant delivery, scroll stability, and clear read states",
+      "solution": "React chat UI with WebSocket or polling backend integration and optimistic sends",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/chat-app",
+      "cards": [],
+      "overview": "A messaging application focused on the frontend experience of real-time chat: conversation list, active thread, timestamps, and input handling. Structured to plug into Socket.io or similar backends.",
+      "challengeDetail": "Chat UIs fail when messages jump on scroll, duplicates appear on retry, or connection drops go unhandled. The project targets predictable list virtualization patterns and connection status feedback.",
+      "solutionDetail": "Componentized layout (sidebar + thread), controlled input with send on Enter, message bubbles grouped by sender, and hooks abstracting the transport layer so the UI stays backend-agnostic.",
+      "keyFeatures": [
+        "Conversation sidebar with active room highlight",
+        "Message thread — bubbles, timestamps, auto-scroll",
+        "Optimistic send with rollback on failure",
+        "Connection status indicator",
+        "TypeScript types for users, rooms, and messages"
+      ],
+      "outcomes": [
+        "Reusable chat UI shell for backend experiments",
+        "Documented real-time UX patterns in portfolio",
+        "Open source — extensible to group channels or media"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    },
+    {
+      "id": 13,
+      "title": "User Dashboard — Admin Panel",
+      "des": "TypeScript admin dashboard with overview metrics, tables, and navigation patterns typical of SaaS back-office tools.",
+      "img": "",
+      "iconLists": [
+        "/re.svg",
+        "/ts.svg",
+        "/tail.svg",
+        "/next.svg"
+      ],
+      "challenge": "Admin tools need scannable metrics and dense data without clutter",
+      "solution": "Dashboard layout with sidebar nav, stat cards, and filterable data tables",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/user-dashboard",
+      "cards": [],
+      "overview": "A user-facing admin dashboard prototype covering the layouts recruiters expect: KPI cards, recent activity, user management table, and settings entry points. Built to demonstrate SPA routing and component composition.",
+      "challengeDetail": "Dashboards easily become unreadable when every widget competes for attention. The focus was hierarchy — primary metrics up top, drill-down tables below, persistent navigation for common tasks.",
+      "solutionDetail": "Responsive grid of summary cards, reusable table component with sort/filter placeholders, collapsible sidebar for mobile, and theme-consistent typography using Tailwind utility patterns.",
+      "keyFeatures": [
+        "KPI stat cards with trend placeholders",
+        "Data table — users, roles, status columns",
+        "Sidebar + top bar navigation shell",
+        "Responsive collapse — usable on tablet widths",
+        "Modular pages — overview, users, settings stubs"
+      ],
+      "outcomes": [
+        "Portfolio-ready admin UI patterns",
+        "Composable layout reusable in client projects",
+        "TypeScript props for table and card widgets"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    },
+    {
+      "id": 14,
+      "title": "Hat & Jacket Detection — YOLOv8",
+      "des": "Python computer-vision pipeline using YOLOv8 to detect hats and jackets in images — training, inference, and evaluation for custom apparel classes.",
+      "img": "",
+      "iconLists": [
+        "/python.svg",
+        "/git.svg"
+      ],
+      "challenge": "Off-the-shelf detectors miss domain-specific apparel classes",
+      "solution": "Custom YOLOv8 fine-tuning on labeled hat/jacket datasets with inference scripts",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/hat-jacket-predict-yolov8",
+      "cards": [],
+      "overview": "An object-detection project targeting two apparel categories with the Ultralytics YOLOv8 stack. Covers dataset preparation, training configuration, validation metrics, and batch inference on sample images.",
+      "challengeDetail": "Generic COCO-trained models do not reliably segment hats vs jackets in varied poses and lighting. A small custom dataset and fine-tuned weights were needed for meaningful precision on portfolio demos.",
+      "solutionDetail": "Organized images into YOLO label format, configured training hyperparameters, tracked mAP on a hold-out set, and exported weights for a simple predict script that draws bounding boxes on new inputs.",
+      "keyFeatures": [
+        "YOLOv8 training pipeline — yaml config, epochs, imgsz",
+        "Custom classes — hat and jacket",
+        "Validation plots — precision/recall curves",
+        "Inference script — single image and folder batch",
+        "Requirements pinned — reproducible Python env"
+      ],
+      "outcomes": [
+        "End-to-end CV workflow documented in repo",
+        "Custom weights for apparel-specific detection",
+        "Foundation for retail or safety PPE extensions"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    },
+    {
+      "id": 15,
+      "title": "Feature Detection — OpenCV",
+      "des": "Jupyter notebooks exploring classical feature detectors — Harris corners, SIFT, ORB, and matching pipelines with OpenCV.",
+      "img": "",
+      "iconLists": [
+        "/python.svg"
+      ],
+      "challenge": "Understanding when classical features beat deep learning on small datasets",
+      "solution": "Notebook series comparing detectors, descriptors, and brute-force matching",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Feature-Detection-using-openCV",
+      "cards": [],
+      "overview": "Educational computer-vision notebooks that visualize keypoint detection and descriptor matching across image pairs. Useful for learning geometry-based approaches before jumping to neural detectors.",
+      "challengeDetail": "Feature detection theory is abstract without side-by-side visual comparisons of repeatability, scale invariance, and match quality under rotation or blur.",
+      "solutionDetail": "Each notebook isolates one algorithm, plots detected keypoints, runs matcher pipelines, and discusses trade-offs (speed vs accuracy, patented vs free algorithms like ORB).",
+      "keyFeatures": [
+        "Harris corner detection visualization",
+        "SIFT / ORB keypoints and descriptors",
+        "Brute-force and FLANN matching demos",
+        "Homography estimation from good matches",
+        "Notebook-friendly OpenCV + NumPy workflow"
+      ],
+      "outcomes": [
+        "Visual study guide for classical CV interviews",
+        "Reusable notebook templates for new image pairs",
+        "Clear comparison of detector strengths"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    },
+    {
+      "id": 16,
+      "title": "Machine Learning Project — Experiments",
+      "des": "Collection of Jupyter notebooks for supervised learning experiments — preprocessing, model training, and evaluation on tabular and sample datasets.",
+      "img": "",
+      "iconLists": [
+        "/python.svg"
+      ],
+      "challenge": "ML coursework needs reproducible notebooks with clear train/test splits",
+      "solution": "Structured notebooks with scikit-learn pipelines and metric reporting",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Machine_Learning_project",
+      "cards": [],
+      "overview": "A sandbox repository for machine-learning coursework and self-study: load data, engineer features, fit baseline models, and compare metrics. Focus on clarity and reproducibility rather than production deployment.",
+      "challengeDetail": "Ad-hoc notebooks often leak test data or omit seed fixing, making results impossible to reproduce or compare across model changes.",
+      "solutionDetail": "Standardized sections — EDA, split, baseline, tuned model, confusion matrix / RMSE — with random seeds and pip requirements noted at the top of each notebook.",
+      "keyFeatures": [
+        "pandas + scikit-learn preprocessing pipelines",
+        "Train/validation/test splits with fixed seeds",
+        "Classification and regression examples",
+        "Metric tables — accuracy, F1, MAE as appropriate",
+        "Matplotlib/seaborn plots for error analysis"
+      ],
+      "outcomes": [
+        "Reproducible ML study artifacts on GitHub",
+        "Interview-ready walkthrough of modeling steps",
+        "Base for future Kaggle or capstone extensions"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    },
+    {
+      "id": 17,
+      "title": "Outverse — Collaborative Platform",
+      "des": "TypeScript web app exploring a community-oriented product surface — modular pages, auth-ready routing, and extensible content sections.",
+      "img": "",
+      "iconLists": [
+        "/re.svg",
+        "/ts.svg",
+        "/next.svg",
+        "/tail.svg"
+      ],
+      "challenge": "Early-stage community products need flexible UI without over-engineering backend",
+      "solution": "Next.js frontend with composable sections and typed content models",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Outverse",
+      "cards": [],
+      "overview": "Outverse is an experimental platform scaffold for a community-focused product. The codebase prioritizes readable routing, shared layout components, and room to grow into feeds, profiles, or spaces without a rewrite.",
+      "challengeDetail": "Greenfield social products often hard-code pages that do not survive pivoting feature scope. The architecture keeps presentation flexible while data layers remain swappable.",
+      "solutionDetail": "App Router structure with layout shells, reusable section blocks, TypeScript interfaces for posts/users placeholders, and Tailwind-driven responsive design consistent with other portfolio Next.js work.",
+      "keyFeatures": [
+        "Next.js App Router — layouts and nested routes",
+        "Composable landing sections",
+        "TypeScript models for users and content stubs",
+        "Responsive navigation and footer patterns",
+        "Monorepo-friendly module boundaries"
+      ],
+      "outcomes": [
+        "Extensible scaffold for community features",
+        "Demonstrates product-minded frontend structure",
+        "Open source — documented README on GitHub"
+      ],
+      "metrics": [],
+      "featured": false,
+      "compact": true
+    }
+  ],
+  "workExperience": [
+    {
+      "id": 1,
+      "title": "Freelancer — Full-Stack & Product Development",
+      "company": "Independent / Freelance",
+      "role": "Freelancer — Full-Stack Developer",
+      "period": "2022 — Present",
+      "location": "Remote",
+      "employmentType": "freelance",
+      "desc": "End-to-end delivery of web, AI, and blockchain products for clients — from architecture to production deployment.",
+      "className": "md:col-span-2",
+      "thumbnail": "/exp3.svg",
+      "featured": true,
+      "overview": "Independent engineering across AI platforms, blockchain systems, marketing UIs, games, and e-commerce backends — owning discovery, implementation, and measurable outcomes for each engagement.",
+      "responsibilities": [
+        "AI-powered autism early-detection platform (May 2025): Next.js + FastAPI with OpenCV face detection, Keras emotion models for behavioral patterns, and an XAI questionnaire module for holistic assessment.",
+        "Blockchain-based voting system (Mar 2024): securely processed 10,000+ votes with no reported integrity issues; transparency and auditability built into the design.",
+        "Custom marketing interface (Aug 2023): React + Storybook UI enabling 50+ clients to personalize campaigns efficiently.",
+        "Mancala game with JavaFX (Jun 2023): interactive animations and intuitive UX that increased user engagement by 25%.",
+        "Online shisha shop backend (2022): streamlined checkout and operations, improving customer-service efficiency by 25%."
+      ],
+      "technologies": [
+        "Next.js",
+        "FastAPI",
+        "Python",
+        "OpenCV",
+        "Keras",
+        "React",
+        "Storybook",
+        "JavaFX",
+        "Blockchain",
+        "GraphQL"
+      ],
+      "outcomes": [
+        "Multiple shipped products across AI, Web3, e-commerce, and gaming",
+        "Demonstrated ownership from prototype to production without a single employer wrapper"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Full-Stack Payment System — Al Ankabot",
+      "company": "Al Ankabot",
+      "role": "Lead Full-Stack Developer",
+      "period": "Oct 2024 — Jan 2026",
+      "location": "Remote",
+      "employmentType": "full-time",
+      "desc": "Led end-to-end development of a secure transaction platform with web and desktop clients.",
+      "className": "md:col-span-2",
+      "thumbnail": "/exp4.svg",
+      "featured": true,
+      "overview": "Led the full lifecycle of a secure payments platform — backend APIs, encrypted auth, Next.js web app, and a PyQt desktop client — built for reliability at scale with multi-layer security.",
+      "responsibilities": [
+        "Architected FastAPI backend with JWT authentication and encryption for sensitive financial flows",
+        "Built Next.js web interface and PyQt desktop client sharing the same transaction core",
+        "Implemented multi-stage security protocols to mitigate data-leak and abuse scenarios",
+        "Monitored uptime and performance for production traffic exceeding 1,000 transactions per month"
+      ],
+      "technologies": [
+        "FastAPI",
+        "Next.js",
+        "PyQt",
+        "Python",
+        "JWT",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "outcomes": [
+        "1,000+ transactions processed monthly at 99.9% system availability",
+        "Secure, auditable payment flows with layered protection against data leaks"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Frontend Developer — LIT-Co",
+      "company": "LIT-Co",
+      "role": "Frontend Developer",
+      "period": "Jun 2023 — Aug 2024",
+      "location": "Syria — Hybrid / On-site",
+      "employmentType": "full-time",
+      "desc": "Led web development for the Plaze e-commerce platform and WordPress ecosystem.",
+      "className": "md:col-span-2",
+      "thumbnail": "/exp2.svg",
+      "overview": "Drove frontend and platform work at LIT-Co — owning the Plaze e-commerce build, WordPress customizations, and a full site redesign that materially improved mobile and conversion metrics.",
+      "responsibilities": [
+        "Led development of the Plaze e-commerce platform with Next.js and GraphQL, raising conversion rate by 15%",
+        "Customized 10+ WordPress themes and plugins, increasing user interaction by 20%",
+        "Led a comprehensive website redesign that improved responsiveness and grew mobile traffic by 40%"
+      ],
+      "technologies": [
+        "Next.js",
+        "GraphQL",
+        "React",
+        "WordPress",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "outcomes": [
+        "Plaze shop live as a production e-commerce storefront",
+        "Measurable gains in conversion, engagement, and mobile reach"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Frontend Developer Intern — LIT-Co",
+      "company": "LIT-Co",
+      "role": "Frontend Developer Intern",
+      "period": "Apr 2023 — Jun 2023",
+      "location": "Syria — On-site / Hybrid",
+      "employmentType": "internship",
+      "desc": "Assisted in the development of a web-based platform using Next.js, enhancing interactivity.",
+      "className": "md:col-span-2",
+      "thumbnail": "/exp1.svg",
+      "overview": "Started at LIT-Co on the frontend team — shipping UI components, fixing bugs, and learning production Next.js practices before moving into the Web Developer role.",
+      "responsibilities": [
+        "Built and refined React/Next.js UI components under senior developer guidance",
+        "Improved interactivity and client-side flows on the company web platform",
+        "Participated in code reviews, stand-ups, and incremental feature delivery",
+        "Supported WordPress and frontend tasks that prepared me for leading Plaze development"
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "CSS",
+        "WordPress",
+        "Git"
+      ],
+      "outcomes": [
+        "Solid foundation in component-driven development and team workflow",
+        "Stepped up to Frontend Developer at LIT-Co (Jun 2023 — Aug 2024)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "Tishreen University",
+      "title": "Information Technology Engineer | Artificial Intelligence Engineer",
+      "desc": "",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/Tishreen.jpeg",
+      "coverImage": "/education/Tishreen.jpeg",
+      "kind": "degree",
+      "featured": true,
+      "timeline": [
+        "I started studying at university in 2017.",
+        "I graduated with an average of 71.43% in 2023."
+      ],
+      "projects": [
+        "Built an NLP based app to classify people's reactions to some emotional categories.",
+        "Built a self-driving car using Unity and Genetic Algorithm to study the effect of deep neural networks over the randomness of genetic algorithms.",
+        "Data Mining project to classify favorite songs."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Preparing to Manage Human Resources",
+      "desc": "Foundations of modern HR: how organizations attract talent, structure jobs, and align people practices with business goals.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/UOM.png",
+      "coverImage": "/certificates/NQVQXD24Y7WJ.png",
+      "institution": "University of Minnesota",
+      "year": "Dec 2023",
+      "kind": "certificate",
+      "category": "Business & HR",
+      "highlights": [
+        "HR strategy",
+        "Talent management",
+        "Organizational design",
+        "Employment law basics"
+      ],
+      "verifyUrl": "https://coursera.org/verify/NQVQXD24Y7WJ",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "title": "Introduction to Data Analytics",
+      "desc": "How data moves from raw sources to decisions — the analytics lifecycle, types of analysis, and the tools teams use daily.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/IBM.png",
+      "coverImage": "/certificates/8RDFX3WXT6F4.png",
+      "institution": "IBM",
+      "year": "Jan 2024",
+      "kind": "certificate",
+      "category": "Data & Analytics",
+      "highlights": [
+        "Data lifecycle",
+        "Descriptive analytics",
+        "SQL basics",
+        "Data visualization",
+        "Business storytelling"
+      ],
+      "verifyUrl": "https://coursera.org/verify/8RDFX3WXT6F4",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "Foundations of Project Management",
+      "desc": "Core PM vocabulary, project phases, and when to use Waterfall vs Agile — plus how culture shapes delivery.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/Google.png",
+      "coverImage": "/certificates/DBNMSDWF2ZKA.png",
+      "institution": "Google",
+      "year": "Feb 2024",
+      "kind": "certificate",
+      "category": "Project Management",
+      "highlights": [
+        "Project lifecycle",
+        "Agile & Waterfall",
+        "Stakeholder communication",
+        "Scrum basics",
+        "Change management"
+      ],
+      "verifyUrl": "https://coursera.org/verify/DBNMSDWF2ZKA",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Excel Basics for Data Analysis",
+      "desc": "Cleaning spreadsheets, building summaries with formulas, and turning rows into charts stakeholders actually read.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/IBM.png",
+      "coverImage": "/certificates/UGXY6GL5WDN8.png",
+      "institution": "IBM",
+      "year": "Feb 2024",
+      "kind": "certificate",
+      "category": "Data & Analytics",
+      "highlights": [
+        "Excel",
+        "Pivot tables",
+        "Data cleaning",
+        "Charts",
+        "VLOOKUP & formulas"
+      ],
+      "verifyUrl": "https://coursera.org/verify/UGXY6GL5WDN8",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Project Initiation: Starting a Successful Project",
+      "desc": "Defining scope, goals, and stakeholders up front — writing charters and success criteria before execution starts.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/Google.png",
+      "coverImage": "/certificates/YKZPXQR3ERY3.png",
+      "institution": "Google",
+      "year": "Apr 2024",
+      "kind": "certificate",
+      "category": "Project Management",
+      "highlights": [
+        "Project charter",
+        "Scope definition",
+        "Stakeholder mapping",
+        "SMART goals",
+        "Risk awareness"
+      ],
+      "verifyUrl": "https://coursera.org/verify/YKZPXQR3ERY3",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "Supervised Machine Learning: Regression and Classification",
+      "desc": "Built intuition for models that learn from labeled data — linear & logistic regression, cost functions, and gradient descent.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/DeepLearning.png",
+      "coverImage": "/certificates/WZC7PWNSUFER.png",
+      "institution": "Stanford Online · DeepLearning.AI",
+      "year": "Apr 2024",
+      "kind": "certificate",
+      "category": "Machine Learning & AI",
+      "highlights": [
+        "Supervised learning",
+        "Linear regression",
+        "Logistic regression",
+        "Gradient descent",
+        "Feature scaling",
+        "Python"
+      ],
+      "verifyUrl": "https://coursera.org/verify/WZC7PWNSUFER",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "title": "Machine Learning in Production",
+      "desc": "MLOps mindset: shipping models safely, monitoring drift, and keeping data + code pipelines reliable after launch.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/DeepLearning.png",
+      "coverImage": "/certificates/6QZPYE3CAU2E.png",
+      "institution": "DeepLearning.AI",
+      "year": "Jun 2024",
+      "kind": "certificate",
+      "category": "Machine Learning & AI",
+      "highlights": [
+        "MLOps",
+        "Model deployment",
+        "Monitoring",
+        "Data pipelines",
+        "Production ML"
+      ],
+      "verifyUrl": "https://coursera.org/verify/6QZPYE3CAU2E",
+      "featured": false
+    },
+    {
+      "id": 9,
+      "title": "Introduction to Front-End Development",
+      "desc": "Role of a front-end developer, semantic HTML, CSS layout, responsive design, and how browsers render UI.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/facebook_logo.jpeg",
+      "coverImage": "/certificates/XR3EBFT7U7BF.png",
+      "institution": "Meta",
+      "year": "Jun 2024",
+      "kind": "certificate",
+      "category": "Software Development",
+      "highlights": [
+        "HTML5",
+        "CSS",
+        "Responsive design",
+        "Accessibility basics",
+        "Developer workflow"
+      ],
+      "verifyUrl": "https://coursera.org/verify/XR3EBFT7U7BF",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "title": "Introduction to Back-End Development",
+      "desc": "Server-side fundamentals: HTTP request/response, APIs, databases at a high level, and how front-end talks to back-end.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/facebook_logo.jpeg",
+      "coverImage": "/certificates/E89F6P7WD82P.png",
+      "institution": "Meta",
+      "year": "Jun 2024",
+      "kind": "certificate",
+      "category": "Software Development",
+      "highlights": [
+        "HTTP & REST",
+        "Back-end concepts",
+        "Databases intro",
+        "Server hosting",
+        "Web architecture"
+      ],
+      "verifyUrl": "https://coursera.org/verify/E89F6P7WD82P",
+      "featured": false
+    },
+    {
+      "id": 11,
+      "title": "Neural Networks and Deep Learning",
+      "desc": "From perceptrons to deep nets — forward/backward propagation, activation functions, and training L-layer networks.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/DeepLearning.png",
+      "coverImage": "/certificates/65HJ6BA7XVTC.png",
+      "institution": "DeepLearning.AI",
+      "year": "Jun 2024",
+      "kind": "certificate",
+      "category": "Machine Learning & AI",
+      "highlights": [
+        "Neural networks",
+        "Deep learning",
+        "Backpropagation",
+        "TensorFlow basics",
+        "Vectorization"
+      ],
+      "verifyUrl": "https://coursera.org/verify/65HJ6BA7XVTC",
+      "featured": false
+    },
+    {
+      "id": 12,
+      "title": "Programming in Python",
+      "desc": "Python building blocks: types, control flow, functions, files, and structuring small programs with clear logic.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/facebook_logo.jpeg",
+      "coverImage": "/certificates/VDK0T64Y9V3P.png",
+      "institution": "Meta",
+      "year": "Sep 2024",
+      "kind": "certificate",
+      "category": "Software Development",
+      "highlights": [
+        "Python",
+        "Functions",
+        "OOP intro",
+        "File I/O",
+        "Debugging"
+      ],
+      "verifyUrl": "https://coursera.org/verify/VDK0T64Y9V3P",
+      "featured": false
+    },
+    {
+      "id": 13,
+      "title": "Introduction to Hardware and Operating Systems",
+      "desc": "How computers are built (CPU, memory, storage) and what operating systems do to run apps and manage resources.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/IBM.png",
+      "coverImage": "/certificates/FIRMWLAYBLM6.png",
+      "institution": "IBM",
+      "year": "Nov 2024",
+      "kind": "certificate",
+      "category": "IT & Infrastructure",
+      "highlights": [
+        "Computer hardware",
+        "Operating systems",
+        "Processes & memory",
+        "I/O systems",
+        "Troubleshooting"
+      ],
+      "verifyUrl": "https://coursera.org/verify/FIRMWLAYBLM6",
+      "featured": false
+    },
+    {
+      "id": 14,
+      "title": "Version Control",
+      "desc": "Git workflows for real teams: commits, branches, merges, pull requests, and recovering from conflicts calmly.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/facebook_logo.jpeg",
+      "coverImage": "/certificates/VIWCLGNJ4VRR.png",
+      "institution": "Meta",
+      "year": "Nov 2024",
+      "kind": "certificate",
+      "category": "Software Development",
+      "highlights": [
+        "Git",
+        "GitHub",
+        "Branching",
+        "Merge conflicts",
+        "Code review"
+      ],
+      "verifyUrl": "https://coursera.org/verify/VIWCLGNJ4VRR",
+      "featured": false
+    },
+    {
+      "id": 15,
+      "title": "Algebra and Differential Calculus for Data Science",
+      "desc": "Math behind ML: vectors, matrices, derivatives, and gradients — the language optimization algorithms speak.",
+      "className": "md:col-span-2",
+      "thumbnail": "/certificates/ICF2ADH90WCR.png",
+      "coverImage": "/certificates/ICF2ADH90WCR.png",
+      "institution": "University of Colorado Boulder",
+      "year": "Jan 2025",
+      "kind": "certificate",
+      "category": "Machine Learning & AI",
+      "highlights": [
+        "Linear algebra",
+        "Calculus",
+        "Gradients",
+        "Optimization",
+        "Data science math"
+      ],
+      "verifyUrl": "https://coursera.org/verify/ICF2ADH90WCR",
+      "featured": false
+    },
+    {
+      "id": 16,
+      "title": "Mathematics for Machine Learning: Linear Algebra",
+      "desc": "Geometric view of linear algebra — transformations, eigenvalues, and why matrix math powers modern AI models.",
+      "className": "md:col-span-2",
+      "thumbnail": "/certificates/CDMDLEXQ6NT3.png",
+      "coverImage": "/certificates/CDMDLEXQ6NT3.png",
+      "institution": "Imperial College London",
+      "year": "Mar 2025",
+      "kind": "certificate",
+      "category": "Machine Learning & AI",
+      "highlights": [
+        "Vectors",
+        "Matrices",
+        "Eigenvalues",
+        "Linear transformations",
+        "ML foundations"
+      ],
+      "verifyUrl": "https://coursera.org/verify/CDMDLEXQ6NT3",
+      "featured": false
+    },
+    {
+      "id": 17,
+      "title": "Introduction to Software Engineering",
+      "desc": "SDLC phases, Agile/Scrum rituals, testing discipline, and professional practices for building software in teams.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/IBM.png",
+      "coverImage": "/certificates/2WIWFGF9W8LB.png",
+      "institution": "IBM",
+      "year": "Apr 2025",
+      "kind": "certificate",
+      "category": "Software Development",
+      "highlights": [
+        "SDLC",
+        "Agile",
+        "Scrum",
+        "Git workflows",
+        "Software design",
+        "QA basics"
+      ],
+      "verifyUrl": "https://coursera.org/verify/2WIWFGF9W8LB",
+      "featured": false
+    },
+    {
+      "id": 18,
+      "title": "HTML and CSS in depth",
+      "desc": "Production-grade UI: Flexbox, Grid, semantic markup, responsive patterns, motion, and accessible components.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/facebook_logo.jpeg",
+      "coverImage": "/certificates/IPRGE2XB7R6L.png",
+      "institution": "Meta",
+      "year": "May 2025",
+      "kind": "certificate",
+      "category": "Software Development",
+      "highlights": [
+        "HTML5",
+        "CSS Grid",
+        "Flexbox",
+        "Responsive UI",
+        "CSS animations",
+        "Accessibility"
+      ],
+      "verifyUrl": "https://coursera.org/verify/IPRGE2XB7R6L",
+      "featured": false
+    },
+    {
+      "id": 19,
+      "title": "An Introduction to Ethical Hacking with Kali Linux",
+      "desc": "Ethical hacker mindset, reconnaissance, and hands-on security tooling in Kali — always within legal scope.",
+      "className": "md:col-span-2",
+      "thumbnail": "/certificates/IB79ARVQ2NN6.png",
+      "coverImage": "/certificates/IB79ARVQ2NN6.png",
+      "institution": "Packt",
+      "year": "Jul 2025",
+      "kind": "certificate",
+      "category": "Security",
+      "highlights": [
+        "Ethical hacking",
+        "Kali Linux",
+        "Reconnaissance",
+        "Vulnerability basics",
+        "Security tooling"
+      ],
+      "verifyUrl": "https://coursera.org/verify/IB79ARVQ2NN6",
+      "featured": false
+    },
+    {
+      "id": 20,
+      "title": "Technical Support Fundamentals",
+      "desc": "IT support foundations: troubleshooting methodically, customer communication, hardware, networking, and OS basics.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/Google.png",
+      "coverImage": "/certificates/6LRMHSCGRC8M.png",
+      "institution": "Google",
+      "year": "Sep 2025",
+      "kind": "certificate",
+      "category": "IT & Infrastructure",
+      "highlights": [
+        "IT support",
+        "Troubleshooting",
+        "Networking basics",
+        "Operating systems",
+        "Customer service"
+      ],
+      "verifyUrl": "https://coursera.org/verify/6LRMHSCGRC8M",
+      "featured": false
+    },
+    {
+      "id": 21,
+      "title": "The Bits and Bytes of Computer Networking",
+      "desc": "TCP/IP stack, DNS, DHCP, routing, and how packets move — the networking layer every full-stack dev should understand.",
+      "className": "md:col-span-2",
+      "thumbnail": "/education/Google.png",
+      "coverImage": "/certificates/QNMBYQOL4Q4F.png",
+      "institution": "Google",
+      "year": "Feb 2026",
+      "kind": "certificate",
+      "category": "IT & Infrastructure",
+      "highlights": [
+        "TCP/IP",
+        "DNS",
+        "Routing",
+        "Network troubleshooting",
+        "Cloud networking intro"
+      ],
+      "verifyUrl": "https://coursera.org/verify/QNMBYQOL4Q4F",
+      "featured": false
+    }
+  ],
+  "skillsSection": {
+    "title": "Skills & technologies I work with",
+    "description": "Programming languages, web and mobile stack, AI/ML foundations, tooling, and the soft skills that make delivery reliable in real teams.",
+    "categories": [
+      {
+        "id": 1,
+        "title": "Programming Languages",
+        "skills": [
+          {
+            "id": 1,
+            "name": "Python",
+            "level": "Senior"
+          },
+          {
+            "id": 2,
+            "name": "JavaScript",
+            "level": "Senior"
+          },
+          {
+            "id": 3,
+            "name": "TypeScript",
+            "level": "Mid"
+          },
+          {
+            "id": 4,
+            "name": "SQL",
+            "level": "Mid"
+          },
+          {
+            "id": 5,
+            "name": "PHP",
+            "level": "Mid"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Web & App Development",
+        "skills": [
+          {
+            "id": 1,
+            "name": "React",
+            "level": "Senior"
+          },
+          {
+            "id": 2,
+            "name": "Next.js",
+            "level": "Senior"
+          },
+          {
+            "id": 3,
+            "name": "Tailwind CSS",
+            "level": "Senior"
+          },
+          {
+            "id": 4,
+            "name": "React Native",
+            "level": "Mid"
+          },
+          {
+            "id": 5,
+            "name": "HTML5",
+            "level": "Senior"
+          },
+          {
+            "id": 6,
+            "name": "CSS3",
+            "level": "Senior"
+          },
+          {
+            "id": 7,
+            "name": "Bootstrap",
+            "level": "Mid"
+          },
+          {
+            "id": 8,
+            "name": "Django",
+            "level": "Mid"
+          },
+          {
+            "id": 9,
+            "name": "Node.js",
+            "level": "Mid"
+          },
+          {
+            "id": 10,
+            "name": "Three.js",
+            "level": "Mid"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "AI & Machine Learning",
+        "skills": [
+          {
+            "id": 1,
+            "name": "Deep Learning",
+            "level": "Mid"
+          },
+          {
+            "id": 2,
+            "name": "Machine Learning",
+            "level": "Mid"
+          },
+          {
+            "id": 3,
+            "name": "NLP",
+            "level": "Mid"
+          },
+          {
+            "id": 4,
+            "name": "Data Mining",
+            "level": "Mid"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Tools & Infrastructure",
+        "skills": [
+          {
+            "id": 1,
+            "name": "Microsoft Office",
+            "level": "Mid"
+          },
+          {
+            "id": 2,
+            "name": "Git",
+            "level": "Senior"
+          },
+          {
+            "id": 3,
+            "name": "Docker",
+            "level": "Mid"
+          },
+          {
+            "id": 4,
+            "name": "Linux",
+            "level": "Mid"
+          },
+          {
+            "id": 5,
+            "name": "PostgreSQL",
+            "level": "Mid"
+          },
+          {
+            "id": 6,
+            "name": "SQL Server",
+            "level": "Mid"
+          },
+          {
+            "id": 7,
+            "name": "CI/CD",
+            "level": "Mid"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Soft Skills",
+        "skills": [
+          {
+            "id": 1,
+            "name": "Problem solving",
+            "level": "Senior",
+            "display": "chip"
+          },
+          {
+            "id": 2,
+            "name": "Teamwork",
+            "level": "Senior",
+            "display": "chip"
+          },
+          {
+            "id": 3,
+            "name": "Adaptability",
+            "level": "Senior",
+            "display": "chip"
+          },
+          {
+            "id": 4,
+            "name": "Project management",
+            "level": "Mid",
+            "display": "chip"
+          },
+          {
+            "id": 5,
+            "name": "Analytical thinking",
+            "level": "Senior",
+            "display": "chip"
+          },
+          {
+            "id": 6,
+            "name": "Ownership & self-reliance",
+            "level": "Senior",
+            "display": "chip"
+          }
+        ]
+      }
+    ]
+  },
+  "languagesSection": {
+    "title": "Languages I communicate in",
+    "description": "Clear communication across teams and markets — from my native Arabic to professional English and German I am actively improving.",
+    "languages": [
+      {
+        "id": "ar",
+        "name": "Arabic",
+        "nativeLabel": "العربية",
+        "levelLabel": "Native · mother tongue",
+        "level": "native",
+        "progress": 100,
+        "flag": "🇸🇾",
+        "note": "Fluent in professional and technical communication.",
+        "learning": false
+      },
+      {
+        "id": "en",
+        "name": "English",
+        "nativeLabel": "English",
+        "levelLabel": "B2 — Upper intermediate",
+        "level": "b2",
+        "progress": 72,
+        "progressLabel": "Professional proficiency",
+        "flag": "🇬🇧",
+        "note": "Comfortable in meetings, documentation, and day-to-day dev collaboration.",
+        "learning": false
+      },
+      {
+        "id": "de",
+        "name": "German",
+        "nativeLabel": "Deutsch",
+        "levelLabel": "A2 · studying for B1",
+        "level": "a2",
+        "progress": 48,
+        "progressLabel": "Progress toward B1",
+        "flag": "🇩🇪",
+        "note": "VHS A2 course + self-study — working toward B1 for work and daily life in Germany.",
+        "learning": true
+      }
+    ]
+  },
+  "servicesSection": {
+    "title": "What I build for product teams",
+    "description": "Full-stack engineering, thoughtful UI, and hands-on technical guidance — from first prototype to production, with clear communication and code your team can maintain.",
+    "services": [
+      {
+        "id": 1,
+        "title": "Full-Stack Product Development",
+        "tagline": "Next.js, React & Python backends",
+        "description": "End-to-end web applications: typed frontends, APIs, authentication, dashboards, and deployments that stay fast and maintainable after launch.",
+        "image": "/b4.svg",
+        "highlights": [
+          "Next.js & React applications",
+          "Python APIs (FastAPI / Django)",
+          "Databases, auth & third-party integrations",
+          "Production performance & reliability"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "UI/UX & Frontend Excellence",
+        "tagline": "Interfaces people enjoy using",
+        "description": "Modern, accessible interfaces with responsive layouts, motion, and design patterns that scale as your product and team grow.",
+        "image": "/app.svg",
+        "highlights": [
+          "Design systems & reusable components",
+          "Mobile-first, responsive layouts",
+          "Accessibility & interaction polish",
+          "Animation & micro-interactions"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Architecture & Technical Advisory",
+        "tagline": "Clarity before you scale",
+        "description": "Stack decisions, system design, and delivery plans — so you invest in the right foundations and ship without costly rework.",
+        "image": "/cloud.svg",
+        "highlights": [
+          "Architecture & API design reviews",
+          "Cloud, DevOps & CI/CD guidance",
+          "Code quality & team mentoring",
+          "AI / ML integration strategy"
+        ]
+      }
+    ]
+  },
+  "approach": {
+    "title": "How I work",
+    "subtitle": "A clear, collaborative process for product teams — aligned with how I deliver on real projects like Plaze, Al Ankabot, and production AI platforms.",
+    "cards": [
+      {
+        "id": 1,
+        "phaseLabel": "01 · Discover",
+        "title": "Align on the problem",
+        "description": "Before code, I clarify goals, users, constraints, and what “done” means for the business.",
+        "highlights": [
+          "Stakeholder & requirement alignment",
+          "Technical feasibility and scope boundaries",
+          "Shared milestones and success criteria"
+        ]
+      },
+      {
+        "id": 2,
+        "phaseLabel": "02 · Build",
+        "title": "Ship with ownership",
+        "description": "Iterative delivery with visible progress — maintainable code, honest estimates, and no surprises.",
+        "highlights": [
+          "Small, reviewable releases — not big-bang handoffs",
+          "Clean APIs, typed frontends, and documented decisions",
+          "Async-friendly updates for distributed teams"
+        ]
+      },
+      {
+        "id": 3,
+        "phaseLabel": "03 · Deliver",
+        "title": "Launch & sustain",
+        "description": "Production-ready outcomes: performance, security basics, and room to grow after go-live.",
+        "highlights": [
+          "Deployment readiness and smoke-tested flows",
+          "Monitoring, fixes, and post-launch iteration",
+          "Knowledge transfer so the team can maintain it"
+        ]
+      }
+    ]
+  },
+  "blogSection": {
+    "title": "Insights & Articles",
+    "description": "Practical notes from courses and projects — what I learned, what I applied, and what is worth your time.",
+    "viewAllLabel": "View all articles",
+    "readLatestLabel": "Read latest article"
+  },
+  "testimonialsSection": {
+    "title": "Voices orbiting the globe",
+    "description": "",
+    "ctaLabel": "Add your review"
+  },
+  "statsSection": {
+    "title": "Impact, Learning & Growth",
+    "description": "What I am learning now, plus verified certificates from IBM, Meta, Google, Stanford, and more — with summaries and skills I use on real work.",
+    "metrics": [
+      {
+        "id": "certs",
+        "label": "Certificates earned",
+        "value": 20,
+        "description": "Verified Coursera credentials"
+      },
+      {
+        "id": "active",
+        "label": "Courses in progress",
+        "value": 5,
+        "description": "Coursera, YouTube, and language learning"
+      },
+      {
+        "id": "ml",
+        "label": "ML & AI completed",
+        "value": 5,
+        "description": "Math, models, and production"
+      },
+      {
+        "id": "platforms",
+        "label": "Learning platforms",
+        "value": 3,
+        "suffix": "",
+        "description": "Coursera · YouTube · VHS portal"
+      }
+    ],
+    "chartTitle": "Certificates completed by year",
+    "chartPoints": [
+      {
+        "id": "2023",
+        "label": "2023",
+        "value": 1
+      },
+      {
+        "id": "2024",
+        "label": "2024",
+        "value": 12
+      },
+      {
+        "id": "2025",
+        "label": "2025",
+        "value": 6
+      },
+      {
+        "id": "2026",
+        "label": "2026",
+        "value": 1
+      }
+    ],
+    "learningTitle": "Learning paths",
+    "learningDescription": "Active courses with progress, plus recent completions. Open a card to continue a course or verify a certificate on Coursera.",
+    "learningItems": [
+      {
+        "id": "progress-os-power",
+        "title": "Operating Systems: Becoming a Power User",
+        "platform": "Coursera",
+        "category": "IT & Infrastructure",
+        "issuer": "Google",
+        "progress": 15,
+        "status": "in_progress",
+        "url": "https://www.coursera.org/learn/os-power-user/home/module/1",
+        "summary": "Shell workflows, processes, package management, and day-to-day power-user skills on desktop OS.",
+        "skills": [
+          "Linux CLI",
+          "Process management",
+          "OS fundamentals"
+        ]
+      },
+      {
+        "id": "progress-cybersec",
+        "title": "Introduction to Cybersecurity Tools & Cyber Attacks",
+        "platform": "Coursera",
+        "category": "Security",
+        "issuer": "IBM",
+        "progress": 50,
+        "status": "in_progress",
+        "url": "https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks/home/welcome",
+        "summary": "Security tooling, common attack types, and how defenders reason about protecting systems.",
+        "skills": [
+          "Cybersecurity basics",
+          "Threat landscape",
+          "Security tools"
+        ]
+      },
+      {
+        "id": "progress-nestjs",
+        "title": "Mastering NestJS",
+        "platform": "Coursera",
+        "category": "Software Development",
+        "issuer": "Packt",
+        "progress": 12,
+        "status": "in_progress",
+        "url": "https://www.coursera.org/learn/packt-mastering-nestjs-4opl7/home/welcome",
+        "summary": "Modular Node back-ends with NestJS — modules, dependency injection, guards, and API structure.",
+        "skills": [
+          "NestJS",
+          "TypeScript",
+          "Node.js",
+          "REST APIs"
+        ]
+      },
+      {
+        "id": "progress-youtube",
+        "title": "Developer skills playlist",
+        "platform": "YouTube",
+        "category": "Software Development",
+        "issuer": "YouTube",
+        "progress": 50,
+        "status": "in_progress",
+        "url": "https://www.youtube.com/show/VLPLF9mJC4RrjIhv0_YjWvC0pmM1EZlVylBt?sbp=KgtEbmV3S01WeWZsRUAB",
+        "summary": "Self-paced video series alongside formal courses — practical topics I apply on real projects.",
+        "skills": [
+          "Self-paced learning",
+          "Hands-on tutorials"
+        ]
+      },
+      {
+        "id": "progress-a2-de",
+        "title": "A2 German Course",
+        "platform": "Other",
+        "category": "Languages",
+        "issuer": "VHS Learning Portal",
+        "progress": 50,
+        "status": "in_progress",
+        "url": "https://a2.vhs-lernportal.de/wws/9.php#/wws/home.php",
+        "summary": "Structured A2 German — grammar, vocabulary, and communication for everyday situations.",
+        "skills": [
+          "German A2",
+          "Grammar",
+          "Listening & reading"
+        ]
+      },
+      {
+        "id": "QNMBYQOL4Q4F",
+        "title": "The Bits and Bytes of Computer Networking",
+        "platform": "Coursera",
+        "category": "IT & Infrastructure",
+        "issuer": "Google",
+        "completedAt": "Feb 2026",
+        "summary": "TCP/IP stack, DNS, DHCP, routing, and how packets move — the networking layer every full-stack dev should understand.",
+        "skills": [
+          "TCP/IP",
+          "DNS",
+          "Routing",
+          "Network troubleshooting",
+          "Cloud networking intro"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/QNMBYQOL4Q4F",
+        "icon": "/certificates/QNMBYQOL4Q4F.png"
+      },
+      {
+        "id": "6LRMHSCGRC8M",
+        "title": "Technical Support Fundamentals",
+        "platform": "Coursera",
+        "category": "IT & Infrastructure",
+        "issuer": "Google",
+        "completedAt": "Sep 2025",
+        "summary": "IT support foundations: troubleshooting methodically, customer communication, hardware, networking, and OS basics.",
+        "skills": [
+          "IT support",
+          "Troubleshooting",
+          "Networking basics",
+          "Operating systems",
+          "Customer service"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/6LRMHSCGRC8M",
+        "icon": "/certificates/6LRMHSCGRC8M.png"
+      },
+      {
+        "id": "IB79ARVQ2NN6",
+        "title": "An Introduction to Ethical Hacking with Kali Linux",
+        "platform": "Coursera",
+        "category": "Security",
+        "issuer": "Packt",
+        "completedAt": "Jul 2025",
+        "summary": "Ethical hacker mindset, reconnaissance, and hands-on security tooling in Kali — always within legal scope.",
+        "skills": [
+          "Ethical hacking",
+          "Kali Linux",
+          "Reconnaissance",
+          "Vulnerability basics",
+          "Security tooling"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/IB79ARVQ2NN6",
+        "icon": "/certificates/IB79ARVQ2NN6.png"
+      },
+      {
+        "id": "IPRGE2XB7R6L",
+        "title": "HTML and CSS in depth",
+        "platform": "Coursera",
+        "category": "Software Development",
+        "issuer": "Meta",
+        "completedAt": "May 2025",
+        "summary": "Production-grade UI: Flexbox, Grid, semantic markup, responsive patterns, motion, and accessible components.",
+        "skills": [
+          "HTML5",
+          "CSS Grid",
+          "Flexbox",
+          "Responsive UI",
+          "CSS animations",
+          "Accessibility"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/IPRGE2XB7R6L",
+        "icon": "/certificates/IPRGE2XB7R6L.png"
+      },
+      {
+        "id": "2WIWFGF9W8LB",
+        "title": "Introduction to Software Engineering",
+        "platform": "Coursera",
+        "category": "Software Development",
+        "issuer": "IBM",
+        "completedAt": "Apr 2025",
+        "summary": "SDLC phases, Agile/Scrum rituals, testing discipline, and professional practices for building software in teams.",
+        "skills": [
+          "SDLC",
+          "Agile",
+          "Scrum",
+          "Git workflows",
+          "Software design",
+          "QA basics"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/2WIWFGF9W8LB",
+        "icon": "/certificates/2WIWFGF9W8LB.png"
+      },
+      {
+        "id": "CDMDLEXQ6NT3",
+        "title": "Mathematics for Machine Learning: Linear Algebra",
+        "platform": "Coursera",
+        "category": "Machine Learning & AI",
+        "issuer": "Imperial College London",
+        "completedAt": "Mar 2025",
+        "summary": "Geometric view of linear algebra — transformations, eigenvalues, and why matrix math powers modern AI models.",
+        "skills": [
+          "Vectors",
+          "Matrices",
+          "Eigenvalues",
+          "Linear transformations",
+          "ML foundations"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/CDMDLEXQ6NT3",
+        "icon": "/certificates/CDMDLEXQ6NT3.png"
+      },
+      {
+        "id": "ICF2ADH90WCR",
+        "title": "Algebra and Differential Calculus for Data Science",
+        "platform": "Coursera",
+        "category": "Machine Learning & AI",
+        "issuer": "University of Colorado Boulder",
+        "completedAt": "Jan 2025",
+        "summary": "Math behind ML: vectors, matrices, derivatives, and gradients — the language optimization algorithms speak.",
+        "skills": [
+          "Linear algebra",
+          "Calculus",
+          "Gradients",
+          "Optimization",
+          "Data science math"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/ICF2ADH90WCR",
+        "icon": "/certificates/ICF2ADH90WCR.png"
+      },
+      {
+        "id": "VIWCLGNJ4VRR",
+        "title": "Version Control",
+        "platform": "Coursera",
+        "category": "Software Development",
+        "issuer": "Meta",
+        "completedAt": "Nov 2024",
+        "summary": "Git workflows for real teams: commits, branches, merges, pull requests, and recovering from conflicts calmly.",
+        "skills": [
+          "Git",
+          "GitHub",
+          "Branching",
+          "Merge conflicts",
+          "Code review"
+        ],
+        "progress": 100,
+        "status": "completed",
+        "url": "https://coursera.org/verify/VIWCLGNJ4VRR",
+        "icon": "/certificates/VIWCLGNJ4VRR.png"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Hiring managers:",
+    "headingHighlight": "let's build your next product together.",
+    "description": "I'm a full-stack developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team-fit conversations.",
+    "badge": "Open to full-time opportunities",
+    "availability": "Remote · Hybrid · Relocation considered",
+    "email": "ahmad.alhalwany@gmail.com",
+    "calendlyUrl": "",
+    "linkedinUrl": "https://www.linkedin.com/in/ahmad-alhalwany/",
+    "resumeUrl": "/resume/ahmad-alhalwany-cv.pdf",
+    "highlights": [
+      {
+        "id": "h1",
+        "value": "3+",
+        "label": "years experience"
+      },
+      {
+        "id": "h2",
+        "value": "Full-stack",
+        "label": "Python & Next.js"
+      },
+      {
+        "id": "h3",
+        "value": "1–2 days",
+        "label": "recruiter reply time"
+      }
+    ],
+    "formTitle": "Send a hiring inquiry",
+    "formDescription": "Include company, role, and stack. Messages go straight to my inbox — built for HR and engineering leads.",
+    "primaryCtaLabel": "Connect on LinkedIn",
+    "calendlyCtaLabel": "Book an intro call",
+    "copyright": "Copyright © 2026 Ahmad Alhalwany",
+    "socialMedia": [
+      {
+        "id": 1,
+        "img": "/git.svg",
+        "link": "https://github.com/ahmad-alhalwany"
+      },
+      {
+        "id": 2,
+        "img": "/twit.svg",
+        "link": "https://x.com/ahmad_alhalwany"
+      },
+      {
+        "id": 3,
+        "img": "/link.svg",
+        "link": "https://www.linkedin.com/in/ahmad-alhalwany/"
+      },
+      {
+        "id": 4,
+        "img": "/insta.png",
+        "link": "https://www.instagram.com/ahmad_al_halwany/"
+      },
+      {
+        "id": 5,
+        "img": "/facebook.png",
+        "link": "https://www.facebook.com/ahmad.alhalwany123"
+      }
+    ]
+  }
+}

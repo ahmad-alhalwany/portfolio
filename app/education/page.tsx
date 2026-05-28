@@ -1,12 +1,5 @@
-import { TracingBeamDemo } from '@/components/TracingBeam'
-import React from 'react'
+import { EducationPageView } from "@/components/education/EducationPageView";
 
-const page = () => {
-  return (
-    <div>
-      <TracingBeamDemo/>
-    </div>
-  )
+export default function EducationPage() {
+  return <EducationPageView />;
 }
-
-export default page

@@ -1,16 +1,25 @@
-"use client"
+"use client";
+
 import { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { IoCopyOutline } from "react-icons/io5";
-
-import Lottie from "react-lottie";
-
+import { FaArrowRight } from "react-icons/fa";
 import { cn } from "@/lib/utils";
-
-
 import { BackgroundGradientAnimation } from "./backgroundGradientAnimation";
-import {GlobeDemo} from "./GridGlobe";
-import animationData from "@/data/confetti.json";
+import dynamic from "next/dynamic";
 import MagicButtons from "./Magic-buttons";
+import { ConfettiLottie } from "./ConfettiLottie";
+import { OptimizedImage } from "./optimized-image";
+import { SIZES } from "@/lib/image-config";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+
+const GlobeDemo = dynamic(() => import("./GridGlobe").then((m) => m.GlobeDemo), {
+  ssr: false,
+});
+
+const STACK_LEFT = ["Python", "Next.js", "TypeScript"];
+const STACK_RIGHT = ["Django", "PostgreSQL", "Tailwind"];
 
 export const BentoGrid = ({
   className,
@@ -22,7 +31,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
+        "mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-6 md:grid-row-7 lg:grid-cols-5 lg:gap-5",
         className
       )}
     >
@@ -50,132 +59,169 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "NextJS", "Typescript"];
-  const rightLists = ["Django", "WordPress", "GraphQL"];
-
   const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  const { t } = useLocale();
 
   const handleCopy = () => {
-    const text = "ahmad.s.alhalwany@gmail.com";
-    navigator.clipboard.writeText(text);
+    if (typeof window === "undefined") return;
+    const text = "ahmad.alhalwany@gmail.com";
+    navigator.clipboard?.writeText(text);
     setCopied(true);
+    window.setTimeout(() => setCopied(false), 2200);
   };
 
   return (
-    <div
-      className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
-        className
-      )}
-      style={{
-        background: "rgb(4,7,29)",
-        backgroundColor:
-          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-      }}
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, delay: id * 0.06 }}
+      className={cn("group/bento relative", className)}
     >
-      <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
-          {img && (
-            <img
-              src={img}
-              alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
-            />
-          )}
-        </div>
-        <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
-        >
-          {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
-              //   width={220}
-              className="object-cover object-center w-full h-full"
-            />
-          )}
-        </div>
-        {id === 6 && (
-          <BackgroundGradientAnimation>
-            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-          </BackgroundGradientAnimation>
+      <div
+        className={cn(
+          "bento-surface relative flex h-full min-h-[10rem] flex-col justify-between overflow-hidden rounded-3xl transition-all duration-300"
         )}
-
+      >
         <div
-          className={cn(
-            titleClassName,
-            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
-          )}
-        >
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
-            {description}
+          className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover/bento:opacity-100"
+          style={{
+            background:
+              "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139,92,246,0.12), transparent 40%)",
+          }}
+        />
+
+        <div className={cn("relative h-full", id === 6 && "flex justify-center")}>
+          <div className="absolute inset-0 overflow-hidden rounded-3xl">
+            {img ? (
+              <>
+                <OptimizedImage
+                  src={img}
+                  alt=""
+                  fill
+                  sizes={SIZES.blogCard}
+                  className={cn(
+                    imgClassName,
+                    "object-cover object-center transition duration-500 group-hover/bento:scale-[1.03]",
+                    id === 1 && "dark:opacity-95"
+                  )}
+                />
+                {(id === 1 || id === 4 || id === 5) && (
+                  <div className="absolute inset-0 bento-img-overlay" />
+                )}
+              </>
+            ) : null}
           </div>
+
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            className={cn(
+              "absolute right-0 -bottom-5 transition duration-500 group-hover/bento:translate-y-[-2px]",
+              id === 5 && "w-full opacity-90"
+            )}
           >
-            {title}
+            {spareImg ? (
+              <div className="relative h-full min-h-[8rem] w-full">
+                <OptimizedImage
+                  src={spareImg}
+                  alt=""
+                  fill
+                  sizes={SIZES.blogCard}
+                  className="object-cover object-center opacity-90 dark:opacity-100"
+                />
+              </div>
+            ) : null}
           </div>
 
-          {id === 2 && <GlobeDemo />}
-
-          {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-              </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
           {id === 6 && (
-            <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
-
-              <MagicButtons
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                postion="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
-            </div>
+            <BackgroundGradientAnimation>
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center" />
+            </BackgroundGradientAnimation>
           )}
+
+          <div
+            className={cn(
+              titleClassName,
+              "relative z-10 flex min-h-40 flex-col px-5 py-6 transition duration-300 md:h-full lg:px-8 lg:py-8",
+              "group-hover/bento:translate-x-1"
+            )}
+          >
+            {description ? (
+              <p className="bento-kicker z-10 max-w-md">{description}</p>
+            ) : null}
+
+            <div
+              className={cn(
+                "bento-title z-10 mt-2 max-w-lg",
+                description ? "mt-3" : "mt-0"
+              )}
+            >
+              {title}
+            </div>
+
+            {id === 2 && (
+              <div className="absolute inset-0 flex items-center justify-end pe-2 opacity-80 dark:opacity-90">
+                <GlobeDemo />
+              </div>
+            )}
+
+            {id === 3 && (
+              <div className="absolute -right-1 bottom-6 flex gap-1.5 lg:-right-2 lg:gap-3">
+                <StackColumn items={STACK_LEFT} delay={0} />
+                <StackColumn items={STACK_RIGHT} delay={0.12} />
+              </div>
+            )}
+
+            {id === 6 && (
+              <div className="relative z-20 mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <Link
+                  href="#contact"
+                  className="group/btn inline-flex items-center gap-2 rounded-xl border border-purple/30 bg-page-card-solid px-4 py-2.5 text-sm font-semibold text-page-fg shadow-sm transition hover:border-purple/50 hover:bg-purple/10 dark:border-white/20 dark:bg-black/40 dark:text-white dark:hover:bg-purple/20"
+                >
+                  {t("bento.contactRoles")}
+                  <FaArrowRight className="h-3 w-3 transition group-hover/btn:translate-x-0.5" />
+                </Link>
+                <MagicButtons
+                  title={copied ? "Copied!" : "Copy email"}
+                  icon={<IoCopyOutline />}
+                  postion="left"
+                  handleClick={handleCopy}
+                  otherClasses="!bg-page-card-solid !text-page-fg !text-xs dark:!bg-[#161A31]/90 dark:!text-white"
+                />
+                <div
+                  className={cn(
+                    "pointer-events-none absolute -bottom-4 right-0",
+                    copied ? "opacity-100" : "opacity-0"
+                  )}
+                >
+                  <ConfettiLottie play={copied} height={160} width={280} />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
+
+function StackColumn({ items, delay }: { items: string[]; delay: number }) {
+  return (
+    <motion.div
+      className="flex flex-col gap-2 lg:gap-3"
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay }}
+    >
+      {items.map((item, i) => (
+        <motion.span
+          key={item}
+          whileHover={{ scale: 1.04, borderColor: "rgba(139,92,246,0.6)" }}
+          className={cn("bento-stack-pill", i === 1 && "lg:opacity-100 opacity-90")}
+        >
+          {item}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+}

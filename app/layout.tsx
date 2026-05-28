@@ -1,35 +1,45 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import "./globals.css";
-import { ThemeProvider } from "./provider";
+import { ClientBoot } from "@/components/root/ClientBoot";
+import { RootJsonLd } from "@/components/seo/RootJsonLd";
+import { rootMetadata } from "@/lib/seo";
+import { getCachedLocalizedContent } from "@/lib/cached-content";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap", preload: true });
 
 export const metadata: Metadata = {
-  title: "Ahmad's Portfolio",
-  description: "Modern & Minimal Ahmad Portfolio",
+  ...rootMetadata,
+  icons: {
+    icon: [{ url: "/profile.svg", type: "image/svg+xml" }],
+  },
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+  },
 };
 
-export default function RootLayout({
+const themeInitScript = `(function(){try{var k="ahmad-portfolio-theme",s=localStorage.getItem(k),r=document.documentElement;if(s==="light"){r.classList.remove("dark");}else{r.classList.add("dark");}}catch(e){document.documentElement.classList.add("dark");}})();`;
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialContent = await getCachedLocalizedContent("en");
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="dark">
       <head>
-        <link rel="icon" href="/logo.png" sizes="any" />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <RootJsonLd />
+        <ClientBoot initialContent={initialContent}>{children}</ClientBoot>
       </body>
     </html>
   );
