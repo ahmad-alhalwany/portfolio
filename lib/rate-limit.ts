@@ -3,12 +3,17 @@ import path from "path";
 
 const storePath = path.join(process.cwd(), "data", "rate-limits.json");
 
+/** Vercel serverless has a read-only filesystem — use in-memory store there. */
+const useMemoryStore = process.env.VERCEL === "1";
+
 type RateLimitEntry = {
   count: number;
   resetAt: number;
 };
 
 type RateLimitStore = Record<string, RateLimitEntry>;
+
+let memoryStore: RateLimitStore = {};
 
 export type RateLimitConfig = {
   /** Unique action key, e.g. `login:192.168.1.1` */
@@ -18,6 +23,10 @@ export type RateLimitConfig = {
 };
 
 async function readStore(): Promise<RateLimitStore> {
+  if (useMemoryStore) {
+    return memoryStore;
+  }
+
   try {
     const raw = await fs.readFile(storePath, "utf8");
     const parsed = JSON.parse(raw) as RateLimitStore;
@@ -28,8 +37,17 @@ async function readStore(): Promise<RateLimitStore> {
 }
 
 async function writeStore(store: RateLimitStore): Promise<void> {
-  await fs.mkdir(path.dirname(storePath), { recursive: true });
-  await fs.writeFile(storePath, JSON.stringify(store, null, 2), "utf8");
+  if (useMemoryStore) {
+    memoryStore = store;
+    return;
+  }
+
+  try {
+    await fs.mkdir(path.dirname(storePath), { recursive: true });
+    await fs.writeFile(storePath, JSON.stringify(store, null, 2), "utf8");
+  } catch {
+    memoryStore = store;
+  }
 }
 
 function prune(store: RateLimitStore): RateLimitStore {

@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getIronSession } from "iron-session";
 import { sessionOptions, SessionData, verifyPassword } from "@/lib/auth";
+import { validateIronSessionPassword } from "@/lib/session";
 import { enforceRateLimit } from "@/lib/security-server";
 
 export async function POST(request: NextRequest) {
   try {
+    const sessionError = validateIronSessionPassword();
+    if (sessionError) {
+      console.error("Login config error:", sessionError);
+      return NextResponse.json(
+        { success: false, message: "Server configuration error. Contact the site owner." },
+        { status: 503 }
+      );
+    }
+
     const rate = await enforceRateLimit(request, "login");
     if (!rate.ok) {
       return NextResponse.json(

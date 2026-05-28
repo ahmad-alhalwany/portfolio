@@ -76,7 +76,7 @@ export function TurnstileWidget({ onToken, onExpire, className }: Props) {
         },
         "error-callback": () => {
           setLoadError(
-            "Turnstile could not load. On production, add your domain in Cloudflare Turnstile → Hostname Management."
+            `Turnstile could not load on "${window.location.hostname}". In Cloudflare Turnstile → Hostname Management, add this exact domain, confirm Site Key + Secret Key match the same widget, then redeploy on Vercel.`
           );
           onExpire?.();
         },
