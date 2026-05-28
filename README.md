@@ -27,7 +27,7 @@ Built by **Ahmad Al-Halwany** — Full-Stack Developer (Python · Next.js · Typ
 | **Stack** | Next.js 14 · React 18 · TypeScript · Tailwind CSS · Framer Motion |
 | **CMS** | JSON-backed content + `/admin` panel with media uploads |
 | **i18n** | English + German (locale toggle, admin-managed overrides) |
-| **Deploy** | Vercel-ready · Sentry · GA4 · Cloudflare Turnstile |
+| **Deploy** | Vercel-ready · Sentry · GA4 |
 
 ---
 
@@ -38,7 +38,7 @@ Built by **Ahmad Al-Halwany** — Full-Stack Developer (Python · Next.js · Typ
 - **📁 Rich project pages** — Case studies, metrics, tech stacks, live demos, GitHub links, and screenshot galleries with lightbox.
 - **📊 Impact & Growth section** — Certificate stats, learning paths, Coursera integrations, and animated charts.
 - **🌍 3D & motion** — Three.js globe for reviews, Framer Motion scroll reveals, page transitions, and micro-interactions.
-- **🔒 Production hardening** — Iron-session admin auth, Turnstile on forms, Sentry error tracking, JSON-LD SEO, sitemap & OG images.
+- **🔒 Production hardening** — Iron-session admin auth, honeypot + rate limits on forms, Sentry error tracking, JSON-LD SEO, sitemap & OG images.
 - **📬 Lead capture** — Hire inquiry form, Calendly embed, newsletter (Buttondown + local fallback), EmailJS contact.
 
 ---
@@ -82,7 +82,7 @@ Next.js 14 (App Router) · React 18 · TypeScript · Tailwind CSS · Framer Moti
 Next.js Route Handlers · JSON file store (`data/content.json`, `data/blog.json`, `data/reviews.json`) · iron-session · bcryptjs · sharp
 
 **Integrations**
-EmailJS · Nodemailer · Cloudflare Turnstile · Google Analytics 4 · Sentry · Buttondown · Calendly
+EmailJS · Nodemailer · Google Analytics 4 · Sentry · Buttondown · Calendly
 
 **Tooling**
 ESLint · PostCSS · Turbopack dev mode
@@ -182,8 +182,8 @@ cp .env.example .env.local
 | `NEXT_PUBLIC_SERVICE_ID` | Optional | EmailJS service ID |
 | `NEXT_PUBLIC_TEMPLATE_ID` | Optional | EmailJS template ID |
 | `NEXT_PUBLIC_USER_ID` | Optional | EmailJS public key |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Optional | Cloudflare Turnstile (forms) |
-| `TURNSTILE_SECRET_KEY` | Optional | Turnstile server verification |
+| `UPSTASH_REDIS_REST_URL` | ✅ Vercel | Shared storage for reviews, comments, subscribers |
+| `UPSTASH_REDIS_REST_TOKEN` | ✅ Vercel | Upstash REST token |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional | Google Analytics 4 |
 | `NEXT_PUBLIC_CALENDLY_URL` | Optional | Calendly booking link |
 | `BUTTONDOWN_API_KEY` | Optional | Newsletter via Buttondown |
@@ -239,7 +239,7 @@ Open [http://localhost:3000](http://localhost:3000) — admin panel at [http://l
 
 - [ ] `NEXT_PUBLIC_SITE_URL` set to your domain
 - [ ] `ADMIN_PASSWORD` + `IRON_SESSION_PASSWORD` set (strong values)
-- [ ] Turnstile keys for spam protection on public forms
+- [ ] Upstash Redis vars set for reviews/comments on Vercel
 - [ ] EmailJS or hire API configured for contact
 - [ ] CV PDF present at `public/resume/ahmad-alhalwany-cv.pdf` or uploaded via admin
 

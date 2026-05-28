@@ -1,12 +1,6 @@
 import { NextRequest } from "next/server";
 import { checkRateLimit } from "./rate-limit";
 import {
-  getHostnameFromRequest,
-  getTurnstileSecretKey,
-  isLocalHost,
-  isTurnstileConfigured,
-} from "./turnstile-config";
-import {
   HONEYPOT_FIELD,
   validateFormTiming,
   validateHoneypot,
@@ -21,6 +15,8 @@ export type GuardAction =
   | "analytics"
   | "newsletter";
 
+const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "[::1]"]);
+
 const RATE_LIMITS: Record<GuardAction, { limit: number; windowMs: number }> = {
   hire: { limit: 5, windowMs: 60 * 60 * 1000 },
   review: { limit: 6, windowMs: 60 * 60 * 1000 },
@@ -31,39 +27,24 @@ const RATE_LIMITS: Record<GuardAction, { limit: number; windowMs: number }> = {
   newsletter: { limit: 6, windowMs: 60 * 60 * 1000 },
 };
 
+function getHostnameFromRequest(request: NextRequest): string {
+  try {
+    return new URL(request.url).hostname;
+  } catch {
+    return "unknown";
+  }
+}
+
+function isLocalHost(hostname: string): boolean {
+  return LOCAL_HOSTS.has(hostname.toLowerCase());
+}
+
 export function getClientIp(request: NextRequest): string {
   const forwarded = request.headers.get("x-forwarded-for");
   if (forwarded) return forwarded.split(",")[0]?.trim() || "unknown";
   const realIp = request.headers.get("x-real-ip");
   if (realIp) return realIp.trim();
   return "unknown";
-}
-
-export async function verifyTurnstileToken(
-  token: string | undefined,
-  request?: NextRequest
-): Promise<boolean> {
-  const hostname = request ? getHostnameFromRequest(request) : "unknown";
-  const secret = getTurnstileSecretKey(hostname);
-  if (!secret) return true;
-
-  if (!token?.trim()) return false;
-
-  try {
-    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ secret, response: token }),
-    });
-    const data = (await res.json()) as { success?: boolean; "error-codes"?: string[] };
-    return Boolean(data.success);
-  } catch {
-    return false;
-  }
-}
-
-export function isTurnstileEnabled(): boolean {
-  return isTurnstileConfigured();
 }
 
 export function shouldSkipRateLimit(request: NextRequest): boolean {
@@ -102,7 +83,7 @@ export async function guardPublicForm(
   request: NextRequest,
   body: Record<string, unknown>,
   action: GuardAction,
-  options?: { skipTiming?: boolean; skipTurnstile?: boolean }
+  options?: { skipTiming?: boolean }
 ): Promise<
   { ok: true } | { ok: false; status: number; message: string; retryAfterSec?: number }
 > {
@@ -124,14 +105,6 @@ export async function guardPublicForm(
     const timingError = validateFormTiming(body.formStartedAt);
     if (timingError) {
       return { ok: false, status: 400, message: timingError };
-    }
-  }
-
-  if (!options?.skipTurnstile && isTurnstileEnabled()) {
-    const token = body.turnstileToken?.toString();
-    const valid = await verifyTurnstileToken(token, request);
-    if (!valid) {
-      return { ok: false, status: 400, message: "Security check failed. Please try again." };
     }
   }
 

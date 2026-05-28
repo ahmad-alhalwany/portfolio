@@ -5,10 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { FaCheck, FaPaperPlane } from "react-icons/fa";
 import {
-  isTurnstileConfigured,
-  TurnstileWidget,
-} from "@/components/security/TurnstileWidget";
-import {
   HONEYPOT_FIELD,
   type HireInquiryInput,
   validateHireInquiry,
@@ -44,10 +40,7 @@ export function HireInquiryForm({ title, description }: Props) {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
   const [honeypot, setHoneypot] = useState("");
-
-  const captchaRequired = isTurnstileConfigured();
 
   const update = (key: keyof FormState, value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -72,12 +65,6 @@ export function HireInquiryForm({ title, description }: Props) {
       return;
     }
 
-    if (captchaRequired && !turnstileToken) {
-      setErrorMessage("Please complete the security check.");
-      setStatus("error");
-      return;
-    }
-
     setStatus("sending");
     setErrorMessage("");
 
@@ -89,7 +76,6 @@ export function HireInquiryForm({ title, description }: Props) {
           ...input,
           [HONEYPOT_FIELD]: honeypot,
           formStartedAt: formStartedAt.current,
-          turnstileToken: turnstileToken || undefined,
         }),
       });
 
@@ -103,7 +89,6 @@ export function HireInquiryForm({ title, description }: Props) {
 
       setStatus("success");
       setForm(initialForm);
-      setTurnstileToken("");
       formStartedAt.current = Date.now();
     } catch (err) {
       setStatus("error");
@@ -208,12 +193,6 @@ export function HireInquiryForm({ title, description }: Props) {
               onChange={(v) => update("message", v)}
               error={errors.message}
               placeholder="Tell me about the team, stack, and what success looks like in the first 90 days…"
-            />
-
-            <TurnstileWidget
-              onToken={setTurnstileToken}
-              onExpire={() => setTurnstileToken("")}
-              className="flex justify-center"
             />
 
             {status === "error" && errorMessage ? (

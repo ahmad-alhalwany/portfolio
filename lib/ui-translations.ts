@@ -41,7 +41,6 @@ export type UiKey =
   | "blog.commentSending"
   | "blog.commentPending"
   | "blog.commentError"
-  | "blog.commentCaptcha"
   | "newsletter.kicker"
   | "newsletter.title"
   | "newsletter.subtitle"
@@ -50,7 +49,6 @@ export type UiKey =
   | "newsletter.sending"
   | "newsletter.consent"
   | "newsletter.consentRequired"
-  | "newsletter.captchaRequired"
   | "newsletter.success"
   | "newsletter.error"
   | "hero.dossierHint"
@@ -187,7 +185,6 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "blog.commentSending": "Sending…",
     "blog.commentPending": "Thanks! Your comment will appear after approval.",
     "blog.commentError": "Could not post your comment. Try again later.",
-    "blog.commentCaptcha": "Please complete the security check.",
     "newsletter.kicker": "Newsletter",
     "newsletter.title": "Stay in the loop",
     "newsletter.subtitle": "Occasional notes on engineering, projects, and new articles — no spam.",
@@ -196,7 +193,6 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "newsletter.sending": "Subscribing…",
     "newsletter.consent": "I agree to receive email updates and can unsubscribe anytime.",
     "newsletter.consentRequired": "Please confirm you want to receive emails.",
-    "newsletter.captchaRequired": "Please complete the security check.",
     "newsletter.success": "Thanks — you are on the list.",
     "newsletter.error": "Could not subscribe. Try again later.",
     "hero.dossierHint": "↓ dossier on the right — pull signal to download",
@@ -336,7 +332,6 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "blog.commentSending": "Wird gesendet…",
     "blog.commentPending": "Danke! Dein Kommentar erscheint nach Freigabe.",
     "blog.commentError": "Kommentar konnte nicht gesendet werden.",
-    "blog.commentCaptcha": "Bitte die Sicherheitsprüfung abschließen.",
     "newsletter.kicker": "Newsletter",
     "newsletter.title": "Auf dem Laufenden bleiben",
     "newsletter.subtitle": "Gelegentliche Updates zu Engineering, Projekten und neuen Artikeln.",
@@ -345,7 +340,6 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "newsletter.sending": "Wird gesendet…",
     "newsletter.consent": "Ich möchte E-Mails erhalten und kann mich jederzeit abmelden.",
     "newsletter.consentRequired": "Bitte bestätige den Erhalt von E-Mails.",
-    "newsletter.captchaRequired": "Bitte die Sicherheitsprüfung abschließen.",
     "newsletter.success": "Danke — du bist auf der Liste.",
     "newsletter.error": "Anmeldung fehlgeschlagen. Bitte später erneut versuchen.",
     "hero.dossierHint": "↓ Dossier rechts — Signal zum Download ziehen",

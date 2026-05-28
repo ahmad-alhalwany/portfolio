@@ -8,10 +8,6 @@ import {
   HONEYPOT_FIELD,
   validateCommentSubmit,
 } from "@/lib/security-shared";
-import {
-  isTurnstileConfigured,
-  TurnstileWidget,
-} from "@/components/security/TurnstileWidget";
 import { BlogCommentPublic } from "@/lib/types";
 
 type Props = {
@@ -27,13 +23,10 @@ export function BlogComments({ postSlug }: Props) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [honeypot, setHoneypot] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState("");
   const [error, setError] = useState("");
-
-  const captchaRequired = isTurnstileConfigured();
 
   const loadComments = useCallback(async () => {
     setLoading(true);
@@ -68,12 +61,6 @@ export function BlogComments({ postSlug }: Props) {
       return;
     }
 
-    if (captchaRequired && !turnstileToken) {
-      setError(t("blog.commentCaptcha"));
-      setSubmitting(false);
-      return;
-    }
-
     try {
       const res = await fetch("/api/comments", {
         method: "POST",
@@ -82,7 +69,6 @@ export function BlogComments({ postSlug }: Props) {
           ...input,
           [HONEYPOT_FIELD]: honeypot,
           formStartedAt: formStartedAt.current,
-          turnstileToken: turnstileToken || undefined,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -93,7 +79,6 @@ export function BlogComments({ postSlug }: Props) {
       setName("");
       setEmail("");
       setMessage("");
-      setTurnstileToken("");
       formStartedAt.current = Date.now();
     } catch (err) {
       setError(err instanceof Error ? err.message : t("blog.commentError"));
@@ -200,12 +185,6 @@ export function BlogComments({ postSlug }: Props) {
           autoComplete="off"
           aria-hidden
         />
-
-        {captchaRequired && (
-          <div className="mt-4">
-            <TurnstileWidget onToken={setTurnstileToken} onExpire={() => setTurnstileToken("")} />
-          </div>
-        )}
 
         <button
           type="submit"

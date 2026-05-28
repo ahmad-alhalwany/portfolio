@@ -8,10 +8,6 @@ import {
   HONEYPOT_FIELD,
   validateNewsletterEmail,
 } from "@/lib/security-shared";
-import {
-  isTurnstileConfigured,
-  TurnstileWidget,
-} from "@/components/security/TurnstileWidget";
 import { formatClientError } from "@/lib/emailjs-client";
 import { cn } from "@/lib/utils";
 
@@ -27,14 +23,12 @@ export function NewsletterSignup({ variant = "footer", className }: Props) {
   const formStartedAt = useRef(Date.now());
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
   const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [fieldError, setFieldError] = useState("");
 
-  const captchaRequired = isTurnstileConfigured();
   const isInline = variant === "inline";
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,12 +51,6 @@ export function NewsletterSignup({ variant = "footer", className }: Props) {
       return;
     }
 
-    if (captchaRequired && !turnstileToken) {
-      setError(t("newsletter.captchaRequired"));
-      setLoading(false);
-      return;
-    }
-
     try {
       const res = await fetch("/api/newsletter/subscribe", {
         method: "POST",
@@ -71,7 +59,6 @@ export function NewsletterSignup({ variant = "footer", className }: Props) {
           email,
           [HONEYPOT_FIELD]: honeypot,
           formStartedAt: formStartedAt.current,
-          turnstileToken: turnstileToken || undefined,
         }),
       });
 
@@ -84,7 +71,6 @@ export function NewsletterSignup({ variant = "footer", className }: Props) {
       setMessage(data.message || t("newsletter.success"));
       setEmail("");
       setConsent(false);
-      setTurnstileToken("");
       formStartedAt.current = Date.now();
     } catch (err) {
       setError(formatClientError(err, t("newsletter.error")));
@@ -183,12 +169,6 @@ export function NewsletterSignup({ variant = "footer", className }: Props) {
             autoComplete="off"
             aria-hidden
           />
-
-          {captchaRequired && (
-            <div className="mt-4 flex justify-center sm:justify-start">
-              <TurnstileWidget onToken={setTurnstileToken} onExpire={() => setTurnstileToken("")} />
-            </div>
-          )}
 
           <AnimatePresence mode="wait">
             {message && (

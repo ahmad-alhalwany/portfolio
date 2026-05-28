@@ -3,10 +3,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
-  isTurnstileConfigured,
-  TurnstileWidget,
-} from "@/components/security/TurnstileWidget";
-import {
   HONEYPOT_FIELD,
   normalizeReviewInput,
   validateReviewSubmit,
@@ -40,13 +36,10 @@ export function AddReviewModal({ open, onClose, onSubmitted }: AddReviewModalPro
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
   const [honeypot, setHoneypot] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-
-  const captchaRequired = isTurnstileConfigured();
 
   const clearAvatarPreview = () => {
     if (avatarBlobRef.current) {
@@ -66,7 +59,6 @@ export function AddReviewModal({ open, onClose, onSubmitted }: AddReviewModalPro
     setRating(5);
     clearAvatarPreview();
     setHoneypot("");
-    setTurnstileToken("");
     setFieldErrors({});
     setSuccess(false);
     setError("");
@@ -101,12 +93,6 @@ export function AddReviewModal({ open, onClose, onSubmitted }: AddReviewModalPro
       return;
     }
 
-    if (captchaRequired && !turnstileToken) {
-      setError("Please complete the security check.");
-      setLoading(false);
-      return;
-    }
-
     try {
       let avatarUrl: string | undefined;
 
@@ -132,7 +118,6 @@ export function AddReviewModal({ open, onClose, onSubmitted }: AddReviewModalPro
           avatar: avatarUrl,
           [HONEYPOT_FIELD]: honeypot,
           formStartedAt: formStartedAt.current,
-          turnstileToken: turnstileToken || undefined,
         }),
       });
 
@@ -324,12 +309,6 @@ export function AddReviewModal({ open, onClose, onSubmitted }: AddReviewModalPro
                   </div>
 
                   <div className="shrink-0 space-y-3 border-t border-slate-800 px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-6">
-                    <TurnstileWidget
-                      onToken={setTurnstileToken}
-                      onExpire={() => setTurnstileToken("")}
-                      className="flex justify-center scale-[0.82] origin-center sm:scale-100"
-                    />
-
                     {error ? (
                       <p className="text-center text-xs text-red-400 sm:text-sm">{error}</p>
                     ) : null}
