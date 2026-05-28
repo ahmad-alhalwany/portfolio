@@ -11,7 +11,9 @@ const inter = Inter({ subsets: ["latin"], display: "swap", preload: true });
 export const metadata: Metadata = {
   ...rootMetadata,
   icons: {
-    icon: [{ url: "/profile.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/code-mark.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/code-mark.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/code-mark.svg", type: "image/svg+xml" }],
   },
   formatDetection: {
     telephone: false,
