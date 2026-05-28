@@ -161,7 +161,7 @@ protfolio/
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/ahmad-alhalwany/protfolio.git
+git clone https://github.com/ahmad-alhalwany/portfolio.git
 cd protfolio
 npm install
 ```
