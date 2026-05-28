@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
 import { enforceRateLimit } from "@/lib/security-server";
+import { runtimeUploadsRoot } from "@/lib/server-storage";
 import { normalizeUploadUrl, sanitizeUploadFileName } from "@/lib/upload-url";
 
 export const dynamic = "force-dynamic";
@@ -57,7 +58,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const uploadsPath = path.join(process.cwd(), "public", "uploads", folder);
+    const uploadsPath = path.join(runtimeUploadsRoot(), folder);
     await fs.mkdir(uploadsPath, { recursive: true });
 
     let fileName: string;

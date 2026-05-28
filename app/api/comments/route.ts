@@ -71,7 +71,8 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 }
     );
-  } catch {
+  } catch (error) {
+    console.error("Comment submit error:", error);
     return NextResponse.json({ error: "Failed to submit comment" }, { status: 500 });
   }
 }

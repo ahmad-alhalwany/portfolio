@@ -1,10 +1,9 @@
-import fs from "fs/promises";
-import path from "path";
+import { readJsonFile, writeJsonFile } from "./server-storage";
 import { Review, ReviewPublic, ReviewStatus } from "./types";
 
-const reviewsPath = path.join(process.cwd(), "data", "reviews.json");
-
 type ReviewsStore = { reviews: Review[] };
+
+const FILE = "reviews.json";
 
 export function coordsFromId(id: string): { lat: number; lng: number } {
   let hash = 0;
@@ -31,17 +30,11 @@ export function toPublicReview(review: Review): ReviewPublic {
 }
 
 async function readStore(): Promise<ReviewsStore> {
-  try {
-    const file = await fs.readFile(reviewsPath, "utf8");
-    return JSON.parse(file) as ReviewsStore;
-  } catch {
-    return { reviews: [] };
-  }
+  return readJsonFile<ReviewsStore>(FILE, { reviews: [] });
 }
 
 async function writeStore(store: ReviewsStore): Promise<void> {
-  await fs.mkdir(path.dirname(reviewsPath), { recursive: true });
-  await fs.writeFile(reviewsPath, JSON.stringify(store, null, 2), "utf8");
+  await writeJsonFile(FILE, store);
 }
 
 export async function getAllReviews(): Promise<Review[]> {

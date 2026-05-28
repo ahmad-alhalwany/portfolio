@@ -1,23 +1,16 @@
-import fs from "fs/promises";
-import path from "path";
+import { readJsonFile, writeJsonFile } from "./server-storage";
 import { BlogComment, BlogCommentPublic, ReviewStatus } from "./types";
 
-const commentsPath = path.join(process.cwd(), "data", "comments.json");
+const FILE = "comments.json";
 
 type CommentsStore = { comments: BlogComment[] };
 
 async function readStore(): Promise<CommentsStore> {
-  try {
-    const file = await fs.readFile(commentsPath, "utf8");
-    return JSON.parse(file) as CommentsStore;
-  } catch {
-    return { comments: [] };
-  }
+  return readJsonFile<CommentsStore>(FILE, { comments: [] });
 }
 
 async function writeStore(store: CommentsStore): Promise<void> {
-  await fs.mkdir(path.dirname(commentsPath), { recursive: true });
-  await fs.writeFile(commentsPath, JSON.stringify(store, null, 2), "utf8");
+  await writeJsonFile(FILE, store);
 }
 
 function toPublic(comment: BlogComment): BlogCommentPublic {
