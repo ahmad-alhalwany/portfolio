@@ -4,12 +4,12 @@
 
 **Production-grade personal portfolio & CMS — built to impress recruiters, clients, and engineering teams.**
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-protfolio.vercel.app-8b5cf6?style=for-the-badge&logo=vercel&logoColor=white)](https://protfolio.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-portfolio--xi--opal--35.vercel.app-8b5cf6?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-xi-opal-35.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-[🌐 Live site](https://protfolio.vercel.app) · [💼 LinkedIn](https://www.linkedin.com/in/ahmad-alhalwany/) · [🐙 GitHub](https://github.com/ahmad-alhalwany) · [📧 Contact](mailto:ahmad.alhalwany@gmail.com)
+[🌐 Live site](https://portfolio-xi-opal-35.vercel.app) · [💼 LinkedIn](https://www.linkedin.com/in/ahmad-alhalwany/) · [🐙 GitHub](https://github.com/ahmad-alhalwany) · [📧 Contact](mailto:ahmad.s.alhalwany@gmail.com)
 
 </div>
 
@@ -23,7 +23,7 @@ Built by **Ahmad Al-Halwany** — Full-Stack Developer (Python · Next.js · Typ
 
 | | |
 |---|---|
-| **Live** | [protfolio.vercel.app](https://protfolio.vercel.app) |
+| **Live** | [portfolio-xi-opal-35.vercel.app](https://portfolio-xi-opal-35.vercel.app) |
 | **Stack** | Next.js 14 · React 18 · TypeScript · Tailwind CSS · Framer Motion |
 | **CMS** | JSON-backed content + `/admin` panel with media uploads |
 | **i18n** | English + German (locale toggle, admin-managed overrides) |
@@ -273,10 +273,10 @@ Use the admin panel to update copy, projects, blog posts, reviews, stats, and Ge
 
 **Ahmad Al-Halwany** — Full-Stack Developer
 
-- 🌐 Portfolio: [protfolio.vercel.app](https://protfolio.vercel.app)
+- 🌐 Portfolio: [portfolio-xi-opal-35.vercel.app](https://portfolio-xi-opal-35.vercel.app)
 - 💼 LinkedIn: [linkedin.com/in/ahmad-alhalwany](https://www.linkedin.com/in/ahmad-alhalwany/)
 - 🐙 GitHub: [github.com/ahmad-alhalwany](https://github.com/ahmad-alhalwany)
-- 📧 Email: [ahmad.alhalwany@gmail.com](mailto:ahmad.alhalwany@gmail.com)
+- 📧 Email: [ahmad.s.alhalwany@gmail.com](mailto:ahmad.s.alhalwany@gmail.com)
 
 ---
 

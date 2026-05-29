@@ -7,7 +7,7 @@ export const defaultContactSection: ContactSection = {
     "I'm a full-stack developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team-fit conversations.",
   badge: "Open to full-time opportunities",
   availability: "Remote · Hybrid · Relocation considered",
-  email: "ahmad.alhalwany@gmail.com",
+  email: "ahmad.s.alhalwany@gmail.com",
   calendlyUrl: "",
   linkedinUrl: "https://www.linkedin.com/in/ahmad-alhalwany/",
   resumeUrl: "/resume/ahmad-alhalwany-cv.pdf",

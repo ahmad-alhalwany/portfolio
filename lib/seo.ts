@@ -9,7 +9,7 @@ export const siteConfig = {
     "Full-stack developer specializing in Python, Next.js, and scalable web applications. Open to full-time roles. Portfolio, projects, blog, and contact.",
   locale: "en_US",
   language: "en",
-  email: "ahmad.alhalwany@gmail.com",
+  email: "ahmad.s.alhalwany@gmail.com",
   twitterHandle: "@ahmad_alhalwany",
   githubUrl: "https://github.com/ahmad-alhalwany",
   linkedinUrl: "https://www.linkedin.com/in/ahmad-alhalwany/",

@@ -47,7 +47,7 @@ data.workExperience = [
     company: "Al Ankabot",
     role: "Lead Full-Stack Developer",
     period: "Oct 2024 — Jan 2026",
-    location: "Remote",
+    location: "Syria — Remote",
     employmentType: "full-time",
     desc: "Led end-to-end development of a secure transaction platform with web and desktop clients.",
     className: "md:col-span-2",
