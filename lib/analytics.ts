@@ -1,5 +1,3 @@
-import fs from "fs/promises";
-import path from "path";
 import {
   type AnalyticsDashboard,
   type AnalyticsEvent,
@@ -8,6 +6,7 @@ import {
   normalizeTrafficSource,
   shouldSkipAnalyticsPath,
 } from "./analytics-shared";
+import { readJsonFile, writeJsonFile } from "./server-storage";
 
 export type {
   AnalyticsDashboard,
@@ -17,7 +16,7 @@ export type {
 
 export { isBotUserAgent, normalizeTrafficSource, shouldSkipAnalyticsPath } from "./analytics-shared";
 
-const analyticsPath = path.join(process.cwd(), "data", "analytics.json");
+const ANALYTICS_FILE = "analytics.json";
 const MAX_EVENTS = 5000;
 const DEDUP_MS = 30_000;
 
@@ -43,18 +42,12 @@ function rangeStart(range: AnalyticsRange): Date | null {
 }
 
 async function readStore(): Promise<AnalyticsStore> {
-  try {
-    const file = await fs.readFile(analyticsPath, "utf8");
-    const parsed = JSON.parse(file) as AnalyticsStore;
-    return { events: Array.isArray(parsed.events) ? parsed.events : [] };
-  } catch {
-    return { events: [] };
-  }
+  const parsed = await readJsonFile<AnalyticsStore>(ANALYTICS_FILE, { events: [] });
+  return { events: Array.isArray(parsed.events) ? parsed.events : [] };
 }
 
 async function writeStore(store: AnalyticsStore): Promise<void> {
-  await fs.mkdir(path.dirname(analyticsPath), { recursive: true });
-  await fs.writeFile(analyticsPath, JSON.stringify(store, null, 2), "utf8");
+  await writeJsonFile(ANALYTICS_FILE, store);
 }
 
 function siteHostFromEnv(): string | undefined {
@@ -82,6 +75,11 @@ export async function recordPageView(input: {
     return { recorded: false };
   }
 
+  const source = normalizeTrafficSource(input.referrer, siteHostFromEnv());
+  if (source === "localhost" || source === "127.0.0.1" || source === "[::1]") {
+    return { recorded: false };
+  }
+
   const sessionId = input.sessionId.slice(0, 64) || "anonymous";
   const store = await readStore();
   const now = Date.now();
@@ -100,7 +98,7 @@ export async function recordPageView(input: {
     id: `evt-${now}-${Math.random().toString(36).slice(2, 9)}`,
     path: pathValue,
     referrer: input.referrer.slice(0, 2048),
-    source: normalizeTrafficSource(input.referrer, siteHostFromEnv()),
+    source,
     sessionId,
     createdAt: new Date(now).toISOString(),
   };

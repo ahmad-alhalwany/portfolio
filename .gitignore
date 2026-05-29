@@ -34,6 +34,7 @@ yarn-error.log*
 data/subscribers.json
 data/comments.json
 data/rate-limits.json
+data/analytics.json
 
 # vercel
 .vercel
