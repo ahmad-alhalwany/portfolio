@@ -15,6 +15,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     ctaLabel: "Projekte entdecken",
     secondaryCtaLabel: "Einstellung? Kontakt",
     resumeLabel: "Dossier laden",
+    resumeLabelDe: "Lebenslauf laden",
     resumeTagline: "Lebenslauf · verschlüsselt",
   },
   aboutSection: {

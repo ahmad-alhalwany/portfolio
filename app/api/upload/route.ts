@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
+import { isAdminRequest } from "@/lib/admin-auth";
 import { enforceRateLimit } from "@/lib/security-server";
 import { runtimeUploadsRoot } from "@/lib/server-storage";
 import { normalizeUploadUrl, sanitizeUploadFileName } from "@/lib/upload-url";
@@ -8,7 +9,7 @@ import { normalizeUploadUrl, sanitizeUploadFileName } from "@/lib/upload-url";
 export const dynamic = "force-dynamic";
 
 const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
-const MAX_RESUME_BYTES = 5 * 1024 * 1024;
+const MAX_RESUME_BYTES = 8 * 1024 * 1024;
 const ALLOWED_IMAGE_TYPES = new Set([
   "image/jpeg",
   "image/png",
@@ -16,7 +17,19 @@ const ALLOWED_IMAGE_TYPES = new Set([
   "image/gif",
   "image/svg+xml",
 ]);
-const ALLOWED_RESUME_TYPES = new Set(["application/pdf"]);
+const ALLOWED_RESUME_TYPES = new Set([
+  "application/pdf",
+  "application/x-pdf",
+  "application/octet-stream",
+  "",
+]);
+
+function isPdfFile(file: File): boolean {
+  if (ALLOWED_RESUME_TYPES.has(file.type)) {
+    return file.name.toLowerCase().endsWith(".pdf");
+  }
+  return file.name.toLowerCase().endsWith(".pdf");
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,6 +37,13 @@ export async function POST(request: NextRequest) {
     const file = formData.get("file");
     const folder = formData.get("folder")?.toString().replace(/[^a-zA-Z0-9_-]/g, "") || "uploads";
     const replaceFile = formData.get("replace")?.toString();
+
+    if (folder !== "reviews") {
+      const admin = await isAdminRequest(request);
+      if (!admin) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
+    }
 
     // Review avatars are rate-limited on POST /api/reviews — avoid double limit with project uploads
     if (folder !== "reviews") {
@@ -44,9 +64,9 @@ export async function POST(request: NextRequest) {
 
     if (isResumeUpload) {
       if (file.size > MAX_RESUME_BYTES) {
-        return NextResponse.json({ error: "File too large (max 5MB)" }, { status: 400 });
+        return NextResponse.json({ error: "File too large (max 8MB)" }, { status: 400 });
       }
-      if (!ALLOWED_RESUME_TYPES.has(file.type)) {
+      if (!isPdfFile(file)) {
         return NextResponse.json({ error: "Only PDF files are allowed" }, { status: 400 });
       }
     } else {

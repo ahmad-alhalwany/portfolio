@@ -73,7 +73,10 @@ function FooterBrand() {
 
 function CenteredFooterBar({ contact }: { contact: ContactSection }) {
   const { locale, t } = useLocale();
-  const footerLinks = getFooterNavLinks(locale);
+  const footerLinks = getFooterNavLinks(locale, {
+    en: contact.resumeUrl,
+    de: contact.resumeUrlDe,
+  });
 
   return (
     <div className="relative z-10 mx-auto mt-8 max-w-4xl px-4">

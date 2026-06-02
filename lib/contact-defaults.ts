@@ -10,7 +10,8 @@ export const defaultContactSection: ContactSection = {
   email: "ahmad.s.alhalwany@gmail.com",
   calendlyUrl: "",
   linkedinUrl: "https://www.linkedin.com/in/ahmad-alhalwany/",
-  resumeUrl: "/resume/ahmad-alhalwany-cv.pdf",
+  resumeUrl: "/resume/ahmad-alhalwany-cv-en.pdf",
+  resumeUrlDe: "/resume/ahmad-alhalwany-cv-de.pdf",
   highlights: [
     { id: "h1", value: "3+", label: "years experience" },
     { id: "h2", value: "Full-stack", label: "Python & Next.js" },

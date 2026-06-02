@@ -10,12 +10,20 @@ import {
 } from "framer-motion";
 import { FaFilePdf } from "react-icons/fa";
 import { ConfettiLottie } from "@/components/ui/ConfettiLottie";
-import { RESUME_DOWNLOAD_NAME, RESUME_PATH, triggerResumeDownload } from "@/lib/resume";
+import {
+  RESUME_DOWNLOAD_NAME_DE,
+  RESUME_DOWNLOAD_NAME_EN,
+  RESUME_PATH_DE,
+  RESUME_PATH_EN,
+  triggerResumeDownload,
+} from "@/lib/resume";
 import { cn } from "@/lib/utils";
 
 type Props = {
   resumeUrl?: string;
+  resumeUrlDe?: string;
   label?: string;
+  labelDe?: string;
   tagline?: string;
   variant?: "hero" | "compact";
   className?: string;
@@ -26,8 +34,10 @@ type Phase = "idle" | "extracting" | "done";
 const ORBIT_WORDS = ["HIRABLE", "PDF", "FULL-STACK", "OPEN"];
 
 export function CVShowcase({
-  resumeUrl = RESUME_PATH,
+  resumeUrl = RESUME_PATH_EN,
+  resumeUrlDe = RESUME_PATH_DE,
   label = "Extract dossier",
+  labelDe = "Lebenslauf laden",
   tagline = "Lebenslauf · classified",
   variant = "hero",
   className,
@@ -75,11 +85,11 @@ export function CVShowcase({
     setHovering(false);
   };
 
-  const download = () => {
+  const downloadEn = () => {
     if (phase === "extracting") return;
     setPhase("extracting");
     window.setTimeout(() => {
-      triggerResumeDownload(resumeUrl);
+      triggerResumeDownload(resumeUrl, RESUME_DOWNLOAD_NAME_EN);
       setCelebrate(true);
       setPhase("done");
       window.setTimeout(() => {
@@ -89,21 +99,30 @@ export function CVShowcase({
     }, 700);
   };
 
+  const downloadDe = () => {
+    triggerResumeDownload(resumeUrlDe, RESUME_DOWNLOAD_NAME_DE);
+  };
+
   if (variant === "compact") {
     return (
-      <button
-        type="button"
-        onClick={() => {
-          triggerResumeDownload(resumeUrl);
-        }}
-        className={cn(
-          "relative inline-flex items-center gap-1.5 rounded-full border border-purple/40 bg-purple/10 px-3 py-1.5 text-xs font-semibold text-purple transition hover:bg-purple/20",
-          className
-        )}
-      >
-        <FaFilePdf className="h-3 w-3" />
-        CV
-      </button>
+      <div className={cn("flex flex-wrap gap-2", className)}>
+        <button
+          type="button"
+          onClick={() => triggerResumeDownload(resumeUrl, RESUME_DOWNLOAD_NAME_EN)}
+          className="relative inline-flex items-center gap-1.5 rounded-full border border-purple/40 bg-purple/10 px-3 py-1.5 text-xs font-semibold text-purple transition hover:bg-purple/20"
+        >
+          <FaFilePdf className="h-3 w-3" />
+          EN
+        </button>
+        <button
+          type="button"
+          onClick={() => triggerResumeDownload(resumeUrlDe, RESUME_DOWNLOAD_NAME_DE)}
+          className="relative inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold text-cyan-300 transition hover:bg-cyan-500/15"
+        >
+          <FaFilePdf className="h-3 w-3" />
+          DE
+        </button>
+      </div>
     );
   }
 
@@ -139,16 +158,16 @@ export function CVShowcase({
         onMouseMove={onMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={resetTilt}
-        onClick={download}
+        onClick={downloadEn}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            download();
+            downloadEn();
           }
         }}
         role="button"
         tabIndex={0}
-        aria-label={`${label} — ${RESUME_DOWNLOAD_NAME}`}
+        aria-label={`${label} — ${RESUME_DOWNLOAD_NAME_EN}`}
         className="group relative h-[min(88vw,340px)] w-[min(88vw,340px)] cursor-pointer sm:h-[360px] sm:w-[360px]"
         style={{ perspective: 1600 }}
         animate={extracting ? { scale: 0.96 } : { scale: 1 }}
@@ -288,23 +307,47 @@ export function CVShowcase({
 
                 <motion.div
                   className={cn(
-                    "relative mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold uppercase tracking-wider",
+                    "relative mt-5 grid grid-cols-2 gap-2",
                     done
                       ? "bg-emerald-500/20 text-emerald-300"
-                      : "bg-gradient-to-r from-purple/90 to-violet-600 text-white"
+                      : ""
                   )}
-                  animate={hovering && !extracting ? { letterSpacing: "0.2em" } : { letterSpacing: "0.12em" }}
                 >
-                  {extracting ? (
-                    <span className="flex items-center gap-2">
-                      <span className="h-3 w-3 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-                      Extracting…
-                    </span>
-                  ) : done ? (
-                    "Transmitted ✓"
-                  ) : (
-                    label
-                  )}
+                  <motion.button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      downloadEn();
+                    }}
+                    className={cn(
+                      "col-span-2 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-bold uppercase tracking-wider sm:col-span-1",
+                      done
+                        ? "bg-emerald-500/20 text-emerald-300"
+                        : "bg-gradient-to-r from-purple/90 to-violet-600 text-white"
+                    )}
+                    animate={hovering && !extracting ? { letterSpacing: "0.16em" } : { letterSpacing: "0.1em" }}
+                  >
+                    {extracting ? (
+                      <span className="flex items-center gap-2">
+                        <span className="h-3 w-3 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                        …
+                      </span>
+                    ) : done ? (
+                      "EN ✓"
+                    ) : (
+                      label
+                    )}
+                  </motion.button>
+                  <motion.button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      downloadDe();
+                    }}
+                    className="col-span-2 flex items-center justify-center gap-2 rounded-lg border border-cyan-500/40 bg-cyan-500/10 py-2.5 text-xs font-bold uppercase tracking-wider text-cyan-100 transition hover:bg-cyan-500/20 sm:col-span-1"
+                  >
+                    {labelDe}
+                  </motion.button>
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -329,7 +372,7 @@ export function CVShowcase({
         {extracting ? "Packaging encrypted dossier…" : statusText}
       </motion.p>
       <p className="mt-1 text-center text-[10px] text-slate-600">
-        Tap the core · {RESUME_DOWNLOAD_NAME}
+        Tap the core for English · {labelDe} for German
       </p>
     </motion.div>
   );

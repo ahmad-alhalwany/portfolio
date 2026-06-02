@@ -42,6 +42,8 @@ const NAV_ICONS: Record<string, IconType> = {
   work: FaBriefcase,
   contact: FaEnvelope,
   cv: FaFilePdf,
+  "cv-en": FaFilePdf,
+  "cv-de": FaFilePdf,
 };
 
 const SECTION_IDS = [

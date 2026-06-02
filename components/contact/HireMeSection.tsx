@@ -7,7 +7,6 @@ import {
   FaBriefcase,
   FaCalendarAlt,
   FaCopy,
-  FaDownload,
   FaLinkedinIn,
   FaCheck,
 } from "react-icons/fa";
@@ -17,7 +16,7 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { HireInquiryForm } from "./HireInquiryForm";
 import { cn } from "@/lib/utils";
-import { RESUME_PATH, triggerResumeDownload } from "@/lib/resume";
+import { ResumeDownloads, resumeUrlsFromContent } from "@/components/resume/ResumeDownloads";
 import { buildIntroCallMailto, resolveCalendlyUrl } from "@/lib/calendly";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
@@ -201,16 +200,14 @@ export default function HireMeSection({ contact }: { contact: ContactSection }) 
               )}
             </button>
 
-            {(contact.resumeUrl || RESUME_PATH) ? (
-              <button
-                type="button"
-                onClick={() => triggerResumeDownload(contact.resumeUrl || RESUME_PATH)}
-                className="inline-flex items-center gap-2 rounded-xl border border-dashed border-purple/40 bg-purple/5 px-5 py-3 text-sm font-medium text-purple transition hover:border-purple/60 hover:bg-purple/10"
-              >
-                <FaDownload />
-                Download Resume
-              </button>
-            ) : null}
+            <ResumeDownloads
+              urls={resumeUrlsFromContent({
+                resumeUrl: contact.resumeUrl,
+                resumeUrlDe: contact.resumeUrlDe,
+              })}
+              enLabel="Download CV · English"
+              deLabel="Download CV · Deutsch"
+            />
           </div>
         </motion.div>
 

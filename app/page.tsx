@@ -7,7 +7,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
 import { LocalizedSkeleton } from "@/components/ui/localized-skeleton";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
-import { RESUME_PATH } from "@/lib/resume";
+import { RESUME_PATH_DE, RESUME_PATH_EN } from "@/lib/resume";
 import { HeroSection, ApproachSection } from "@/lib/types";
 import { emptyBlogSection, emptyTestimonialsSection } from "@/lib/empty-section-defaults";
 import { getFullEducationItems, resolveStatsSection } from "@/lib/certificates-catalog";
@@ -96,7 +96,8 @@ const defaultHero: HeroSection = {
   ctaLink: "#projects",
   secondaryCtaLabel: "Hiring? Let's talk",
   secondaryCtaLink: "#contact",
-  resumeUrl: RESUME_PATH,
+  resumeUrl: RESUME_PATH_EN,
+  resumeUrlDe: RESUME_PATH_DE,
   resumeLabel: "Extract dossier",
   resumeTagline: "Lebenslauf · encrypted",
 };
@@ -140,9 +141,16 @@ const defaultContactSocial = [
 
 const Home = () => {
   const { content, locale, t } = useLocale();
-  const navItems = React.useMemo(() => getSiteNavItems(locale), [locale]);
-
   const hero = content?.hero ?? defaultHero;
+  const navItems = React.useMemo(
+    () =>
+      getSiteNavItems(locale, {
+        en: hero.resumeUrl,
+        de: hero.resumeUrlDe,
+      }),
+    [locale, hero.resumeUrl, hero.resumeUrlDe]
+  );
+
   const gridItems = content?.gridItems ?? defaultGridItems;
   const projects = content?.projects ?? defaultProjects;
   const workExperience =

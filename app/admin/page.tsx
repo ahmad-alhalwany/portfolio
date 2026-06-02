@@ -142,12 +142,21 @@ const AdminPage = () => {
     });
   };
 
-  const updateResumeUrl = (url: string) => {
+  const updateResumeUrlEn = (url: string) => {
     if (!content) return;
     setContent({
       ...content,
       hero: { ...content.hero, resumeUrl: url },
       contact: { ...content.contact, resumeUrl: url },
+    });
+  };
+
+  const updateResumeUrlDe = (url: string) => {
+    if (!content) return;
+    setContent({
+      ...content,
+      hero: { ...content.hero, resumeUrlDe: url },
+      contact: { ...content.contact, resumeUrlDe: url },
     });
   };
 
@@ -791,12 +800,15 @@ const AdminPage = () => {
         body: JSON.stringify(payload),
       });
 
+      const data = (await response.json()) as Content & { error?: string };
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Save failed");
+        throw new Error(data.error || `Save failed (${response.status})`);
       }
 
-      setContent(payload);
+      setContent({
+        ...data,
+        projects: data.projects.map((p) => normalizeProjectImages(p)),
+      });
       setSavedMessage("Content saved successfully.");
     } catch (error) {
       setErrorMessage(String(error));
@@ -1003,16 +1015,31 @@ const AdminPage = () => {
               />
             </label>
             <AdminResumeUpload
-              label="Resume PDF"
-              hint="Upload your CV. Preview, replace, or remove it here. Used in Hero, nav, and Contact."
+              label="Resume PDF (English)"
+              hint="English CV — used in Hero, nav, Contact, and Experience page."
               value={content.hero.resumeUrl ?? ""}
-              onChange={updateResumeUrl}
+              onChange={updateResumeUrlEn}
+            />
+            <AdminResumeUpload
+              label="Resume PDF (German / Deutsch)"
+              hint="German CV (Lebenslauf) — second download option across the site."
+              value={content.hero.resumeUrlDe ?? ""}
+              onChange={updateResumeUrlDe}
             />
             <label className="space-y-2 text-sm">
-              CV button label
+              CV button label (English)
               <input
                 value={content.hero.resumeLabel ?? ""}
                 onChange={(event) => updateHeroField("resumeLabel", event.target.value)}
+                className="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-white"
+              />
+            </label>
+            <label className="space-y-2 text-sm">
+              CV button label (German)
+              <input
+                value={content.hero.resumeLabelDe ?? ""}
+                onChange={(event) => updateHeroField("resumeLabelDe", event.target.value)}
+                placeholder="Lebenslauf laden"
                 className="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-white"
               />
             </label>

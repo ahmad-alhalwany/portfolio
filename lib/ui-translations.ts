@@ -15,6 +15,8 @@ export type UiKey =
   | "nav.approach"
   | "nav.contact"
   | "nav.cv"
+  | "nav.cvEn"
+  | "nav.cvDe"
   | "nav.portfolio"
   | "nav.navigate"
   | "nav.close"
@@ -127,6 +129,9 @@ export type UiKey =
   | "experience.page.stat.companies"
   | "experience.page.stat.years"
   | "experience.page.downloadCv"
+  | "experience.page.downloadCvDe"
+  | "contact.downloadCvEn"
+  | "contact.downloadCvDe"
   | "experience.page.filter.all"
   | "experience.page.filter.fulltime"
   | "experience.page.filter.internship"
@@ -159,6 +164,8 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "nav.approach": "Approach",
     "nav.contact": "Contact",
     "nav.cv": "CV",
+    "nav.cvEn": "CV · EN",
+    "nav.cvDe": "CV · DE",
     "nav.portfolio": "Portfolio",
     "nav.navigate": "Navigate",
     "nav.close": "Close",
@@ -274,7 +281,10 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "experience.page.stat.roles": "Roles",
     "experience.page.stat.companies": "Companies",
     "experience.page.stat.years": "Years active",
-    "experience.page.downloadCv": "Download full CV",
+    "experience.page.downloadCv": "Download CV (English)",
+    "experience.page.downloadCvDe": "Download CV (German)",
+    "contact.downloadCvEn": "Download CV · English",
+    "contact.downloadCvDe": "Download CV · Deutsch",
     "experience.page.filter.all": "All roles",
     "experience.page.filter.fulltime": "Full-time",
     "experience.page.filter.internship": "Internships",
@@ -306,6 +316,8 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "nav.approach": "Arbeitsweise",
     "nav.contact": "Kontakt",
     "nav.cv": "CV",
+    "nav.cvEn": "CV · EN",
+    "nav.cvDe": "CV · DE",
     "nav.portfolio": "Portfolio",
     "nav.navigate": "Navigation",
     "nav.close": "Schließen",
@@ -422,7 +434,10 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "experience.page.stat.roles": "Rollen",
     "experience.page.stat.companies": "Unternehmen",
     "experience.page.stat.years": "Aktive Jahre",
-    "experience.page.downloadCv": "Vollständigen CV laden",
+    "experience.page.downloadCv": "CV laden (Englisch)",
+    "experience.page.downloadCvDe": "CV laden (Deutsch)",
+    "contact.downloadCvEn": "CV · Englisch",
+    "contact.downloadCvDe": "CV · Deutsch",
     "experience.page.filter.all": "Alle Rollen",
     "experience.page.filter.fulltime": "Vollzeit",
     "experience.page.filter.internship": "Praktika",

@@ -3,7 +3,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { HeroSection } from "@/lib/types";
 import { CVShowcase } from "./resume/CVShowcase";
 import { HeroIntro } from "./hero/HeroIntro";
-import { RESUME_PATH } from "@/lib/resume";
+import { RESUME_PATH_EN } from "@/lib/resume";
 
 type HeroProps = {
   hero: HeroSection;
@@ -25,8 +25,10 @@ const Hero = ({ hero }: HeroProps) => {
         <div className="flex w-full max-w-6xl flex-col items-center gap-14 px-2 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-6">
           <HeroIntro hero={hero} />
           <CVShowcase
-            resumeUrl={hero.resumeUrl ?? RESUME_PATH}
+            resumeUrl={hero.resumeUrl ?? RESUME_PATH_EN}
+            resumeUrlDe={hero.resumeUrlDe}
             label={hero.resumeLabel ?? "Extract dossier"}
+            labelDe={hero.resumeLabelDe ?? "Lebenslauf laden"}
             tagline={hero.resumeTagline ?? "Lebenslauf · encrypted"}
             className="lg:shrink-0"
           />

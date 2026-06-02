@@ -1,4 +1,4 @@
-import { RESUME_PATH } from "@/lib/resume";
+import { getResumeDeUrl, getResumeEnUrl, resolveResumeUrl, type ResumeUrls } from "@/lib/resume";
 import { Locale } from "@/lib/locale";
 import { t, UiKey } from "@/lib/ui-translations";
 
@@ -12,13 +12,19 @@ export type SiteNavItem = {
   download?: boolean;
 };
 
-function navIdFromLink(link: string): string {
+function navIdFromLink(link: string, key: string): string {
+  if (key.startsWith("nav.cv")) return key === "nav.cvDe" ? "cv-de" : "cv-en";
   if (link.startsWith("#")) return link.slice(1);
   if (link === "/") return "home";
   return "blog";
 }
 
-const NAV_KEYS: { key: UiKey; link: string; primary?: boolean; download?: boolean }[] = [
+const NAV_KEYS: {
+  key: UiKey;
+  link: string | ((resume: ResumeUrls) => string);
+  primary?: boolean;
+  download?: boolean;
+}[] = [
   { key: "nav.home", link: "#home", primary: true },
   { key: "nav.about", link: "#about" },
   { key: "nav.skills", link: "#skills" },
@@ -32,17 +38,30 @@ const NAV_KEYS: { key: UiKey; link: string; primary?: boolean; download?: boolea
   { key: "nav.experience", link: "#work", primary: true },
   { key: "nav.approach", link: "#approach" },
   { key: "nav.contact", link: "#contact", primary: true },
-  { key: "nav.cv", link: RESUME_PATH, download: true, primary: true },
+  {
+    key: "nav.cvEn",
+    link: (resume) => resolveResumeUrl(getResumeEnUrl(resume)),
+    download: true,
+    primary: true,
+  },
+  {
+    key: "nav.cvDe",
+    link: (resume) => resolveResumeUrl(getResumeDeUrl(resume)),
+    download: true,
+  },
 ];
 
-export function getSiteNavItems(locale: Locale): SiteNavItem[] {
-  return NAV_KEYS.map(({ key, link, primary, download }) => ({
-    name: t(locale, key),
-    link,
-    id: navIdFromLink(link),
-    primary,
-    download,
-  }));
+export function getSiteNavItems(locale: Locale, resumeUrls: ResumeUrls = {}): SiteNavItem[] {
+  return NAV_KEYS.map(({ key, link, primary, download }) => {
+    const resolvedLink = typeof link === "function" ? link(resumeUrls) : link;
+    return {
+      name: t(locale, key),
+      link: resolvedLink,
+      id: navIdFromLink(resolvedLink, key),
+      primary,
+      download,
+    };
+  });
 }
 
 export function getBlogNavItems(locale: Locale): SiteNavItem[] {

@@ -21,8 +21,10 @@
     "ctaLink": "#projects",
     "secondaryCtaLabel": "Hiring? Let's talk",
     "secondaryCtaLink": "#contact",
-    "resumeUrl": "/resume/ahmad-alhalwany-cv.pdf",
+    "resumeUrl": "/resume/ahmad-alhalwany-cv-en.pdf",
+    "resumeUrlDe": "/resume/ahmad-alhalwany-cv-de.pdf",
     "resumeLabel": "Extract dossier",
+    "resumeLabelDe": "Lebenslauf laden",
     "resumeTagline": "Lebenslauf · encrypted"
   },
   "aboutSection": {
@@ -2514,7 +2516,8 @@
     "email": "ahmad.s.alhalwany@gmail.com",
     "calendlyUrl": "",
     "linkedinUrl": "https://www.linkedin.com/in/ahmad-alhalwany/",
-    "resumeUrl": "/resume/ahmad-alhalwany-cv.pdf",
+    "resumeUrl": "/resume/ahmad-alhalwany-cv-en.pdf",
+    "resumeUrlDe": "/resume/ahmad-alhalwany-cv-de.pdf",
     "highlights": [
       {
         "id": "h1",

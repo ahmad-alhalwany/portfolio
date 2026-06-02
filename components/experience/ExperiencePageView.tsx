@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FaArrowLeft,
   FaBriefcase,
-  FaFilePdf,
   FaLayerGroup,
   FaRocket,
   FaUserTie,
@@ -16,7 +15,7 @@ import { inferEmploymentType } from "@/lib/work-experience-utils";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { ExperienceRoleCard } from "./ExperienceRoleCard";
-import { resolveResumeUrl } from "@/lib/resume";
+import { ResumeDownloads, resumeUrlsFromContent } from "@/components/resume/ResumeDownloads";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { defaultWorkExperience } from "@/lib/work-defaults";
@@ -153,14 +152,15 @@ export function ExperiencePageView() {
           </motion.div>
 
           <div className="mt-8 flex justify-center">
-            <a
-              href={resolveResumeUrl(content?.hero.resumeUrl ?? content?.contact.resumeUrl)}
-              download
-              className="btn-press inline-flex items-center gap-2 rounded-full border border-purple/40 bg-purple/10 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-purple/20"
-            >
-              <FaFilePdf className="h-4 w-4 text-purple" />
-              {t("experience.page.downloadCv")}
-            </a>
+            <ResumeDownloads
+              urls={resumeUrlsFromContent({
+                resumeUrl: content?.hero.resumeUrl ?? content?.contact.resumeUrl,
+                resumeUrlDe: content?.hero.resumeUrlDe ?? content?.contact.resumeUrlDe,
+              })}
+              enLabel={t("experience.page.downloadCv")}
+              deLabel={t("experience.page.downloadCvDe")}
+              variant="links"
+            />
           </div>
         </div>
       </header>

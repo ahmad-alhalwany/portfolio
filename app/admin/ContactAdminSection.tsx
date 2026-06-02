@@ -185,14 +185,26 @@ export function ContactAdminSection({ content, setContent }: Props) {
           )}
         </label>
         <AdminResumeUpload
-          label="Resume PDF"
-          hint="Same CV as Hero. Updating here also updates the Hero section."
+          label="Resume PDF (English)"
+          hint="English CV — synced with Hero section."
           value={contact.resumeUrl ?? ""}
           onChange={(url) => {
             setContent({
               ...content,
               hero: { ...content.hero, resumeUrl: url },
               contact: { ...contact, resumeUrl: url },
+            });
+          }}
+        />
+        <AdminResumeUpload
+          label="Resume PDF (German)"
+          hint="German Lebenslauf — synced with Hero section."
+          value={contact.resumeUrlDe ?? ""}
+          onChange={(url) => {
+            setContent({
+              ...content,
+              hero: { ...content.hero, resumeUrlDe: url },
+              contact: { ...contact, resumeUrlDe: url },
             });
           }}
         />

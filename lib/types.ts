@@ -12,7 +12,9 @@ export type HeroSection = {
   secondaryCtaLabel?: string;
   secondaryCtaLink?: string;
   resumeUrl?: string;
+  resumeUrlDe?: string;
   resumeLabel?: string;
+  resumeLabelDe?: string;
   resumeTagline?: string;
 };
 
@@ -257,6 +259,7 @@ export type ContactSection = {
   calendlyUrl?: string;
   linkedinUrl?: string;
   resumeUrl?: string;
+  resumeUrlDe?: string;
   highlights: ContactHighlight[];
   formTitle: string;
   formDescription: string;

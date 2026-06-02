@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AdminField } from "@/components/admin/admin-ui";
-import { RESUME_DOWNLOAD_NAME } from "@/lib/resume";
+import { RESUME_DOWNLOAD_NAME_EN } from "@/lib/resume";
 import { normalizeUploadUrl, toMediaServeUrl } from "@/lib/upload-url";
 
 type Props = {
@@ -25,6 +25,25 @@ function fileNameFromUrl(url: string): string {
   return url.split("/").pop() || "";
 }
 
+function isPdfFile(file: File): boolean {
+  const name = file.name.toLowerCase();
+  if (!name.endsWith(".pdf")) return false;
+  if (!file.type || file.type === "application/octet-stream") return true;
+  return file.type === "application/pdf" || file.type === "application/x-pdf";
+}
+
+async function parseJsonResponse<T>(res: Response): Promise<T> {
+  const text = await res.text();
+  if (!text.trim()) {
+    throw new Error(`Request failed (${res.status})`);
+  }
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    throw new Error(text.slice(0, 120) || `Request failed (${res.status})`);
+  }
+}
+
 export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const replaceInputRef = useRef<HTMLInputElement>(null);
@@ -36,8 +55,8 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
 
   const upload = useCallback(
     async (file: File, replaceName?: string) => {
-      if (file.type !== "application/pdf") {
-        setError("Please choose a PDF file.");
+      if (!isPdfFile(file)) {
+        setError("Please choose a PDF file (.pdf).");
         return;
       }
 
@@ -51,7 +70,7 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
         if (replaceName) formData.append("replace", replaceName);
 
         const res = await fetch("/api/upload", { method: "POST", body: formData });
-        const data = (await res.json()) as { url?: string; error?: string };
+        const data = await parseJsonResponse<{ url?: string; error?: string }>(res);
         if (!res.ok || !data.url) {
           throw new Error(data.error || "Upload failed");
         }
@@ -59,7 +78,7 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
         const newUrl = normalizeUploadUrl(data.url);
         const previousUrl = value;
 
-        if (previousUrl && previousUrl !== newUrl) {
+        if (previousUrl && previousUrl !== newUrl && previousUrl.startsWith("/uploads/")) {
           await fetch("/api/resume", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
@@ -93,7 +112,10 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
   };
 
   const remove = async () => {
-    if (!value) return;
+    if (!value || !value.startsWith("/uploads/")) {
+      onChange("");
+      return;
+    }
     setDeleting(true);
     setError("");
     try {
@@ -103,7 +125,7 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
         body: JSON.stringify({ url: value }),
       });
       if (!res.ok) {
-        const data = (await res.json()) as { error?: string };
+        const data = await parseJsonResponse<{ error?: string }>(res);
         throw new Error(data.error || "Failed to delete file");
       }
       onChange("");
@@ -166,14 +188,14 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
           <iframe
             key={src}
             src={src}
-            title={`CV preview — ${RESUME_DOWNLOAD_NAME}`}
+            title={`CV preview — ${RESUME_DOWNLOAD_NAME_EN}`}
             className="h-72 w-full bg-white"
           />
 
           <input
             ref={replaceInputRef}
             type="file"
-            accept="application/pdf,.pdf"
+            accept=".pdf,application/pdf"
             className="hidden"
             onChange={(e) => onReplace(e.target.files?.[0])}
           />
@@ -208,13 +230,13 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
               >
                 Choose PDF
               </button>
-              <p className="mt-2 text-xs text-slate-500">Max 5MB · PDF only</p>
+              <p className="mt-2 text-xs text-slate-500">Max 8MB · PDF only · works on mobile</p>
             </>
           )}
           <input
             ref={inputRef}
             type="file"
-            accept="application/pdf,.pdf"
+            accept=".pdf,application/pdf"
             className="hidden"
             onChange={(e) => onFile(e.target.files?.[0])}
           />
