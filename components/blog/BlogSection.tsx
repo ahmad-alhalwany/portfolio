@@ -58,7 +58,17 @@ export default function BlogSection({ section = defaultSection }: { section?: Bl
           >
             <div className="grid lg:grid-cols-2">
               <div className="relative min-h-[280px] lg:min-h-[360px]">
-                <OptimizedImage src={latest.coverImage} alt={latest.title} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+                <OptimizedImage
+                  src={latest.coverImage}
+                  alt={latest.title}
+                  fill
+                  className={
+                    latest.coverImage?.includes("/certificates/")
+                      ? "object-contain bg-slate-950 p-4"
+                      : "object-cover"
+                  }
+                  sizes="(max-width:1024px) 100vw, 50vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
               </div>
               <div className="flex flex-col justify-center gap-5 p-8 lg:p-12">
@@ -82,7 +92,7 @@ export default function BlogSection({ section = defaultSection }: { section?: Bl
               <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <h3 className="text-xl font-semibold text-white">Previous articles</h3>
-                  <p className="text-sm text-slate-400">Explore more in the 3D gallery</p>
+                  <p className="text-sm text-slate-400">More articles from production work and learning</p>
                 </div>
                 <Link href="/blog" className="text-sm text-purple hover:underline">
                   {section.viewAllLabel}

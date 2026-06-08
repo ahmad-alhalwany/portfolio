@@ -64,7 +64,17 @@ export function BlogArticleLayout({ post }: { post: BlogPostPublic }) {
 
         <div className="relative mb-12 overflow-hidden rounded-3xl border border-slate-800">
           <div className="relative aspect-[21/9] w-full">
-            <OptimizedImage src={post.coverImage} alt={post.title} fill className="object-cover" priority />
+            <OptimizedImage
+              src={post.coverImage}
+              alt={post.title}
+              fill
+              className={
+                post.coverImage?.includes("/certificates/")
+                  ? "object-contain bg-slate-950 p-6"
+                  : "object-cover"
+              }
+              priority
+            />
           </div>
         </div>
 

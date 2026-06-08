@@ -43,7 +43,15 @@ export async function getAllPosts(): Promise<BlogPost[]> {
 
 export async function getPublishedPosts(): Promise<BlogPostPublic[]> {
   const posts = await getAllPosts();
-  return posts.filter((p) => p.status === "published").map(toPublicPost);
+  const seen = new Set<string>();
+  return posts
+    .filter((p) => p.status === "published")
+    .filter((p) => {
+      if (seen.has(p.slug)) return false;
+      seen.add(p.slug);
+      return true;
+    })
+    .map(toPublicPost);
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPostPublic | null> {

@@ -40,7 +40,16 @@ export default function BlogPage() {
             className="group mb-16 grid overflow-hidden rounded-3xl border border-purple/20 bg-slate-950 lg:grid-cols-2"
           >
             <div className="relative min-h-[240px]">
-              <OptimizedImage src={latest.coverImage} alt={latest.title} fill className="object-cover transition group-hover:scale-105" />
+              <OptimizedImage
+                src={latest.coverImage}
+                alt={latest.title}
+                fill
+                className={
+                  latest.coverImage?.includes("/certificates/")
+                    ? "object-contain bg-slate-950 p-4 transition group-hover:scale-[1.02]"
+                    : "object-cover transition group-hover:scale-105"
+                }
+              />
             </div>
             <div className="flex flex-col justify-center gap-4 p-8">
               <span className="text-xs uppercase tracking-[0.2em] text-purple">{t("blog.featured")}</span>
@@ -57,18 +66,6 @@ export default function BlogPage() {
           <>
             <h2 className="mb-6 text-2xl font-semibold text-white">{t("blog.moreArticles")}</h2>
             <ThreeDMarquee posts={older} size="large" className="mb-12" />
-            <div className="grid gap-6 md:grid-cols-2">
-              {older.map((post) => (
-                <Link
-                  key={post.id}
-                  href={`/blog/${post.slug}`}
-                  className="rounded-2xl border border-slate-800 bg-slate-950 p-5 transition hover:border-purple/40"
-                >
-                  <h3 className="text-lg font-semibold text-white">{post.title}</h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-slate-400">{post.excerpt}</p>
-                </Link>
-              ))}
-            </div>
           </>
         )}
       </div>
