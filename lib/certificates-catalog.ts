@@ -16,61 +16,6 @@ type CertSeed = {
 
 const CERTIFICATES: CertSeed[] = [
   {
-    verifyId: "NQVQXD24Y7WJ",
-    title: "Preparing to Manage Human Resources",
-    issuer: "University of Minnesota",
-    platform: "Coursera",
-    category: "Business & HR",
-    completedAt: "Dec 2023",
-    summary:
-      "Foundations of modern HR: how organizations attract talent, structure jobs, and align people practices with business goals.",
-    skills: ["HR strategy", "Talent management", "Organizational design", "Employment law basics"],
-  },
-  {
-    verifyId: "8RDFX3WXT6F4",
-    title: "Introduction to Data Analytics",
-    issuer: "IBM",
-    platform: "Coursera",
-    category: "Data & Analytics",
-    completedAt: "Jan 2024",
-    summary:
-      "How data moves from raw sources to decisions — the analytics lifecycle, types of analysis, and the tools teams use daily.",
-    skills: ["Data lifecycle", "Descriptive analytics", "SQL basics", "Data visualization", "Business storytelling"],
-  },
-  {
-    verifyId: "DBNMSDWF2ZKA",
-    title: "Foundations of Project Management",
-    issuer: "Google",
-    platform: "Coursera",
-    category: "Project Management",
-    completedAt: "Feb 2024",
-    summary:
-      "Core PM vocabulary, project phases, and when to use Waterfall vs Agile — plus how culture shapes delivery.",
-    skills: ["Project lifecycle", "Agile & Waterfall", "Stakeholder communication", "Scrum basics", "Change management"],
-  },
-  {
-    verifyId: "UGXY6GL5WDN8",
-    title: "Excel Basics for Data Analysis",
-    issuer: "IBM",
-    platform: "Coursera",
-    category: "Data & Analytics",
-    completedAt: "Feb 2024",
-    summary:
-      "Cleaning spreadsheets, building summaries with formulas, and turning rows into charts stakeholders actually read.",
-    skills: ["Excel", "Pivot tables", "Data cleaning", "Charts", "VLOOKUP & formulas"],
-  },
-  {
-    verifyId: "YKZPXQR3ERY3",
-    title: "Project Initiation: Starting a Successful Project",
-    issuer: "Google",
-    platform: "Coursera",
-    category: "Project Management",
-    completedAt: "Apr 2024",
-    summary:
-      "Defining scope, goals, and stakeholders up front — writing charters and success criteria before execution starts.",
-    skills: ["Project charter", "Scope definition", "Stakeholder mapping", "SMART goals", "Risk awareness"],
-  },
-  {
     verifyId: "WZC7PWNSUFER",
     title: "Supervised Machine Learning: Regression and Classification",
     issuer: "Stanford Online · DeepLearning.AI",
@@ -137,17 +82,6 @@ const CERTIFICATES: CertSeed[] = [
     skills: ["Python", "Functions", "OOP intro", "File I/O", "Debugging"],
   },
   {
-    verifyId: "FIRMWLAYBLM6",
-    title: "Introduction to Hardware and Operating Systems",
-    issuer: "IBM",
-    platform: "Coursera",
-    category: "IT & Infrastructure",
-    completedAt: "Nov 2024",
-    summary:
-      "How computers are built (CPU, memory, storage) and what operating systems do to run apps and manage resources.",
-    skills: ["Computer hardware", "Operating systems", "Processes & memory", "I/O systems", "Troubleshooting"],
-  },
-  {
     verifyId: "VIWCLGNJ4VRR",
     title: "Version Control",
     issuer: "Meta",
@@ -157,83 +91,6 @@ const CERTIFICATES: CertSeed[] = [
     summary:
       "Git workflows for real teams: commits, branches, merges, pull requests, and recovering from conflicts calmly.",
     skills: ["Git", "GitHub", "Branching", "Merge conflicts", "Code review"],
-  },
-  {
-    verifyId: "ICF2ADH90WCR",
-    title: "Algebra and Differential Calculus for Data Science",
-    issuer: "University of Colorado Boulder",
-    platform: "Coursera",
-    category: "Machine Learning & AI",
-    completedAt: "Jan 2025",
-    summary:
-      "Math behind ML: vectors, matrices, derivatives, and gradients — the language optimization algorithms speak.",
-    skills: ["Linear algebra", "Calculus", "Gradients", "Optimization", "Data science math"],
-  },
-  {
-    verifyId: "CDMDLEXQ6NT3",
-    title: "Mathematics for Machine Learning: Linear Algebra",
-    issuer: "Imperial College London",
-    platform: "Coursera",
-    category: "Machine Learning & AI",
-    completedAt: "Mar 2025",
-    summary:
-      "Geometric view of linear algebra — transformations, eigenvalues, and why matrix math powers modern AI models.",
-    skills: ["Vectors", "Matrices", "Eigenvalues", "Linear transformations", "ML foundations"],
-  },
-  {
-    verifyId: "2WIWFGF9W8LB",
-    title: "Introduction to Software Engineering",
-    issuer: "IBM",
-    platform: "Coursera",
-    category: "Software Development",
-    completedAt: "Apr 2025",
-    summary:
-      "SDLC phases, Agile/Scrum rituals, testing discipline, and professional practices for building software in teams.",
-    skills: ["SDLC", "Agile", "Scrum", "Git workflows", "Software design", "QA basics"],
-  },
-  {
-    verifyId: "IPRGE2XB7R6L",
-    title: "HTML and CSS in depth",
-    issuer: "Meta",
-    platform: "Coursera",
-    category: "Software Development",
-    completedAt: "May 2025",
-    summary:
-      "Production-grade UI: Flexbox, Grid, semantic markup, responsive patterns, motion, and accessible components.",
-    skills: ["HTML5", "CSS Grid", "Flexbox", "Responsive UI", "CSS animations", "Accessibility"],
-  },
-  {
-    verifyId: "IB79ARVQ2NN6",
-    title: "An Introduction to Ethical Hacking with Kali Linux",
-    issuer: "Packt",
-    platform: "Coursera",
-    category: "Security",
-    completedAt: "Jul 2025",
-    summary:
-      "Ethical hacker mindset, reconnaissance, and hands-on security tooling in Kali — always within legal scope.",
-    skills: ["Ethical hacking", "Kali Linux", "Reconnaissance", "Vulnerability basics", "Security tooling"],
-  },
-  {
-    verifyId: "6LRMHSCGRC8M",
-    title: "Technical Support Fundamentals",
-    issuer: "Google",
-    platform: "Coursera",
-    category: "IT & Infrastructure",
-    completedAt: "Sep 2025",
-    summary:
-      "IT support foundations: troubleshooting methodically, customer communication, hardware, networking, and OS basics.",
-    skills: ["IT support", "Troubleshooting", "Networking basics", "Operating systems", "Customer service"],
-  },
-  {
-    verifyId: "QNMBYQOL4Q4F",
-    title: "The Bits and Bytes of Computer Networking",
-    issuer: "Google",
-    platform: "Coursera",
-    category: "IT & Infrastructure",
-    completedAt: "Feb 2026",
-    summary:
-      "TCP/IP stack, DNS, DHCP, routing, and how packets move — the networking layer every full-stack dev should understand.",
-    skills: ["TCP/IP", "DNS", "Routing", "Network troubleshooting", "Cloud networking intro"],
   },
 ];
 
@@ -253,54 +110,6 @@ type InProgressSeed = {
 
 /** Courses actively in progress — shown first in Impact & Growth. */
 const IN_PROGRESS_COURSES: InProgressSeed[] = [
-  {
-    id: "progress-os-power",
-    title: "Operating Systems: Becoming a Power User",
-    issuer: "Google",
-    platform: "Coursera",
-    category: "IT & Infrastructure",
-    progress: 15,
-    url: "https://www.coursera.org/learn/os-power-user/home/module/1",
-    summary:
-      "Shell workflows, processes, package management, and day-to-day power-user skills on desktop OS.",
-    skills: ["Linux CLI", "Process management", "OS fundamentals"],
-  },
-  {
-    id: "progress-cybersec",
-    title: "Introduction to Cybersecurity Tools & Cyber Attacks",
-    issuer: "IBM",
-    platform: "Coursera",
-    category: "Security",
-    progress: 50,
-    url: "https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks/home/welcome",
-    summary:
-      "Security tooling, common attack types, and how defenders reason about protecting systems.",
-    skills: ["Cybersecurity basics", "Threat landscape", "Security tools"],
-  },
-  {
-    id: "progress-nestjs",
-    title: "Mastering NestJS",
-    issuer: "Packt",
-    platform: "Coursera",
-    category: "Software Development",
-    progress: 12,
-    url: "https://www.coursera.org/learn/packt-mastering-nestjs-4opl7/home/welcome",
-    summary:
-      "Modular Node back-ends with NestJS — modules, dependency injection, guards, and API structure.",
-    skills: ["NestJS", "TypeScript", "Node.js", "REST APIs"],
-  },
-  {
-    id: "progress-youtube",
-    title: "Developer skills playlist",
-    issuer: "YouTube",
-    platform: "YouTube",
-    category: "Software Development",
-    progress: 50,
-    url: "https://www.youtube.com/show/VLPLF9mJC4RrjIhv0_YjWvC0pmM1EZlVylBt?sbp=KgtEbmV3S01WeWZsRUAB",
-    summary:
-      "Self-paced video series alongside formal courses — practical topics I apply on real projects.",
-    skills: ["Self-paced learning", "Hands-on tutorials"],
-  },
   {
     id: "progress-a2-de",
     title: "A2 German Course",
@@ -326,7 +135,7 @@ const CATEGORY_ORDER = [
   "Business & HR",
 ] as const;
 
-const STATS_COMPLETED_PREVIEW = 8;
+const STATS_COMPLETED_PREVIEW = 7;
 
 function inProgressToLearningItem(course: InProgressSeed): LearningItem {
   return {
@@ -419,12 +228,7 @@ export function getCertificateLearningItems(): LearningItem[] {
   });
 }
 
-const CHART_BY_YEAR: StatsChartPoint[] = [
-  { id: "2023", label: "2023", value: 1 },
-  { id: "2024", label: "2024", value: 12 },
-  { id: "2025", label: "2025", value: 6 },
-  { id: "2026", label: "2026", value: 1 },
-];
+const CHART_BY_YEAR: StatsChartPoint[] = [{ id: "2024", label: "2024", value: 7 }];
 
 export function getInProgressLearningItems(): LearningItem[] {
   return IN_PROGRESS_COURSES.map(inProgressToLearningItem);
@@ -441,33 +245,33 @@ export function getCertificatesStatsSection(): StatsSection {
       id: "certs",
       label: "Certificates earned",
       value: completed.length,
-      description: "Verified Coursera credentials",
+      description: "Meta & DeepLearning.AI credentials",
     },
     {
       id: "active",
       label: "Courses in progress",
       value: inProgress.length,
-      description: "Coursera, YouTube, and language learning",
+      description: "German A2 — VHS learning portal",
     },
     {
       id: "ml",
       label: "ML & AI completed",
       value: completed.filter((i) => i.category === "Machine Learning & AI").length,
-      description: "Math, models, and production",
+      description: "Supervised ML, deep learning, MLOps",
     },
     {
       id: "platforms",
       label: "Learning platforms",
-      value: 3,
+      value: 2,
       suffix: "",
-      description: "Coursera · YouTube · VHS portal",
+      description: "Coursera · VHS portal",
     },
   ];
 
   return {
     title: "Impact, Learning & Growth",
     description:
-      "What I am learning now, plus verified certificates from IBM, Meta, Google, Stanford, and more — with summaries and skills I use on real work.",
+      "Focused professional credentials from Meta and DeepLearning.AI — plus German language progress — aligned with full-stack and production ML work.",
     metrics,
     chartTitle: "Certificates completed by year",
     chartPoints: CHART_BY_YEAR,

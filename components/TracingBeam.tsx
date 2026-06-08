@@ -69,7 +69,7 @@ const dummyContent = [
           I started studying at university in 2017.
         </p>
         <p>
-          I graduated with an average of 71.43% in 2023.
+          I graduated in 2023 with a degree in Information Technology and Artificial Intelligence.
         </p>
         <p className="mt-6">
           <span>Projects:</span>

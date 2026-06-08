@@ -36,7 +36,7 @@ export const defaultAboutSection: AboutSection = {
   meta: [
     { key: "mode", value: "employment · not freelance" },
     { key: "stack", value: "python · next.js · typescript" },
-    { key: "timezone", value: "EU / MENA · remote-friendly" },
+    { key: "timezone", value: "Germany · CET (Trier)" },
     { key: "languages", value: "AR native · EN B2 · DE A2 → B1" },
   ],
   bentoTitle: "Identity fragments",

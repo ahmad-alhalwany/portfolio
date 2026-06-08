@@ -27,8 +27,8 @@ const Hero = ({ hero }: HeroProps) => {
           <CVShowcase
             resumeUrl={hero.resumeUrl ?? RESUME_PATH_EN}
             resumeUrlDe={hero.resumeUrlDe}
-            label={hero.resumeLabel ?? "Extract dossier"}
-            labelDe={hero.resumeLabelDe ?? "Lebenslauf laden"}
+            label={hero.resumeLabel ?? "Download CV (EN)"}
+            labelDe={hero.resumeLabelDe ?? "Lebenslauf (DE)"}
             tagline={hero.resumeTagline ?? "Lebenslauf · encrypted"}
             className="lg:shrink-0"
           />

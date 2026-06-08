@@ -14,9 +14,9 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
       "Hallo, ich bin Ahmad — ich verwandle komplexe Probleme in Software, auf die Menschen vertrauen. Ich suche eine langfristige Rolle, in der Handwerk, Verantwortung und Teamwirkung zählen.",
     ctaLabel: "Projekte entdecken",
     secondaryCtaLabel: "Einstellung? Kontakt",
-    resumeLabel: "Dossier laden",
-    resumeLabelDe: "Lebenslauf laden",
-    resumeTagline: "Lebenslauf · verschlüsselt",
+    resumeLabel: "CV laden (EN)",
+    resumeLabelDe: "Lebenslauf (DE)",
+    resumeTagline: "CV · Englisch & Deutsch",
   },
   aboutSection: {
     label: "profil.sys / dekodieren",
@@ -54,7 +54,8 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     meta: [
       { key: "modus", value: "Festanstellung · kein Freelance" },
       { key: "stack", value: "python · next.js · typescript" },
-      { key: "zeitzone", value: "EU / MENA · remote-freundlich" },
+      { key: "zeitzone", value: "Deutschland · MEZ (Trier)" },
+      { key: "standort", value: "Trier, Deutschland · vor Ort, hybrid & remote" },
       { key: "sprachen", value: "AR Muttersprache · EN B2 · DE A2 → B1" },
     ],
     bentoTitle: "Identitätsfragmente",
@@ -284,7 +285,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     description:
       "Full-Stack-Entwickler, offen für Festanstellungen — kein Freelance. Kontakt für Interviews, Tech-Screens oder Team-Fit.",
     badge: "Offen für Festanstellungen",
-    availability: "Remote · Hybrid · Umzug möglich",
+    availability: "Trier, Deutschland · vor Ort, hybrid & remote",
     highlights: [
       { id: "h1", value: "3+", label: "Jahre Erfahrung" },
       { id: "h2", value: "Full-Stack", label: "Python & Next.js" },
@@ -299,7 +300,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
   blogSection: {
     title: "Einblicke & Artikel",
     description:
-      "Praktische Notizen aus Kursen und Projekten — was ich gelernt, angewendet und teilenswert finde.",
+      "Praktische Notizen aus Production-Projekten und Kursen — Architekturentscheidungen, Learnings und teilenswerte Inhalte.",
     viewAllLabel: "Alle Artikel ansehen",
     readLatestLabel: "Neuesten Artikel lesen",
   },
@@ -312,7 +313,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
   statsSection: {
     title: "Wirkung, Lernen & Wachstum",
     description:
-      "Was ich gerade lerne, plus verifizierte Zertifikate von IBM, Meta, Google, Stanford und mehr — mit Zusammenfassungen und Skills für echte Projekte.",
+      "Ausgewählte Zertifikate von Meta und DeepLearning.AI — plus Deutsch A2 — abgestimmt auf Full-Stack- und Production-ML-Arbeit.",
     metrics: [
       {
         id: "certs",

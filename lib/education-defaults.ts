@@ -14,7 +14,7 @@ export const defaultEducationItems: EducationItem[] = [
     featured: true,
     timeline: [
       "I started studying at university in 2017.",
-      "I graduated with an average of 71.43% in 2023.",
+      "I graduated in 2023 with a degree in Information Technology and Artificial Intelligence.",
     ],
     projects: [
       "Built an NLP based app to classify people's reactions to some emotional categories.",

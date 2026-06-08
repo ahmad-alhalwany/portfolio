@@ -89,7 +89,7 @@ const defaultHero: HeroSection = {
   flipWords: ["production web apps", "full-stack systems", "hire-ready products"],
   headlineEnd: "for teams that ship.",
   availabilityBadge: "Open to full-time roles",
-  skillChips: ["Python", "Next.js", "TypeScript", "Django"],
+  skillChips: ["Python", "FastAPI", "Next.js", "TypeScript"],
   description:
     "Hi, I'm Ahmad — I turn complex problems into software people rely on. Looking for a long-term role where craft, ownership, and team impact matter.",
   ctaLabel: "Explore projects",
@@ -98,8 +98,9 @@ const defaultHero: HeroSection = {
   secondaryCtaLink: "#contact",
   resumeUrl: RESUME_PATH_EN,
   resumeUrlDe: RESUME_PATH_DE,
-  resumeLabel: "Extract dossier",
-  resumeTagline: "Lebenslauf · encrypted",
+  resumeLabel: "Download CV (EN)",
+  resumeLabelDe: "Lebenslauf (DE)",
+  resumeTagline: "CV · English & German",
 };
 
 const defaultApproach: ApproachSection = {
