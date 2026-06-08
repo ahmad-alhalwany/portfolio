@@ -689,7 +689,7 @@
           "src": "/project/asd-about-bottom.png"
         }
       ],
-      "overview": "A production full-stack health-tech platform that helps caregivers run an early ASD screening via two paths: upload a facial photo (MobileNetV3 + Grad-CAM) or complete a 12-question behavioral survey (neural network). Results include confidence scores, medical disclaimers, recommendations, and support resources — in Arabic and English.",
+      "overview": "Personal portfolio project — full-stack health-tech platform for early ASD screening via computer vision and a behavioral questionnaire (not client freelance work). Helps caregivers run screening via facial analysis (MobileNetV3 + Grad-CAM) or a 12-question survey — bilingual AR/EN.",
       "challengeDetail": "Early autism signs are easy to miss without specialist access, and many AI demos stop at a classification label. The product needed two screening paths (visual + behavioral), explainable outputs caregivers can understand, clear medical disclaimers, and a bilingual UX that works in production — not just in a notebook.",
       "solutionDetail": "I built a monorepo with Next.js 15 on Vercel and FastAPI on Hugging Face Spaces. The image pipeline preprocesses 224×224 inputs through a fine-tuned MobileNetV3, returns Grad-CAM heatmaps as base64, and generates structured reports. The questionnaire path scales 12 yes/no answers through a trained neural network (~92% accuracy) with tailored recommendations and WHO/CDC resource links. Docker, health checks, CORS, and Swagger keep the stack deployable and reviewable.",
       "keyFeatures": [
@@ -911,7 +911,7 @@
           "src": "/project/vote-how-it-works.png"
         }
       ],
-      "overview": "VoteChain is a portfolio Web3 dApp for transparent, tamper-proof elections. Votes are counted immutably on an Ethereum smart contract (Solidity + Hardhat), while candidate and voter photos plus JSON metadata live on IPFS. A Next.js frontend connects MetaMask for signing, protects organizer pages with on-chain + UI guards, and shows live results with percentage bars and leading badges.",
+      "overview": "Personal portfolio project — Web3 dApp for transparent elections (built outside full-time employment). Votes are counted immutably on Ethereum (Solidity + Hardhat); candidate metadata on IPFS. Next.js frontend with MetaMask, role-based admin, and live results.",
       "challengeDetail": "Traditional voting systems rely on a central authority that can alter records. The product needed clear on-chain rules (one vote per registered voter, organizer-only registration), decentralized media storage without expensive on-chain blobs, CORS-safe IPFS uploads from the browser, and a polished UX so non-Web3 users can follow the flow — confirm modals, toasts, loaders, and readable live results.",
       "solutionDetail": "I built a full-stack Web3 app: the Create smart contract (Solidity 0.8.9, OpenZeppelin Counters) enforces organizer permissions, voter whitelisting, and single-vote integrity. Next.js API routes (/api/ipfs-upload, /api/ipfs-proxy) handle server-side IPFS uploads and image proxying. VotingContext centralizes Web3 state (Ethers.js v5, Web3Modal, MetaMask). OrganizerGuard mirrors contract rules in the UI. React Dropzone feeds IPFS; live dashboards read vote counts directly from the chain after each transaction.",
       "keyFeatures": [
@@ -1293,43 +1293,6 @@
   ],
   "workExperience": [
     {
-      "id": 1,
-      "title": "Freelancer — Full-Stack & Product Development",
-      "company": "Independent / Freelance",
-      "role": "Freelancer — Full-Stack Developer",
-      "period": "2022 — Present",
-      "location": "Remote",
-      "employmentType": "freelance",
-      "desc": "End-to-end delivery of web, AI, and blockchain products for clients — from architecture to production deployment.",
-      "className": "md:col-span-2",
-      "thumbnail": "/exp3.svg",
-      "featured": true,
-      "overview": "Independent engineering across AI platforms, blockchain systems, marketing UIs, games, and e-commerce backends — owning discovery, implementation, and measurable outcomes for each engagement.",
-      "responsibilities": [
-        "AI-powered autism early-detection platform (May 2025): Next.js + FastAPI with OpenCV face detection, Keras emotion models for behavioral patterns, and an XAI questionnaire module for holistic assessment.",
-        "Blockchain-based voting system (Mar 2024): securely processed 10,000+ votes with no reported integrity issues; transparency and auditability built into the design.",
-        "Custom marketing interface (Aug 2023): React + Storybook UI enabling 50+ clients to personalize campaigns efficiently.",
-        "Mancala game with JavaFX (Jun 2023): interactive animations and intuitive UX that increased user engagement by 25%.",
-        "Online shisha shop backend (2022): streamlined checkout and operations, improving customer-service efficiency by 25%."
-      ],
-      "technologies": [
-        "Next.js",
-        "FastAPI",
-        "Python",
-        "OpenCV",
-        "Keras",
-        "React",
-        "Storybook",
-        "JavaFX",
-        "Blockchain",
-        "GraphQL"
-      ],
-      "outcomes": [
-        "Multiple shipped products across AI, Web3, e-commerce, and gaming",
-        "Demonstrated ownership from prototype to production without a single employer wrapper"
-      ]
-    },
-    {
       "id": 2,
       "title": "Full-Stack Payment System — Al Ankabot",
       "company": "Al Ankabot",
@@ -1373,11 +1336,13 @@
       "desc": "Led web development for the Plaze e-commerce platform and WordPress ecosystem.",
       "className": "md:col-span-2",
       "thumbnail": "/exp2.svg",
+      "featured": true,
       "overview": "Drove frontend and platform work at LIT-Co — owning the Plaze e-commerce build, WordPress customizations, and a full site redesign that materially improved mobile and conversion metrics.",
       "responsibilities": [
         "Led development of the Plaze e-commerce platform with Next.js and GraphQL, raising conversion rate by 15%",
         "Customized 10+ WordPress themes and plugins, increasing user interaction by 20%",
-        "Led a comprehensive website redesign that improved responsiveness and grew mobile traffic by 40%"
+        "Led a comprehensive website redesign that improved responsiveness and grew mobile traffic by 40%",
+        "Participated in agile stand-ups, code reviews, and incremental feature delivery in a production team"
       ],
       "technologies": [
         "Next.js",
@@ -1388,7 +1353,7 @@
         "Tailwind CSS"
       ],
       "outcomes": [
-        "Plaze shop live as a production e-commerce storefront",
+        "Plaze shop live as a production e-commerce storefront at plaze-shop.de",
         "Measurable gains in conversion, engagement, and mobile reach"
       ]
     },
@@ -1403,7 +1368,7 @@
       "desc": "Assisted in the development of a web-based platform using Next.js, enhancing interactivity.",
       "className": "md:col-span-2",
       "thumbnail": "/exp1.svg",
-      "overview": "Started at LIT-Co on the frontend team — shipping UI components, fixing bugs, and learning production Next.js practices before moving into the Web Developer role.",
+      "overview": "Started at LIT-Co on the frontend team — shipping UI components, fixing bugs, and learning production Next.js practices before moving into the Frontend Developer role.",
       "responsibilities": [
         "Built and refined React/Next.js UI components under senior developer guidance",
         "Improved interactivity and client-side flows on the company web platform",
@@ -1421,7 +1386,36 @@
       ],
       "outcomes": [
         "Solid foundation in component-driven development and team workflow",
-        "Stepped up to Frontend Developer at LIT-Co (Jun 2023 — Aug 2024)"
+        "Promoted to Frontend Developer at LIT-Co (Jun 2023 — Aug 2024)"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Freelancer — Web & Backend (Fixed-Scope Contracts)",
+      "company": "Independent / Freelance",
+      "role": "Freelance Full-Stack Developer",
+      "period": "2022 — Apr 2023",
+      "location": "Remote",
+      "employmentType": "freelance",
+      "desc": "Short-term client contracts for web backends and e-commerce flows — completed before joining LIT-Co full-time.",
+      "className": "md:col-span-2",
+      "thumbnail": "/exp3.svg",
+      "featured": false,
+      "overview": "Selected fixed-scope freelance work while finishing university — focused on deliverable backends and checkout integrations, not overlapping with later full-time roles.",
+      "responsibilities": [
+        "Online shisha shop backend (2022): streamlined checkout and operations, improving customer-service efficiency by 25%",
+        "Delivered REST APIs and admin tooling for small retail clients under agreed scope and deadlines"
+      ],
+      "technologies": [
+        "Python",
+        "Django",
+        "Node.js",
+        "PostgreSQL",
+        "REST APIs"
+      ],
+      "outcomes": [
+        "Shipped production backends for e-commerce clients on fixed timelines",
+        "Moved to full-time employment at LIT-Co (Apr 2023)"
       ]
     }
   ],

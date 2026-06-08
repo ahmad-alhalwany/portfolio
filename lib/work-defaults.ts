@@ -3,26 +3,6 @@ import { WorkExperience } from "@/lib/types";
 /** Fallback when CMS content has not loaded yet */
 export const defaultWorkExperience: WorkExperience[] = [
   {
-    id: 1,
-    title: "Freelancer — Full-Stack & Product Development",
-    company: "Independent / Freelance",
-    role: "Freelancer — Full-Stack Developer",
-    period: "2022 — Present",
-    location: "Remote",
-    employmentType: "freelance",
-    desc: "End-to-end delivery of web, AI, and blockchain products for clients.",
-    className: "md:col-span-2",
-    thumbnail: "/exp3.svg",
-    featured: true,
-    overview:
-      "Independent engineering across AI platforms, blockchain systems, marketing UIs, games, and e-commerce backends.",
-    responsibilities: [
-      "AI autism early-detection platform (Next.js, FastAPI, OpenCV, Keras, XAI questionnaire)",
-      "Blockchain voting system — 10,000+ votes with zero reported integrity issues",
-    ],
-    technologies: ["Next.js", "FastAPI", "Python", "React", "Blockchain"],
-  },
-  {
     id: 2,
     title: "Full-Stack Payment System — Al Ankabot",
     company: "Al Ankabot",
@@ -33,5 +13,30 @@ export const defaultWorkExperience: WorkExperience[] = [
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
     featured: true,
+  },
+  {
+    id: 3,
+    title: "Frontend Developer — LIT-Co",
+    company: "LIT-Co",
+    role: "Frontend Developer",
+    period: "Jun 2023 — Aug 2024",
+    employmentType: "full-time",
+    desc: "Plaze e-commerce platform and WordPress ecosystem.",
+    className: "md:col-span-2",
+    thumbnail: "/exp2.svg",
+    featured: true,
+  },
+  {
+    id: 1,
+    title: "Freelancer — Web & Backend (Fixed-Scope Contracts)",
+    company: "Independent / Freelance",
+    role: "Freelance Full-Stack Developer",
+    period: "2022 — Apr 2023",
+    location: "Remote",
+    employmentType: "freelance",
+    desc: "Short-term client contracts — completed before LIT-Co full-time.",
+    className: "md:col-span-2",
+    thumbnail: "/exp3.svg",
+    featured: false,
   },
 ];

@@ -343,11 +343,12 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
   workExperience: [
     {
       id: 1,
-      title: "Freelancer — Full-Stack & Produktentwicklung",
-      role: "Freelancer — Full-Stack Developer",
-      desc: "End-to-End-Lieferung von Web-, KI- und Blockchain-Produkten — von Architektur bis Produktion.",
+      title: "Freelancer — Web & Backend (Festumfang)",
+      role: "Freelance Full-Stack Developer",
+      period: "2022 — Apr 2023",
+      desc: "Kurzfristige Kundenverträge für Web-Backends und E-Commerce — abgeschlossen vor der Festanstellung bei LIT-Co.",
       overview:
-        "Eigenständige Projekte über KI, Blockchain, Marketing-UIs, Spiele und E-Commerce — inkl. Discovery, Umsetzung und messbaren Ergebnissen.",
+        "Ausgewählte Freelance-Projekte mit festem Scope während des Studiums — Fokus auf Backends und Checkout-Integrationen, ohne Überschneidung mit späteren Vollzeitrollen.",
     },
     {
       id: 2,

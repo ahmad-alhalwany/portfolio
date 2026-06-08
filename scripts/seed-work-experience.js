@@ -4,44 +4,6 @@ const data = JSON.parse(fs.readFileSync(path, "utf8"));
 
 data.workExperience = [
   {
-    id: 1,
-    title: "Freelancer — Full-Stack & Product Development",
-    company: "Independent / Freelance",
-    role: "Freelancer — Full-Stack Developer",
-    period: "2022 — Present",
-    location: "Remote",
-    employmentType: "freelance",
-    desc: "End-to-end delivery of web, AI, and blockchain products for clients — from architecture to production deployment.",
-    className: "md:col-span-2",
-    thumbnail: "/exp3.svg",
-    featured: true,
-    overview:
-      "Independent engineering across AI platforms, blockchain systems, marketing UIs, games, and e-commerce backends — owning discovery, implementation, and measurable outcomes for each engagement.",
-    responsibilities: [
-      "AI-powered autism early-detection platform (May 2025): Next.js + FastAPI with OpenCV face detection, Keras emotion models for behavioral patterns, and an XAI questionnaire module for holistic assessment.",
-      "Blockchain-based voting system (Mar 2024): securely processed 10,000+ votes with no reported integrity issues; transparency and auditability built into the design.",
-      "Custom marketing interface (Aug 2023): React + Storybook UI enabling 50+ clients to personalize campaigns efficiently.",
-      "Mancala game with JavaFX (Jun 2023): interactive animations and intuitive UX that increased user engagement by 25%.",
-      "Online shisha shop backend (2022): streamlined checkout and operations, improving customer-service efficiency by 25%.",
-    ],
-    technologies: [
-      "Next.js",
-      "FastAPI",
-      "Python",
-      "OpenCV",
-      "Keras",
-      "React",
-      "Storybook",
-      "JavaFX",
-      "Blockchain",
-      "GraphQL",
-    ],
-    outcomes: [
-      "Multiple shipped products across AI, Web3, e-commerce, and gaming",
-      "Demonstrated ownership from prototype to production without a single employer wrapper",
-    ],
-  },
-  {
     id: 2,
     title: "Full-Stack Payment System — Al Ankabot",
     company: "Al Ankabot",
@@ -78,16 +40,18 @@ data.workExperience = [
     desc: "Led web development for the Plaze e-commerce platform and WordPress ecosystem.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
+    featured: true,
     overview:
       "Drove frontend and platform work at LIT-Co — owning the Plaze e-commerce build, WordPress customizations, and a full site redesign that materially improved mobile and conversion metrics.",
     responsibilities: [
       "Led development of the Plaze e-commerce platform with Next.js and GraphQL, raising conversion rate by 15%",
       "Customized 10+ WordPress themes and plugins, increasing user interaction by 20%",
       "Led a comprehensive website redesign that improved responsiveness and grew mobile traffic by 40%",
+      "Participated in agile stand-ups, code reviews, and incremental feature delivery in a production team",
     ],
     technologies: ["Next.js", "GraphQL", "React", "WordPress", "TypeScript", "Tailwind CSS"],
     outcomes: [
-      "Plaze shop live as a production e-commerce storefront",
+      "Plaze shop live as a production e-commerce storefront at plaze-shop.de",
       "Measurable gains in conversion, engagement, and mobile reach",
     ],
   },
@@ -103,7 +67,7 @@ data.workExperience = [
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
     overview:
-      "Started at LIT-Co on the frontend team — shipping UI components, fixing bugs, and learning production Next.js practices before moving into the Web Developer role.",
+      "Started at LIT-Co on the frontend team — shipping UI components, fixing bugs, and learning production Next.js practices before moving into the Frontend Developer role.",
     responsibilities: [
       "Built and refined React/Next.js UI components under senior developer guidance",
       "Improved interactivity and client-side flows on the company web platform",
@@ -113,7 +77,31 @@ data.workExperience = [
     technologies: ["Next.js", "React", "JavaScript", "TypeScript", "CSS", "WordPress", "Git"],
     outcomes: [
       "Solid foundation in component-driven development and team workflow",
-      "Stepped up to Frontend Developer at LIT-Co (Jun 2023 — Aug 2024)",
+      "Promoted to Frontend Developer at LIT-Co (Jun 2023 — Aug 2024)",
+    ],
+  },
+  {
+    id: 1,
+    title: "Freelancer — Web & Backend (Fixed-Scope Contracts)",
+    company: "Independent / Freelance",
+    role: "Freelance Full-Stack Developer",
+    period: "2022 — Apr 2023",
+    location: "Remote",
+    employmentType: "freelance",
+    desc: "Short-term client contracts for web backends and e-commerce flows — completed before joining LIT-Co full-time.",
+    className: "md:col-span-2",
+    thumbnail: "/exp3.svg",
+    featured: false,
+    overview:
+      "Selected fixed-scope freelance work while finishing university — focused on deliverable backends and checkout integrations, not overlapping with later full-time roles.",
+    responsibilities: [
+      "Online shisha shop backend (2022): streamlined checkout and operations, improving customer-service efficiency by 25%",
+      "Delivered REST APIs and admin tooling for small retail clients under agreed scope and deadlines",
+    ],
+    technologies: ["Python", "Django", "Node.js", "PostgreSQL", "REST APIs"],
+    outcomes: [
+      "Shipped production backends for e-commerce clients on fixed timelines",
+      "Moved to full-time employment at LIT-Co (Apr 2023)",
     ],
   },
 ];
