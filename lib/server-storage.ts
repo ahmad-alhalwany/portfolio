@@ -92,7 +92,13 @@ export async function readJsonFile<T>(filename: string, fallback: T): Promise<T>
         return stored;
       }
     } catch (error) {
-      console.error(`Redis read failed for ${filename}:`, error);
+      // DYNAMIC_SERVER_USAGE is Next.js's internal sentinel thrown when a static
+      // generation attempt accesses no-store fetches (Redis). It signals that the
+      // page should fall back to dynamic rendering — not a real error. Don't log it.
+      const digest = (error as { digest?: string }).digest;
+      if (digest !== "DYNAMIC_SERVER_USAGE") {
+        console.error(`Redis read failed for ${filename}:`, error);
+      }
     }
     return readBundledJsonFile(filename, fallback);
   }

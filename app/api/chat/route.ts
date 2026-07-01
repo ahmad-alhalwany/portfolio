@@ -20,7 +20,7 @@ function buildContext(content: any, posts: any[]): string {
     .map(
       (p: any) =>
         `- Project ID ${p.id}: "${p.title}" — ${(p.des ?? "").slice(0, 200)}${
-          p.tags?.length ? ` [tags: ${p.tags.join(", ")}]` : ""
+          p.iconLists?.length ? ` [tags: ${p.iconLists.join(", ")}]` : ""
         }`
     )
     .join("\n");
@@ -60,16 +60,89 @@ ${blog}
 Contact: ahmad.s.alhalwany@gmail.com · Based in Trier, Germany · Open to on-site, hybrid & remote roles.`;
 }
 
-export async function POST(request: NextRequest) {
-  const apiKey = process.env.OPENAI_API_KEY?.trim();
+const NOT_CONFIGURED_REPLY =
+  "The Ask Ahmad assistant is not configured yet. Please reach out via the contact form or email ahmad.s.alhalwany@gmail.com — Ahmad usually replies within 24 hours.";
 
-  if (!apiKey) {
+async function callGemini(apiKey: string, systemPrompt: string, context: string, messages: any[], userQuestion: string): Promise<string> {
+  const model = "gemini-2.0-flash";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+  const contents = [
+    ...messages.slice(-6).map((m: any) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: String(m.content).slice(0, 800) }],
+    })),
+    { role: "user", parts: [{ text: userQuestion }] },
+  ];
+
+  const body = {
+    system_instruction: {
+      parts: [{ text: `${systemPrompt}\n\n${context}` }],
+    },
+    contents,
+    generationConfig: {
+      temperature: 0.4,
+      maxOutputTokens: 400,
+    },
+  };
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    console.error("Gemini error:", response.status, text.slice(0, 200));
+    throw new Error(`Gemini API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  return reply || "I couldn't generate a response. Please try again.";
+}
+
+async function callOpenAI(apiKey: string, systemPrompt: string, context: string, messages: any[], userQuestion: string): Promise<string> {
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      temperature: 0.4,
+      max_tokens: 400,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "system", content: `Context:\n${context}` },
+        ...messages.slice(-6).map((m: any) => ({
+          role: m.role === "assistant" ? "assistant" : "user",
+          content: String(m.content).slice(0, 800),
+        })),
+        { role: "user", content: userQuestion },
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    console.error("OpenAI error:", response.status, text.slice(0, 200));
+    throw new Error(`OpenAI API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data?.choices?.[0]?.message?.content ?? "I couldn't generate a response. Please try again.";
+}
+
+export async function POST(request: NextRequest) {
+  const geminiKey = process.env.GEMINI_API_KEY?.trim();
+  const openaiKey = process.env.OPENAI_API_KEY?.trim();
+
+  if (!geminiKey && !openaiKey) {
     return NextResponse.json(
-      {
-        reply:
-          "The Ask Ahmad assistant is not configured yet. Please reach out via the contact form or email ahmad.s.alhalwany@gmail.com — Ahmad usually replies within 24 hours.",
-        unconfigured: true,
-      },
+      { reply: NOT_CONFIGURED_REPLY, unconfigured: true },
       { status: 200 }
     );
   }
@@ -87,41 +160,16 @@ export async function POST(request: NextRequest) {
     const [content, posts] = await Promise.all([getContent(), getPublishedPosts()]);
     const context = buildContext(content, posts);
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        temperature: 0.4,
-        max_tokens: 400,
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          { role: "system", content: `Context:\n${context}` },
-          ...messages.slice(-6).map((m: any) => ({
-            role: m.role === "assistant" ? "assistant" : "user",
-            content: String(m.content).slice(0, 800),
-          })),
-          { role: "user", content: userQuestion },
-        ],
-      }),
-    });
-
-    if (!response.ok) {
-      const text = await response.text();
-      console.error("OpenAI error:", response.status, text.slice(0, 200));
-      return NextResponse.json(
-        { reply: "I'm having trouble connecting to my brain right now. Please try again in a moment, or email Ahmad directly." },
-        { status: 200 }
-      );
+    let reply: string;
+    if (geminiKey) {
+      reply = await callGemini(geminiKey, SYSTEM_PROMPT, context, messages, userQuestion);
+    } else if (openaiKey) {
+      reply = await callOpenAI(openaiKey, SYSTEM_PROMPT, context, messages, userQuestion);
+    } else {
+      reply = NOT_CONFIGURED_REPLY;
     }
 
-    const data = await response.json();
-    const reply = data?.choices?.[0]?.message?.content ?? "I couldn't generate a response. Please try again.";
-
-    return NextResponse.json({ reply });
+    return NextResponse.json({ reply, provider: geminiKey ? "gemini" : "openai" });
   } catch (error) {
     console.error("Chat API error:", error);
     return NextResponse.json(
