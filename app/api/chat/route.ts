@@ -63,12 +63,71 @@ Contact: ahmad.s.alhalwany@gmail.com · Based in Trier, Germany · Open to on-si
 const NOT_CONFIGURED_REPLY =
   "The Ask Ahmad assistant is not configured yet. Please reach out via the contact form or email ahmad.s.alhalwany@gmail.com — Ahmad usually replies within 24 hours.";
 
-async function callGemini(apiKey: string, systemPrompt: string, context: string, messages: any[], userQuestion: string): Promise<string> {
+type ChatMessage = { role: string; content: string };
+
+function historyMessages(messages: ChatMessage[]) {
+  return messages.slice(-6).map((m) => ({
+    role: m.role === "assistant" ? "assistant" : "user",
+    content: String(m.content).slice(0, 800),
+  }));
+}
+
+/** Call any OpenAI-compatible chat completions endpoint (OpenAI, Groq, Mistral, OpenRouter). */
+async function callOpenAICompatible(
+  label: string,
+  baseUrl: string,
+  apiKey: string,
+  model: string,
+  systemPrompt: string,
+  context: string,
+  messages: ChatMessage[],
+  userQuestion: string,
+  extraBody: Record<string, unknown> = {}
+): Promise<string> {
+  const response = await fetch(baseUrl, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model,
+      temperature: 0.4,
+      // Reasoning models (e.g. gpt-oss) spend part of the budget on hidden
+      // reasoning tokens, so keep the ceiling generous to leave room for the answer.
+      max_tokens: 800,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "system", content: `Context:\n${context}` },
+        ...historyMessages(messages),
+        { role: "user", content: userQuestion },
+      ],
+      ...extraBody,
+    }),
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    console.error(`${label} error:`, response.status, text.slice(0, 300));
+    throw new Error(`${label} API error ${response.status}: ${text.slice(0, 200)}`);
+  }
+
+  const data = await response.json();
+  const msg = data?.choices?.[0]?.message;
+  const reply = msg?.content?.trim() || msg?.reasoning?.trim();
+  if (!reply) {
+    console.error(`${label} empty content:`, JSON.stringify(data?.choices?.[0] ?? {}).slice(0, 300));
+    throw new Error(`${label} returned empty content`);
+  }
+  return reply;
+}
+
+async function callGemini(apiKey: string, systemPrompt: string, context: string, messages: ChatMessage[], userQuestion: string): Promise<string> {
   const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.0-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
   const contents = [
-    ...messages.slice(-6).map((m: any) => ({
+    ...messages.slice(-6).map((m) => ({
       role: m.role === "assistant" ? "model" : "user",
       parts: [{ text: String(m.content).slice(0, 800) }],
     })),
@@ -76,24 +135,15 @@ async function callGemini(apiKey: string, systemPrompt: string, context: string,
   ];
 
   const body = {
-    system_instruction: {
-      parts: [{ text: `${systemPrompt}\n\n${context}` }],
-    },
+    system_instruction: { parts: [{ text: `${systemPrompt}\n\n${context}` }] },
     contents,
-    generationConfig: {
-      temperature: 0.4,
-      maxOutputTokens: 400,
-    },
+    generationConfig: { temperature: 0.4, maxOutputTokens: 400 },
   };
 
-  // AQ. auth keys and legacy AIza keys both work via the x-goog-api-key header
-  // on the native Gemini endpoint.
+  // AQ. auth keys and legacy AIza keys both work via the x-goog-api-key header.
   const response = await fetch(url, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-goog-api-key": apiKey,
-    },
+    headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
     body: JSON.stringify(body),
   });
 
@@ -108,50 +158,76 @@ async function callGemini(apiKey: string, systemPrompt: string, context: string,
   return reply || "I couldn't generate a response. Please try again.";
 }
 
-async function callOpenAI(apiKey: string, systemPrompt: string, context: string, messages: any[], userQuestion: string): Promise<string> {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      temperature: 0.4,
-      max_tokens: 400,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "system", content: `Context:\n${context}` },
-        ...messages.slice(-6).map((m: any) => ({
-          role: m.role === "assistant" ? "assistant" : "user",
-          content: String(m.content).slice(0, 800),
-        })),
-        { role: "user", content: userQuestion },
-      ],
-    }),
-  });
+function cleanKey(raw?: string): string | undefined {
+  const cleaned = raw
+    ?.trim()
+    .replace(/^[A-Z_]+=/, "")
+    .replace(/^["']|["']$/g, "")
+    .trim();
+  return cleaned || undefined;
+}
 
-  if (!response.ok) {
-    const text = await response.text();
-    console.error("OpenAI error:", response.status, text.slice(0, 200));
-    throw new Error(`OpenAI API error: ${response.status}`);
+type Provider = {
+  name: string;
+  run: (sys: string, ctx: string, msgs: ChatMessage[], q: string) => Promise<string>;
+};
+
+/** Build the ordered list of available providers. Groq is preferred (free + fast). */
+function resolveProviders(): Provider[] {
+  const groqKey = cleanKey(process.env.GROQ_API_KEY);
+  const geminiKey = cleanKey(process.env.GEMINI_API_KEY);
+  const openaiKey = cleanKey(process.env.OPENAI_API_KEY);
+  const mistralKey = cleanKey(process.env.MISTRAL_API_KEY);
+  const openrouterKey = cleanKey(process.env.OPENROUTER_API_KEY);
+
+  const providers: Provider[] = [];
+
+  if (groqKey) {
+    const model = process.env.GROQ_MODEL?.trim() || "openai/gpt-oss-120b";
+    // gpt-oss models reason before answering; "low" keeps latency + token cost down.
+    const extra = model.includes("gpt-oss") ? { reasoning_effort: "low" } : {};
+    providers.push({
+      name: "groq",
+      run: (s, c, m, q) =>
+        callOpenAICompatible("Groq", "https://api.groq.com/openai/v1/chat/completions", groqKey, model, s, c, m, q, extra),
+    });
+  }
+  if (geminiKey) {
+    providers.push({ name: "gemini", run: (s, c, m, q) => callGemini(geminiKey, s, c, m, q) });
+  }
+  if (openaiKey) {
+    const model = process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
+    providers.push({
+      name: "openai",
+      run: (s, c, m, q) =>
+        callOpenAICompatible("OpenAI", "https://api.openai.com/v1/chat/completions", openaiKey, model, s, c, m, q),
+    });
+  }
+  if (mistralKey) {
+    const model = process.env.MISTRAL_MODEL?.trim() || "mistral-small-latest";
+    providers.push({
+      name: "mistral",
+      run: (s, c, m, q) =>
+        callOpenAICompatible("Mistral", "https://api.mistral.ai/v1/chat/completions", mistralKey, model, s, c, m, q),
+    });
+  }
+  if (openrouterKey) {
+    const model = process.env.OPENROUTER_MODEL?.trim() || "meta-llama/llama-3.3-70b-instruct:free";
+    providers.push({
+      name: "openrouter",
+      run: (s, c, m, q) =>
+        callOpenAICompatible("OpenRouter", "https://openrouter.ai/api/v1/chat/completions", openrouterKey, model, s, c, m, q),
+    });
   }
 
-  const data = await response.json();
-  return data?.choices?.[0]?.message?.content ?? "I couldn't generate a response. Please try again.";
+  return providers;
 }
 
 export async function POST(request: NextRequest) {
-  // Defensive: strip an accidental "GEMINI_API_KEY=" prefix and surrounding quotes
-  // that sometimes get pasted into the value field on hosting dashboards.
-  const cleanKey = (raw?: string) =>
-    raw?.trim().replace(/^GEMINI_API_KEY=/, "").replace(/^OPENAI_API_KEY=/, "").replace(/^["']|["']$/g, "").trim();
-
-  const geminiKey = cleanKey(process.env.GEMINI_API_KEY);
-  const openaiKey = cleanKey(process.env.OPENAI_API_KEY);
+  const providers = resolveProviders();
   const debug = new URL(request.url).searchParams.get("debug") === "1";
 
-  if (!geminiKey && !openaiKey) {
+  if (providers.length === 0) {
     return NextResponse.json(
       { reply: NOT_CONFIGURED_REPLY, unconfigured: true },
       { status: 200 }
@@ -160,8 +236,8 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const messages = Array.isArray(body?.messages) ? body.messages : [];
-    const lastUser = [...messages].reverse().find((m: any) => m?.role === "user");
+    const messages: ChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
+    const lastUser = [...messages].reverse().find((m) => m?.role === "user");
     const userQuestion = (lastUser?.content ?? "").toString().slice(0, 800);
 
     if (!userQuestion) {
@@ -171,24 +247,38 @@ export async function POST(request: NextRequest) {
     const [content, posts] = await Promise.all([getContent(), getPublishedPosts()]);
     const context = buildContext(content, posts);
 
-    let reply: string;
-    if (geminiKey) {
-      reply = await callGemini(geminiKey, SYSTEM_PROMPT, context, messages, userQuestion);
-    } else if (openaiKey) {
-      reply = await callOpenAI(openaiKey, SYSTEM_PROMPT, context, messages, userQuestion);
-    } else {
-      reply = NOT_CONFIGURED_REPLY;
+    // Try each provider in order; fall back to the next on failure (e.g. quota 429).
+    let reply: string | null = null;
+    let usedProvider = "";
+    let lastError: unknown = null;
+    for (const provider of providers) {
+      try {
+        reply = await provider.run(SYSTEM_PROMPT, context, messages, userQuestion);
+        usedProvider = provider.name;
+        break;
+      } catch (providerError) {
+        lastError = providerError;
+        const msg = providerError instanceof Error ? providerError.message : String(providerError);
+        console.error(`Provider ${provider.name} failed: ${msg}`);
+      }
     }
 
-    return NextResponse.json({ reply, provider: geminiKey ? "gemini" : "openai" });
+    if (reply === null) {
+      throw lastError ?? new Error("All providers failed");
+    }
+
+    return NextResponse.json({ reply, provider: usedProvider });
   } catch (error) {
     console.error("Chat API error:", error);
     const message = error instanceof Error ? error.message : String(error);
+    const isQuota = /\b429\b|quota|rate.?limit|RESOURCE_EXHAUSTED/i.test(message);
     return NextResponse.json(
       {
         reply: debug
           ? `DEBUG: ${message}`
-          : "Something went wrong. Please try again, or reach out via the contact form.",
+          : isQuota
+            ? "I'm getting a lot of questions right now and hit my usage limit. Please try again a bit later, or email Ahmad directly at ahmad.s.alhalwany@gmail.com."
+            : "Something went wrong. Please try again, or reach out via the contact form.",
       },
       { status: 200 }
     );

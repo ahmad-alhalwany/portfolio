@@ -123,14 +123,14 @@ export async function resolveUploadFile(segments: string[]): Promise<string | nu
     return null;
   }
 
+  const relative = segments.join("/");
   const roots = IS_VERCEL
     ? [runtimeUploadsRoot(), publicUploadsRoot()]
     : [publicUploadsRoot()];
 
   for (const root of roots) {
-    const filePath = path.join(root, ...segments);
-    const resolved = path.resolve(filePath);
     const rootResolved = path.resolve(root);
+    const resolved = path.resolve(rootResolved, relative);
 
     if (
       !resolved.startsWith(rootResolved + path.sep) &&
