@@ -64,8 +64,8 @@ const NOT_CONFIGURED_REPLY =
   "The Ask Ahmad assistant is not configured yet. Please reach out via the contact form or email ahmad.s.alhalwany@gmail.com — Ahmad usually replies within 24 hours.";
 
 async function callGemini(apiKey: string, systemPrompt: string, context: string, messages: any[], userQuestion: string): Promise<string> {
-  const model = "gemini-2.0-flash";
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.0-flash";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
   const contents = [
     ...messages.slice(-6).map((m: any) => ({
@@ -86,16 +86,21 @@ async function callGemini(apiKey: string, systemPrompt: string, context: string,
     },
   };
 
+  // AQ. auth keys and legacy AIza keys both work via the x-goog-api-key header
+  // on the native Gemini endpoint.
   const response = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-goog-api-key": apiKey,
+    },
     body: JSON.stringify(body),
   });
 
   if (!response.ok) {
     const text = await response.text();
-    console.error("Gemini error:", response.status, text.slice(0, 200));
-    throw new Error(`Gemini API error: ${response.status}`);
+    console.error("Gemini error:", response.status, text.slice(0, 300));
+    throw new Error(`Gemini API error ${response.status}: ${text.slice(0, 200)}`);
   }
 
   const data = await response.json();
@@ -137,8 +142,14 @@ async function callOpenAI(apiKey: string, systemPrompt: string, context: string,
 }
 
 export async function POST(request: NextRequest) {
-  const geminiKey = process.env.GEMINI_API_KEY?.trim();
-  const openaiKey = process.env.OPENAI_API_KEY?.trim();
+  // Defensive: strip an accidental "GEMINI_API_KEY=" prefix and surrounding quotes
+  // that sometimes get pasted into the value field on hosting dashboards.
+  const cleanKey = (raw?: string) =>
+    raw?.trim().replace(/^GEMINI_API_KEY=/, "").replace(/^OPENAI_API_KEY=/, "").replace(/^["']|["']$/g, "").trim();
+
+  const geminiKey = cleanKey(process.env.GEMINI_API_KEY);
+  const openaiKey = cleanKey(process.env.OPENAI_API_KEY);
+  const debug = new URL(request.url).searchParams.get("debug") === "1";
 
   if (!geminiKey && !openaiKey) {
     return NextResponse.json(
@@ -172,8 +183,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ reply, provider: geminiKey ? "gemini" : "openai" });
   } catch (error) {
     console.error("Chat API error:", error);
+    const message = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { reply: "Something went wrong. Please try again, or reach out via the contact form." },
+      {
+        reply: debug
+          ? `DEBUG: ${message}`
+          : "Something went wrong. Please try again, or reach out via the contact form.",
+      },
       { status: 200 }
     );
   }
