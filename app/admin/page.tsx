@@ -88,7 +88,7 @@ const AdminPage = () => {
 
   useEffect(() => {
     if (authenticated) {
-      fetch("/api/content")
+      fetch("/api/content?raw=true")
         .then((response) => response.json())
         .then((data: Content) =>
           setContent({

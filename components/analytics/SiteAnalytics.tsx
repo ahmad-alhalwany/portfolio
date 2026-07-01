@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { shouldSkipAnalyticsPath } from "@/lib/analytics-shared";
@@ -26,13 +26,27 @@ function sendGtagPageView(path: string) {
   }
 }
 
+function isAnalyticsConsentGiven(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const raw = window.localStorage.getItem("ahmad-portfolio-cookie-consent");
+    if (!raw) return false;
+    const parsed = JSON.parse(raw);
+    return parsed?.choice === "all";
+  } catch {
+    return false;
+  }
+}
+
 function trackPageView(path: string) {
   if (shouldSkipAnalyticsPath(path)) return;
 
   const sessionId = getSessionId();
   const referrer = document.referrer || "";
 
-  sendGtagPageView(path);
+  if (isAnalyticsConsentGiven()) {
+    sendGtagPageView(path);
+  }
 
   fetch("/api/analytics/track", {
     method: "POST",
@@ -46,6 +60,19 @@ export function SiteAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const lastPath = useRef<string | null>(null);
+  const [consent, setConsent] = useState(false);
+
+  // Listen for consent changes (cookie banner dispatches a custom event).
+  useEffect(() => {
+    setConsent(isAnalyticsConsentGiven());
+    const handler = () => setConsent(isAnalyticsConsentGiven());
+    window.addEventListener("cookie-consent-change", handler);
+    window.addEventListener("storage", handler);
+    return () => {
+      window.removeEventListener("cookie-consent-change", handler);
+      window.removeEventListener("storage", handler);
+    };
+  }, []);
 
   useEffect(() => {
     const query = searchParams?.toString();
@@ -58,7 +85,7 @@ export function SiteAnalytics() {
     trackPageView(normalized);
   }, [pathname, searchParams]);
 
-  if (!GA_ID) return null;
+  if (!GA_ID || !consent) return null;
 
   return (
     <>

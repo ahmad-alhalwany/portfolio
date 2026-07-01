@@ -1,6 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
+import { isAdminRequest } from "@/lib/admin-auth";
+import { runtimeUploadsRoot } from "@/lib/server-storage";
 import { normalizeUploadUrl } from "@/lib/upload-url";
 
 export const dynamic = "force-dynamic";
@@ -14,9 +16,9 @@ function resolveResumeFilePath(url: string): string | null {
     if (segments.length === 0 || segments.some((s) => s === "." || s === "..")) {
       return null;
     }
-    const filePath = path.join(process.cwd(), "public", "uploads", "resume", ...segments);
+    const filePath = path.join(runtimeUploadsRoot(), "resume", ...segments);
     const resolved = path.resolve(filePath);
-    const root = path.resolve(path.join(process.cwd(), "public", "uploads", "resume"));
+    const root = path.resolve(path.join(runtimeUploadsRoot(), "resume"));
     if (!resolved.startsWith(root + path.sep)) return null;
     return resolved;
   }
@@ -39,6 +41,11 @@ function resolveResumeFilePath(url: string): string | null {
 
 export async function DELETE(request: NextRequest) {
   try {
+    const admin = await isAdminRequest(request);
+    if (!admin) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const body = (await request.json()) as { url?: string };
     const url = body.url?.trim();
     if (!url) {

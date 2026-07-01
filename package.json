@@ -8,9 +8,12 @@
     "dev:webpack": "next dev",
     "preview": "npm run build && next start",
     "clean": "node scripts/clean-next.mjs",
-    "build": "next build",
+    "build": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next build",
+    "build:8g": "node --max-old-space-size=8192 ./node_modules/next/dist/bin/next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "verify": "next lint && tsc --noEmit",
     "setup:community": "node scripts/setup-community.mjs",
     "sync:certs": "npx tsx scripts/sync-education-certs.mjs"
   },

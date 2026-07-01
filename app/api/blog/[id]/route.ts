@@ -7,10 +7,17 @@ export const dynamic = "force-dynamic";
 
 type RouteContext = { params: { id: string } };
 
-export async function GET(_request: NextRequest, { params }: RouteContext) {
+export async function GET(request: NextRequest, { params }: RouteContext) {
   const post = await getPostById(params.id);
   if (!post) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });
+  }
+  // Drafts are sensitive — only expose to authenticated admin.
+  if (post.status !== "published") {
+    const admin = await isAdminRequest(request);
+    if (!admin) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
   }
   return NextResponse.json({ post });
 }

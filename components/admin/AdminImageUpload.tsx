@@ -19,6 +19,7 @@ type Props = {
 };
 
 const PREVIEW_H = { sm: "h-24", md: "h-32", lg: "h-40" };
+const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
 
 export function AdminImageUpload({
   label,
@@ -49,12 +50,12 @@ export function AdminImageUpload({
 
   useEffect(() => () => clearBlob(), [clearBlob]);
 
-  const setBlobPreview = (file: File) => {
+  const setBlobPreview = useCallback((file: File) => {
     clearBlob();
     const blob = URL.createObjectURL(file);
     blobRef.current = blob;
     setLocalPreview(blob);
-  };
+  }, [clearBlob]);
 
   const upload = useCallback(
     async (file: File) => {
@@ -82,12 +83,20 @@ export function AdminImageUpload({
         if (inputRef.current) inputRef.current.value = "";
       }
     },
-    [clearBlob, folder, onChange, onUploaded]
+    [clearBlob, folder, onChange, onUploaded, setBlobPreview]
   );
 
   const onFile = (file: File | undefined) => {
-    if (file && file.type.startsWith("image/")) void upload(file);
-    else if (file) setError("Please choose an image file (PNG, JPG, WebP, GIF, SVG).");
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      setError("Please choose an image file (PNG, JPG, WebP, GIF, SVG).");
+      return;
+    }
+    if (file.size > MAX_IMAGE_BYTES) {
+      setError(`File too large — max 2MB. Your file is ${(file.size / 1024 / 1024).toFixed(1)}MB.`);
+      return;
+    }
+    void upload(file);
   };
 
   const storedPreview =

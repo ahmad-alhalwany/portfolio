@@ -16,7 +16,7 @@ const MIME: Record<string, string> = {
 };
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: { path: string[] } }
 ) {
   const resolved = await resolveUploadFile(params.path ?? []);
@@ -27,12 +27,18 @@ export async function GET(
   try {
     const buffer = await fs.readFile(resolved);
     const ext = path.extname(resolved).toLowerCase();
+    const etag = `"${Buffer.from(resolved).toString("hex")}-${buffer.length}"`;
+
+    if (request.headers.get("if-none-match") === etag) {
+      return new NextResponse(null, { status: 304, headers: { ETag: etag } });
+    }
 
     return new NextResponse(buffer, {
       headers: {
         "Content-Type": MIME[ext] || "application/octet-stream",
         "Cache-Control": "public, max-age=604800, stale-while-revalidate=86400",
         "Content-Length": String(buffer.length),
+        ETag: etag,
       },
     });
   } catch {

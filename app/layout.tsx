@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClientBoot } from "@/components/root/ClientBoot";
 import { RootJsonLd } from "@/components/seo/RootJsonLd";
+import { CookieConsent } from "@/components/cookies/CookieConsent";
+import { AskAhmadChat } from "@/components/chat/AskAhmadChat";
 import { rootMetadata } from "@/lib/seo";
 import { getCachedLocalizedContent } from "@/lib/cached-content";
 
@@ -14,6 +16,12 @@ export const metadata: Metadata = {
     icon: [{ url: "/code-mark.svg", type: "image/svg+xml" }],
     shortcut: [{ url: "/code-mark.svg", type: "image/svg+xml" }],
     apple: [{ url: "/code-mark.svg", type: "image/svg+xml" }],
+  },
+  alternates: {
+    ...(rootMetadata.alternates as { canonical?: string } | undefined),
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: "Ahmad Al-Halwany — Blog RSS" }],
+    },
   },
   formatDetection: {
     telephone: false,
@@ -42,6 +50,8 @@ export default async function RootLayout({
       <body className={inter.className}>
         <RootJsonLd />
         <ClientBoot initialContent={initialContent}>{children}</ClientBoot>
+        <CookieConsent />
+        <AskAhmadChat />
       </body>
     </html>
   );

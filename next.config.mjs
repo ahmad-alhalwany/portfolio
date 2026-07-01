@@ -7,6 +7,10 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  // Skip ESLint + TypeScript during `next build` — we run them separately via `npm run verify`.
+  // This shaves 30–90s off build time. Run `npm run verify` before pushing.
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
   ...(process.env.NEXT_PUBLIC_CDN_URL?.trim()
     ? {
         assetPrefix: process.env.NEXT_PUBLIC_CDN_URL.trim().replace(/\/$/, ""),

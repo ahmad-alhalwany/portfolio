@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { Project } from "@/lib/types";
 import { hasProjectLinks } from "@/lib/project-utils";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 type Props = { project: Project };
 
@@ -17,7 +18,14 @@ export default function CompactProjectCard({ project }: Props) {
             {project.iconLists?.length ? (
               <div className="flex items-center gap-1.5">
                 {project.iconLists.slice(0, 5).map((icon, i) => (
-                  <img key={i} src={icon} alt="" className="h-5 w-5 opacity-80" />
+                  <OptimizedImage
+                    key={i}
+                    src={icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 opacity-80"
+                  />
                 ))}
               </div>
             ) : null}

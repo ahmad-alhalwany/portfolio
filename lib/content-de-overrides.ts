@@ -347,6 +347,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
       title: "Freelancer — Web & Backend (Festumfang)",
       role: "Freelance Full-Stack Developer",
       period: "2022 — Apr 2023",
+      location: "Remote · Syrien",
       desc: "Kurzfristige Kundenverträge für Web-Backends und E-Commerce — abgeschlossen vor der Festanstellung bei LIT-Co.",
       overview:
         "Ausgewählte Freelance-Projekte mit festem Scope während des Studiums — Fokus auf Backends und Checkout-Integrationen, ohne Überschneidung mit späteren Vollzeitrollen.",

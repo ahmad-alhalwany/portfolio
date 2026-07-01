@@ -38,6 +38,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.75,
     },
+    {
+      url: absoluteUrl("/now"),
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: absoluteUrl("/uses"),
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: absoluteUrl("/imprint"),
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: absoluteUrl("/privacy"),
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
   ];
 
   let blogRoutes: MetadataRoute.Sitemap = [];
@@ -67,7 +91,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   if (!base || base.includes("localhost")) {
-    return [...staticRoutes, ...blogRoutes, ...projectRoutes];
+    // Dev previews shouldn't pollute search indexes — return an empty sitemap.
+    return [];
   }
 
   return [...staticRoutes, ...blogRoutes, ...projectRoutes];

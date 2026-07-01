@@ -10,6 +10,9 @@ import { extractTocFromHtml, injectHeadingIds, TocItem } from "@/lib/blog-toc";
 import { FaArrowLeft, FaClock } from "react-icons/fa";
 import { BlogComments } from "@/components/blog/BlogComments";
 import { BlogArticleNewsletter } from "@/components/newsletter/BlogArticleNewsletter";
+import { ReadingProgress } from "@/components/blog/ReadingProgress";
+import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
+import { CodeBlockCopyEnhancer } from "@/components/blog/CodeBlockCopyEnhancer";
 
 export function BlogArticleLayout({ post }: { post: BlogPostPublic }) {
   const bodyWithIds = injectHeadingIds(post.body);
@@ -41,6 +44,7 @@ export function BlogArticleLayout({ post }: { post: BlogPostPublic }) {
 
   return (
     <main className="min-h-screen bg-page px-5 py-24 sm:px-10">
+      <ReadingProgress />
       <article className="mx-auto max-w-6xl">
         <Link
           href="/blog"
@@ -78,6 +82,10 @@ export function BlogArticleLayout({ post }: { post: BlogPostPublic }) {
           </div>
         </div>
 
+        <div className="mb-8 flex justify-center">
+          <BlogShareButtons title={post.title} slug={post.slug} />
+        </div>
+
         <div className="grid gap-10 lg:grid-cols-[240px_1fr]">
           {toc.length > 0 && (
             <aside className="hidden lg:block">
@@ -105,6 +113,10 @@ export function BlogArticleLayout({ post }: { post: BlogPostPublic }) {
           <div className="min-w-0 space-y-10">
             <div className="blog-prose rounded-3xl border border-slate-800 bg-slate-950/50 p-6 md:p-10">
               {parse(bodyWithIds)}
+            </div>
+            <CodeBlockCopyEnhancer />
+            <div className="flex justify-center">
+              <BlogShareButtons title={post.title} slug={post.slug} />
             </div>
             <BlogArticleNewsletter />
             <BlogComments postSlug={post.slug} />

@@ -241,7 +241,7 @@ Open [http://localhost:3000](http://localhost:3000) — admin panel at [http://l
 - [ ] `ADMIN_PASSWORD` + `IRON_SESSION_PASSWORD` set (strong values)
 - [ ] Upstash Redis vars set for reviews/comments on Vercel
 - [ ] EmailJS or hire API configured for contact
-- [ ] CV PDF present at `public/resume/ahmad-alhalwany-cv.pdf` or uploaded via admin
+- [ ] CV PDFs present at `public/resume/ahmad-alhalwany-cv-en.pdf` and `public/resume/ahmad-alhalwany-cv-de.pdf`, or uploaded via admin
 
 ---
 

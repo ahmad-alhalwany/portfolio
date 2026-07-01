@@ -11,8 +11,6 @@ export default function robots(): MetadataRoute.Robots {
           "/admin",
           "/admin/",
           "/api/",
-          "/sentry-example-page",
-          "/sentry-example-api",
         ],
       },
     ],

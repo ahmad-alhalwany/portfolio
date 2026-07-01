@@ -78,8 +78,16 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const uploadsPath = path.join(runtimeUploadsRoot(), folder);
-    await fs.mkdir(uploadsPath, { recursive: true });
+    let targetDir: string;
+    let publicUrlPrefix: string;
+
+    // Always write uploads to the runtime uploads root (served via /api/media/).
+    // Writing to public/resume/ would 404 under `next start` because the static
+    // manifest is generated at build time and doesn't pick up new files.
+    targetDir = path.join(runtimeUploadsRoot(), folder);
+    publicUrlPrefix = `/uploads/${folder}/`;
+
+    await fs.mkdir(targetDir, { recursive: true });
 
     let fileName: string;
     if (replaceFile) {
@@ -90,15 +98,16 @@ export async function POST(request: NextRequest) {
       fileName = `${timestamp}-${originalName}`;
     }
 
-    const filePath = path.join(uploadsPath, fileName);
+    const filePath = path.join(targetDir, fileName);
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
     await fs.writeFile(filePath, buffer);
 
-    const url = normalizeUploadUrl(`/uploads/${folder}/${fileName}`);
+    const url = normalizeUploadUrl(`${publicUrlPrefix}${fileName}`);
     return NextResponse.json({ url });
-  } catch {
+  } catch (error) {
+    console.error("Upload failed:", error);
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });
   }
 }

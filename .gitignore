@@ -36,6 +36,9 @@ data/comments.json
 data/rate-limits.json
 data/analytics.json
 
+# runtime uploads (regenerated on server via /api/upload — served via /api/media)
+/public/uploads/
+
 # vercel
 .vercel
 

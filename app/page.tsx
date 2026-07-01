@@ -82,6 +82,11 @@ const BlogSectionBlock = dynamic(() => import("@/components/blog/BlogSection"), 
   ),
 });
 
+const GitHubActivity = dynamic(
+  () => import("@/components/github/GitHubActivityWidget").then((m) => m.GitHubActivityWidget),
+  { ssr: false }
+);
+
 const defaultHero: HeroSection = {
   subtitle: "ahmad.dev / full-stack · open to hire",
   title: "Full-stack developer open to full-time roles — Python, Next.js, and software teams can rely on.",
@@ -200,6 +205,9 @@ const Home = () => {
         </ScrollReveal>
         <ScrollReveal variant="fadeUp">
           <BlogSectionBlock section={content?.blogSection ?? emptyBlogSection} />
+        </ScrollReveal>
+        <ScrollReveal variant="fadeUp">
+          <GitHubActivity />
         </ScrollReveal>
         <ScrollReveal variant="fadeUp">
           <Approach approach={approach} />

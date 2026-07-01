@@ -25,6 +25,8 @@ function fileNameFromUrl(url: string): string {
   return url.split("/").pop() || "";
 }
 
+const MAX_RESUME_BYTES = 8 * 1024 * 1024;
+
 function isPdfFile(file: File): boolean {
   const name = file.name.toLowerCase();
   if (!name.endsWith(".pdf")) return false;
@@ -59,6 +61,10 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
         setError("Please choose a PDF file (.pdf).");
         return;
       }
+      if (file.size > MAX_RESUME_BYTES) {
+        setError(`File too large — max 8MB. Your file is ${(file.size / 1024 / 1024).toFixed(1)}MB.`);
+        return;
+      }
 
       setUploading(true);
       setError("");
@@ -78,7 +84,12 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
         const newUrl = normalizeUploadUrl(data.url);
         const previousUrl = value;
 
-        if (previousUrl && previousUrl !== newUrl && previousUrl.startsWith("/uploads/")) {
+        if (
+          previousUrl &&
+          previousUrl !== newUrl &&
+          (previousUrl.startsWith("/uploads/") || previousUrl.startsWith("/resume/")) &&
+          previousUrl.startsWith("/uploads/resume/") // only auto-delete uploads-resume (not committed static PDFs)
+        ) {
           await fetch("/api/resume", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
@@ -106,13 +117,21 @@ export function AdminResumeUpload({ label, hint, value, onChange }: Props) {
 
   const onReplace = (file: File | undefined) => {
     if (!file) return;
-    const replaceName =
-      value.startsWith("/uploads/resume/") ? fileNameFromUrl(value) : undefined;
+    let replaceName: string | undefined;
+    if (value.startsWith("/uploads/resume/")) {
+      replaceName = fileNameFromUrl(value);
+    } else if (value.startsWith("/resume/")) {
+      replaceName = fileNameFromUrl(value);
+    }
     void upload(file, replaceName);
   };
 
   const remove = async () => {
-    if (!value || !value.startsWith("/uploads/")) {
+    if (!value) {
+      onChange("");
+      return;
+    }
+    if (!value.startsWith("/uploads/") && !value.startsWith("/resume/")) {
       onChange("");
       return;
     }

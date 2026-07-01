@@ -1,26 +1,19 @@
-import fs from "fs/promises";
-import path from "path";
 import { BlogPost, BlogPostPublic, BlogPostStatus } from "./types";
 import { estimateReadTime, slugify } from "./blog-shared";
+import { readJsonFile, writeJsonFile } from "./server-storage";
 
 export { estimateReadTime, slugify } from "./blog-shared";
 
-const blogPath = path.join(process.cwd(), "data", "blog.json");
+const FILE = "blog.json";
 
 type BlogStore = { posts: BlogPost[] };
 
 async function readStore(): Promise<BlogStore> {
-  try {
-    const file = await fs.readFile(blogPath, "utf8");
-    return JSON.parse(file) as BlogStore;
-  } catch {
-    return { posts: [] };
-  }
+  return readJsonFile<BlogStore>(FILE, { posts: [] });
 }
 
 async function writeStore(store: BlogStore): Promise<void> {
-  await fs.mkdir(path.dirname(blogPath), { recursive: true });
-  await fs.writeFile(blogPath, JSON.stringify(store, null, 2), "utf8");
+  await writeJsonFile(FILE, store);
 }
 
 function sortPosts(posts: BlogPost[]): BlogPost[] {

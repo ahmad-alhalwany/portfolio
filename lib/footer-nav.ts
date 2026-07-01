@@ -33,10 +33,22 @@ const FOOTER_KEYS: {
   },
 ];
 
+const LEGAL_LINKS: { labelEn: string; labelDe: string; href: string }[] = [
+  { labelEn: "Impressum", labelDe: "Impressum", href: "/imprint" },
+  { labelEn: "Privacy", labelDe: "Datenschutz", href: "/privacy" },
+];
+
 export function getFooterNavLinks(locale: Locale, resumeUrls: ResumeUrls = {}): FooterNavLink[] {
   return FOOTER_KEYS.map(({ key, href, download }) => ({
     label: t(locale, key),
     href: typeof href === "function" ? href(resumeUrls) : href,
     download,
+  }));
+}
+
+export function getFooterLegalLinks(locale: Locale): FooterNavLink[] {
+  return LEGAL_LINKS.map((l) => ({
+    label: locale === "de" ? l.labelDe : l.labelEn,
+    href: l.href,
   }));
 }

@@ -25,9 +25,11 @@ export function TracingBeamDemo() {
                     transform: `translateX(-${5 * index + 2}px)`,
                   }}
                 >
-                  <img
+                  <Image
                     src={item.icon}
                     alt="icon"
+                    width={40}
+                    height={40}
                     className="p-1 rounded-full w-full h-full object-cover"
                   />
                 </div>

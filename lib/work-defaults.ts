@@ -32,7 +32,7 @@ export const defaultWorkExperience: WorkExperience[] = [
     company: "Independent / Freelance",
     role: "Freelance Full-Stack Developer",
     period: "2022 — Apr 2023",
-    location: "Remote",
+    location: "Remote · Syria",
     employmentType: "freelance",
     desc: "Short-term client contracts — completed before LIT-Co full-time.",
     className: "md:col-span-2",

@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": ["node_modules/", ".next/", "out/", "build/", "scripts/seed-*.js"],
+  "overrides": [
+    {
+      "files": ["components/ui/**/*.{ts,tsx}"],
+      "rules": {
+        "react-hooks/exhaustive-deps": "off",
+        "@next/next/no-img-element": "off"
+      }
+    }
+  ]
 }

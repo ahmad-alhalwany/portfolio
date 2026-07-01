@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { FaCode } from "react-icons/fa";
 import { ContactSection } from "@/lib/types";
 import { mergeContactSection } from "@/lib/contact-defaults";
-import { getFooterNavLinks } from "@/lib/footer-nav";
+import { getFooterNavLinks, getFooterLegalLinks } from "@/lib/footer-nav";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { SIZES } from "@/lib/image-config";
@@ -30,9 +30,12 @@ const Footer = ({ contact }: { contact: ContactSection }) => {
   return (
     <footer className="relative w-full pb-6">
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 w-full overflow-hidden md:h-56">
-        <img
+        <OptimizedImage
           src="/footer-grid.svg"
           alt=""
+          width={1200}
+          height={300}
+          sizes="100vw"
           className="h-full w-full object-cover object-bottom opacity-30"
           aria-hidden
         />
@@ -77,6 +80,7 @@ function CenteredFooterBar({ contact }: { contact: ContactSection }) {
     en: contact.resumeUrl,
     de: contact.resumeUrlDe,
   });
+  const legalLinks = getFooterLegalLinks(locale);
 
   return (
     <div className="relative z-10 mx-auto mt-8 max-w-4xl px-4">
@@ -130,6 +134,21 @@ function CenteredFooterBar({ contact }: { contact: ContactSection }) {
         <p className="mt-1.5 pb-2 text-center text-[10px] uppercase tracking-widest text-page-muted">
           {t("footer.hiringLine")}
         </p>
+
+        <nav
+          className="mt-4 flex items-center gap-4 text-[11px] text-page-muted"
+          aria-label="Legal"
+        >
+          {legalLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="transition hover:text-purple hover:underline"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </div>
   );
