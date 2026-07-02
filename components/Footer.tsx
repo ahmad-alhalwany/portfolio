@@ -11,6 +11,19 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { SIZES } from "@/lib/image-config";
 import { cn } from "@/lib/utils";
 
+/** Infer an accessible label from a social profile URL so screen readers can distinguish links. */
+function socialLabelFromUrl(url: string): string {
+  const u = url.toLowerCase();
+  if (u.includes("github")) return "GitHub profile";
+  if (u.includes("linkedin")) return "LinkedIn profile";
+  if (u.includes("twitter") || u.includes("x.com")) return "X (Twitter) profile";
+  if (u.includes("instagram")) return "Instagram profile";
+  if (u.includes("facebook")) return "Facebook profile";
+  if (u.includes("xing")) return "Xing profile";
+  if (u.startsWith("mailto:")) return "Email Ahmad";
+  return "Social profile";
+}
+
 const FooterNewsletter = dynamic(
   () => import("@/components/newsletter/FooterNewsletter").then((m) => m.FooterNewsletter),
   { ssr: false }
@@ -109,7 +122,7 @@ function CenteredFooterBar({ contact }: { contact: ContactSection }) {
                 href={info.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Social profile"
+                aria-label={socialLabelFromUrl(info.link)}
                 className={cn(
                   "flex h-10 w-10 items-center justify-center rounded-xl border border-page bg-page-card backdrop-blur-md transition duration-300",
                   "hover:border-purple/40 hover:bg-purple/5 hover:shadow-[0_0_20px_-8px_var(--glow-purple)] focus-ring"

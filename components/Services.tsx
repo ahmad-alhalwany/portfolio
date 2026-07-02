@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaCheck, FaCloud, FaCode, FaPaintBrush } from "react-icons/fa";
 import { ServicesSection, ServiceItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 const SERVICE_VISUALS: Record<
   number,
@@ -45,6 +46,7 @@ function getVisuals(service: ServiceItem) {
 }
 
 const Services = ({ servicesSection }: { servicesSection: ServicesSection }) => {
+  const { t } = useLocale();
   const [activeIndex, setActiveIndex] = useState(0);
   const services = servicesSection.services;
   const activeService = services[activeIndex] ?? services[0];
@@ -65,7 +67,7 @@ const Services = ({ servicesSection }: { servicesSection: ServicesSection }) => 
 
       <div className="relative z-10 mb-10 text-center lg:mb-12">
         <span className="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-purple/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-purple">
-          Services
+          {t("services.badge")}
         </span>
         <h2 className="mt-5 bg-gradient-to-b from-white via-white to-slate-400 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
           {servicesSection.title}

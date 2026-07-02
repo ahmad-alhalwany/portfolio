@@ -31,14 +31,14 @@ type Props = {
 
 type Phase = "idle" | "extracting" | "done";
 
-const ORBIT_WORDS = ["HIRABLE", "PDF", "FULL-STACK", "OPEN"];
+const ORBIT_WORDS = ["AVAILABLE", "PDF", "FULL-STACK", "OPEN"];
 
 export function CVShowcase({
   resumeUrl = RESUME_PATH_EN,
   resumeUrlDe = RESUME_PATH_DE,
-  label = "Extract dossier",
-  labelDe = "Lebenslauf laden",
-  tagline = "Lebenslauf · classified",
+  label = "Download CV (EN)",
+  labelDe = "Lebenslauf (DE)",
+  tagline = "CV · English & German",
   variant = "hero",
   className,
 }: Props) {
@@ -65,9 +65,9 @@ export function CVShowcase({
   }, []);
 
   const statusLines = [
-    "Scanning recruiter signal…",
-    "Decrypting career graph…",
-    "Dossier ready — pull to download",
+    "Available for full-time roles",
+    "Python · Next.js · full-stack",
+    "Ready — tap to download",
   ];
   const statusText = statusLines[tick % statusLines.length];
 
@@ -150,7 +150,7 @@ export function CVShowcase({
       </AnimatePresence>
 
       <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.35em] text-cyan-400/80">
-        signal://recruiter-channel
+        cv // en · de
       </p>
 
       <motion.div
@@ -283,7 +283,7 @@ export function CVShowcase({
                 </div>
 
                 <p className="relative mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-slate-500">
-                  dossier://
+                  cv //
                 </p>
                 <p
                   className={cn(
@@ -369,7 +369,7 @@ export function CVShowcase({
         animate={{ opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 2.2, repeat: Infinity }}
       >
-        {extracting ? "Packaging encrypted dossier…" : statusText}
+        {extracting ? "Preparing your download…" : statusText}
       </motion.p>
       <p className="mt-1 text-center text-[10px] text-slate-600">
         Tap the core for English · {labelDe} for German

@@ -34,6 +34,8 @@ const FOOTER_KEYS: {
 ];
 
 const LEGAL_LINKS: { labelEn: string; labelDe: string; href: string }[] = [
+  { labelEn: "Now", labelDe: "Aktuell", href: "/now" },
+  { labelEn: "Uses", labelDe: "Setup", href: "/uses" },
   { labelEn: "Impressum", labelDe: "Impressum", href: "/imprint" },
   { labelEn: "Privacy", labelDe: "Datenschutz", href: "/privacy" },
 ];

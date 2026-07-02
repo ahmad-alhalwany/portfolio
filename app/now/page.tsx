@@ -58,7 +58,7 @@ export default function NowPage() {
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-purple"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-page-muted transition hover:text-purple"
         >
           <FaHome className="h-4 w-4" />
           Back to home
@@ -66,8 +66,8 @@ export default function NowPage() {
 
         <header className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple">/now</p>
-          <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl">What I&apos;m doing now</h1>
-          <p className="mt-4 text-slate-400">
+          <h1 className="mt-2 text-4xl font-bold text-page-fg md:text-5xl">What I&apos;m doing now</h1>
+          <p className="mt-4 text-page-muted">
             Inspired by{" "}
             <a
               href="https://nownownow.com"
@@ -87,13 +87,13 @@ export default function NowPage() {
             return (
               <section
                 key={section.title}
-                className="rounded-2xl border border-white/10 bg-slate-950/40 p-6"
+                className="rounded-2xl border border-page bg-page-card p-6"
               >
-                <h2 className="mb-4 flex items-center gap-3 text-xl font-semibold text-white">
+                <h2 className="mb-4 flex items-center gap-3 text-xl font-semibold text-page-fg">
                   <Icon className={`h-5 w-5 ${section.color}`} />
                   {section.title}
                 </h2>
-                <ul className="space-y-2.5 text-sm text-slate-300">
+                <ul className="space-y-2.5 text-sm text-page-muted">
                   {section.items.map((item, i) => (
                     <li key={i} className="flex gap-2.5">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple/60" />
@@ -106,7 +106,7 @@ export default function NowPage() {
           })}
         </div>
 
-        <p className="mt-10 text-center text-xs text-slate-500">
+        <p className="mt-10 text-center text-xs text-page-muted">
           This page is updated whenever something material changes — not on a fixed schedule.
         </p>
       </div>

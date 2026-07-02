@@ -25,17 +25,17 @@ export default function GlobalError({
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-red-400/80">
           error://unhandled
         </p>
-        <h1 className="mt-6 text-4xl font-bold text-white md:text-5xl">
+        <h1 className="mt-6 text-4xl font-bold text-page-fg md:text-5xl">
           Something broke on this page.
         </h1>
-        <p className="mt-4 text-base text-slate-300">
+        <p className="mt-4 text-base text-page-muted">
           An unexpected error occurred while rendering this page. You can try
           again, or head back to safer ground. The error has been logged for
           investigation.
         </p>
 
         {error.digest ? (
-          <p className="mt-3 font-mono text-xs text-slate-500">
+          <p className="mt-3 font-mono text-xs text-page-muted">
             Reference: {error.digest}
           </p>
         ) : null}
@@ -51,7 +51,7 @@ export default function GlobalError({
           </button>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-purple/40 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-page px-5 py-2.5 text-sm font-semibold text-page-fg transition hover:border-purple/40 hover:text-purple"
           >
             <FaHome className="h-4 w-4" />
             Back to home

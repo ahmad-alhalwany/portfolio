@@ -56,6 +56,8 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
       { key: "stack", value: "python · next.js · typescript" },
       { key: "zeitzone", value: "Deutschland · MEZ (Trier)" },
       { key: "standort", value: "Trier, Deutschland · vor Ort, hybrid & remote" },
+      { key: "arbeitserlaubnis", value: "Chancenkarte · arbeitsberechtigt · keine Arbeitgeber-Sponsorship nötig" },
+      { key: "verfügbarkeit", value: "Sofort verfügbar" },
       { key: "sprachen", value: "AR Muttersprache · EN B2 · DE A2 → B1" },
     ],
     bentoTitle: "Identitätsfragmente",
@@ -90,6 +92,103 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
       id: 6,
       title: "Einstellung? Lass uns die Passung klären.",
       description: "",
+    },
+  ],
+  projects: [
+    {
+      id: 1,
+      title: "Plaze-Shop — E-Commerce-Website",
+      des: "Produkte und Baumaterialien nahtlos entdecken — mit einer in Next.js gebauten Oberfläche.",
+      challenge: "Bestandsfehler reduzieren und die Produktsuche verbessern",
+      solution: "Responsiver Storefront mit strukturierten Bestands-Workflows",
+      overview:
+        "Plaze Shop ist ein produktiver E-Commerce-Storefront für Baumaterialien und Zubehör, gebaut mit Next.js — für schnelle Produktsuche der Kunden und eine zuverlässige Online-Bestandsverwaltung des Unternehmens.",
+      challengeDetail:
+        "Das Unternehmen brauchte einen modernen Webauftritt, auf dem Kunden Produkte und Materialien reibungslos entdecken können, während das interne Team mit manueller Bestandsführung kämpfte — was zu Zählfehlern und langsamen Nachbestellzyklen führte.",
+      solutionDetail:
+        "Ich habe einen Next.js-Storefront mit klarer Kategorienavigation, Produktdetailseiten und einem internen Bestands-Dashboard umgesetzt. Die UI ist auf Lesbarkeit auf Mobil und Desktop optimiert, und das Datenmodell hält die Lagerbestände über Admin- und öffentliche Ansichten hinweg konsistent.",
+      keyFeatures: [
+        "Next.js App Router mit optimierten Bildern und responsiven Layouts",
+        "Produktkatalog mit suchfreundlicher Struktur und Detailseiten",
+        "Interne Bestandsverwaltungs-Ansichten für Lageraktualisierungen",
+        "Tailwind-basiertes Designsystem, abgestimmt auf die Marke Plaze",
+        "Live-Demo bereitgestellt und mit der echten Unternehmensdomain integriert",
+      ],
+      outcomes: [
+        "Live-Produktivsite, die echte Kunden unter plaze-shop.de bedient",
+        "Einzige Bestandsquelle — Admin-Updates synchronisieren mit dem öffentlichen Katalog",
+        "21+ Screens für Katalog, Produktdetail und Bestands-Workflows",
+        "Mobile-First-UX für die Materialsuche vor Ort auf Handy und Tablet",
+      ],
+      metrics: [
+        { id: "m1", value: "Live", label: "Produktiv unter plaze-shop.de" },
+        { id: "m2", value: "21+", label: "Katalog- & Admin-Screens" },
+        { id: "m3", value: "2", label: "Bereiche — Storefront + Bestand" },
+      ],
+    },
+    {
+      id: 6,
+      des: "Full-Stack-KI-Plattform zur frühen Autismus-Früherkennung — Gesichtsbildanalyse mit Grad-CAM plus 12-Fragen-Verhaltensfragebogen, zweisprachig AR/EN.",
+      challenge: "Familien einen zugänglichen ersten Screening-Weg geben — keine Blackbox-Diagnose",
+      solution: "Zweigleisige Next.js- + FastAPI-Plattform mit erklärbarer KI und medizinnahen Berichten",
+      overview:
+        "Persönliches Portfolio-Projekt — eine Full-Stack-Health-Tech-Plattform zur frühen ASD-Früherkennung per Computer Vision und Verhaltensfragebogen (keine Kunden-Freelance-Arbeit). Unterstützt Bezugspersonen beim Screening via Gesichtsanalyse (MobileNetV3 + Grad-CAM) oder einem 12-Fragen-Test — zweisprachig AR/EN.",
+      challengeDetail:
+        "Frühe Autismus-Anzeichen werden ohne Fachzugang leicht übersehen, und viele KI-Demos enden bei einem Klassifikations-Label. Das Produkt brauchte zwei Screening-Wege (visuell + verhaltensbasiert), erklärbare Ergebnisse, die Bezugspersonen verstehen, klare medizinische Hinweise und eine zweisprachige UX, die in Produktion funktioniert — nicht nur im Notebook.",
+      solutionDetail:
+        "Ich habe ein Monorepo mit Next.js 15 auf Vercel und FastAPI auf Hugging Face Spaces gebaut. Die Bild-Pipeline verarbeitet 224×224-Eingaben durch ein feinabgestimmtes MobileNetV3, liefert Grad-CAM-Heatmaps als Base64 und erzeugt strukturierte Berichte. Der Fragebogen-Weg skaliert 12 Ja/Nein-Antworten durch ein trainiertes neuronales Netz (~92 % Genauigkeit) mit maßgeschneiderten Empfehlungen und WHO/CDC-Ressourcen. Docker, Health-Checks, CORS und Swagger halten den Stack deploybar und überprüfbar.",
+      keyFeatures: [
+        "Next.js 15 App Router — Bild-Upload, Fragebogen, Über-Seite, AR/EN-i18n mit RTL/LTR",
+        "FastAPI-Backend — /predict-image, /predict-questions, /health, Swagger-Docs",
+        "MobileNetV3 (~70 %) + Grad-CAM-Erklärbarkeit für Augen-, Stirn- und Mundregionen",
+        "Neuronales Netz für Fragebogen (~92 %) mit Scaler, Berichten und Hilfsressourcen",
+        "Medizinischer Hinweis, ResultPanel, ChildInfoForm — Privacy-First (In-Memory-Verarbeitung)",
+        "Monorepo + Docker — Frontend auf Vercel, Backend auf Hugging Face Spaces",
+      ],
+      outcomes: [
+        "Live-Demo unter autism-spectrum-six.vercel.app mit offenem GitHub-Monorepo",
+        "2 Screening-Wege — Bild (~70 %) und Fragebogen (~92 %) mit XAI-Heatmaps",
+        "13 dokumentierte UI-Screens — Home, Erkennung, Ergebnisse, Über, zweisprachige Flows",
+        "Produktiv-Deployment — Vercel-Frontend + Hugging-Face-Docker-API mit CORS",
+      ],
+      metrics: [
+        { id: "m1", value: "~92%", label: "Genauigkeit Fragebogen-Modell" },
+        { id: "m2", value: "2", label: "Screening-Wege — Bild + Test" },
+        { id: "m3", value: "AR/EN", label: "Voll zweisprachige UI + Berichte" },
+      ],
+    },
+    {
+      id: 7,
+      des: "Full-Stack-Plattform für Geldtransfers mit mehreren Filialen — SYP & USD, rollenbasierte Dashboards, Berichte, Gewinn-Tracking, PDF-Belege und zweisprachige AR/EN-UI.",
+      challenge: "Filialübergreifende Transfers brauchen RBAC, Steuerlogik und auditfähiges Reporting — keine Tabellenkalkulation",
+      solution: "Produktionsreifes Next.js + FastAPI + PostgreSQL mit 3 rollenspezifischen Dashboards",
+      overview:
+        "Ein Portfolio-Fintech-Demo, das einen echten Geldtransfer-Betrieb mit mehreren Filialen in Syrien simuliert — mit ausgehenden und eingehenden Transfers in Syrischen Pfund (SYP) und US-Dollar (USD). Drei Rollen (Direktor, Filialleiter, Mitarbeiter) erhalten jeweils zugeschnittene Dashboards für Filialen, Personal, Transfers, Steuer-/Gewinn-Inventar, Berichte mit Diagrammen und PDF-Belege — mit voller Arabisch/Englisch-Unterstützung und Dark-/Light-Themes.",
+      challengeDetail:
+        "Filialnetze können nicht mit Ad-hoc-Tools laufen: Direktoren brauchen systemweite Transparenz und Mittelzuweisung, Filialleiter dürfen nur Mitarbeiter, Gewinne und Berichte ihrer Filiale sehen, und Mitarbeiter an vorderster Front brauchen einen schnellen Weg, Transfers zu erstellen, Status zu verfolgen und eingehende Zahlungen zu bestätigen. Das Produkt erfordert außerdem Steuerberechnung pro Filiale, CSV-Exporte, auditfreundliche Filter, JWT-gesicherte APIs und ein Demo, das durchgängig in Produktion funktioniert — kein gemocktes JSON im Frontend.",
+      solutionDetail:
+        "Ich habe einen getrennten Stack konzipiert: Next.js 14 auf Vercel spricht über HTTPS mit FastAPI auf Render mittels JWT (Middleware + RoleGuard im Frontend, get_current_user + Filial-Scoping im Backend). PostgreSQL auf Neon speichert Filialen, Nutzer, Transfers und Steuersätze. Die Geschäftslogik liegt in Service-Schichten (branch_profits, transactions, reports) mit pytest-Abdeckung; die UI nutzt React Hook Form + Zod, Recharts für Analysen, jsPDF für Belege und eine vollständige i18n-Schicht (AR/EN, RTL/LTR). GitHub Actions führt Lint + Jest + pytest aus; AUTO_SEED_DEMO legt 3 Filialen, 6 Nutzer und 20 Beispieltransfers für sofortige Demos an.",
+      keyFeatures: [
+        "3-Rollen-RBAC — Direktor (/dashboard), Filialleiter (/branch-dashboard), Mitarbeiter (/money-transfer)",
+        "Transfer-Lebenszyklus — Erstellung, ausgehende/eingehende Listen, Status-Workflow, PDF-Beleg-Generierung",
+        "Direktor-Funktionen — Filial-CRUD, Mittelzuweisung, Mitarbeiterverwaltung, Systemeinstellungen + Backup",
+        "Filialleiter-Funktionen — zugeordnete Mitarbeiter, Berichte, Gewinn-/Steuertabellen, Recharts-Analysen, CSV-Export",
+        "Mehrwährung — SYP & USD mit filialspezifischen Steuersätzen, Nettobetrag und Gewinnformeln",
+        "Sicherheit — JWT-Auth, bcrypt-Passwörter, CORS-Allowlist, ratenbegrenzter Login, branch_id-Scoping",
+        "i18n + Theming — Arabisch/Englisch mit RTL/LTR, Dark-/Light-Modus, Hilfe-Panels auf jedem wichtigen Screen",
+        "CI/CD + Deploy — GitHub Actions, Vercel-Frontend, Render-API, Neon-PostgreSQL, lokal Docker Compose",
+      ],
+      outcomes: [
+        "Live-Demo unter payment-system-portfolio.vercel.app mit Ein-Klick-Demo-Login (director / demo123)",
+        "28 UI-Screens — Landing, 3 Dashboards, Transfers, Berichte, Inventar, Einstellungen, Belege",
+        "17+ Backend-Testdateien — Auth, Transaktionen, Berichte, Gewinne, Filial-Scoping",
+        "Produktiv-Stack — Vercel + Render + Neon, keine reinen Frontend-Mocks",
+      ],
+      metrics: [
+        { id: "m1", value: "3", label: "Rollen — Direktor, Manager, Mitarbeiter" },
+        { id: "m2", value: "2", label: "Währungen — SYP & USD" },
+        { id: "m3", value: "28", label: "Dokumentierte UI-Screens" },
+      ],
     },
   ],
   skillsSection: {
@@ -285,7 +384,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     description:
       "Full-Stack-Entwickler, offen für Festanstellungen — kein Freelance. Kontakt für Interviews, Tech-Screens oder Team-Fit.",
     badge: "Offen für Festanstellungen",
-    availability: "Trier, Deutschland · vor Ort, hybrid & remote",
+    availability: "Trier, Deutschland · sofort verfügbar · Chancenkarte (keine Arbeitgeber-Sponsorship nötig) · vor Ort, hybrid & remote",
     highlights: [
       { id: "h1", value: "3+", label: "Jahre Erfahrung" },
       { id: "h2", value: "Full-Stack", label: "Python & Next.js" },

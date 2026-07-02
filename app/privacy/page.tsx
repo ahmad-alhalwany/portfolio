@@ -16,7 +16,7 @@ export default function PrivacyPage() {
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-purple"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-page-muted transition hover:text-purple"
         >
           <FaHome className="h-4 w-4" />
           Back to home
@@ -24,15 +24,15 @@ export default function PrivacyPage() {
 
         <header className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple">Legal</p>
-          <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl">Datenschutzerklärung</h1>
-          <p className="mt-3 text-sm text-slate-500">
+          <h1 className="mt-2 text-4xl font-bold text-page-fg md:text-5xl">Datenschutzerklärung</h1>
+          <p className="mt-3 text-sm text-page-muted">
             Privacy Policy according to Art. 13 GDPR (DSGVO).
           </p>
         </header>
 
-        <div className="space-y-8 text-slate-300">
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">1. Verantwortlicher / Controller</h2>
+        <div className="space-y-8 text-page-muted">
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">1. Verantwortlicher / Controller</h2>
             <p className="text-sm leading-relaxed">
               Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der
               Datenschutz-Grundverordnung (DSGVO) ist:
@@ -52,8 +52,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">2. Hosting & Server</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">2. Hosting & Server</h2>
             <p className="text-sm leading-relaxed">
               Diese Website wird bei <strong>Vercel Inc.</strong> gehostet (340 S Lemon Ave #2699,
               Walnut, CA 91789, USA). Beim Aufruf der Website werden durch Vercel automatisch
@@ -63,8 +63,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">3. Server-side Caching (Upstash Redis)</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">3. Server-side Caching (Upstash Redis)</h2>
             <p className="text-sm leading-relaxed">
               Inhalte dieser Website (Projekte, Blogposts, Kommentare, Rezensionen) werden in einer
               <strong> Upstash Redis</strong>-Instanz zwischengespeichert, um die Performance zu
@@ -73,8 +73,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">4. Web-Analyse (Google Analytics 4)</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">4. Web-Analyse (Google Analytics 4)</h2>
             <p className="text-sm leading-relaxed">
               Diese Website verwendet <strong>Google Analytics 4</strong> (Google Ireland Ltd.,
               Gordon House, Barrow Street, Dublin 4, Irland) zur Erfassung anonymisierter
@@ -89,8 +89,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">5. Fehler-Monitoring (Sentry)</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">5. Fehler-Monitoring (Sentry)</h2>
             <p className="text-sm leading-relaxed">
               Zur Erkennung technischer Fehler verwendet diese Website <strong>Sentry</strong>{" "}
               (Functional Software, Inc., USA). Sentry empfängt bei Client-Fehlern automatisch
@@ -100,8 +100,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">6. Kontaktformular & E-Mail</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">6. Kontaktformular & E-Mail</h2>
             <p className="text-sm leading-relaxed">
               Wenn Sie mir über das Kontaktformular, die Kommentar- oder Bewertungsfunktion
               schreiben, werden Ihre Angaben (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung
@@ -115,8 +115,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">7. Newsletter (Buttondown)</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">7. Newsletter (Buttondown)</h2>
             <p className="text-sm leading-relaxed">
               Wenn Sie sich für den Newsletter anmelden, wird Ihre E-Mail-Adresse über{" "}
               <strong>Buttondown</strong> gespeichert. Sie können jederzeit über den Link in jeder
@@ -125,8 +125,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">8. Ihre Rechte / Your GDPR rights</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">8. Ihre Rechte / Your GDPR rights</h2>
             <p className="text-sm leading-relaxed">
               Sie haben gemäß DSGVO die folgenden Rechte:
             </p>
@@ -153,8 +153,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">9. Cookies</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">9. Cookies</h2>
             <p className="text-sm leading-relaxed">
               Diese Website verwendet zwei Arten von Cookies:
             </p>
@@ -171,7 +171,7 @@ export default function PrivacyPage() {
             </ul>
           </section>
 
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-page-muted">
             Stand: Juli 2026. Änderungen vorbehalten. Questions about privacy?{" "}
             <a
               href="mailto:ahmad.s.alhalwany@gmail.com"

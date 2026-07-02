@@ -39,9 +39,10 @@ export function LocaleProvider({
   const loadContent = useCallback(async (next: Locale, opts?: { silent?: boolean }) => {
     if (!opts?.silent) setLoading(true);
     try {
-      const res = await fetch(`/api/content?locale=${next}`);
+      const res = await fetch(`/api/content?locale=${next}`, { cache: "no-store" });
       const data = (await res.json()) as Content;
       setContent(data);
+      writeContentCache(next, data);
     } catch {
       if (!initialContent) setContent(null);
     } finally {

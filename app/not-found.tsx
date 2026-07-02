@@ -12,8 +12,8 @@ export default function NotFound() {
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-purple/80">
           error://404
         </p>
-        <h1 className="mt-6 text-7xl font-bold text-white md:text-8xl">404</h1>
-        <p className="mt-4 text-lg text-slate-300">
+        <h1 className="mt-6 text-7xl font-bold text-page-fg md:text-8xl">404</h1>
+        <p className="mt-4 text-lg text-page-muted">
           This page drifted off-stack. The route you requested was not found —
           it may have been moved, renamed, or never existed.
         </p>
@@ -28,14 +28,14 @@ export default function NotFound() {
           </Link>
           <Link
             href="/#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-purple/40 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-page px-5 py-2.5 text-sm font-semibold text-page-fg transition hover:border-purple/40 hover:text-purple"
           >
             <FaEnvelope className="h-4 w-4" />
             Contact Ahmad
           </Link>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-slate-500">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-page-muted">
           <Link href="/#projects" className="hover:text-purple hover:underline">
             Projects
           </Link>

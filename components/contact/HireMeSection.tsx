@@ -224,7 +224,7 @@ export default function HireMeSection({ contact }: { contact: ContactSection }) 
               </span>
               <div>
                 <p className="text-lg font-semibold text-white">For recruiters & hiring managers</p>
-                <p className="text-sm text-slate-500">Full-time · Remote-friendly · EU / MENA timezone</p>
+                <p className="text-sm text-slate-500">Full-time · Based in Trier, Germany · On-site, hybrid & remote (CET)</p>
               </div>
             </div>
 

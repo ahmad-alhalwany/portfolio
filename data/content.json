@@ -89,6 +89,14 @@
         "value": "Trier, Germany · on-site, hybrid & remote"
       },
       {
+        "key": "work permit",
+        "value": "Chancenkarte (Opportunity Card) · eligible to work · no employer sponsorship needed"
+      },
+      {
+        "key": "availability",
+        "value": "Available immediately"
+      },
+      {
         "key": "languages",
         "value": "AR native · EN B2 · DE A2 → B1"
       }
@@ -238,9 +246,6 @@
         },
         {
           "src": "/project/plaze21.png"
-        },
-        {
-          "src": "/project/plwp1.png"
         },
         {
           "src": "/project/plwp1.png"
@@ -1173,11 +1178,16 @@
           },
           {
             "id": 9,
-            "name": "Node.js",
+            "name": "FastAPI",
             "level": "Mid"
           },
           {
             "id": 10,
+            "name": "Node.js",
+            "level": "Mid"
+          },
+          {
+            "id": 11,
             "name": "Three.js",
             "level": "Mid"
           }
@@ -1215,7 +1225,7 @@
         "skills": [
           {
             "id": 1,
-            "name": "Microsoft Office",
+            "name": "Redis",
             "level": "Mid"
           },
           {
@@ -1427,7 +1437,7 @@
   },
   "testimonialsSection": {
     "title": "Voices orbiting the globe",
-    "description": "",
+    "description": "Feedback from people I've built with — clients, teammates, and mentors. Each glowing particle is a real story; move your cursor to attract them and click to read.",
     "ctaLabel": "Add your review"
   },
   "statsSection": {
@@ -1635,7 +1645,7 @@
     "headingHighlight": "let's build your next product together.",
     "description": "I'm a full-stack developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team-fit conversations.",
     "badge": "Open to full-time opportunities",
-    "availability": "Based in Trier, Germany · open to on-site, hybrid & remote roles",
+    "availability": "Based in Trier, Germany · available immediately · Chancenkarte holder (no employer sponsorship needed) · on-site, hybrid & remote",
     "email": "ahmad.s.alhalwany@gmail.com",
     "calendlyUrl": "",
     "linkedinUrl": "https://www.linkedin.com/in/ahmad-alhalwany/",

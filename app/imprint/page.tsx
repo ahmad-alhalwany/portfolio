@@ -16,7 +16,7 @@ export default function ImprintPage() {
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-purple"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-page-muted transition hover:text-purple"
         >
           <FaHome className="h-4 w-4" />
           Back to home
@@ -24,32 +24,32 @@ export default function ImprintPage() {
 
         <header className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple">Legal</p>
-          <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl">Impressum</h1>
-          <p className="mt-3 text-sm text-slate-500">
+          <h1 className="mt-2 text-4xl font-bold text-page-fg md:text-5xl">Impressum</h1>
+          <p className="mt-3 text-sm text-page-muted">
             Legal notice according to § 5 TMG (Telemediengesetz, Germany).
           </p>
         </header>
 
-        <div className="space-y-10 text-slate-300">
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">Diensteanbieter / Service provider</h2>
+        <div className="space-y-10 text-page-muted">
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">Diensteanbieter / Service provider</h2>
             <dl className="space-y-1.5 text-sm">
               <div className="flex gap-3">
-                <dt className="w-32 shrink-0 text-slate-500">Name:</dt>
+                <dt className="w-32 shrink-0 text-page-muted">Name:</dt>
                 <dd>Ahmad Al-Halwany</dd>
               </div>
               <div className="flex gap-3">
-                <dt className="w-32 shrink-0 text-slate-500">Anschrift:</dt>
+                <dt className="w-32 shrink-0 text-page-muted">Anschrift:</dt>
                 <dd>
                   Trier, Germany
                   <br />
-                  <span className="text-xs text-slate-500">
+                  <span className="text-xs text-page-muted">
                     Full street address available on request (private residence).
                   </span>
                 </dd>
               </div>
               <div className="flex gap-3">
-                <dt className="w-32 shrink-0 text-slate-500">E-Mail:</dt>
+                <dt className="w-32 shrink-0 text-page-muted">E-Mail:</dt>
                 <dd>
                   <a
                     href="mailto:ahmad.s.alhalwany@gmail.com"
@@ -60,7 +60,7 @@ export default function ImprintPage() {
                 </dd>
               </div>
               <div className="flex gap-3">
-                <dt className="w-32 shrink-0 text-slate-500">LinkedIn:</dt>
+                <dt className="w-32 shrink-0 text-page-muted">LinkedIn:</dt>
                 <dd>
                   <a
                     href="https://www.linkedin.com/in/ahmad-alhalwany/"
@@ -73,7 +73,7 @@ export default function ImprintPage() {
                 </dd>
               </div>
               <div className="flex gap-3">
-                <dt className="w-32 shrink-0 text-slate-500">GitHub:</dt>
+                <dt className="w-32 shrink-0 text-page-muted">GitHub:</dt>
                 <dd>
                   <a
                     href="https://github.com/ahmad-alhalwany"
@@ -88,16 +88,16 @@ export default function ImprintPage() {
             </dl>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">Inhaltlich Verantwortlicher / Responsible for content</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">Inhaltlich Verantwortlicher / Responsible for content</h2>
             <p className="text-sm leading-relaxed">
               Ahmad Al-Halwany (same as above). Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
               Ahmad Al-Halwany, Trier, Germany.
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">Haftung für Inhalte / Liability for content</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">Haftung für Inhalte / Liability for content</h2>
             <p className="text-sm leading-relaxed">
               Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
               nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
@@ -112,8 +112,8 @@ export default function ImprintPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">Haftung für Links / Liability for links</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">Haftung für Links / Liability for links</h2>
             <p className="text-sm leading-relaxed">
               Dieses Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir
               keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr
@@ -122,8 +122,8 @@ export default function ImprintPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-            <h2 className="mb-3 text-xl font-semibold text-white">Urheberrecht / Copyright</h2>
+          <section className="rounded-2xl border border-page bg-page-card p-6">
+            <h2 className="mb-3 text-xl font-semibold text-page-fg">Urheberrecht / Copyright</h2>
             <p className="text-sm leading-relaxed">
               Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
               unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
@@ -132,7 +132,7 @@ export default function ImprintPage() {
             </p>
           </section>
 
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-page-muted">
             Need to contact me about this site?{" "}
             <Link href="/#contact" className="text-purple hover:underline">
               Use the contact form

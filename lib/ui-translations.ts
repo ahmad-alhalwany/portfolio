@@ -146,7 +146,8 @@ export type UiKey =
   | "blog.minRead"
   | "testimonials.loading"
   | "testimonials.badge"
-  | "testimonials.hint";
+  | "testimonials.hint"
+  | "services.badge";
 
 const UI: Record<Locale, Record<UiKey, string>> = {
   en: {
@@ -202,7 +203,7 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "newsletter.consentRequired": "Please confirm you want to receive emails.",
     "newsletter.success": "Thanks — you are on the list.",
     "newsletter.error": "Could not subscribe. Try again later.",
-    "hero.dossierHint": "↓ dossier on the right — pull signal to download",
+    "hero.dossierHint": "↓ CV on the right — tap to download (EN / DE)",
     "bento.contactRoles": "Contact for roles",
     "approach.hireBadge": "Built for long-term hires",
     "approach.metricsBadge": "Metrics-driven phases",
@@ -300,6 +301,7 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "testimonials.loading": "Loading testimonials…",
     "testimonials.badge": "Testimonials",
     "testimonials.hint": "{n} voices · hover to attract · click to explore",
+    "services.badge": "What I deliver",
   },
   de: {
     "nav.home": "Start",
@@ -354,7 +356,7 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "newsletter.consentRequired": "Bitte bestätige den Erhalt von E-Mails.",
     "newsletter.success": "Danke — du bist auf der Liste.",
     "newsletter.error": "Anmeldung fehlgeschlagen. Bitte später erneut versuchen.",
-    "hero.dossierHint": "↓ Dossier rechts — Signal zum Download ziehen",
+    "hero.dossierHint": "↓ Lebenslauf rechts — zum Download tippen (EN / DE)",
     "bento.contactRoles": "Kontakt für Stellen",
     "approach.hireBadge": "Für langfristige Festanstellungen",
     "approach.metricsBadge": "Phasen mit klaren Metriken",
@@ -453,6 +455,7 @@ const UI: Record<Locale, Record<UiKey, string>> = {
     "testimonials.loading": "Stimmen werden geladen…",
     "testimonials.badge": "Stimmen",
     "testimonials.hint": "{n} Stimmen · Hover zum Anziehen · Klick zum Lesen",
+    "services.badge": "Was ich liefere",
   },
 };
 

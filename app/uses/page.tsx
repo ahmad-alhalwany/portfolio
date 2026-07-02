@@ -49,7 +49,7 @@ const SECTIONS = [
     title: "Hardware",
     items: [
       { name: "Windows 11 workstation", note: "16 GB RAM · SSD" },
-      { name: "Mechanical keyboard", note: " tactile switches" },
+      { name: "Mechanical keyboard", note: "Tactile switches" },
       { name: "Dual monitor setup", note: "Code + preview side-by-side" },
     ],
   },
@@ -61,7 +61,7 @@ export default function UsesPage() {
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-purple"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-page-muted transition hover:text-purple"
         >
           <FaHome className="h-4 w-4" />
           Back to home
@@ -69,8 +69,8 @@ export default function UsesPage() {
 
         <header className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple">/uses</p>
-          <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl">What I use</h1>
-          <p className="mt-4 text-slate-400">
+          <h1 className="mt-2 text-4xl font-bold text-page-fg md:text-5xl">What I use</h1>
+          <p className="mt-4 text-page-muted">
             Inspired by{" "}
             <a
               href="https://uses.tech"
@@ -80,9 +80,8 @@ export default function UsesPage() {
             >
               uses.tech
             </a>{" "}
-            — the tools, hardware, and frameworks I rely on day-to-day. Edit this page in{" "}
-            <code className="rounded bg-black/40 px-1.5 py-0.5 text-xs text-purple">app/uses/page.tsx</code>{" "}
-            to match your actual setup.
+            — the tools, hardware, and frameworks I rely on day-to-day to ship
+            full-stack products.
           </p>
         </header>
 
@@ -92,17 +91,17 @@ export default function UsesPage() {
             return (
               <section
                 key={section.title}
-                className="rounded-2xl border border-white/10 bg-slate-950/40 p-6"
+                className="rounded-2xl border border-page bg-page-card p-6"
               >
-                <h2 className="mb-4 flex items-center gap-3 text-xl font-semibold text-white">
+                <h2 className="mb-4 flex items-center gap-3 text-xl font-semibold text-page-fg">
                   <Icon className="h-5 w-5 text-purple" />
                   {section.title}
                 </h2>
-                <ul className="divide-y divide-white/5">
+                <ul className="divide-y divide-[var(--page-border)]">
                   {section.items.map((item) => (
                     <li key={item.name} className="flex flex-col gap-0.5 py-2.5 text-sm sm:flex-row sm:items-center sm:justify-between">
-                      <span className="font-medium text-slate-200">{item.name}</span>
-                      <span className="text-xs text-slate-500">{item.note}</span>
+                      <span className="font-medium text-page-fg">{item.name}</span>
+                      <span className="text-xs text-page-muted">{item.note}</span>
                     </li>
                   ))}
                 </ul>
