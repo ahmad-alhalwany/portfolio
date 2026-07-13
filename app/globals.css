@@ -307,7 +307,7 @@
   }
 
   .section-shell {
-    @apply rounded-3xl border border-page bg-page-card shadow-[0_4px_32px_-12px_var(--glow-purple)];
+    @apply max-w-full overflow-x-hidden rounded-3xl border border-page bg-page-card shadow-[0_4px_32px_-12px_var(--glow-purple)];
   }
 
   .dark .section-shell {

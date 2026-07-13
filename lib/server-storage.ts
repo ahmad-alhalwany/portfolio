@@ -50,7 +50,7 @@ export function runtimeUploadsRoot(): string {
   return path.join("/tmp", "protfolio-uploads");
 }
 
-async function readBundledJsonFile<T>(filename: string, fallback: T): Promise<T> {
+export async function readBundledJsonFile<T>(filename: string, fallback: T): Promise<T> {
   try {
     const raw = await fs.readFile(bundledDataPath(filename), "utf8");
     return JSON.parse(raw) as T;

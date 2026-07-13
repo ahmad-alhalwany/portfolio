@@ -37,13 +37,13 @@ function SkillBar({ skill }: { skill: SkillItem }) {
   const levelLabel = LEVEL_LABEL[skill.level]?.[locale] ?? skill.level;
 
   return (
-    <div className="inner-panel space-y-2 p-4 transition-colors hover:border-purple/30">
-      <div className="flex items-center justify-between gap-3 text-sm text-page-fg dark:text-slate-200">
-        <div className="flex min-w-0 items-center gap-2">
-          <span className="inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-purple" />
-          <span className="truncate">{skill.name}</span>
+    <div className="inner-panel min-w-0 space-y-2 p-4 transition-colors hover:border-purple/30">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3 text-sm text-page-fg dark:text-slate-200">
+        <div className="flex min-w-0 flex-1 items-start gap-2">
+          <span className="mt-1.5 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-purple" />
+          <span className="break-words leading-snug">{skill.name}</span>
         </div>
-        <span className="shrink-0 rounded-full bg-page-elevated px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-page-muted dark:bg-slate-800 dark:text-slate-300">
+        <span className="shrink-0 self-start rounded-full bg-page-elevated px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-page-muted dark:bg-slate-800 dark:text-slate-300">
           {levelLabel}
         </span>
       </div>
@@ -89,7 +89,7 @@ function SkillCard({
 
   return (
     <StaggerItem className={className}>
-      <div className="interactive-card h-full bg-page-card-solid p-6 dark:bg-slate-950 dark:shadow-lg dark:shadow-slate-950/20">
+      <div className="interactive-card h-full min-w-0 bg-page-card-solid p-6 dark:bg-slate-950 dark:shadow-lg dark:shadow-slate-950/20">
         <div className="mb-5 flex items-center justify-between gap-3">
           <p className="text-sm uppercase tracking-[0.24em] text-purple">{category.title}</p>
           <span className="rounded-full bg-page-elevated px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-page-muted dark:bg-slate-900 dark:text-slate-300">
@@ -117,9 +117,9 @@ const Skills = ({ skillsSection }: { skillsSection: SkillsSection }) => {
   const categories = skillsSection.categories;
 
   return (
-    <section id="skills" className="section-shell mt-10 p-6">
-      <div className="grid gap-10 xl:grid-cols-[0.9fr_1.1fr]">
-        <div className="inner-panel space-y-6 p-8 hover-glow">
+    <section id="skills" className="section-shell mt-10 max-w-full overflow-x-hidden p-6">
+      <div className="grid min-w-0 gap-10 xl:grid-cols-[0.9fr_1.1fr]">
+        <div className="inner-panel min-w-0 space-y-6 p-6 sm:p-8 hover-glow">
           <div className="inline-flex items-center gap-2 rounded-full bg-purple/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-purple">
             Skills & Technologies
           </div>
@@ -128,12 +128,12 @@ const Skills = ({ skillsSection }: { skillsSection: SkillsSection }) => {
             <p className="section-body max-w-2xl">{skillsSection.description}</p>
           </div>
         </div>
-        <StaggerReveal className="grid gap-6 md:grid-cols-2">
-          {categories.map((category, index) => (
+        <StaggerReveal className="grid min-w-0 gap-6 md:grid-cols-2 [&>*]:min-w-0">
+          {categories.map((category) => (
             <SkillCard
               key={category.id}
               category={category}
-              className={cn(category.id === 5 && "md:col-span-2")}
+              className={cn(category.id === 6 && "md:col-span-2")}
             />
           ))}
         </StaggerReveal>

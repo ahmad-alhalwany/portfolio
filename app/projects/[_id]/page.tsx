@@ -1,11 +1,24 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { readBundledJsonFile } from "@/lib/server-storage";
 import { ProjectDetailView } from "@/components/projects/ProjectDetailView";
 import { buildPageMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Content } from "@/lib/types";
 
 export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const [bundled, content] = await Promise.all([
+    readBundledJsonFile<Content>("content.json", {} as Content),
+    getContent(),
+  ]);
+  const ids = new Set<number>();
+  for (const p of bundled.projects ?? []) ids.add(p.id);
+  for (const p of content.projects ?? []) ids.add(p.id);
+  return [...ids].map((id) => ({ _id: String(id) }));
+}
 
 type PageProps = {
   params: { _id: string };
