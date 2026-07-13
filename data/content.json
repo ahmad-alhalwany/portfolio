@@ -1,28 +1,25 @@
 {
   "hero": {
-    "subtitle": "ahmad.dev / full-stack · open to hire",
-    "title": "Full-stack developer open to full-time roles — Python, Next.js, and software teams can rely on.",
-    "headlineLead": "I build",
-    "flipWords": [
-      "production web apps",
-      "full-stack systems",
-      "hire-ready products"
-    ],
-    "headlineEnd": "for teams that ship.",
+    "subtitle": "ahmad.dev / ai applications · open to hire",
+    "title": "Hi, I'm Ahmad — an AI Application Developer.",
+    "headlineLead": "",
+    "flipWords": [],
+    "headlineEnd": "",
     "availabilityBadge": "Open to full-time roles",
     "skillChips": [
+      "RAG",
+      "LLM",
       "Python",
       "FastAPI",
-      "Next.js",
-      "TypeScript"
+      "Next.js"
     ],
-    "description": "Hi, I'm Ahmad — I turn complex problems into software people rely on. Looking for a long-term role where craft, ownership, and team impact matter.",
+    "description": "I build production AI products end-to-end — ML models, LLM/RAG systems, and the full-stack apps around them.",
     "ctaLabel": "Explore projects",
     "ctaLink": "#projects",
     "secondaryCtaLabel": "Hiring? Let's talk",
     "secondaryCtaLink": "#contact",
-    "resumeUrl": "/resume/ahmad-alhalwany-cv-en.pdf",
-    "resumeUrlDe": "/resume/ahmad-alhalwany-cv-de.pdf",
+    "resumeUrl": "/resume/ahmad-alhalwany-ai-en.pdf",
+    "resumeUrlDe": "/resume/ahmad-alhalwany-ai-de.pdf",
     "resumeLabel": "Download CV (EN)",
     "resumeLabelDe": "Lebenslauf (DE)",
     "resumeTagline": "CV · English & German"
@@ -31,11 +28,11 @@
     "label": "profile.sys / decode",
     "title": "The engineer",
     "titleAccent": "behind the product",
-    "intro": "I'm Ahmad Al-Halwany — a full-stack developer who cares about the whole journey: architecture, developer experience, and the people who rely on what we ship.",
+    "intro": "AI Application Developer combining a ZAB-recognised Bachelor in AI Engineering with 3+ years of full-stack experience. I build AI products end-to-end — machine learning, computer vision (OpenCV, Keras, Grad-CAM), NLP, and LLM assistants — and ship them as production apps (Python/FastAPI, Next.js, TypeScript, PostgreSQL). I care about shipping real, usable AI products, not notebooks.",
     "story": [
-      "I grew from tinkering with how systems work into owning production APIs, dashboards, and web applications that teams depend on every day.",
-      "Today I work across Python backends and Next.js frontends — favoring maintainable code, honest communication, and outcomes that survive beyond the first launch.",
-      "I'm seeking a full-time role where ownership, craft, and long-term product impact matter more than quick freelance handoffs."
+      "From AI engineering studies to production systems — I combine ML model work with the full-stack delivery that turns research into software people actually use.",
+      "Recent focus: computer vision with explainability (Grad-CAM), RAG assistants with source citations, and context-grounded LLM integrations in real web apps.",
+      "I'm seeking a full-time role where I can build AI products end-to-end — from model and retrieval layer to API, UI, and deployment."
     ],
     "principles": [
       {
@@ -58,12 +55,12 @@
       {
         "id": "t1",
         "year": "Now",
-        "label": "Full-stack · open to full-time hire"
+        "label": "AI applications · open to full-time hire"
       },
       {
         "id": "t2",
         "year": "Focus",
-        "label": "Python systems & Next.js products"
+        "label": "ML · LLM/RAG · production full-stack"
       },
       {
         "id": "t3",
@@ -78,7 +75,7 @@
       },
       {
         "key": "stack",
-        "value": "python · next.js · typescript"
+        "value": "ml · llm/rag · python · next.js"
       },
       {
         "key": "timezone",
@@ -126,7 +123,7 @@
     },
     {
       "id": 3,
-      "title": "Stack I ship with daily",
+      "title": "AI stack I ship with daily",
       "description": "Always refining craft",
       "className": "lg:col-span-2 md:col-span-3 md:row-span-2",
       "imgClassName": "",
@@ -166,6 +163,253 @@
     }
   ],
   "projects": [
+    {
+      "id": 6,
+      "title": "ASD Early-Detection Platform",
+      "des": "A production health-tech AI platform for early autism screening, combining computer vision, an ML questionnaire, and a RAG assistant — bilingual (Arabic/English).",
+      "img": "/project/asd-home-hero.png",
+      "iconLists": [
+        "/next.svg",
+        "/re.svg",
+        "/ts.svg",
+        "/tail.svg",
+        "/dockerName.svg",
+        "/host.svg",
+        "/cloud.svg"
+      ],
+      "challenge": "Accessible early screening with explainable AI — not a black-box label",
+      "solution": "Three-layer AI health app: CNN + Grad-CAM, ML questionnaire, and RAG assistant with citations",
+      "liveDemoUrl": "https://autism-spectrum-six.vercel.app",
+      "githubUrl": "https://github.com/ahmad-alhalwany/Autism-spectrum",
+      "cards": [
+        {
+          "src": "/project/asd-home-hero.png"
+        },
+        {
+          "src": "/project/asd-home-cards.png"
+        },
+        {
+          "src": "/project/asd-how-it-works.png"
+        },
+        {
+          "src": "/project/asd-image-upload.png"
+        },
+        {
+          "src": "/project/asd-image-result.png"
+        },
+        {
+          "src": "/project/asd-image-gradcam.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-start.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-mid.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-more.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-end.png"
+        },
+        {
+          "src": "/project/asd-questionnaire-report.png"
+        },
+        {
+          "src": "/project/asd-about-top.png"
+        },
+        {
+          "src": "/project/asd-about-bottom.png"
+        }
+      ],
+      "overview": "An end-to-end AI health application with three AI layers: (1) a CNN image classifier (fine-tuned MobileNetV3) returning Grad-CAM heatmaps for explainability; (2) an ML behavioural-questionnaire classifier (neural network, ~92% accuracy) with structured reports; (3) a RAG assistant with multilingual semantic retrieval (fastembed embeddings + cosine-similarity search) over a verified medical knowledge base (WHO/CDC), an LLM (Hugging Face) for generation, and answers with source citations plus an anti-hallucination fallback.",
+      "challengeDetail": "Early autism signs are easy to miss without specialist access, and many AI demos stop at a classification label. The product needed three AI layers — visual screening, behavioural questionnaire, and a trustworthy Q&A assistant — with explainable outputs, clear medical disclaimers, and a bilingual UX that works in production.",
+      "solutionDetail": "Built as a monorepo — Next.js 15 (Vercel) frontend with AR/EN i18n (RTL/LTR), FastAPI backend (Hugging Face Spaces) with Docker, health checks, CORS and Swagger. The image pipeline uses fine-tuned MobileNetV3 with Grad-CAM heatmaps. The questionnaire path uses a trained neural network (~92% accuracy). The RAG layer uses fastembed embeddings, cosine-similarity retrieval over WHO/CDC sources, Hugging Face LLM generation, source citations, and anti-hallucination fallback. Privacy-first (in-memory processing) with clear medical disclaimers.",
+      "keyFeatures": [
+        "CNN image classifier — fine-tuned MobileNetV3 with Grad-CAM heatmaps for explainability",
+        "ML questionnaire classifier — neural network (~92% accuracy) with structured reports",
+        "RAG assistant — fastembed embeddings, cosine-similarity search, WHO/CDC knowledge base, source citations",
+        "Next.js 15 App Router — AR/EN i18n with RTL/LTR, image upload, questionnaire, about pages",
+        "FastAPI backend on Hugging Face Spaces — Docker, health checks, CORS, Swagger docs",
+        "Privacy-first — in-memory processing with clear medical disclaimers"
+      ],
+      "outcomes": [
+        "Live demo at autism-spectrum-six.vercel.app with open GitHub monorepo",
+        "Three AI layers — computer vision, ML questionnaire, and RAG assistant with citations",
+        "13 UI screens documented — home, detect, results, about, bilingual flows",
+        "Production deployment — Vercel frontend + Hugging Face Docker API with CORS"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "3",
+          "label": "AI layers — CV, ML, RAG"
+        },
+        {
+          "id": "m2",
+          "value": "2",
+          "label": "Languages — Arabic & English"
+        },
+        {
+          "id": "m3",
+          "value": "AR/EN",
+          "label": "Full bilingual UI + reports"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 9,
+      "title": "\"Ask Ahmad\" — Portfolio AI Assistant",
+      "des": "A context-grounded LLM assistant embedded in this site that answers recruiter questions about my work — with a multi-provider fallback chain for reliability.",
+      "img": "/b1.svg",
+      "iconLists": [
+        "/next.svg",
+        "/ts.svg",
+        "/re.svg",
+        "/tail.svg"
+      ],
+      "challenge": "Recruiters need quick, accurate answers about experience — without digging through every page",
+      "solution": "Context-grounded LLM chat widget with multi-provider fallback and strict anti-hallucination prompting",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany",
+      "cards": [],
+      "overview": "An LLM assistant (the chat widget on this site) that answers questions about my projects, experience and availability, grounded strictly in my portfolio data. Built with a multi-provider fallback chain (Groq → Gemini → OpenAI → Mistral → OpenRouter) for reliability and cost control, strict anti-hallucination system prompting (answers only from provided context), short-term conversation memory, and bilingual EN/DE responses. Next.js Route Handler (/api/chat) calling OpenAI-compatible and Gemini endpoints via fetch.",
+      "challengeDetail": "Portfolio sites are static — recruiters and hiring managers often want quick answers about stack fit, project depth, and availability without reading every case study. The assistant had to stay honest (no invented experience), work reliably when one API provider fails, and respond in English or German.",
+      "solutionDetail": "I built a Next.js /api/chat Route Handler that injects portfolio content as system context, enforces answers-only-from-context rules, and tries providers in priority order until one succeeds. Short-term conversation memory keeps follow-up questions coherent. Try it — the assistant in the corner is this project.",
+      "keyFeatures": [
+        "Multi-provider fallback — Groq → Gemini → OpenAI → Mistral → OpenRouter",
+        "Context-grounded prompting — answers only from portfolio data (not vector RAG)",
+        "Anti-hallucination guardrails — refuses when context is insufficient",
+        "Bilingual EN/DE responses aligned with site locale",
+        "Next.js Route Handler — OpenAI-compatible + Gemini fetch integration",
+        "Short-term conversation memory for natural follow-ups"
+      ],
+      "outcomes": [
+        "Try it — the assistant in the corner is this project",
+        "5-provider fallback chain for reliability and cost control",
+        "Strict grounding in CMS content — no invented projects or metrics",
+        "Open-source implementation in this Next.js codebase"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "5",
+          "label": "LLM providers in fallback chain"
+        },
+        {
+          "id": "m2",
+          "value": "EN/DE",
+          "label": "Bilingual recruiter responses"
+        },
+        {
+          "id": "m3",
+          "value": "Live",
+          "label": "Embedded chat widget on this site"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 8,
+      "title": "VoteChain — Decentralized Voting dApp",
+      "des": "Full Web3 election platform — immutable votes on Ethereum, candidate/voter media on IPFS, MetaMask integration, and a live results dashboard with role-based admin.",
+      "img": "/project/vote-home-hero.png",
+      "iconLists": [
+        "/next.svg",
+        "/re.svg",
+        "/js.png",
+        "/git.svg",
+        "/cloud.svg",
+        "/host.svg"
+      ],
+      "challenge": "Centralized voting can be altered — elections need transparent, tamper-proof records",
+      "solution": "Hybrid Web3 dApp: Solidity smart contract + IPFS storage + Next.js admin & voter UI",
+      "liveDemoUrl": "",
+      "githubUrl": "https://github.com/ahmad-alhalwany/vote-chain",
+      "cards": [
+        {
+          "src": "/project/vote-home-hero.png"
+        },
+        {
+          "src": "/project/vote-live-candidates.png"
+        },
+        {
+          "src": "/project/vote-live-results.png"
+        },
+        {
+          "src": "/project/vote-confirm-modal.png"
+        },
+        {
+          "src": "/project/vote-register-candidate.png"
+        },
+        {
+          "src": "/project/vote-register-voter.png"
+        },
+        {
+          "src": "/project/vote-voter-list.png"
+        },
+        {
+          "src": "/project/vote-how-it-works.png"
+        }
+      ],
+      "overview": "Personal portfolio project — Web3 dApp for transparent elections (built outside full-time employment). Votes are counted immutably on Ethereum (Solidity + Hardhat); candidate metadata on IPFS. Next.js frontend with MetaMask, role-based admin, and live results.",
+      "challengeDetail": "Traditional voting systems rely on a central authority that can alter records. The product needed clear on-chain rules (one vote per registered voter, organizer-only registration), decentralized media storage without expensive on-chain blobs, CORS-safe IPFS uploads from the browser, and a polished UX so non-Web3 users can follow the flow — confirm modals, toasts, loaders, and readable live results.",
+      "solutionDetail": "I built a full-stack Web3 app: the Create smart contract (Solidity 0.8.9, OpenZeppelin Counters) enforces organizer permissions, voter whitelisting, and single-vote integrity. Next.js API routes (/api/ipfs-upload, /api/ipfs-proxy) handle server-side IPFS uploads and image proxying. VotingContext centralizes Web3 state (Ethers.js v5, Web3Modal, MetaMask). OrganizerGuard mirrors contract rules in the UI. React Dropzone feeds IPFS; live dashboards read vote counts directly from the chain after each transaction.",
+      "keyFeatures": [
+        "Smart contract — setCandidate(), voterRight(), vote() with events and on-chain RBAC",
+        "Hybrid storage — votes & permissions on Ethereum; images + JSON on IPFS (Kubo)",
+        "Next.js API — server-side IPFS upload + proxy to bypass browser CORS limits",
+        "MetaMask flow — wallet connect, transaction signing, full-screen loader during mining",
+        "Organizer admin — register candidates/voters with drag-drop photos (OrganizerGuard)",
+        "Live dashboard — vote counts, percentage bars, Leading badge, real-time refresh",
+        "UX polish — confirmation modal before vote, toast notifications, glassmorphism dark UI",
+        "Hardhat toolchain — local chain deploy script, contract ABI wired via constants + context"
+      ],
+      "outcomes": [
+        "End-to-end dApp — Frontend ↔ Smart Contract ↔ IPFS in one integrated codebase",
+        "8 documented screens — hero, live results, admin, voter list, confirm flow, how-it-works",
+        "Double protection — require(votingOrganizer) on-chain + OrganizerGuard in React",
+        "Open source on GitHub — runnable locally with Hardhat node + IPFS daemon + npm run dev"
+      ],
+      "metrics": [
+        {
+          "id": "m1",
+          "value": "Web3",
+          "label": "Ethereum + MetaMask + Solidity"
+        },
+        {
+          "id": "m2",
+          "value": "1",
+          "label": "Vote per registered voter (on-chain)"
+        },
+        {
+          "id": "m3",
+          "value": "8",
+          "label": "UI screens in case study gallery"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 7,
+      "title": "Payment Transfer System",
+      "des": "Full-stack multi-branch money transfer platform — SYP & USD, role-based dashboards, reports, profit tracking, PDF receipts, and bilingual AR/EN UI.",
+      "img": "/project/pay-director-branches.png",
+      "iconLists": ["/next.svg", "/re.svg", "/ts.svg", "/tail.svg", "/s.svg", "/Axios.png", "/dockerName.svg", "/cloud.svg"],
+      "challenge": "Multi-branch transfers need RBAC, tax logic, and audit-ready reporting — not spreadsheets",
+      "solution": "Production-grade Next.js + FastAPI + PostgreSQL with 3 role-specific dashboards",
+      "liveDemoUrl": "https://payment-system-portfolio.vercel.app/money-transfer",
+      "githubUrl": "https://github.com/ahmad-alhalwany/payment-system-portfolio",
+      "cards": [{"src": "/project/pay-landing.png"}, {"src": "/project/pay-login.png"}, {"src": "/project/pay-money-transfer-home.png"}, {"src": "/project/pay-new-transfer-form.png"}, {"src": "/project/pay-outgoing-transfers.png"}, {"src": "/project/pay-incoming-transfers.png"}, {"src": "/project/pay-receipt-pdf.png"}, {"src": "/project/pay-director-overview.png"}, {"src": "/project/pay-director-branches.png"}, {"src": "/project/pay-director-employees.png"}, {"src": "/project/pay-director-transactions.png"}, {"src": "/project/pay-director-reports-table.png"}, {"src": "/project/pay-director-reports-charts.png"}, {"src": "/project/pay-director-inventory.png"}, {"src": "/project/pay-director-inventory-table.png"}, {"src": "/project/pay-director-settings.png"}, {"src": "/project/pay-director-fund-history.png"}, {"src": "/project/pay-branch-dashboard.png"}, {"src": "/project/pay-branch-employees.png"}, {"src": "/project/pay-branch-reports.png"}, {"src": "/project/pay-branch-profits.png"}, {"src": "/project/pay-branch-profit-chart.png"}, {"src": "/project/pay-branch-settings.png"}, {"src": "/project/pay-employee-home.png"}, {"src": "/project/pay-employee-new-transfer.png"}, {"src": "/project/pay-employee-outgoing.png"}, {"src": "/project/pay-employee-incoming.png"}, {"src": "/project/pay-employee-search.png"}],
+      "overview": "A portfolio-grade fintech demo that simulates a real multi-branch money transfer operation — handling outgoing and incoming transfers in Syrian pounds (SYP) and US dollars (USD). Three roles (Director, Branch Manager, Employee) each get scoped dashboards for branches, staff, transfers, tax/profit inventory, reports with charts, and PDF receipts — with full Arabic/English support and dark/light themes.",
+      "challengeDetail": "Branch networks can't run on ad-hoc tools: directors need system-wide visibility and fund allocation, branch managers must see only their branch's employees, profits, and reports, and front-line employees need a fast path to create transfers, track status, and confirm incoming payments.",
+      "solutionDetail": "Next.js 14 on Vercel talks to FastAPI on Render over HTTPS with JWT. PostgreSQL on Neon stores branches, users, transfers, and tax rates. Business logic lives in service layers with pytest coverage; the UI uses React Hook Form + Zod, Recharts for analytics, jsPDF for receipts, and a full i18n layer (AR/EN, RTL/LTR).",
+      "keyFeatures": ["3-role RBAC — Director, Branch Manager, Employee dashboards", "Transfer lifecycle — create, outgoing/incoming lists, status workflow, PDF receipts", "Multi-currency — SYP & USD with per-branch tax rates and profit formulas", "Security — JWT auth, bcrypt passwords, CORS allowlist, branch_id scoping", "i18n + theming — Arabic/English with RTL/LTR, dark/light mode", "CI/CD + deploy — GitHub Actions, Vercel frontend, Render API, Neon PostgreSQL"],
+      "outcomes": ["Live demo at payment-system-portfolio.vercel.app with one-click demo login", "28 UI screens — landing, 3 dashboards, transfers, reports, inventory, settings, receipts", "17+ backend test files — auth, transactions, reports, profits, branch scoping", "Production stack — Vercel + Render + Neon, not frontend-only mocks"],
+      "metrics": [{"id": "m1", "value": "3", "label": "Roles — Director, Manager, Employee"}, {"id": "m2", "value": "2", "label": "Currencies — SYP & USD"}, {"id": "m3", "value": "28", "label": "Documented UI screens"}],
+      "featured": false
+    },
     {
       "id": 1,
       "title": "plaze-shop ecommerce website",
@@ -284,7 +528,7 @@
           "label": "Surfaces — storefront + inventory"
         }
       ],
-      "featured": true
+      "featured": false
     },
     {
       "id": 2,
@@ -478,325 +722,6 @@
         }
       ],
       "featured": false
-    },
-    {
-      "id": 6,
-      "title": "ASD Early Detection Platform",
-      "des": "Full-stack AI platform for early autism screening — facial image analysis with Grad-CAM plus a 12-question behavioral questionnaire, bilingual AR/EN.",
-      "img": "/project/asd-home-hero.png",
-      "iconLists": [
-        "/next.svg",
-        "/re.svg",
-        "/ts.svg",
-        "/tail.svg",
-        "/dockerName.svg",
-        "/host.svg",
-        "/cloud.svg"
-      ],
-      "challenge": "Give families an accessible first screening path — not a black-box label",
-      "solution": "Dual-path Next.js + FastAPI platform with explainable AI and medical-grade reports",
-      "liveDemoUrl": "https://autism-spectrum-six.vercel.app/",
-      "githubUrl": "https://github.com/ahmad-alhalwany/Autism-spectrum",
-      "cards": [
-        {
-          "src": "/project/asd-home-hero.png"
-        },
-        {
-          "src": "/project/asd-home-cards.png"
-        },
-        {
-          "src": "/project/asd-how-it-works.png"
-        },
-        {
-          "src": "/project/asd-image-upload.png"
-        },
-        {
-          "src": "/project/asd-image-result.png"
-        },
-        {
-          "src": "/project/asd-image-gradcam.png"
-        },
-        {
-          "src": "/project/asd-questionnaire-start.png"
-        },
-        {
-          "src": "/project/asd-questionnaire-mid.png"
-        },
-        {
-          "src": "/project/asd-questionnaire-more.png"
-        },
-        {
-          "src": "/project/asd-questionnaire-end.png"
-        },
-        {
-          "src": "/project/asd-questionnaire-report.png"
-        },
-        {
-          "src": "/project/asd-about-top.png"
-        },
-        {
-          "src": "/project/asd-about-bottom.png"
-        }
-      ],
-      "overview": "Personal portfolio project — full-stack health-tech platform for early ASD screening via computer vision and a behavioral questionnaire (not client freelance work). Helps caregivers run screening via facial analysis (MobileNetV3 + Grad-CAM) or a 12-question survey — bilingual AR/EN.",
-      "challengeDetail": "Early autism signs are easy to miss without specialist access, and many AI demos stop at a classification label. The product needed two screening paths (visual + behavioral), explainable outputs caregivers can understand, clear medical disclaimers, and a bilingual UX that works in production — not just in a notebook.",
-      "solutionDetail": "I built a monorepo with Next.js 15 on Vercel and FastAPI on Hugging Face Spaces. The image pipeline preprocesses 224×224 inputs through a fine-tuned MobileNetV3, returns Grad-CAM heatmaps as base64, and generates structured reports. The questionnaire path scales 12 yes/no answers through a trained neural network (~92% accuracy) with tailored recommendations and WHO/CDC resource links. Docker, health checks, CORS, and Swagger keep the stack deployable and reviewable.",
-      "keyFeatures": [
-        "Next.js 15 App Router — image upload, questionnaire, about, AR/EN i18n with RTL/LTR",
-        "FastAPI backend — /predict-image, /predict-questions, /health, Swagger docs",
-        "MobileNetV3 (~70%) + Grad-CAM explainability on eyes, forehead, and mouth regions",
-        "Neural network questionnaire (~92%) with scaler, reports, and support resources",
-        "Medical disclaimer, ResultPanel, ChildInfoForm — privacy-first (in-memory processing)",
-        "Monorepo + Docker — Frontend on Vercel, backend on Hugging Face Spaces"
-      ],
-      "outcomes": [
-        "Live demo at autism-spectrum-six.vercel.app with open GitHub monorepo",
-        "2 screening paths — image (~70%) and questionnaire (~92%) with XAI heatmaps",
-        "13 UI screens documented — home, detect, results, about, bilingual flows",
-        "Production deployment — Vercel frontend + Hugging Face Docker API with CORS"
-      ],
-      "metrics": [
-        {
-          "id": "m1",
-          "value": "~92%",
-          "label": "Questionnaire model accuracy"
-        },
-        {
-          "id": "m2",
-          "value": "2",
-          "label": "Screening paths — image + survey"
-        },
-        {
-          "id": "m3",
-          "value": "AR/EN",
-          "label": "Full bilingual UI + reports"
-        }
-      ],
-      "featured": true
-    },
-    {
-      "id": 7,
-      "title": "Payment Transfer System",
-      "des": "Full-stack multi-branch money transfer platform — SYP & USD, role-based dashboards, reports, profit tracking, PDF receipts, and bilingual AR/EN UI.",
-      "img": "/project/pay-director-branches.png",
-      "iconLists": [
-        "/next.svg",
-        "/re.svg",
-        "/ts.svg",
-        "/tail.svg",
-        "/s.svg",
-        "/Axios.png",
-        "/dockerName.svg",
-        "/cloud.svg"
-      ],
-      "challenge": "Multi-branch transfers need RBAC, tax logic, and audit-ready reporting — not spreadsheets",
-      "solution": "Production-grade Next.js + FastAPI + PostgreSQL with 3 role-specific dashboards",
-      "liveDemoUrl": "https://payment-system-portfolio.vercel.app/money-transfer",
-      "githubUrl": "https://github.com/ahmad-alhalwany/payment-system-portfolio",
-      "cards": [
-        {
-          "src": "/project/pay-landing.png"
-        },
-        {
-          "src": "/project/pay-login.png"
-        },
-        {
-          "src": "/project/pay-money-transfer-home.png"
-        },
-        {
-          "src": "/project/pay-new-transfer-form.png"
-        },
-        {
-          "src": "/project/pay-outgoing-transfers.png"
-        },
-        {
-          "src": "/project/pay-incoming-transfers.png"
-        },
-        {
-          "src": "/project/pay-receipt-pdf.png"
-        },
-        {
-          "src": "/project/pay-director-overview.png"
-        },
-        {
-          "src": "/project/pay-director-branches.png"
-        },
-        {
-          "src": "/project/pay-director-employees.png"
-        },
-        {
-          "src": "/project/pay-director-transactions.png"
-        },
-        {
-          "src": "/project/pay-director-reports-table.png"
-        },
-        {
-          "src": "/project/pay-director-reports-charts.png"
-        },
-        {
-          "src": "/project/pay-director-inventory.png"
-        },
-        {
-          "src": "/project/pay-director-inventory-table.png"
-        },
-        {
-          "src": "/project/pay-director-settings.png"
-        },
-        {
-          "src": "/project/pay-director-fund-history.png"
-        },
-        {
-          "src": "/project/pay-branch-dashboard.png"
-        },
-        {
-          "src": "/project/pay-branch-employees.png"
-        },
-        {
-          "src": "/project/pay-branch-reports.png"
-        },
-        {
-          "src": "/project/pay-branch-profits.png"
-        },
-        {
-          "src": "/project/pay-branch-profit-chart.png"
-        },
-        {
-          "src": "/project/pay-branch-settings.png"
-        },
-        {
-          "src": "/project/pay-employee-home.png"
-        },
-        {
-          "src": "/project/pay-employee-new-transfer.png"
-        },
-        {
-          "src": "/project/pay-employee-outgoing.png"
-        },
-        {
-          "src": "/project/pay-employee-incoming.png"
-        },
-        {
-          "src": "/project/pay-employee-search.png"
-        }
-      ],
-      "overview": "A portfolio-grade fintech demo that simulates a real multi-branch money transfer operation in Syria — handling outgoing and incoming transfers in Syrian pounds (SYP) and US dollars (USD). Three roles (Director, Branch Manager, Employee) each get scoped dashboards for branches, staff, transfers, tax/profit inventory, reports with charts, and PDF receipts — with full Arabic/English support and dark/light themes.",
-      "challengeDetail": "Branch networks can't run on ad-hoc tools: directors need system-wide visibility and fund allocation, branch managers must see only their branch's employees, profits, and reports, and front-line employees need a fast path to create transfers, track status, and confirm incoming payments. The product also requires tax calculation per branch, CSV exports, audit-friendly filters, JWT-secured APIs, and a demo that works end-to-end in production — not mocked JSON on the frontend.",
-      "solutionDetail": "I architected a separated stack: Next.js 14 on Vercel talks to FastAPI on Render over HTTPS with JWT (middleware + RoleGuard on the frontend, get_current_user + branch scoping on the backend). PostgreSQL on Neon stores branches, users, transfers, and tax rates. Business logic lives in service layers (branch_profits, transactions, reports) with pytest coverage; the UI uses React Hook Form + Zod, Recharts for analytics, jsPDF for receipts, and a full i18n layer (AR/EN, RTL/LTR). GitHub Actions runs lint + Jest + pytest; AUTO_SEED_DEMO seeds 3 branches, 6 users, and 20 sample transfers for instant demos.",
-      "keyFeatures": [
-        "3-role RBAC — Director (/dashboard), Branch Manager (/branch-dashboard), Employee (/money-transfer)",
-        "Transfer lifecycle — create, outgoing/incoming lists, status workflow, PDF receipt generation",
-        "Director ops — branch CRUD, fund allocation, employee management, system settings + backup",
-        "Branch manager ops — scoped employees, reports, profit/tax tables, Recharts analytics, CSV export",
-        "Multi-currency — SYP & USD with per-branch tax rates, benefited amount, and profit formulas",
-        "Security — JWT auth, bcrypt passwords, CORS allowlist, rate-limited login, branch_id scoping",
-        "i18n + theming — Arabic/English with RTL/LTR, dark/light mode, guide panels on every major screen",
-        "CI/CD + deploy — GitHub Actions, Vercel frontend, Render API, Neon PostgreSQL, Docker Compose locally"
-      ],
-      "outcomes": [
-        "Live demo at payment-system-portfolio.vercel.app with one-click demo login (director / demo123)",
-        "28 UI screens — landing, 3 dashboards, transfers, reports, inventory, settings, receipts",
-        "17+ backend test files — auth, transactions, reports, profits, branch scoping",
-        "Production stack — Vercel + Render + Neon, not frontend-only mocks"
-      ],
-      "metrics": [
-        {
-          "id": "m1",
-          "value": "3",
-          "label": "Roles — Director, Manager, Employee"
-        },
-        {
-          "id": "m2",
-          "value": "2",
-          "label": "Currencies — SYP & USD"
-        },
-        {
-          "id": "m3",
-          "value": "28",
-          "label": "Documented UI screens"
-        }
-      ],
-      "featured": true
-    },
-    {
-      "id": 8,
-      "title": "VoteChain — Decentralized Voting dApp",
-      "des": "Full Web3 election platform — immutable votes on Ethereum, candidate/voter media on IPFS, MetaMask integration, and a live results dashboard with role-based admin.",
-      "img": "/project/vote-home-hero.png",
-      "iconLists": [
-        "/next.svg",
-        "/re.svg",
-        "/js.png",
-        "/git.svg",
-        "/cloud.svg",
-        "/host.svg"
-      ],
-      "challenge": "Centralized voting can be altered — elections need transparent, tamper-proof records",
-      "solution": "Hybrid Web3 dApp: Solidity smart contract + IPFS storage + Next.js admin & voter UI",
-      "liveDemoUrl": "",
-      "githubUrl": "https://github.com/ahmad-alhalwany/vote-chain",
-      "cards": [
-        {
-          "src": "/project/vote-home-hero.png"
-        },
-        {
-          "src": "/project/vote-live-candidates.png"
-        },
-        {
-          "src": "/project/vote-live-results.png"
-        },
-        {
-          "src": "/project/vote-confirm-modal.png"
-        },
-        {
-          "src": "/project/vote-register-candidate.png"
-        },
-        {
-          "src": "/project/vote-register-voter.png"
-        },
-        {
-          "src": "/project/vote-voter-list.png"
-        },
-        {
-          "src": "/project/vote-how-it-works.png"
-        }
-      ],
-      "overview": "Personal portfolio project — Web3 dApp for transparent elections (built outside full-time employment). Votes are counted immutably on Ethereum (Solidity + Hardhat); candidate metadata on IPFS. Next.js frontend with MetaMask, role-based admin, and live results.",
-      "challengeDetail": "Traditional voting systems rely on a central authority that can alter records. The product needed clear on-chain rules (one vote per registered voter, organizer-only registration), decentralized media storage without expensive on-chain blobs, CORS-safe IPFS uploads from the browser, and a polished UX so non-Web3 users can follow the flow — confirm modals, toasts, loaders, and readable live results.",
-      "solutionDetail": "I built a full-stack Web3 app: the Create smart contract (Solidity 0.8.9, OpenZeppelin Counters) enforces organizer permissions, voter whitelisting, and single-vote integrity. Next.js API routes (/api/ipfs-upload, /api/ipfs-proxy) handle server-side IPFS uploads and image proxying. VotingContext centralizes Web3 state (Ethers.js v5, Web3Modal, MetaMask). OrganizerGuard mirrors contract rules in the UI. React Dropzone feeds IPFS; live dashboards read vote counts directly from the chain after each transaction.",
-      "keyFeatures": [
-        "Smart contract — setCandidate(), voterRight(), vote() with events and on-chain RBAC",
-        "Hybrid storage — votes & permissions on Ethereum; images + JSON on IPFS (Kubo)",
-        "Next.js API — server-side IPFS upload + proxy to bypass browser CORS limits",
-        "MetaMask flow — wallet connect, transaction signing, full-screen loader during mining",
-        "Organizer admin — register candidates/voters with drag-drop photos (OrganizerGuard)",
-        "Live dashboard — vote counts, percentage bars, Leading badge, real-time refresh",
-        "UX polish — confirmation modal before vote, toast notifications, glassmorphism dark UI",
-        "Hardhat toolchain — local chain deploy script, contract ABI wired via constants + context"
-      ],
-      "outcomes": [
-        "End-to-end dApp — Frontend ↔ Smart Contract ↔ IPFS in one integrated codebase",
-        "8 documented screens — hero, live results, admin, voter list, confirm flow, how-it-works",
-        "Double protection — require(votingOrganizer) on-chain + OrganizerGuard in React",
-        "Open source on GitHub — runnable locally with Hardhat node + IPFS daemon + npm run dev"
-      ],
-      "metrics": [
-        {
-          "id": "m1",
-          "value": "Web3",
-          "label": "Ethereum + MetaMask + Solidity"
-        },
-        {
-          "id": "m2",
-          "value": "1",
-          "label": "Vote per registered voter (on-chain)"
-        },
-        {
-          "id": "m3",
-          "value": "8",
-          "label": "UI screens in case study gallery"
-        }
-      ],
-      "featured": true
     }
   ],
   "workExperience": [
@@ -806,7 +731,7 @@
       "company": "Al Ankabot",
       "role": "Lead Full-Stack Developer",
       "period": "Oct 2024 — Jan 2026",
-      "location": "Syria — Remote",
+      "location": "Remote",
       "employmentType": "full-time",
       "desc": "Led end-to-end development of a secure transaction platform with web and desktop clients.",
       "className": "md:col-span-2",
@@ -817,6 +742,7 @@
         "Architected FastAPI backend with JWT authentication and encryption for sensitive financial flows",
         "Built Next.js web interface and PyQt desktop client sharing the same transaction core",
         "Implemented multi-stage security protocols to mitigate data-leak and abuse scenarios",
+        "Introduced AI-assisted development workflows and automated recurring processes with Python",
         "Monitored uptime and performance for production traffic exceeding 1,000 transactions per month"
       ],
       "technologies": [
@@ -931,7 +857,7 @@
     {
       "id": 1,
       "institution": "Tishreen University",
-      "title": "Information Technology Engineer | Artificial Intelligence Engineer",
+      "title": "Bachelor · AI Engineering — ZAB-recognised in Germany",
       "desc": "",
       "className": "md:col-span-2",
       "thumbnail": "/education/Tishreen.jpeg",
@@ -1099,11 +1025,73 @@
   ],
   "skillsSection": {
     "title": "Skills & technologies I work with",
-    "description": "Programming languages, web and mobile stack, AI/ML foundations, tooling, and the soft skills that make delivery reliable in real teams.",
+    "description": "AI/ML and LLM systems first — then the backend, frontend, and DevOps stack I use to ship production AI applications.",
     "categories": [
       {
         "id": 1,
-        "title": "Programming Languages",
+        "title": "AI / ML",
+        "skills": [
+          {
+            "id": 1,
+            "name": "Machine Learning",
+            "level": "Mid"
+          },
+          {
+            "id": 2,
+            "name": "Deep Learning",
+            "level": "Mid"
+          },
+          {
+            "id": 3,
+            "name": "Computer Vision (OpenCV, Keras, CNNs, MobileNetV3)",
+            "level": "Mid"
+          },
+          {
+            "id": 4,
+            "name": "Grad-CAM (Explainable AI)",
+            "level": "Mid"
+          },
+          {
+            "id": 5,
+            "name": "NLP",
+            "level": "Mid"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Generative AI / LLMs",
+        "skills": [
+          {
+            "id": 1,
+            "name": "LLM integration",
+            "level": "Mid"
+          },
+          {
+            "id": 2,
+            "name": "RAG (retrieval-augmented generation)",
+            "level": "Mid"
+          },
+          {
+            "id": 3,
+            "name": "Embeddings",
+            "level": "Mid"
+          },
+          {
+            "id": 4,
+            "name": "Prompt engineering",
+            "level": "Mid"
+          },
+          {
+            "id": 5,
+            "name": "Multi-provider LLM orchestration",
+            "level": "Mid"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Backend",
         "skills": [
           {
             "id": 1,
@@ -1112,7 +1100,38 @@
           },
           {
             "id": 2,
-            "name": "JavaScript",
+            "name": "FastAPI",
+            "level": "Mid"
+          },
+          {
+            "id": 3,
+            "name": "Django",
+            "level": "Mid"
+          },
+          {
+            "id": 4,
+            "name": "REST APIs",
+            "level": "Senior"
+          },
+          {
+            "id": 5,
+            "name": "PostgreSQL",
+            "level": "Mid"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Frontend",
+        "skills": [
+          {
+            "id": 1,
+            "name": "Next.js",
+            "level": "Senior"
+          },
+          {
+            "id": 2,
+            "name": "React",
             "level": "Senior"
           },
           {
@@ -1122,146 +1141,39 @@
           },
           {
             "id": 4,
-            "name": "SQL",
-            "level": "Mid"
-          },
-          {
-            "id": 5,
-            "name": "PHP",
-            "level": "Mid"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Web & App Development",
-        "skills": [
-          {
-            "id": 1,
-            "name": "React",
-            "level": "Senior"
-          },
-          {
-            "id": 2,
-            "name": "Next.js",
-            "level": "Senior"
-          },
-          {
-            "id": 3,
             "name": "Tailwind CSS",
             "level": "Senior"
-          },
-          {
-            "id": 4,
-            "name": "React Native",
-            "level": "Mid"
-          },
-          {
-            "id": 5,
-            "name": "HTML5",
-            "level": "Senior"
-          },
-          {
-            "id": 6,
-            "name": "CSS3",
-            "level": "Senior"
-          },
-          {
-            "id": 7,
-            "name": "Bootstrap",
-            "level": "Mid"
-          },
-          {
-            "id": 8,
-            "name": "Django",
-            "level": "Mid"
-          },
-          {
-            "id": 9,
-            "name": "FastAPI",
-            "level": "Mid"
-          },
-          {
-            "id": 10,
-            "name": "Node.js",
-            "level": "Mid"
-          },
-          {
-            "id": 11,
-            "name": "Three.js",
-            "level": "Mid"
           }
         ]
       },
       {
-        "id": 3,
-        "title": "AI & Machine Learning",
+        "id": 5,
+        "title": "DevOps",
         "skills": [
           {
             "id": 1,
-            "name": "Deep Learning",
-            "level": "Mid"
-          },
-          {
-            "id": 2,
-            "name": "Machine Learning",
-            "level": "Mid"
-          },
-          {
-            "id": 3,
-            "name": "NLP",
-            "level": "Mid"
-          },
-          {
-            "id": 4,
-            "name": "Data Mining",
-            "level": "Mid"
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "title": "Tools & Infrastructure",
-        "skills": [
-          {
-            "id": 1,
-            "name": "Redis",
-            "level": "Mid"
-          },
-          {
-            "id": 2,
-            "name": "Git",
-            "level": "Senior"
-          },
-          {
-            "id": 3,
             "name": "Docker",
             "level": "Mid"
           },
           {
-            "id": 4,
+            "id": 2,
             "name": "Linux",
             "level": "Mid"
           },
           {
-            "id": 5,
-            "name": "PostgreSQL",
-            "level": "Mid"
+            "id": 3,
+            "name": "Git",
+            "level": "Senior"
           },
           {
-            "id": 6,
-            "name": "SQL Server",
-            "level": "Mid"
-          },
-          {
-            "id": 7,
+            "id": 4,
             "name": "CI/CD",
             "level": "Mid"
           }
         ]
       },
       {
-        "id": 5,
+        "id": 6,
         "title": "Soft Skills",
         "skills": [
           {
@@ -1643,14 +1555,14 @@
   "contact": {
     "heading": "Hiring managers:",
     "headingHighlight": "let's build your next product together.",
-    "description": "I'm a full-stack developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team-fit conversations.",
+    "description": "I'm an AI Application Developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team-fit conversations.",
     "badge": "Open to full-time opportunities",
     "availability": "Based in Trier, Germany · available immediately · Chancenkarte holder (no employer sponsorship needed) · on-site, hybrid & remote",
     "email": "ahmad.s.alhalwany@gmail.com",
     "calendlyUrl": "",
     "linkedinUrl": "https://www.linkedin.com/in/ahmad-alhalwany/",
-    "resumeUrl": "/resume/ahmad-alhalwany-cv-en.pdf",
-    "resumeUrlDe": "/resume/ahmad-alhalwany-cv-de.pdf",
+    "resumeUrl": "/resume/ahmad-alhalwany-ai-en.pdf",
+    "resumeUrlDe": "/resume/ahmad-alhalwany-ai-de.pdf",
     "highlights": [
       {
         "id": "h1",
@@ -1659,8 +1571,8 @@
       },
       {
         "id": "h2",
-        "value": "Full-stack",
-        "label": "Python & Next.js"
+        "value": "AI Apps",
+        "label": "ML · LLM/RAG · full-stack"
       },
       {
         "id": "h3",

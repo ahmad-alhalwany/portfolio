@@ -300,8 +300,8 @@ export function CVShowcase({
 
                 {/* fake data stream */}
                 <div className="relative mt-4 space-y-1.5 border-t border-slate-800/80 pt-3 font-mono text-[9px] text-slate-600">
-                  <DataLine label="role" value="full_stack.dev" active={hovering} />
-                  <DataLine label="stack" value="python.next" active={hovering} />
+                  <DataLine label="role" value="ai_app.dev" active={hovering} />
+                  <DataLine label="stack" value="ml.llm.rag" active={hovering} />
                   <DataLine label="status" value="open_to_hire" active />
                 </div>
 

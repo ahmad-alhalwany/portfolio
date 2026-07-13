@@ -8,7 +8,7 @@ const defaultContact: ContactSection = {
   heading: "Hiring managers:",
   headingHighlight: "let's build your next product together.",
   description:
-    "I'm a full-stack developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team fit conversations.",
+    "I'm an AI Application Developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team fit conversations.",
   badge: "Open to full-time opportunities",
   availability: "Remote · Hybrid · Relocation considered",
   email: "ahmad.alhalwany@example.com",

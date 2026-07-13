@@ -8,6 +8,7 @@ export const defaultWorkExperience: WorkExperience[] = [
     company: "Al Ankabot",
     role: "Lead Full-Stack Developer",
     period: "Oct 2024 — Jan 2026",
+    location: "Remote",
     employmentType: "full-time",
     desc: "Secure transaction platform with web and desktop clients.",
     className: "md:col-span-2",

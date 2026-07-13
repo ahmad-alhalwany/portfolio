@@ -1,12 +1,12 @@
 import { isUploadPath, toMediaServeUrl } from "@/lib/upload-url";
 
-export const RESUME_PATH_EN = "/resume/ahmad-alhalwany-cv-en.pdf";
-export const RESUME_PATH_DE = "/resume/ahmad-alhalwany-cv-de.pdf";
+export const RESUME_PATH_EN = "/resume/ahmad-alhalwany-ai-en.pdf";
+export const RESUME_PATH_DE = "/resume/ahmad-alhalwany-ai-de.pdf";
 /** @deprecated Use RESUME_PATH_EN */
 export const RESUME_PATH = RESUME_PATH_EN;
 
-export const RESUME_DOWNLOAD_NAME_EN = "Ahmad-Al-Halwany-CV-English.pdf";
-export const RESUME_DOWNLOAD_NAME_DE = "Ahmad-Al-Halwany-CV-German.pdf";
+export const RESUME_DOWNLOAD_NAME_EN = "Ahmad-Halwany-AI-Application-Developer-CV-EN.pdf";
+export const RESUME_DOWNLOAD_NAME_DE = "Ahmad-Halwany-AI-Application-Developer-CV-DE.pdf";
 /** @deprecated Use RESUME_DOWNLOAD_NAME_EN */
 export const RESUME_DOWNLOAD_NAME = RESUME_DOWNLOAD_NAME_EN;
 

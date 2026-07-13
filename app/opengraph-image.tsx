@@ -42,7 +42,7 @@ export default function OpenGraphImage() {
             Ahmad Alhalwany
           </div>
           <div style={{ fontSize: 34, fontWeight: 600, lineHeight: 1.25, color: "#cbd5e1" }}>
-            Full-Stack Developer · Python · Next.js · Product-minded engineer
+            AI Application Developer · ML · LLM/RAG · Full-Stack
           </div>
           <div style={{ fontSize: 24, lineHeight: 1.5, color: "#94a3b8", maxWidth: 860 }}>
             {siteConfig.description}
@@ -51,7 +51,7 @@ export default function OpenGraphImage() {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
           <div style={{ display: "flex", gap: 12 }}>
-            {["Python", "Next.js", "TypeScript", "Django"].map((tag) => (
+            {["RAG", "LLM", "Python", "FastAPI"].map((tag) => (
               <span
                 key={tag}
                 style={{

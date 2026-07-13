@@ -3,15 +3,14 @@ import { Content, DeepPartial } from "@/lib/types";
 /** German overlays — merged onto English `content.json` when locale is `de`. */
 export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
   hero: {
-    subtitle: "ahmad.dev / full-stack · Festanstellung",
-    title:
-      "Full-Stack-Entwickler — offen für Festanstellungen mit Python, Next.js und produktionsreifer Software.",
-    headlineLead: "Ich entwickle",
-    flipWords: ["Web-Apps für Production", "Full-Stack-Systeme", "einsatzbereite Produkte"],
-    headlineEnd: "für Teams, die liefern.",
+    subtitle: "ahmad.dev / ki-anwendungen · Festanstellung",
+    title: "Hallo, ich bin Ahmad — AI Application Developer.",
+    headlineLead: "",
+    flipWords: [],
+    headlineEnd: "",
     availabilityBadge: "Offen für Festanstellungen",
     description:
-      "Hallo, ich bin Ahmad — ich verwandle komplexe Probleme in Software, auf die Menschen vertrauen. Ich suche eine langfristige Rolle, in der Handwerk, Verantwortung und Teamwirkung zählen.",
+      "Ich entwickle produktionsreife KI-Produkte end-to-end — ML-Modelle, LLM/RAG-Systeme und die Full-Stack-Apps darum herum.",
     ctaLabel: "Projekte entdecken",
     secondaryCtaLabel: "Einstellung? Kontakt",
     resumeLabel: "CV laden (EN)",
@@ -23,11 +22,11 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     title: "Der Engineer",
     titleAccent: "hinter dem Produkt",
     intro:
-      "Ich bin Ahmad Al-Halwany — Full-Stack-Entwickler mit Fokus auf Architektur, Developer Experience und die Menschen, die unsere Software nutzen.",
+      "AI Application Developer mit ZAB-anerkanntem Bachelor in AI Engineering und 3+ Jahren Full-Stack-Erfahrung. Ich entwickle KI-Produkte end-to-end — Machine Learning, Computer Vision (OpenCV, Keras, Grad-CAM), NLP und LLM-Assistenten — und bringe sie als produktionsreife Apps (Python/FastAPI, Next.js, TypeScript, PostgreSQL) live. Mir geht es um echte, nutzbare KI-Produkte, nicht um Notebooks.",
     story: [
-      "Aus Neugier an Systemen wurde Verantwortung für Produktions-APIs, Dashboards und Web-Apps, von denen Teams täglich abhängen.",
-      "Heute arbeite ich mit Python-Backends und Next.js-Frontends — wartbarer Code, klare Kommunikation und Ergebnisse, die über den Launch hinaus halten.",
-      "Ich suche eine Festanstellung, in der Ownership, Qualität und langfristige Produktwirkung wichtiger sind als schnelle Freelance-Übergaben.",
+      "Vom KI-Studium zu Produktionssystemen — ich verbinde ML-Modellarbeit mit Full-Stack-Delivery, die Forschung in Software verwandelt, die Menschen wirklich nutzen.",
+      "Aktueller Fokus: Computer Vision mit Erklärbarkeit (Grad-CAM), RAG-Assistenten mit Quellenangaben und kontextbasierte LLM-Integrationen in echten Web-Apps.",
+      "Ich suche eine Festanstellung, in der ich KI-Produkte end-to-end bauen kann — von Modell und Retrieval-Schicht bis API, UI und Deployment.",
     ],
     principles: [
       {
@@ -47,13 +46,13 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
       },
     ],
     timeline: [
-      { id: "t1", year: "Jetzt", label: "Full-Stack · offen für Festanstellung" },
-      { id: "t2", year: "Fokus", label: "Python-Systeme & Next.js-Produkte" },
+      { id: "t1", year: "Jetzt", label: "KI-Anwendungen · offen für Festanstellung" },
+      { id: "t2", year: "Fokus", label: "ML · LLM/RAG · produktionsreifer Full-Stack" },
       { id: "t3", year: "Ziel", label: "Team mit sinnvoller Mission" },
     ],
     meta: [
       { key: "modus", value: "Festanstellung · kein Freelance" },
-      { key: "stack", value: "python · next.js · typescript" },
+      { key: "stack", value: "ml · llm/rag · python · next.js" },
       { key: "zeitzone", value: "Deutschland · MEZ (Trier)" },
       { key: "standort", value: "Trier, Deutschland · vor Ort, hybrid & remote" },
       { key: "arbeitserlaubnis", value: "Chancenkarte · arbeitsberechtigt · keine Arbeitgeber-Sponsorship nötig" },
@@ -75,7 +74,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     },
     {
       id: 3,
-      title: "Stack, den ich täglich einsetze",
+      title: "KI-Stack, den ich täglich einsetze",
       description: "Ständig am Verfeinern",
     },
     {
@@ -128,33 +127,66 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     },
     {
       id: 6,
-      des: "Full-Stack-KI-Plattform zur frühen Autismus-Früherkennung — Gesichtsbildanalyse mit Grad-CAM plus 12-Fragen-Verhaltensfragebogen, zweisprachig AR/EN.",
-      challenge: "Familien einen zugänglichen ersten Screening-Weg geben — keine Blackbox-Diagnose",
-      solution: "Zweigleisige Next.js- + FastAPI-Plattform mit erklärbarer KI und medizinnahen Berichten",
+      title: "ASD Early-Detection Platform",
+      des: "Produktionsreife Health-Tech-KI-Plattform zur frühen Autismus-Früherkennung — Computer Vision, ML-Fragebogen und RAG-Assistent, zweisprachig (Arabisch/Englisch).",
+      challenge: "Zugängliches Früh-Screening mit erklärbarer KI — kein Blackbox-Label",
+      solution: "Dreischichtige KI-Gesundheits-App: CNN + Grad-CAM, ML-Fragebogen und RAG-Assistent mit Quellenangaben",
       overview:
-        "Persönliches Portfolio-Projekt — eine Full-Stack-Health-Tech-Plattform zur frühen ASD-Früherkennung per Computer Vision und Verhaltensfragebogen (keine Kunden-Freelance-Arbeit). Unterstützt Bezugspersonen beim Screening via Gesichtsanalyse (MobileNetV3 + Grad-CAM) oder einem 12-Fragen-Test — zweisprachig AR/EN.",
+        "End-to-End-KI-Gesundheitsanwendung mit drei KI-Schichten: (1) CNN-Bildklassifikator (feinabgestimmtes MobileNetV3) mit Grad-CAM-Heatmaps für Erklärbarkeit; (2) ML-Verhaltensfragebogen-Klassifikator (neuronales Netz, ~92 % Genauigkeit) mit strukturierten Berichten; (3) RAG-Assistent mit multilingualer semantischer Suche (fastembed-Embeddings + Cosine-Similarity) über eine verifizierte medizinische Wissensbasis (WHO/CDC), LLM (Hugging Face) zur Generierung und Antworten mit Quellenangaben plus Anti-Halluzinations-Fallback.",
       challengeDetail:
-        "Frühe Autismus-Anzeichen werden ohne Fachzugang leicht übersehen, und viele KI-Demos enden bei einem Klassifikations-Label. Das Produkt brauchte zwei Screening-Wege (visuell + verhaltensbasiert), erklärbare Ergebnisse, die Bezugspersonen verstehen, klare medizinische Hinweise und eine zweisprachige UX, die in Produktion funktioniert — nicht nur im Notebook.",
+        "Frühe Autismus-Anzeichen werden ohne Fachzugang leicht übersehen. Das Produkt brauchte drei KI-Schichten — visuelles Screening, Verhaltensfragebogen und einen vertrauenswürdigen Q&A-Assistenten — mit erklärbaren Ergebnissen, klaren medizinischen Hinweisen und zweisprachiger Produktions-UX.",
       solutionDetail:
-        "Ich habe ein Monorepo mit Next.js 15 auf Vercel und FastAPI auf Hugging Face Spaces gebaut. Die Bild-Pipeline verarbeitet 224×224-Eingaben durch ein feinabgestimmtes MobileNetV3, liefert Grad-CAM-Heatmaps als Base64 und erzeugt strukturierte Berichte. Der Fragebogen-Weg skaliert 12 Ja/Nein-Antworten durch ein trainiertes neuronales Netz (~92 % Genauigkeit) mit maßgeschneiderten Empfehlungen und WHO/CDC-Ressourcen. Docker, Health-Checks, CORS und Swagger halten den Stack deploybar und überprüfbar.",
+        "Als Monorepo umgesetzt — Next.js 15 (Vercel) Frontend mit AR/EN-i18n (RTL/LTR), FastAPI-Backend (Hugging Face Spaces) mit Docker, Health-Checks, CORS und Swagger. Die RAG-Schicht nutzt fastembed-Embeddings, Cosine-Similarity-Retrieval über WHO/CDC-Quellen, Hugging-Face-LLM-Generierung, Quellenangaben und Anti-Halluzinations-Fallback. Privacy-First (In-Memory-Verarbeitung) mit klaren medizinischen Hinweisen.",
       keyFeatures: [
-        "Next.js 15 App Router — Bild-Upload, Fragebogen, Über-Seite, AR/EN-i18n mit RTL/LTR",
-        "FastAPI-Backend — /predict-image, /predict-questions, /health, Swagger-Docs",
-        "MobileNetV3 (~70 %) + Grad-CAM-Erklärbarkeit für Augen-, Stirn- und Mundregionen",
-        "Neuronales Netz für Fragebogen (~92 %) mit Scaler, Berichten und Hilfsressourcen",
-        "Medizinischer Hinweis, ResultPanel, ChildInfoForm — Privacy-First (In-Memory-Verarbeitung)",
-        "Monorepo + Docker — Frontend auf Vercel, Backend auf Hugging Face Spaces",
+        "CNN-Bildklassifikator — feinabgestimmtes MobileNetV3 mit Grad-CAM-Heatmaps",
+        "ML-Fragebogen-Klassifikator — neuronales Netz (~92 % Genauigkeit) mit strukturierten Berichten",
+        "RAG-Assistent — fastembed-Embeddings, Cosine-Similarity-Suche, WHO/CDC-Wissensbasis, Quellenangaben",
+        "Next.js 15 App Router — AR/EN-i18n mit RTL/LTR",
+        "FastAPI-Backend auf Hugging Face Spaces — Docker, Health-Checks, CORS, Swagger",
+        "Privacy-First — In-Memory-Verarbeitung mit klaren medizinischen Hinweisen",
       ],
       outcomes: [
         "Live-Demo unter autism-spectrum-six.vercel.app mit offenem GitHub-Monorepo",
-        "2 Screening-Wege — Bild (~70 %) und Fragebogen (~92 %) mit XAI-Heatmaps",
+        "Drei KI-Schichten — Computer Vision, ML-Fragebogen und RAG-Assistent mit Quellenangaben",
         "13 dokumentierte UI-Screens — Home, Erkennung, Ergebnisse, Über, zweisprachige Flows",
         "Produktiv-Deployment — Vercel-Frontend + Hugging-Face-Docker-API mit CORS",
       ],
       metrics: [
-        { id: "m1", value: "~92%", label: "Genauigkeit Fragebogen-Modell" },
-        { id: "m2", value: "2", label: "Screening-Wege — Bild + Test" },
+        { id: "m1", value: "3", label: "KI-Schichten — CV, ML, RAG" },
+        { id: "m2", value: "2", label: "Sprachen — Arabisch & Englisch" },
         { id: "m3", value: "AR/EN", label: "Voll zweisprachige UI + Berichte" },
+      ],
+    },
+    {
+      id: 9,
+      title: "\"Ask Ahmad\" — Portfolio-KI-Assistent",
+      des: "Kontextbasierter LLM-Assistent auf dieser Website, der Recruiter-Fragen zu meiner Arbeit beantwortet — mit Multi-Provider-Fallback-Kette für Zuverlässigkeit.",
+      challenge: "Recruiter brauchen schnelle, präzise Antworten — ohne jede Seite zu lesen",
+      solution: "Kontextbasierter LLM-Chat mit Multi-Provider-Fallback und striktem Anti-Halluzinations-Prompting",
+      overview:
+        "Ein LLM-Assistent (das Chat-Widget auf dieser Website), der Fragen zu Projekten, Erfahrung und Verfügbarkeit beantwortet — strikt auf Portfolio-Daten beschränkt. Multi-Provider-Fallback-Kette (Groq → Gemini → OpenAI → Mistral → OpenRouter), striktes Anti-Halluzinations-System-Prompting (Antworten nur aus bereitgestelltem Kontext), Kurzzeit-Gesprächsspeicher und zweisprachige EN/DE-Antworten. Next.js Route Handler (/api/chat) mit OpenAI-kompatiblen und Gemini-Endpunkten via fetch.",
+      challengeDetail:
+        "Portfolio-Websites sind statisch — Recruiter wollen oft schnell Antworten zu Stack-Fit, Projekt-Tiefe und Verfügbarkeit. Der Assistent musste ehrlich bleiben (keine erfundene Erfahrung), zuverlässig funktionieren wenn ein API-Provider ausfällt, und auf Deutsch oder Englisch antworten.",
+      solutionDetail:
+        "Next.js /api/chat Route Handler, der Portfolio-Inhalte als System-Kontext injiziert, Antworten-nur-aus-Kontext erzwingt und Provider in Prioritätsreihenfolge versucht. Probieren Sie es — der Assistent in der Ecke ist dieses Projekt.",
+      keyFeatures: [
+        "Multi-Provider-Fallback — Groq → Gemini → OpenAI → Mistral → OpenRouter",
+        "Kontextbasiertes Prompting — Antworten nur aus Portfolio-Daten (kein Vector-RAG)",
+        "Anti-Halluzinations-Guardrails — lehnt ab wenn Kontext nicht ausreicht",
+        "Zweisprachige EN/DE-Antworten passend zur Site-Locale",
+        "Next.js Route Handler — OpenAI-kompatibel + Gemini fetch",
+        "Kurzzeit-Gesprächsspeicher für natürliche Follow-ups",
+      ],
+      outcomes: [
+        "Probieren Sie es — der Assistent in der Ecke ist dieses Projekt",
+        "5-Provider-Fallback-Kette für Zuverlässigkeit und Kostenkontrolle",
+        "Strikte Einbettung in CMS-Inhalte — keine erfundenen Projekte oder Metriken",
+        "Open-Source-Implementierung in dieser Next.js-Codebasis",
+      ],
+      metrics: [
+        { id: "m1", value: "5", label: "LLM-Provider in Fallback-Kette" },
+        { id: "m2", value: "EN/DE", label: "Zweisprachige Recruiter-Antworten" },
+        { id: "m3", value: "Live", label: "Eingebettetes Chat-Widget auf dieser Site" },
       ],
     },
     {
@@ -194,60 +226,63 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
   skillsSection: {
     title: "Skills & Technologien, mit denen ich arbeite",
     description:
-      "Programmiersprachen, Web- und App-Stack, KI/ML-Grundlagen, Tools und Soft Skills für zuverlässige Zusammenarbeit im Team.",
+      "KI/ML und LLM-Systeme zuerst — dann Backend, Frontend und DevOps für produktionsreife KI-Anwendungen.",
     categories: [
       {
         id: 1,
-        title: "Programmiersprachen",
+        title: "KI / ML",
         skills: [
-          { id: 1, name: "Python" },
-          { id: 2, name: "JavaScript" },
-          { id: 3, name: "TypeScript" },
-          { id: 4, name: "SQL" },
-          { id: 5, name: "PHP" },
+          { id: 1, name: "Machine Learning" },
+          { id: 2, name: "Deep Learning" },
+          { id: 3, name: "Computer Vision (OpenCV, Keras, CNNs, MobileNetV3)" },
+          { id: 4, name: "Grad-CAM (Explainable AI)" },
+          { id: 5, name: "NLP" },
         ],
       },
       {
         id: 2,
-        title: "Web- und App-Entwicklung",
+        title: "Generative AI / LLMs",
         skills: [
-          { id: 1, name: "React" },
-          { id: 2, name: "Next.js" },
-          { id: 3, name: "Tailwind CSS" },
-          { id: 4, name: "React Native" },
-          { id: 5, name: "HTML5" },
-          { id: 6, name: "CSS3" },
-          { id: 7, name: "Bootstrap" },
-          { id: 8, name: "Django" },
-          { id: 9, name: "Node.js" },
-          { id: 10, name: "Three.js" },
+          { id: 1, name: "LLM integration" },
+          { id: 2, name: "RAG (retrieval-augmented generation)" },
+          { id: 3, name: "Embeddings" },
+          { id: 4, name: "Prompt engineering" },
+          { id: 5, name: "Multi-provider LLM orchestration" },
         ],
       },
       {
         id: 3,
-        title: "KI und Machine Learning",
+        title: "Backend",
         skills: [
-          { id: 1, name: "Deep Learning" },
-          { id: 2, name: "Machine Learning" },
-          { id: 3, name: "NLP" },
-          { id: 4, name: "Data Mining" },
+          { id: 1, name: "Python" },
+          { id: 2, name: "FastAPI" },
+          { id: 3, name: "Django" },
+          { id: 4, name: "REST APIs" },
+          { id: 5, name: "PostgreSQL" },
         ],
       },
       {
         id: 4,
-        title: "Tools & Infrastruktur",
+        title: "Frontend",
         skills: [
-          { id: 1, name: "Microsoft Office" },
-          { id: 2, name: "Git" },
-          { id: 3, name: "Docker" },
-          { id: 4, name: "Linux" },
-          { id: 5, name: "PostgreSQL" },
-          { id: 6, name: "SQL Server" },
-          { id: 7, name: "CI/CD" },
+          { id: 1, name: "Next.js" },
+          { id: 2, name: "React" },
+          { id: 3, name: "TypeScript" },
+          { id: 4, name: "Tailwind CSS" },
         ],
       },
       {
         id: 5,
+        title: "DevOps",
+        skills: [
+          { id: 1, name: "Docker" },
+          { id: 2, name: "Linux" },
+          { id: 3, name: "Git" },
+          { id: 4, name: "CI/CD" },
+        ],
+      },
+      {
+        id: 6,
         title: "Soft Skills",
         skills: [
           { id: 1, name: "Problemlösung" },
@@ -382,12 +417,12 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     heading: "An Hiring Manager:",
     headingHighlight: "lass uns Ihr nächstes Produkt gemeinsam bauen.",
     description:
-      "Full-Stack-Entwickler, offen für Festanstellungen — kein Freelance. Kontakt für Interviews, Tech-Screens oder Team-Fit.",
+      "AI Application Developer, offen für Festanstellungen — kein Freelance. Kontakt für Interviews, Tech-Screens oder Team-Fit.",
     badge: "Offen für Festanstellungen",
     availability: "Trier, Deutschland · sofort verfügbar · Chancenkarte (keine Arbeitgeber-Sponsorship nötig) · vor Ort, hybrid & remote",
     highlights: [
       { id: "h1", value: "3+", label: "Jahre Erfahrung" },
-      { id: "h2", value: "Full-Stack", label: "Python & Next.js" },
+      { id: "h2", value: "KI-Apps", label: "ML · LLM/RAG · Full-Stack" },
       { id: "h3", value: "1–2 Tage", label: "Antwortzeit Recruiter" },
     ],
     formTitle: "Einstellungsanfrage senden",
@@ -455,9 +490,16 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
       id: 2,
       title: "Full-Stack Payment System — Al Ankabot",
       role: "Lead Full-Stack Developer",
+      location: "Remote",
       desc: "Leitung einer sicheren Transaktionsplattform mit Web- und Desktop-Clients.",
       overview:
         "Gesamter Lifecycle einer Payment-Plattform — FastAPI, JWT, Next.js und PyQt-Client mit Mehrschicht-Security.",
+      responsibilities: [
+        "FastAPI-Backend mit JWT-Authentifizierung und Verschlüsselung für sensible Finanzflüsse",
+        "Next.js-Web-UI und PyQt-Desktop-Client mit gemeinsamem Transaktions-Kern",
+        "Mehrstufige Security-Protokolle gegen Datenlecks und Missbrauch",
+        "Einführung KI-gestützter Entwicklungs-Workflows und Automatisierung wiederkehrender Prozesse mit Python",
+      ],
     },
     {
       id: 3,

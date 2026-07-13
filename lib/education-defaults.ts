@@ -5,7 +5,7 @@ export const defaultEducationItems: EducationItem[] = [
   {
     id: 1,
     institution: "Tishreen University",
-    title: "Information Technology Engineer | Artificial Intelligence Engineer",
+    title: "Information Technology & AI Engineering (Bachelor)",
     desc: "",
     className: "md:col-span-2",
     thumbnail: "/education/Tishreen.jpeg",

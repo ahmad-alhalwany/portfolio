@@ -19,7 +19,7 @@
 
 A **full-stack developer portfolio** that goes far beyond a static landing page. This project combines a cinematic, motion-rich public site with a **password-protected admin CMS**, bilingual content (EN / DE), blog, testimonials, analytics, and SEO tooling — all editable without touching code.
 
-Built by **Ahmad Al-Halwany** — Full-Stack Developer (Python · Next.js · TypeScript · Django).
+Built by **Ahmad Al-Halwany** — AI Application Developer (ML · LLM/RAG · Python · Next.js).
 
 | | |
 |---|---|
@@ -241,7 +241,7 @@ Open [http://localhost:3000](http://localhost:3000) — admin panel at [http://l
 - [ ] `ADMIN_PASSWORD` + `IRON_SESSION_PASSWORD` set (strong values)
 - [ ] Upstash Redis vars set for reviews/comments on Vercel
 - [ ] EmailJS or hire API configured for contact
-- [ ] CV PDFs present at `public/resume/ahmad-alhalwany-cv-en.pdf` and `public/resume/ahmad-alhalwany-cv-de.pdf`, or uploaded via admin
+- [ ] CV PDFs present at `public/resume/ahmad-alhalwany-ai-en.pdf` and `public/resume/ahmad-alhalwany-ai-de.pdf`, or uploaded via admin
 
 ---
 
@@ -271,7 +271,7 @@ Use the admin panel to update copy, projects, blog posts, reviews, stats, and Ge
 
 ## Author
 
-**Ahmad Al-Halwany** — Full-Stack Developer
+**Ahmad Al-Halwany** — AI Application Developer
 
 - 🌐 Portfolio: [portfolio-xi-opal-35.vercel.app](https://portfolio-xi-opal-35.vercel.app)
 - 💼 LinkedIn: [linkedin.com/in/ahmad-alhalwany](https://www.linkedin.com/in/ahmad-alhalwany/)

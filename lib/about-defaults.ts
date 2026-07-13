@@ -5,11 +5,11 @@ export const defaultAboutSection: AboutSection = {
   title: "The engineer",
   titleAccent: "behind the product",
   intro:
-    "I'm Ahmad Al-Halwany — a full-stack developer who cares about the whole journey: architecture, developer experience, and the people who rely on what we ship.",
+    "AI Application Developer combining a ZAB-recognised Bachelor in AI Engineering with 3+ years of full-stack experience. I build AI products end-to-end — machine learning, computer vision (OpenCV, Keras, Grad-CAM), NLP, and LLM assistants — and ship them as production apps (Python/FastAPI, Next.js, TypeScript, PostgreSQL). I care about shipping real, usable AI products, not notebooks.",
   story: [
-    "I grew from tinkering with how systems work into owning production APIs, dashboards, and web applications that teams depend on every day.",
-    "Today I work across Python backends and Next.js frontends — favoring maintainable code, honest communication, and outcomes that survive beyond the first launch.",
-    "I'm seeking a full-time role where ownership, craft, and long-term product impact matter more than quick freelance handoffs.",
+    "From AI engineering studies to production systems — I combine ML model work with the full-stack delivery that turns research into software people actually use.",
+    "Recent focus: computer vision with explainability (Grad-CAM), RAG assistants with source citations, and context-grounded LLM integrations in real web apps.",
+    "I'm seeking a full-time role where I can build AI products end-to-end — from model and retrieval layer to API, UI, and deployment.",
   ],
   principles: [
     {
@@ -29,13 +29,13 @@ export const defaultAboutSection: AboutSection = {
     },
   ],
   timeline: [
-    { id: "t1", year: "Now", label: "Full-stack · open to full-time hire" },
-    { id: "t2", year: "Focus", label: "Python systems & Next.js products" },
+    { id: "t1", year: "Now", label: "AI applications · open to full-time hire" },
+    { id: "t2", year: "Focus", label: "ML · LLM/RAG · production full-stack" },
     { id: "t3", year: "Goal", label: "Join a team building something meaningful" },
   ],
   meta: [
     { key: "mode", value: "employment · not freelance" },
-    { key: "stack", value: "python · next.js · typescript" },
+    { key: "stack", value: "ml · llm/rag · python · next.js" },
     { key: "timezone", value: "Germany · CET (Trier)" },
     { key: "languages", value: "AR native · EN B2 · DE A2 → B1" },
   ],

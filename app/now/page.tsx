@@ -16,8 +16,8 @@ const SECTIONS = [
     title: "Open to work",
     color: "text-emerald-400",
     items: [
-      "Actively interviewing for mid-level full-stack / backend engineer roles in Germany.",
-      "Target stack: Python (FastAPI / Django), Next.js, PostgreSQL.",
+      "Actively interviewing for AI Application Developer / ML engineer roles in Germany.",
+      "Target stack: Python (FastAPI), ML/LLM/RAG, Next.js, PostgreSQL.",
       "Available for on-site (Trier / remote-friendly), hybrid, or fully remote roles.",
     ],
   },
@@ -26,8 +26,8 @@ const SECTIONS = [
     title: "Building",
     color: "text-purple",
     items: [
-      "Portfolio v3 — Next.js 14 App Router, ISR, Redis-backed CMS, edge OG images.",
-      "Production hardening: GDPR compliance, cookie consent, dynamic OG, RSS feed.",
+      "Portfolio v3 — Next.js 14 App Router, ISR, Redis-backed CMS, AI chat assistant (/api/chat).",
+      "Production hardening: GDPR compliance, multi-provider LLM fallback, dynamic OG, RSS feed.",
     ],
   },
   {

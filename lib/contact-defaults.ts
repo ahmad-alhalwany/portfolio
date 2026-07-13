@@ -4,7 +4,7 @@ export const defaultContactSection: ContactSection = {
   heading: "Hiring managers:",
   headingHighlight: "let's build your next product together.",
   description:
-    "I'm a full-stack developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team-fit conversations.",
+    "I'm an AI Application Developer open to full-time roles — not freelance. Reach out for interviews, technical screens, or team-fit conversations.",
   badge: "Open to full-time opportunities",
   availability: "Based in Trier, Germany · open to on-site, hybrid & remote roles",
   email: "ahmad.s.alhalwany@gmail.com",

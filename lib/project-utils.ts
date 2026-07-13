@@ -1,7 +1,7 @@
 import { Project } from "@/lib/types";
 
 /** Default featured order when `featured` flag is not set in CMS */
-export const DEFAULT_FEATURED_IDS = [7, 6, 1, 8];
+export const DEFAULT_FEATURED_IDS = [6, 9, 8];
 
 export function getFullProjects(projects: Project[]): Project[] {
   return projects.filter((p) => !p.compact);

@@ -88,15 +88,15 @@ const GitHubActivity = dynamic(
 );
 
 const defaultHero: HeroSection = {
-  subtitle: "ahmad.dev / full-stack · open to hire",
-  title: "Full-stack developer open to full-time roles — Python, Next.js, and software teams can rely on.",
-  headlineLead: "I build",
-  flipWords: ["production web apps", "full-stack systems", "hire-ready products"],
-  headlineEnd: "for teams that ship.",
+  subtitle: "ahmad.dev / ai applications · open to hire",
+  title: "Hi, I'm Ahmad — an AI Application Developer.",
+  headlineLead: "",
+  flipWords: [],
+  headlineEnd: "",
   availabilityBadge: "Open to full-time roles",
-  skillChips: ["Python", "FastAPI", "Next.js", "TypeScript"],
+  skillChips: ["RAG", "LLM", "Python", "FastAPI", "Next.js"],
   description:
-    "Hi, I'm Ahmad — I turn complex problems into software people rely on. Looking for a long-term role where craft, ownership, and team impact matter.",
+    "I build production AI products end-to-end — ML models, LLM/RAG systems, and the full-stack apps around them.",
   ctaLabel: "Explore projects",
   ctaLink: "#projects",
   secondaryCtaLabel: "Hiring? Let's talk",
