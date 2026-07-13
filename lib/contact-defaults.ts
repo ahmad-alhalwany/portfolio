@@ -14,7 +14,7 @@ export const defaultContactSection: ContactSection = {
   resumeUrlDe: "/resume/ahmad-alhalwany-cv-de.pdf",
   highlights: [
     { id: "h1", value: "3+", label: "years experience" },
-    { id: "h2", value: "Full-stack", label: "Python & Next.js" },
+    { id: "h2", value: "AI Apps", label: "ML · LLM/RAG · full-stack" },
     { id: "h3", value: "1–2 days", label: "recruiter reply time" },
   ],
   formTitle: "Send a hiring inquiry",

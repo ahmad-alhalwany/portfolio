@@ -398,7 +398,7 @@ export function SiteNavbar({
                   <ThemeToggle />
                 </div>
                 <p className="text-center text-[10px] uppercase tracking-[0.3em] text-page-muted">
-                  Ahmad Al-Halwany · Full-stack
+                  Ahmad Al-Halwany · AI Application Developer
                 </p>
               </div>
             </motion.div>

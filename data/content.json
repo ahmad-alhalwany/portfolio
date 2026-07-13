@@ -124,7 +124,7 @@
     {
       "id": 3,
       "title": "AI stack I ship with daily",
-      "description": "Always refining craft",
+      "description": "ML · LLM/RAG · Python",
       "className": "lg:col-span-2 md:col-span-3 md:row-span-2",
       "imgClassName": "",
       "titleClassName": "justify-center",
@@ -143,7 +143,7 @@
     },
     {
       "id": 5,
-      "title": "Always leveling up — backend depth & system design",
+      "title": "AI systems, LLM/RAG & backend depth",
       "description": "Learning in public",
       "className": "md:col-span-3 md:row-span-2",
       "imgClassName": "absolute right-0 bottom-0 md:w-96 w-60",
@@ -166,7 +166,7 @@
     {
       "id": 6,
       "title": "ASD Early-Detection Platform",
-      "des": "A production health-tech AI platform for early autism screening, combining computer vision, an ML questionnaire, and a RAG assistant — bilingual (Arabic/English).",
+      "des": "Health-tech AI platform: CNN image classifier (MobileNetV3) with Grad-CAM explainability, ML questionnaire (~92%), and a RAG assistant (fastembed embeddings + semantic search over WHO/CDC, LLM generation, source citations). Next.js + FastAPI, bilingual AR/EN.",
       "img": "/project/asd-home-hero.png",
       "iconLists": [
         "/next.svg",
@@ -261,13 +261,12 @@
     {
       "id": 9,
       "title": "\"Ask Ahmad\" — Portfolio AI Assistant",
-      "des": "A context-grounded LLM assistant embedded in this site that answers recruiter questions about my work — with a multi-provider fallback chain for reliability.",
+      "des": "A context-grounded LLM assistant embedded in this site, answering recruiter questions from portfolio data. Multi-provider fallback chain (Groq, Gemini, OpenAI, Mistral, OpenRouter), anti-hallucination prompting, bilingual EN/DE. NOT vector-RAG — context-grounded.",
       "img": "/b1.svg",
       "iconLists": [
         "/next.svg",
         "/ts.svg",
-        "/re.svg",
-        "/tail.svg"
+        "/re.svg"
       ],
       "challenge": "Recruiters need quick, accurate answers about experience — without digging through every page",
       "solution": "Context-grounded LLM chat widget with multi-provider fallback and strict anti-hallucination prompting",
@@ -1258,46 +1257,46 @@
     ]
   },
   "servicesSection": {
-    "title": "What I build for product teams",
-    "description": "Full-stack engineering, thoughtful UI, and hands-on technical guidance — from first prototype to production, with clear communication and code your team can maintain.",
+    "title": "What I deliver for product teams",
+    "description": "AI Application Development — ML models, LLM/RAG systems, and the full-stack apps around them. From first prototype to production, with clear communication and code your team can maintain.",
     "services": [
       {
         "id": 1,
-        "title": "Full-Stack Product Development",
-        "tagline": "Next.js, React & Python backends",
-        "description": "End-to-end web applications: typed frontends, APIs, authentication, dashboards, and deployments that stay fast and maintainable after launch.",
+        "title": "AI Application Development",
+        "tagline": "ML · LLM/RAG · Computer Vision",
+        "description": "Production AI products end-to-end — model training and serving, RAG assistants with retrieval and citations, explainable computer vision, and LLM integrations grounded in real data.",
         "image": "/b4.svg",
         "highlights": [
-          "Next.js & React applications",
-          "Python APIs (FastAPI / Django)",
-          "Databases, auth & third-party integrations",
-          "Production performance & reliability"
+          "Machine learning & deep learning pipelines",
+          "LLM/RAG systems — embeddings, retrieval, prompt engineering",
+          "Computer vision — OpenCV, Keras, Grad-CAM explainability",
+          "Anti-hallucination guardrails & production deployment"
         ]
       },
       {
         "id": 2,
+        "title": "Full-Stack Product Delivery",
+        "tagline": "Next.js, FastAPI & PostgreSQL",
+        "description": "The full-stack layer around AI — typed frontends, Python APIs, authentication, dashboards, and deployments that stay fast and maintainable after launch.",
+        "image": "/app.svg",
+        "highlights": [
+          "Next.js & React applications",
+          "Python APIs (FastAPI / Django)",
+          "PostgreSQL, auth & third-party integrations",
+          "Production performance & reliability"
+        ]
+      },
+      {
+        "id": 3,
         "title": "UI/UX & Frontend Excellence",
         "tagline": "Interfaces people enjoy using",
-        "description": "Modern, accessible interfaces with responsive layouts, motion, and design patterns that scale as your product and team grow.",
-        "image": "/app.svg",
+        "description": "Modern, accessible interfaces with responsive layouts, motion, and design patterns that scale as your product and team grow — including bilingual EN/DE and RTL/LTR.",
+        "image": "/cloud.svg",
         "highlights": [
           "Design systems & reusable components",
           "Mobile-first, responsive layouts",
           "Accessibility & interaction polish",
           "Animation & micro-interactions"
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Architecture & Technical Advisory",
-        "tagline": "Clarity before you scale",
-        "description": "Stack decisions, system design, and delivery plans — so you invest in the right foundations and ship without costly rework.",
-        "image": "/cloud.svg",
-        "highlights": [
-          "Architecture & API design reviews",
-          "Cloud, DevOps & CI/CD guidance",
-          "Code quality & team mentoring",
-          "AI / ML integration strategy"
         ]
       }
     ]
@@ -1354,7 +1353,7 @@
   },
   "statsSection": {
     "title": "Impact, Learning & Growth",
-    "description": "Focused professional credentials from Meta and DeepLearning.AI — plus German language progress — aligned with full-stack and production ML work.",
+    "description": "Focused professional credentials from Meta and DeepLearning.AI — plus German language progress — aligned with AI application development and production ML work.",
     "metrics": [
       {
         "id": "certs",

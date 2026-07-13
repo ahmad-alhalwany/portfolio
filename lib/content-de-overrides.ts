@@ -75,7 +75,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     {
       id: 3,
       title: "KI-Stack, den ich täglich einsetze",
-      description: "Ständig am Verfeinern",
+      description: "ML · LLM/RAG · Python",
     },
     {
       id: 4,
@@ -84,7 +84,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     },
     {
       id: 5,
-      title: "Ständig am Leveln — Backend-Tiefe & Systemdesign",
+      title: "KI-Systeme, LLM/RAG & Backend-Tiefe",
       description: "Öffentlich lernen",
     },
     {
@@ -128,7 +128,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     {
       id: 6,
       title: "ASD Early-Detection Platform",
-      des: "Produktionsreife Health-Tech-KI-Plattform zur frühen Autismus-Früherkennung — Computer Vision, ML-Fragebogen und RAG-Assistent, zweisprachig (Arabisch/Englisch).",
+      des: "Health-Tech-KI-Plattform: CNN-Bildklassifikator (MobileNetV3) mit Grad-CAM-Erklärbarkeit, ML-Fragebogen (~92 %) und RAG-Assistent (fastembed-Embeddings + semantische Suche über WHO/CDC, LLM-Generierung, Quellenangaben). Next.js + FastAPI, zweisprachig AR/EN.",
       challenge: "Zugängliches Früh-Screening mit erklärbarer KI — kein Blackbox-Label",
       solution: "Dreischichtige KI-Gesundheits-App: CNN + Grad-CAM, ML-Fragebogen und RAG-Assistent mit Quellenangaben",
       overview:
@@ -160,7 +160,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     {
       id: 9,
       title: "\"Ask Ahmad\" — Portfolio-KI-Assistent",
-      des: "Kontextbasierter LLM-Assistent auf dieser Website, der Recruiter-Fragen zu meiner Arbeit beantwortet — mit Multi-Provider-Fallback-Kette für Zuverlässigkeit.",
+      des: "Kontextbasierter LLM-Assistent auf dieser Website — beantwortet Recruiter-Fragen aus Portfolio-Daten. Multi-Provider-Fallback (Groq, Gemini, OpenAI, Mistral, OpenRouter), Anti-Halluzinations-Prompting, zweisprachig EN/DE. Kein Vector-RAG — kontextbasiert.",
       challenge: "Recruiter brauchen schnelle, präzise Antworten — ohne jede Seite zu lesen",
       solution: "Kontextbasierter LLM-Chat mit Multi-Provider-Fallback und striktem Anti-Halluzinations-Prompting",
       overview:
@@ -325,47 +325,47 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
     ],
   },
   servicesSection: {
-    title: "Was ich für Produktteams entwickle",
+    title: "Was ich für Produktteams liefere",
     description:
-      "Full-Stack-Engineering, durchdachtes UI und praxisnahe technische Beratung — vom Prototyp bis Production, mit klarer Kommunikation und wartbarem Code.",
+      "AI Application Development — ML-Modelle, LLM/RAG-Systeme und die Full-Stack-Apps darum herum. Vom Prototyp bis Production, mit klarer Kommunikation und wartbarem Code.",
     services: [
       {
         id: 1,
-        title: "Full-Stack-Produktentwicklung",
-        tagline: "Next.js, React & Python-Backends",
+        title: "AI Application Development",
+        tagline: "ML · LLM/RAG · Computer Vision",
         description:
-          "Webanwendungen von Anfang bis Ende: typisierte Frontends, APIs, Authentifizierung, Dashboards und Deployments, die schnell und wartbar bleiben.",
+          "Produktionsreife KI-Produkte end-to-end — Modelltraining und Serving, RAG-Assistenten mit Retrieval und Quellenangaben, erklärbare Computer Vision und LLM-Integrationen auf echten Daten.",
         highlights: [
-          "Next.js & React-Anwendungen",
-          "Python-APIs (FastAPI / Django)",
-          "Datenbanken, Auth & Integrationen",
-          "Performance & Production-Readiness",
+          "Machine Learning & Deep-Learning-Pipelines",
+          "LLM/RAG-Systeme — Embeddings, Retrieval, Prompt Engineering",
+          "Computer Vision — OpenCV, Keras, Grad-CAM",
+          "Anti-Halluzinations-Guardrails & Production-Deployment",
         ],
       },
       {
         id: 2,
+        title: "Full-Stack Product Delivery",
+        tagline: "Next.js, FastAPI & PostgreSQL",
+        description:
+          "Die Full-Stack-Schicht um KI — typisierte Frontends, Python-APIs, Authentifizierung, Dashboards und Deployments, die schnell und wartbar bleiben.",
+        highlights: [
+          "Next.js & React-Anwendungen",
+          "Python-APIs (FastAPI / Django)",
+          "PostgreSQL, Auth & Integrationen",
+          "Performance & Production-Readiness",
+        ],
+      },
+      {
+        id: 3,
         title: "UI/UX & Frontend-Exzellenz",
         tagline: "Oberflächen, die gerne genutzt werden",
         description:
-          "Moderne, barrierefreie Interfaces mit responsivem Layout, Motion und Designmustern, die mit Produkt und Team mitwachsen.",
+          "Moderne, barrierefreie Interfaces mit responsivem Layout, Motion und Designmustern — inklusive zweisprachig EN/DE und RTL/LTR.",
         highlights: [
           "Design Systems & Komponenten",
           "Mobile-first, responsive UI",
           "Accessibility & Interaktionsqualität",
           "Animation & Micro-Interactions",
-        ],
-      },
-      {
-        id: 3,
-        title: "Architektur & technische Beratung",
-        tagline: "Klarheit, bevor Sie skalieren",
-        description:
-          "Stack-Entscheidungen, Systemdesign und Delivery-Pläne — damit Sie in die richtigen Grundlagen investieren und ohne teure Umwege liefern.",
-        highlights: [
-          "Architektur- & API-Reviews",
-          "Cloud, DevOps & CI/CD",
-          "Code-Qualität & Mentoring",
-          "KI-/ML-Integrationsstrategie",
         ],
       },
     ],
@@ -447,7 +447,7 @@ export const CONTENT_DE_OVERRIDES: DeepPartial<Content> = {
   statsSection: {
     title: "Wirkung, Lernen & Wachstum",
     description:
-      "Ausgewählte Zertifikate von Meta und DeepLearning.AI — plus Deutsch A2 — abgestimmt auf Full-Stack- und Production-ML-Arbeit.",
+      "Ausgewählte Zertifikate von Meta und DeepLearning.AI — plus Deutsch A2 — abgestimmt auf AI Application Development und Production-ML-Arbeit.",
     metrics: [
       {
         id: "certs",

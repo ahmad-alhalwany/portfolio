@@ -1,50 +1,50 @@
 import { ServicesSection } from "@/lib/types";
 
 export const defaultServicesSection: ServicesSection = {
-  title: "What I build for product teams",
+  title: "What I deliver for product teams",
   description:
-    "Full-stack engineering, thoughtful UI, and hands-on technical guidance — from first prototype to production, with clear communication and code your team can maintain.",
+    "AI Application Development — ML models, LLM/RAG systems, and the full-stack apps around them. From first prototype to production, with clear communication and code your team can maintain.",
   services: [
     {
       id: 1,
-      title: "Full-Stack Product Development",
-      tagline: "Next.js, React & Python backends",
+      title: "AI Application Development",
+      tagline: "ML · LLM/RAG · Computer Vision",
       description:
-        "End-to-end web applications: typed frontends, APIs, authentication, dashboards, and deployments that stay fast and maintainable after launch.",
+        "Production AI products end-to-end — model training and serving, RAG assistants with retrieval and citations, explainable computer vision, and LLM integrations grounded in real data.",
       image: "/b4.svg",
       highlights: [
-        "Next.js & React applications",
-        "Python APIs (FastAPI / Django)",
-        "Databases, auth & third-party integrations",
-        "Production performance & reliability",
+        "Machine learning & deep learning pipelines",
+        "LLM/RAG systems — embeddings, retrieval, prompt engineering",
+        "Computer vision — OpenCV, Keras, Grad-CAM explainability",
+        "Anti-hallucination guardrails & production deployment",
       ],
     },
     {
       id: 2,
+      title: "Full-Stack Product Delivery",
+      tagline: "Next.js, FastAPI & PostgreSQL",
+      description:
+        "The full-stack layer around AI — typed frontends, Python APIs, authentication, dashboards, and deployments that stay fast and maintainable after launch.",
+      image: "/app.svg",
+      highlights: [
+        "Next.js & React applications",
+        "Python APIs (FastAPI / Django)",
+        "PostgreSQL, auth & third-party integrations",
+        "Production performance & reliability",
+      ],
+    },
+    {
+      id: 3,
       title: "UI/UX & Frontend Excellence",
       tagline: "Interfaces people enjoy using",
       description:
-        "Modern, accessible interfaces with responsive layouts, motion, and design patterns that scale as your product and team grow.",
-      image: "/app.svg",
+        "Modern, accessible interfaces with responsive layouts, motion, and design patterns that scale as your product and team grow — including bilingual EN/DE and RTL/LTR.",
+      image: "/cloud.svg",
       highlights: [
         "Design systems & reusable components",
         "Mobile-first, responsive layouts",
         "Accessibility & interaction polish",
         "Animation & micro-interactions",
-      ],
-    },
-    {
-      id: 3,
-      title: "Architecture & Technical Advisory",
-      tagline: "Clarity before you scale",
-      description:
-        "Stack decisions, system design, and delivery plans — so you invest in the right foundations and ship without costly rework.",
-      image: "/cloud.svg",
-      highlights: [
-        "Architecture & API design reviews",
-        "Cloud, DevOps & CI/CD guidance",
-        "Code quality & team mentoring",
-        "AI / ML integration strategy",
       ],
     },
   ],

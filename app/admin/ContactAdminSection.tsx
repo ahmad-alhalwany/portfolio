@@ -17,7 +17,7 @@ const defaultContact: ContactSection = {
   resumeUrl: "",
   highlights: [
     { id: "h1", value: "3+", label: "years experience" },
-    { id: "h2", value: "Full-stack", label: "Python & Next.js" },
+    { id: "h2", value: "AI Apps", label: "ML · LLM/RAG · full-stack" },
     { id: "h3", value: "Fast", label: "reply to recruiters" },
   ],
   formTitle: "Send a hiring inquiry",

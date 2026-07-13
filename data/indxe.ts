@@ -21,8 +21,8 @@
     },
     {
       id: 3,
-      title: "Stack I ship with daily",
-      description: "Always refining craft",
+      title: "AI stack I ship with daily",
+      description: "ML · LLM/RAG · Python",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
       titleClassName: "justify-center",
@@ -41,7 +41,7 @@
     },
     {
       id: 5,
-      title: "Always leveling up — backend depth & system design",
+      title: "AI systems, LLM/RAG & backend depth",
       description: "Learning in public",
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -62,6 +62,30 @@
   ];
   
   export const projects = [
+    {
+      id: 6,
+      title: "ASD Early-Detection Platform",
+      des: "Health-tech AI platform: CNN image classifier (MobileNetV3) with Grad-CAM explainability, ML questionnaire (~92%), and a RAG assistant (fastembed embeddings + semantic search over WHO/CDC, LLM generation, source citations). Next.js + FastAPI, bilingual AR/EN.",
+      img: "/project/asd-home-hero.png",
+      iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/tail.svg", "/dockerName.svg"],
+      featured: true,
+    },
+    {
+      id: 9,
+      title: "\"Ask Ahmad\" — Portfolio AI Assistant",
+      des: "A context-grounded LLM assistant embedded in this site, answering recruiter questions from portfolio data. Multi-provider fallback chain (Groq, Gemini, OpenAI, Mistral, OpenRouter), anti-hallucination prompting, bilingual EN/DE. NOT vector-RAG — context-grounded.",
+      img: "/b1.svg",
+      iconLists: ["/next.svg", "/ts.svg", "/re.svg"],
+      featured: true,
+    },
+    {
+      id: 8,
+      title: "VoteChain — Decentralized Voting dApp",
+      des: "Blockchain voting dApp with Solidity smart contracts and Web3 frontend.",
+      img: "/project/vote-home-hero.png",
+      iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/tail.svg", "/s.svg"],
+      featured: true,
+    },
     {
       id: 1,
       title: "plaze-shop ecommerce website",
@@ -84,24 +108,10 @@
       iconLists: ["/django.png", "/Html.png", "/css.png", "/js.png"],
     },
     {
-      id: 6,
-      title: "ASD Early Detection Platform",
-      des: "Full-stack AI platform for early autism screening — bilingual AR/EN.",
-      img: "/project/asd-home-hero.png",
-      iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/tail.svg", "/dockerName.svg"],
-    },
-    {
       id: 7,
       title: "Payment Transfer System",
       des: "Multi-branch money transfer platform with RBAC dashboards and bilingual UI.",
       img: "/project/pay-director-branches.png",
-      iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/tail.svg", "/s.svg"],
-    },
-    {
-      id: 8,
-      title: "VoteChain — Decentralized Voting dApp",
-      des: "Blockchain voting dApp with Solidity smart contracts and Web3 frontend.",
-      img: "/project/vote-home-hero.png",
       iconLists: ["/next.svg", "/re.svg", "/ts.svg", "/tail.svg", "/s.svg"],
     },
   ];

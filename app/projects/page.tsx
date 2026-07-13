@@ -11,7 +11,7 @@ export const revalidate = 60;
 export const metadata = buildPageMetadata({
   title: "Projects | Ahmad Al-Halwany",
   description:
-    "Full-stack projects by Ahmad Al-Halwany — web apps, mobile, AI platforms, and 3D experiences with case studies and live demos.",
+    "AI application projects by Ahmad Al-Halwany — ML platforms, LLM assistants, RAG systems, and full-stack case studies with live demos.",
   path: "/projects",
 });
 
